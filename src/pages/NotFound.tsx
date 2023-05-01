@@ -1,10 +1,11 @@
 import { FC } from 'react';
 
-export const NotFound: FC = (): JSX.Element => {
+function NotFound() {
   return (
-    <div>
-      <h1>404</h1>
-      <h2>Page not found</h2>
+    <div className="flex flex-col items-center justify-center w-screen h-screen">
+      <h1 className="text-3xl font-bold underline">404</h1>
+      <h2 className="text-2xl font-bold mt-4">Page not found</h2>
     </div>
   );
-};
+}
+export default NotFound;
