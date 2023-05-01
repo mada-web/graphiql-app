@@ -17,7 +17,7 @@ function Header() {
   return (
     <header
       className={`h-25 z-10 fixed top-0 left-0 w-screen transition-all duration-200 ${
-        animateHeader ? 'bg-slate-100' : 'bg-white'
+        animateHeader ? 'bg-gray-300' : 'bg-white'
       }`}
     >
       <nav
