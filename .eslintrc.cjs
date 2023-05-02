@@ -19,10 +19,12 @@ module.exports = {
     project: './tsconfig.json',
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],
+  ignorePatterns: ["/public/output.css",],
   rules: {
     'react/react-in-jsx-scope': 0,
     'react/button-has-type': 0,
     'import/no-absolute-path': 0,
     '@typescript-eslint/no-shadow': ['off'],
+    'import/prefer-default-export': 'off',
   },
 };

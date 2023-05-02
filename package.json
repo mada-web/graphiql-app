@@ -4,14 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently \"npm run tailwind\" \"vite\"",
     "build": "tsc && vite build",
-    "tailwind:dev": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch",
+    "tailwind": "npx tailwindcss -i ./src/index.css -o public/output.css --watch",
     "lint": "eslint ./src --ext .ts,.tsx --ignore-path ./.gitignore --max-warnings=0",
     "lint:fix": "eslint ./src --ext .ts,.tsx --ignore-path ./.gitignore --fix"
   },
   "dependencies": {
     "@svgx/vite-plugin-react": "^1.0.1",
+    "concurrently": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.0"
