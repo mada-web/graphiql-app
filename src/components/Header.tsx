@@ -5,23 +5,23 @@ import LogoText from '../assets/svg/logo-text.svg';
 import Person from '../assets/svg/person.svg';
 
 function Header() {
-  // const [animateHeader, setAnimateHeader] = useState(false);
-  // useEffect(() => {
-  //   const listener = () => {
-  //     if (window.scrollY > 10) {
-  //       setAnimateHeader(true);
-  //     } else setAnimateHeader(false);
-  //   };
-  //   window.addEventListener('scroll', listener);
-  //   return () => {
-  //     window.removeEventListener('scroll', listener);
-  //   };
-  // }, []);
+  const [animateHeader, setAnimateHeader] = useState(false);
+  useEffect(() => {
+    const listener = () => {
+      if (window.scrollY > 10) {
+        setAnimateHeader(true);
+      } else setAnimateHeader(false);
+    };
+    window.addEventListener('scroll', listener);
+    return () => {
+      window.removeEventListener('scroll', listener);
+    };
+  }, []);
   return (
     <header
-      // className={`h-28 fixed p-8 top-0 left-0 w-screen transition-all duration-200 ${
-      //   animateHeader ? 'bg-green text-black' : 'bg-black text-white'
-      // }`}
+      className={`h-28 fixed p-8 top-0 left-0 w-screen transition-all duration-200 ${
+        animateHeader ? 'bg-green text-black' : 'bg-black text-white'
+      }`}
     >
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between lg:px-8"
