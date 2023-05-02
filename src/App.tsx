@@ -12,8 +12,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="sigh-in" element={<Login />} />
-          <Route path="sigh-up" element={<Register />} />
+          <Route path="/sigh-in" element={<Login />} />
+          <Route path="/sigh-up" element={<Register />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
