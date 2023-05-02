@@ -3,14 +3,15 @@ import Header from './Header';
 import Footer from './Footer';
 
 function Layout() {
-  // const shouldShowFooterHeader = <NavLink to="/sigh-up" /> || (
-  //     <NavLink to="/" />
-  //   ) || <NavLink to="/sign-in" />;
+  const shouldShowFooterHeader =
+    window.location.pathname === '/sign-in' ||
+    window.location.pathname === '/' ||
+    window.location.pathname === '/sign-up';
   return (
     <div>
-      <Header />
+      {shouldShowFooterHeader && <Header />}
       <Outlet />
-      <Footer />
+      {shouldShowFooterHeader && <Footer />}
     </div>
   );
 }

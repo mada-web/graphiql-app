@@ -23,7 +23,7 @@ function Header() {
         animateHeader ? 'bg-green text-black' : 'bg-black text-white'
       }`}
     >
-      <nav
+      <div
         className="mx-auto flex max-w-7xl items-center justify-between lg:px-8"
         aria-label="Global"
       >
@@ -57,7 +57,7 @@ function Header() {
             LogOut<span aria-hidden="true">&rarr;</span>
           </NavLink>
         </li>
-      </nav>
+      </div>
     </header>
   );
 }
