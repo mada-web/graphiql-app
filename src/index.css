@@ -4,10 +4,10 @@
 
 html {
 behavior: smooth;
+background-color: black;
 }
-
 li:hover svg path {
-fill: black;
+fill: white;
 }
 li:hover svg .path {
   fill: white;
