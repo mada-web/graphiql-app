@@ -14,7 +14,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/sigh-in" element={<Login />} />
           <Route path="/sigh-up" element={<Register />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
