@@ -6,9 +6,16 @@ html {
 behavior: smooth;
 background-color: black;
 }
-li:hover svg path {
+.person:hover svg path {
 fill: white;
+/* color: white; */
 }
 li:hover svg .path {
   fill: white;
+  }
+li:hover svg .path1 {
+    fill: black;
+    }
+.li:hover svg path {
+  fill: #7EBC59;
   }

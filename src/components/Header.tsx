@@ -1,6 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Logo from '../assets/svg/logo.svg';
+import LogoText from '../assets/svg/logo-text.svg';
+import Person from '../assets/svg/person.svg';
 
 function Header() {
   const [animateHeader, setAnimateHeader] = useState(false);
@@ -25,35 +27,36 @@ function Header() {
         className="mx-auto flex max-w-7xl items-center justify-between lg:px-8"
         aria-label="Global"
       >
-        <div className="group relative flex items-center gap-x-6 rounded-lg leading-6 hover:bg-gray-50">
+        <li className="person group relative flex items-center gap-x-6 rounded-lg leading-6">
           <NavLink
             className="flex items-center 'Impact' text-[32px] font-semibold-400 justify-center gap-x-2.5"
             to="/"
           >
             <Logo />
-            Graphql
+            <LogoText />
           </NavLink>
-        </div>
-        <div className="hidden lg:flex lg:gap-x-12">
+        </li>
+        <li className="lg:flex lg:gap-x-12">
           <NavLink
-            className="-mx-3 block rounded-lg px-3 py-2.5 font-semibold leading-7 hover:bg-gray-50"
-            to="/sigh-up"
-          >
-            Sigh up
-          </NavLink>
-          <NavLink
-            className="-mx-3 block rounded-lg px-3 py-2.5 font-semibold leading-7 hover:bg-gray-50"
+            className="-mx-3 person flex items-center block rounded-lg px-3 py-2.5 font-semibold leading-7 hover:text-white"
             to="/sigh-in"
           >
-            Sign in
+            <Person />
+            <p className="relative left-[10px]">Sigh in</p>
           </NavLink>
           <NavLink
-            className="-mx-3 block rounded-lg px-3 py-2.5 font-semibold leading-7 hover:bg-gray-50"
+            className="-mx-3 block rounded-lg px-3 py-2.5 font-semibold leading-7 hover:text-white"
+            to="/sigh-up"
+          >
+            Sign up
+          </NavLink>
+          <NavLink
+            className="-mx-3 block rounded-lg px-3 py-2.5 font-semibold leading-7 hover:text-white"
             to="/"
           >
             LogOut<span aria-hidden="true">&rarr;</span>
           </NavLink>
-        </div>
+        </li>
       </nav>
     </header>
   );
