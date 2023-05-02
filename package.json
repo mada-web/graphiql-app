@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "concurrently \"npm run tailwind\" \"vite\"",
     "build": "tsc && vite build",
-    "tailwind": "npx tailwindcss -i ./src/index.css -o /public/output.css --watch",
+    "tailwind": "npx tailwindcss -i ./src/index.css -o public/output.css --watch",
     "lint": "eslint ./src --ext .ts,.tsx --ignore-path ./.gitignore --max-warnings=0",
     "lint:fix": "eslint ./src --ext .ts,.tsx --ignore-path ./.gitignore --fix"
   },
