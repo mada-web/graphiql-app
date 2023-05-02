@@ -39,23 +39,23 @@ function Header() {
         <li className="lg:flex lg:gap-x-12">
           <NavLink
             className="-mx-3 person flex items-center block rounded-lg px-3 py-2.5 font-semibold leading-7 hover:text-white"
-            to="/sigh-in"
+            to="sigh-in"
           >
             <Person />
             <p className="relative left-[10px]">Sigh in</p>
           </NavLink>
           <NavLink
             className="-mx-3 block rounded-lg px-3 py-2.5 font-semibold leading-7 hover:text-white"
-            to="/sigh-up"
+            to="sigh-up"
           >
             Sign up
           </NavLink>
-          {/* <NavLink
+          <NavLink
             className="-mx-3 block rounded-lg px-3 py-2.5 font-semibold leading-7 hover:text-white"
             to="/"
           >
             LogOut<span aria-hidden="true">&rarr;</span>
-          </NavLink> */}
+          </NavLink>
         </li>
       </div>
     </header>
