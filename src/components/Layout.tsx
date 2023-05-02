@@ -3,9 +3,9 @@ import Header from './Header';
 import Footer from './Footer';
 
 function Layout() {
-  const shouldShowFooterHeader = <NavLink to="/about" /> || (
+  const shouldShowFooterHeader = <NavLink to="/sigh-up" /> || (
       <NavLink to="/" />
-    ) || <NavLink to="/recycle" />;
+    ) || <NavLink to="/sign-in" />;
   return (
     <div>
       {shouldShowFooterHeader && <Header />}
