@@ -4,13 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "tailwind:dev": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch",
+    "dev": "concurrently \"npm run tailwind\" \"vite\"",
+    "build": "concurrently \"tsc\" \"vite build\" \"npm run tailwind\"",
+    "tailwind": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch",
     "lint": "eslint ./src --ext .ts,.tsx --ignore-path ./.gitignore --max-warnings=0",
     "lint:fix": "eslint ./src --ext .ts,.tsx --ignore-path ./.gitignore --fix"
   },
   "dependencies": {
+    "concurrently": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.0"

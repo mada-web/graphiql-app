@@ -1,5 +1,6 @@
 # graphiql-app
 GraphiQL is a playground for graphQL requests.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2b8aa04b-fc00-4b9c-bec2-a015e852da2e/deploy-status)](https://app.netlify.com/sites/grand-biscotti-3945e0/deploys)
 
 
 ### Available Scripts
