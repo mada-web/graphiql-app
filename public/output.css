@@ -765,6 +765,7 @@ video {
 
 html {
   behavior: smooth;
+  overflow-y: hidden;
   background-color: black;
 }
 
