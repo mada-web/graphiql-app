@@ -21,18 +21,18 @@ const Footer = () => {
               mada-web
             </a>
           </li>
-          <li className="li group relative flex items-center gap-x-6 rounded-lg p-4">
+          <li className="li group relative flex items-center gap-x-6 rounded-lg p-4 hover:text-green">
             <a
-              className="flex items-center justify-center gap-x-2.5 fill-current hover:text-green"
+              className="flex items-center justify-center gap-x-2.5 fill-current"
               href="https://github.com/dairinka"
             >
               <Github />
               dairinka
             </a>
           </li>
-          <li className="li group relative flex items-center gap-x-6 rounded-lg p-4">
+          <li className="li group relative flex items-center gap-x-6 rounded-lg p-4 hover:text-green">
             <a
-              className="flex items-center justify-center gap-x-2.5 hover:text-green"
+              className="flex items-center justify-center gap-x-2.5"
               href="https://github.com/Mary190183/"
             >
               <Github />
