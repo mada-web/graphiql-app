@@ -14,7 +14,6 @@ import {
   collection,
   where,
   addDoc,
-  DocumentData,
   CollectionReference,
 } from 'firebase/firestore';
 
@@ -43,14 +42,14 @@ const signInWithGoogle = async () => {
         name: user.displayName,
         email: user.email,
         uid: user.uid,
-      } as CollectionReference<DocumentData>);
+      } as CollectionReference);
     }
   } catch (err) {
     console.log(err);
   }
 };
 
-const logInWithEmailAndPassword = async (email, password) => {
+const logInWithEmailAndPassword = async (email: string, password: string) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
   } catch (err) {
@@ -58,7 +57,11 @@ const logInWithEmailAndPassword = async (email, password) => {
   }
 };
 
-const registerWithEmailAndPassword = async (name, email, password) => {
+const registerWithEmailAndPassword = async (
+  name: string,
+  email: string,
+  password: string
+) => {
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
     const { user } = res;
@@ -67,7 +70,7 @@ const registerWithEmailAndPassword = async (name, email, password) => {
       name,
       authProvider: 'local',
       email,
-    });
+    } as CollectionReference);
   } catch (err) {
     console.error(err);
   }
