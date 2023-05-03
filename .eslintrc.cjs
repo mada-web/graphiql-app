@@ -19,7 +19,7 @@ module.exports = {
     project: './tsconfig.json',
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],
-  ignorePatterns: ['/public/output.css'],
+  ignorePatterns: ['/public/output.css', 'tailwind.config.js'],
   rules: {
     'react/button-has-type': 'off',
     'import/no-absolute-path': 'off',
