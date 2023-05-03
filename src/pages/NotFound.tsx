@@ -1,7 +1,6 @@
-import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export const NotFound: FC = (): JSX.Element => {
+const NotFound = (): JSX.Element => {
   const navigate = useNavigate();
   const routeChange = () => {
     navigate('/');
