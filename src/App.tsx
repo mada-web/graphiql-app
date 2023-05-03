@@ -6,7 +6,7 @@ import Register from './pages/Register';
 import NotFound from './pages/NotFound';
 import Layout from './components/Layout';
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
       <Routes>
@@ -19,6 +19,6 @@ function App() {
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default App;

@@ -4,7 +4,7 @@ import Logo from '../assets/svg/logo.svg';
 import LogoText from '../assets/svg/logo-text.svg';
 import Person from '../assets/svg/person.svg';
 
-function Header() {
+const Header = () => {
   const [animateHeader, setAnimateHeader] = useState(false);
   useEffect(() => {
     const listener = () => {
@@ -20,7 +20,7 @@ function Header() {
   return (
     <header
       className={`h-28 fixed p-8 top-0 left-0 w-screen transition-all duration-200 ${
-        animateHeader ? 'bg-green text-black' : 'bg-black text-white'
+        animateHeader ? 'bg-green text-dark-blue' : 'bg-gray'
       }`}
     >
       <div
@@ -60,6 +60,6 @@ function Header() {
       </div>
     </header>
   );
-}
+};
 
 export default Header;

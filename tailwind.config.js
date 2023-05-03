@@ -6,6 +6,7 @@ export default {
       'green': '#7EBC59',
       'white': '#ffffff',
       'gray': '#D9D9D9',
+      'dark-blue': '#0E0E27',
     },
     extend: {},
   },

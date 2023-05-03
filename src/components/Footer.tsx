@@ -2,7 +2,7 @@ import Github from '../assets/svg/github.svg';
 import RSLogo from '../assets/svg/rsschool.svg';
 import Graph from '../assets/svg/graph.svg';
 
-function Footer() {
+const Footer = () => {
   return (
     <footer className="w-screen">
       <div className="h-[3.75rem] bg-gray" />
@@ -62,6 +62,6 @@ function Footer() {
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;
