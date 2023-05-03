@@ -1,10 +1,11 @@
+import { FC } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
-import NotFound from './pages/NotFound';
-import Layout from './components/Layout';
+import { NotFound } from './pages/NotFound';
+import { Layout } from './components/Layout';
 
-function App() {
+export const App: FC = (): JSX.Element => {
   return (
     <BrowserRouter>
       <Routes>
@@ -17,6 +18,4 @@ function App() {
       </Routes>
     </BrowserRouter>
   );
-}
-
-export default App;
+};
