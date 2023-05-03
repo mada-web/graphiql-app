@@ -19,12 +19,19 @@ module.exports = {
     project: './tsconfig.json',
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],
-  ignorePatterns: ["/public/output.css",],
+  ignorePatterns: ['/public/output.css'],
   rules: {
-    'react/react-in-jsx-scope': 0,
-    'react/button-has-type': 0,
-    'import/no-absolute-path': 0,
-    '@typescript-eslint/no-shadow': ['off'],
+    'react/button-has-type': 'off',
+    'import/no-absolute-path': 'off',
+    'react/react-in-jsx-scope': 'off',
     'import/prefer-default-export': 'off',
+    '@typescript-eslint/no-shadow': ['off'],
+    "react/function-component-definition": [
+      2,
+      {
+        namedComponents: "arrow-function",
+        unnamedComponents: "arrow-function",
+      },
+    ],
   },
 };
