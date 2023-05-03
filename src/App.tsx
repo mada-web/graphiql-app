@@ -1,17 +1,24 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { Home } from './pages/Home';
-import { NotFound } from './pages/NotFound';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import NotFound from './pages/NotFound';
+import Layout from './components/Layout';
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<Home />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="sigh-in" element={<Login />} />
+          <Route path="sigh-up" element={<Register />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default App;
