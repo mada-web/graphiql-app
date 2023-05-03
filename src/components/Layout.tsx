@@ -1,17 +1,14 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 
-function Layout() {
-  const shouldShowFooterHeader = <NavLink to="/about" /> || (
-      <NavLink to="/" />
-    ) || <NavLink to="/recycle" />;
+const Layout = () => {
   return (
     <div>
-      {shouldShowFooterHeader && <Header />}
+      <Header />
       <Outlet />
-      {shouldShowFooterHeader && <Footer />}
+      <Footer />
     </div>
   );
-}
+};
 export default Layout;

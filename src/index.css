@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+behavior: smooth;
+overflow-x: hidden;
+background-color: #0E0E27;
+}
+.person:hover svg path {
+fill: white;
+/* color: white; */
+}
+li:hover svg .path {
+  fill: white;
+  }
+li:hover svg .path1 {
+    fill: #0E0E27;
+    }
+.li:hover svg path {
+  fill: #7EBC59;
+  }

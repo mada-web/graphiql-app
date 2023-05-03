@@ -1,7 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import Logo from '../assets/svg/logo.svg';
+import LogoText from '../assets/svg/logo-text.svg';
+import Person from '../assets/svg/person.svg';
 
-function Header() {
+const Header = () => {
   const [animateHeader, setAnimateHeader] = useState(false);
   useEffect(() => {
     const listener = () => {
@@ -16,50 +19,47 @@ function Header() {
   }, []);
   return (
     <header
-      className={`h-25 z-10 fixed top-0 left-0 w-screen transition-all duration-200 ${
-        animateHeader ? 'bg-slate-100' : 'bg-white'
+      className={`h-28 fixed p-8 top-0 left-0 w-screen transition-all duration-200 ${
+        animateHeader ? 'bg-green text-dark-blue' : 'bg-gray'
       }`}
     >
-      <nav
-        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+      <div
+        className="mx-auto flex max-w-7xl items-center justify-between lg:px-8"
         aria-label="Global"
       >
-        <div className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+        <li className="person group relative flex items-center gap-x-6 rounded-lg leading-6">
           <NavLink
-            className="flex items-center justify-center gap-x-2.5 font-semibold"
+            className="flex items-center 'Impact' text-[32px] font-semibold-400 justify-center gap-x-2.5"
             to="/"
           >
-            <img
-              className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white"
-              src="../../public/favicon.png"
-              alt="logo"
-            />
-            Graphql
+            <Logo />
+            <LogoText />
           </NavLink>
-        </div>
-        <div className="hidden lg:flex lg:gap-x-12">
+        </li>
+        <li className="lg:flex lg:gap-x-12">
           <NavLink
-            className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-            to="/sigh-up"
+            className="-mx-3 person flex items-center block rounded-lg px-3 py-2.5 font-semibold leading-7 hover:text-white"
+            to="sigh-in"
           >
-            Sigh up
+            <Person />
+            <p className="relative left-[10px]">Sigh in</p>
           </NavLink>
           <NavLink
-            className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-            to="/sigh-in"
+            className="-mx-3 block rounded-lg px-3 py-2.5 font-semibold leading-7 hover:text-white"
+            to="sigh-up"
           >
-            Sign in
+            Sign up
           </NavLink>
           <NavLink
-            className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+            className="-mx-3 block rounded-lg px-3 py-2.5 font-semibold leading-7 hover:text-white"
             to="/"
           >
             LogOut<span aria-hidden="true">&rarr;</span>
           </NavLink>
-        </div>
-      </nav>
+        </li>
+      </div>
     </header>
   );
-}
+};
 
 export default Header;

@@ -27,3 +27,4 @@ export const NotFound: FC = (): JSX.Element => {
     </div>
   );
 };
+export default NotFound;
