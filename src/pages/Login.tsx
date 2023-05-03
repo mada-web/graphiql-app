@@ -1,5 +1,3 @@
-import { FC } from 'react';
-
 function Login() {
   return (
     <div className="flex flex-col items-center justify-center w-screen h-screen text-white">
