@@ -14,7 +14,6 @@ import {
   collection,
   where,
   addDoc,
-  CollectionReference,
 } from 'firebase/firestore';
 
 const app = initializeApp({
@@ -42,7 +41,7 @@ const signInWithGoogle = async () => {
         name: user.displayName,
         email: user.email,
         uid: user.uid,
-      } as CollectionReference);
+      } as unknown);
     }
   } catch (err) {
     console.log(err);
@@ -70,7 +69,7 @@ const registerWithEmailAndPassword = async (
       name,
       authProvider: 'local',
       email,
-    } as CollectionReference);
+    } as unknown);
   } catch (err) {
     console.error(err);
   }
