@@ -14,8 +14,8 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="sigh-in" element={<Login />} />
           <Route path="sigh-up" element={<Register />} />
-          <Route path="*" element={<NotFound />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

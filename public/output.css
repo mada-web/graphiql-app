@@ -593,6 +593,10 @@ video {
   margin-top: 1rem;
 }
 
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
 .block {
   display: block;
 }
@@ -651,6 +655,10 @@ video {
 
 .max-w-7xl {
   max-width: 80rem;
+}
+
+.grow {
+  flex-grow: 1;
 }
 
 .grid-cols-3 {
