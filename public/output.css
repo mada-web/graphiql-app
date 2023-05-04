@@ -735,8 +735,8 @@ video {
   background-color: rgb(126 188 89 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\'src\/assets\/img\/bg_404\.png\'\)\] {
-  background-image: url('src/assets/img/bg_404.png');
+.bg-\[url\(\'\.\/bg_404\.png\'\)\] {
+  background-image: url('./bg_404.png');
 }
 
 .bg-center {
