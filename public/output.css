@@ -522,28 +522,8 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
-
 .fixed {
   position: fixed;
-}
-
-.\!absolute {
-  position: absolute !important;
-}
-
-.absolute {
-  position: absolute;
 }
 
 .relative {
@@ -579,14 +559,6 @@ video {
   top: -100px;
 }
 
-.bottom-1\/2 {
-  bottom: 50%;
-}
-
-.right-1\/2 {
-  right: 50%;
-}
-
 .col-span-3 {
   grid-column: span 3 / span 3;
 }
@@ -603,22 +575,19 @@ video {
   grid-row-start: 3;
 }
 
-.\!-m-px {
-  margin: -1px !important;
-}
-
 .-mx-3 {
   margin-left: -0.75rem;
   margin-right: -0.75rem;
 }
 
+.mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
-}
-
-.mr-2 {
-  margin-right: 0.5rem;
 }
 
 .mt-4 {
@@ -627,14 +596,6 @@ video {
 
 .block {
   display: block;
-}
-
-.inline-block {
-  display: inline-block;
-}
-
-.inline {
-  display: inline;
 }
 
 .flex {
@@ -681,30 +642,6 @@ video {
   height: 100vh;
 }
 
-.\!h-px {
-  height: 1px !important;
-}
-
-.h-6 {
-  height: 1.5rem;
-}
-
-.h-64 {
-  height: 16rem;
-}
-
-.h-\[32px\] {
-  height: 32px;
-}
-
-.h-9 {
-  height: 2.25rem;
-}
-
-.h-\[162px\] {
-  height: 162px;
-}
-
 .w-8 {
   width: 2rem;
 }
@@ -721,50 +658,12 @@ video {
   width: 100vw;
 }
 
-.\!w-px {
-  width: 1px !important;
-}
-
-.w-6 {
-  width: 1.5rem;
-}
-
-.w-64 {
-  width: 16rem;
-}
-
-.w-\[32px\] {
-  width: 32px;
-}
-
-.w-9 {
-  width: 2.25rem;
-}
-
-.w-\[100px\] {
-  width: 100px;
-}
-
 .max-w-7xl {
   max-width: 80rem;
 }
 
 .grow {
   flex-grow: 1;
-}
-
-.translate-x-1\/2 {
-  --tw-translate-x: 50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-y-1\/2 {
-  --tw-translate-y: 50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.transform {
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 @keyframes spin {
@@ -832,14 +731,6 @@ video {
   overflow: hidden;
 }
 
-.\!overflow-hidden {
-  overflow: hidden !important;
-}
-
-.\!whitespace-nowrap {
-  white-space: nowrap !important;
-}
-
 .rounded-\[20px\] {
   border-radius: 20px;
 }
@@ -850,47 +741,6 @@ video {
 
 .rounded-md {
   border-radius: 0.375rem;
-}
-
-.rounded-full {
-  border-radius: 9999px;
-}
-
-.\!border-0 {
-  border-width: 0px !important;
-}
-
-.border-4 {
-  border-width: 4px;
-}
-
-.border-\[3px\] {
-  border-width: 3px;
-}
-
-.border-8 {
-  border-width: 8px;
-}
-
-.border-solid {
-  border-style: solid;
-}
-
-.border-current {
-  border-color: currentColor;
-}
-
-.border-blue-400 {
-  --tw-border-opacity: 1;
-  border-color: rgb(96 165 250 / var(--tw-border-opacity));
-}
-
-.border-r-transparent {
-  border-right-color: transparent;
-}
-
-.border-t-transparent {
-  border-top-color: transparent;
 }
 
 .bg-dark-blue {
@@ -937,10 +787,6 @@ video {
   padding: 1rem;
 }
 
-.\!p-0 {
-  padding: 0px !important;
-}
-
 .px-16 {
   padding-left: 4rem;
   padding-right: 4rem;
@@ -968,10 +814,6 @@ video {
 
 .text-center {
   text-align: center;
-}
-
-.align-\[-0\.125em\] {
-  vertical-align: -0.125em;
 }
 
 .font-Impact {
@@ -1054,10 +896,6 @@ video {
   transition-duration: 200ms;
 }
 
-.\!\[clip\:rect\(0\2c 0\2c 0\2c 0\)\] {
-  clip: rect(0,0,0,0) !important;
-}
-
 html {
   behavior: smooth;
   overflow-x: hidden;
@@ -1091,18 +929,6 @@ li:hover svg .path1 {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-@media (prefers-reduced-motion: reduce) {
-  @keyframes spin {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  .motion-reduce\:animate-\[spin_1\.5s_linear_infinite\] {
-    animation: spin 1.5s linear infinite;
-  }
-}
-
 @media (min-width: 640px) {
   .sm\:col-span-1 {
     grid-column: span 1 / span 1;
@@ -1134,5 +960,12 @@ li:hover svg .path1 {
   .lg\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
