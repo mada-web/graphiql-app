@@ -4,7 +4,7 @@ import Graph from '../assets/svg/graph.svg';
 
 const Footer = () => {
   return (
-    <footer className="w-screen">
+    <footer className="w-screen bg-dark-blue">
       <div className="h-[3.75rem] bg-gray" />
       <div className="mx-auto h-[29rem] max-w-7xl flex items-center justify-between max-w-7xl overflow-hidden">
         <ul className="relative block content-center text-white">
