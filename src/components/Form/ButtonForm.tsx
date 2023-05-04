@@ -1,6 +1,6 @@
-import React, { FC } from 'react';
 import { UseFormRegister, FieldValues, FieldErrors, Path } from 'react-hook-form';
 import { DataFormCard } from '../../types/types';
+import { FC } from 'react';
 
 interface InputTitleProps {
   register: UseFormRegister<FieldValues>;
