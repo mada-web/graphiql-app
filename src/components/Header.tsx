@@ -19,7 +19,7 @@ const Header = () => {
   }, []);
   return (
     <header
-      className={`h-28 fixed p-8 top-0 left-0 w-screen transition-all duration-200 ${
+      className={`fixed z-2 p-4 top-0 left-0 w-screen transition-all duration-200 ${
         animateHeader ? 'bg-green text-dark-blue' : 'bg-gray'
       }`}
     >
