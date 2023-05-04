@@ -12,7 +12,7 @@ dist
 public/output.css
 dist-ssr
 *.local
-public/output.css
+
 
 # Editor directories and files
 .vscode/*
