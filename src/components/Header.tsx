@@ -1,7 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Logo from '../assets/svg/logo.svg';
-import LogoText from '../assets/svg/logo-text.svg';
 import Person from '../assets/svg/person.svg';
 
 const Header = () => {
@@ -29,11 +28,11 @@ const Header = () => {
       >
         <li className="person group relative flex items-center gap-x-6 rounded-lg leading-6">
           <NavLink
-            className="flex items-center 'Impact' text-[32px] font-semibold-400 justify-center gap-x-2.5"
+            className="flex items-center text-[32px] font-semibold-400 font-Impact justify-center gap-x-2.5 hover:text-white"
             to="/"
           >
             <Logo />
-            <LogoText />
+            GraphiQL
           </NavLink>
         </li>
         <li className="lg:flex lg:gap-x-12">
