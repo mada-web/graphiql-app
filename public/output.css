@@ -610,10 +610,6 @@ video {
   display: none;
 }
 
-.h-8 {
-  height: 2rem;
-}
-
 .h-\[29rem\] {
   height: 29rem;
 }
@@ -640,10 +636,6 @@ video {
 
 .h-screen {
   height: 100vh;
-}
-
-.w-8 {
-  width: 2rem;
 }
 
 .w-\[162px\] {
