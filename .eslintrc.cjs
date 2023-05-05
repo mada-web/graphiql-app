@@ -11,11 +11,11 @@ module.exports = {
     'plugin:prettier/recommended',
   ],
   overrides: [],
-  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: './tsconfig.json',
+    parser: '@typescript-eslint/parser',
+    tsconfigRootDir: __dirname,
   },
   settings: {
     react: {
