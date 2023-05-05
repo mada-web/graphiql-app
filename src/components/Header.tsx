@@ -19,7 +19,7 @@ const Header = () => {
   }, []);
   return (
     <header
-      className={`fixed z-2 p-4 top-0 left-0 w-screen transition-all duration-200 ${
+      className={`fixed left-0 top-0 z-10 w-screen p-4 transition-all duration-200 ${
         animateHeader ? 'bg-green text-dark-blue' : 'bg-gray'
       }`}
     >
@@ -29,7 +29,7 @@ const Header = () => {
       >
         <li className="person group relative flex items-center gap-x-6 rounded-lg leading-6">
           <NavLink
-            className="flex items-center 'Impact' text-[32px] font-semibold-400 justify-center gap-x-2.5"
+            className="'Impact' font-semibold-400 flex items-center justify-center gap-x-2.5 text-[32px]"
             to="/"
           >
             <Logo />
@@ -38,7 +38,7 @@ const Header = () => {
         </li>
         <li className="lg:flex lg:gap-x-12">
           <NavLink
-            className="-mx-3 person flex items-center block rounded-lg px-3 py-2.5 font-semibold leading-7 hover:text-white"
+            className="person -mx-3 block flex items-center rounded-lg px-3 py-2.5 font-semibold leading-7 hover:text-white"
             to="sigh-in"
           >
             <Person />
