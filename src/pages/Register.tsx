@@ -13,32 +13,36 @@ const Register = () => {
     handleSubmit,
     reset,
   } = useForm({ mode: 'onBlur' });
+
   const [valueName, setValueName] = useState('');
+  const [valueEmail, setValueEmail] = useState('');
+  const [valuePassword, setValuePassword] = useState('');
+
   const handleChangeName: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setValueName(e.target.value);
   };
-  const [valueEmail, setValueEmail] = useState('');
   const handleChangeEmail: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setValueEmail(e.target.value);
   };
-  const [valuePassword, setValuePassword] = useState('');
   const handleChangePassword: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setValuePassword(e.target.value);
   };
+
   const onSubmit: SubmitHandler<FieldValues> = () => {
     setValueName('');
     setValueEmail('');
     setValuePassword('');
     reset();
   };
+
   return (
     <section className="w-screen h-screen flex items-center justify-center bg-dark-blue">
       <form
-        className="max-w-7xl flex flex-col h-1/2 w-1/2 justify-center items-center bg-gray text-black rounded-[10px] min-w-[300px]"
+        className="max-w-7xl flex flex-col w-1/2 justify-center items-center bg-gray text-black rounded-[10px] min-w-[300px]"
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="flex flex-col w-2/3 text-start">
-          <h2 className="text-[40px] font-semibold-400 font-Impact">Sign Up</h2>
+          <h2 className="text-[40px] font-semibold-400 font-Impact pt-5">Sign Up</h2>
           <FormName
             value={valueName}
             onChange={handleChangeName}
@@ -65,8 +69,8 @@ const Register = () => {
           </div>
         </div>
         <div className="flex flex-row mt-3">
-          <p className="mr-3">Already on GraphiQL?</p>
-          <Link to="/sigh-in">
+          <p className="mr-3 pb-3">Already on GraphiQL?</p>
+          <Link to="/sign-in">
             <span className="text-green underline">Sign In</span>
           </Link>
         </div>

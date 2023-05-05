@@ -38,14 +38,14 @@ const Header = () => {
         <li className="lg:flex lg:gap-x-12">
           <NavLink
             className="-mx-3 person flex items-center block rounded-lg px-3 py-2.5 font-semibold leading-7 hover:text-white"
-            to="sigh-in"
+            to="sign-in"
           >
             <Person />
-            <p className="relative left-[10px]">Sigh in</p>
+            <p className="relative left-[10px]">Sign in</p>
           </NavLink>
           <NavLink
             className="-mx-3 block rounded-lg px-3 py-2.5 font-semibold leading-7 hover:text-white"
-            to="sigh-up"
+            to="sign-up"
           >
             Sign up
           </NavLink>

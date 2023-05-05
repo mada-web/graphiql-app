@@ -23,7 +23,7 @@ const FormName: FC<InputTitleProps> = (props) => {
         </label>
         <input
           className="rounded-r-md w-full pl-3"
-          placeholder="Enter text ..."
+          placeholder="Enter name ..."
           type="text"
           value={value}
           maxLength={20}

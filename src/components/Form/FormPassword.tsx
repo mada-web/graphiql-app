@@ -25,17 +25,17 @@ const FormPassword: FC<InputPasswordProps> = (props) => {
           className="rounded-r-md w-full pl-3"
           placeholder="Enter password ..."
           type="password"
-          maxLength={10}
+          maxLength={12}
           value={value}
           {...register(label, {
             required: 'Enter a password',
             minLength: {
-              value: 6,
-              message: 'Min length must be more 6',
+              value: 8,
+              message: 'Min length must be more 8',
             },
             pattern: {
-              value: /^\d+$/,
-              message: 'Numbers only',
+              value: /^(?=.*\d)(?=.*[!@#$%^&*"'{}<>])(?=.*[a-zA-Z]).{8,}$/,
+              message: 'Must be 1 letter, 1 digit, 1 special character',
             },
           })}
           onChange={onChange}
