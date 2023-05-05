@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { UseFormRegister, FieldValues, FieldErrors, Path } from 'react-hook-form';
+
 import { DataFormCard } from '../../types/types';
 
 interface InputTitleProps {
