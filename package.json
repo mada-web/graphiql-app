@@ -11,6 +11,10 @@
     "lint:fix": "npm run lint -- --fix",
     "tailwind": "npx tailwindcss -i ./src/index.css -o public/output.css --watch"
   },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": "eslint --cache --fix",
+    "src/**/*.{ts,tsx,css,md}": "prettier --write --ignore-unknown"
+  },
   "dependencies": {
     "@svgx/vite-plugin-react": "^1.0.1",
     "concurrently": "^8.0.1",

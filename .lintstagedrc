@@ -1,4 +1,0 @@
-{
-  "*.{ts, tsx}": ["tsc-files -p tsconfig.build.json --noEmit", "npm run eslint ./src --ext .ts,.tsx", "prettier --write"],
-  "*.{ts,json,css}": ["prettier --write"]
-}
