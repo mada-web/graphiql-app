@@ -42,7 +42,7 @@ const FormPassword: FC<InputPasswordProps> = (props) => {
           onChange={onChange}
         />
       </div>
-      <div className="h-4 text-red">
+      <div className="h-8 text-red">
         {errors?.password && <p>{`${errors.password?.message}` || 'Error'}</p>}
       </div>
     </>
