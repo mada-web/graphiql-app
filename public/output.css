@@ -622,10 +622,6 @@ video {
   display: none;
 }
 
-.h-1\/2 {
-  height: 50%;
-}
-
 .h-4 {
   height: 1rem;
 }
@@ -862,12 +858,12 @@ video {
   padding-bottom: 0.75rem;
 }
 
-.pl-3 {
-  padding-left: 0.75rem;
-}
-
 .pb-3 {
   padding-bottom: 0.75rem;
+}
+
+.pl-3 {
+  padding-left: 0.75rem;
 }
 
 .pt-5 {
