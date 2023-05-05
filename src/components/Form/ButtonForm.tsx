@@ -1,17 +1,16 @@
 import { FC } from 'react';
-import { UseFormRegister, FieldValues, FieldErrors, Path } from 'react-hook-form';
+import { UseFormRegister, FieldValues, Path } from 'react-hook-form';
 
 import { DataFormCard } from '../../types/types';
 
 interface InputTitleProps {
   register: UseFormRegister<FieldValues>;
-  errors: FieldErrors<FieldValues>;
   label: Path<DataFormCard>;
   page: string;
 }
 
 export const ButtonForm: FC<InputTitleProps> = (props) => {
-  const { register, errors, label, page } = props;
+  const { register, label, page } = props;
 
   return (
     <div className="mt-4">
@@ -23,9 +22,6 @@ export const ButtonForm: FC<InputTitleProps> = (props) => {
         })}
         value={page === 'login' ? 'Sign In' : 'Sign Up'}
       />
-      <div className="h-4 text-red">
-        {(errors?.name || errors?.email || errors?.password) && <p>Please, enter correct data!</p>}
-      </div>
     </div>
   );
 };

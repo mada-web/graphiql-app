@@ -19,9 +19,11 @@ const Login = () => {
 
   const handleChangeEmail: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setValueEmail(e.target.value);
+    reset();
   };
   const handleChangePassword: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setValuePassword(e.target.value);
+    reset();
   };
 
   const onSubmit: SubmitHandler<FieldValues> = () => {
@@ -31,10 +33,16 @@ const Login = () => {
   };
 
   return (
-    <section className="w-screen h-screen flex items-center justify-center bg-dark-blue">
+    <section className="w-screen h-screen flex items-center justify-center bg-dark-blue overflow-hidden">
+      <img
+        className="relative top-1/4 left-[-100px] w-[539px] h-[463px] object-none z-0 hidden lg:inline-block"
+        src="./bg_decor2.png"
+        alt="element"
+      />
       <form
-        className="max-w-7xl flex flex-col w-1/2 justify-center items-center bg-gray text-black rounded-[10px] min-w-[300px]"
+        className="max-w-7xl flex flex-col w-1/2 justify-center items-center bg-gray text-black rounded-[10px] min-w-[300px] z-10"
         onSubmit={handleSubmit(onSubmit)}
+        noValidate
       >
         <div className="flex flex-col w-2/3 text-start">
           <h2 className="text-[40px] font-semibold-400 font-Impact pt-5">Sign In</h2>
@@ -53,7 +61,7 @@ const Login = () => {
             label="password"
           />
           <div className="form-row">
-            <ButtonForm register={register} errors={errors} label="submit" page="login" />
+            <ButtonForm register={register} label="submit" page="login" />
           </div>
         </div>
         <div className="flex flex-row mt-3">
@@ -63,6 +71,11 @@ const Login = () => {
           </Link>
         </div>
       </form>
+      <img
+        className="relative bottom-1/3 right-[-240px] w-[539px] h-[463px] object-none z-0 hidden lg:inline-block"
+        src="./element.png"
+        alt="element"
+      />
     </section>
   );
 };

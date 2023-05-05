@@ -41,11 +41,11 @@ const Footer = () => {
           </li>
         </ul>
         <img
-          className="relative top-[-100px] left-[250px] w-[539px] h-[463px] object-none"
+          className="relative top-[-100px] left-[250px] w-[539px] h-[463px] object-none hidden lg:inline-block"
           src="./element.png"
           alt="element"
         />
-        <img src="./Bazz.png" alt="Bazz" />
+        <img className="hidden sm:inline-block" src="./Bazz.png" alt="Bazz" />
       </div>
       <div className="h-[3.61rem] bg-green">
         <ul className="mx-auto flex max-w-7xl items-center justify-between p-2">
