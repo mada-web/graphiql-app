@@ -11,15 +11,15 @@ const Main: FC = (): JSX.Element => {
   };
 
   return (
-    <main className="bg-dark-blue w-screen h-screen">
-      <div className="grid grid-cols-1 sm:grid-cols-2 pt-[100px] grid-rows-1 h-[100%]">
+    <main className="relative z-0 h-screen w-screen bg-dark-blue">
+      <div className="grid h-[100%] grid-cols-1 grid-rows-1 pt-[100px] sm:grid-cols-2">
         <div className="grid grid-cols-[90%_10%] grid-rows-[60%_40%]">
           <EditorBlock />
           <ControlBtns />
-          <div className="self-end row-start-2 col-span-2 col-start-1 flex flex-col w-full">
+          <div className="relative z-10 col-span-2 col-start-1 row-start-2 flex w-full flex-col self-end">
             <button
               onClick={openQueryEditor}
-              className="bg-green text-center py-2 w-[80%] self-center lg:w-1/3 rounded-t-lg lg:ml-10 lg:self-start transition-all"
+              className="w-[80%] self-center rounded-t-lg bg-green py-2 text-center transition-all lg:ml-10 lg:w-1/3 lg:self-start"
             >
               query params
             </button>
