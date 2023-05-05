@@ -1,0 +1,4 @@
+{
+  "*.ts": ["tsc-files -p tsconfig.build.json --noEmit", "eslint --fix", "prettier --write"],
+  "*.{js,json,md}": ["prettier --write"]
+}

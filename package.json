@@ -6,11 +6,10 @@
   "scripts": {
     "dev": "concurrently \"npm run tailwind\" \"vite\"",
     "build": "tsc && vite build",
-    "tailwind": "npx tailwindcss -i ./src/index.css -o public/output.css --watch",
+    "husky-install": "husky install",
     "lint": "eslint ./src --ext .ts,.tsx",
     "lint:fix": "npm run lint -- --fix",
-    "lint-staged": "lint-staged --config lint-staged.js",
-    "husky-install": "husky install"
+    "tailwind": "npx tailwindcss -i ./src/index.css -o public/output.css --watch"
   },
   "dependencies": {
     "@svgx/vite-plugin-react": "^1.0.1",
