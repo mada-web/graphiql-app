@@ -22,7 +22,7 @@ const logInWithEmailAndPassword = async (email: string, password: string) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
   } catch (err) {
-    console.error(err);
+    alert(err);
   }
 };
 
@@ -37,7 +37,7 @@ const registerWithEmailAndPassword = async (name: string, email: string, passwor
       email,
     } as unknown);
   } catch (err) {
-    console.error(err);
+    alert(err);
   }
 };
 

@@ -1,5 +1,7 @@
 import { NavLink } from 'react-router-dom';
+
 import { useEffect, useState } from 'react';
+
 import Logo from '../assets/svg/logo.svg';
 import Person from '../assets/svg/person.svg';
 
