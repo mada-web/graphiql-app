@@ -13,15 +13,36 @@ import Editor, { Monaco } from '@monaco-editor/react';
 //     },
 //   },
 // });
-
+const code = `query {
+    eggGroups{
+      count,
+      results {
+        name
+      }
+    }
+  }
+`;
 const EditorBlock = () => {
+  const options: monaco.editor.IStandaloneEditorConstructionOptions = {
+    readOnly: false,
+    minimap: { enabled: false },
+    bracketPairColorization: { enabled: true },
+    autoDetectHighContrast: false,
+    roundedSelection: false,
+    scrollBeyondLastLine: false,
+    scrollbar: {
+      vertical: 'hidden',
+      verticalHasArrows: true,
+      arrowSize: 1000,
+    },
+  };
   const handleEditorValidation = (markers: monaco.editor.IMarker[]) => {
     // model markers
     markers.forEach((marker) => console.log('onValidate:', marker.message));
   };
 
   const handleEditorWillMount = (monaco: Monaco) => {
-    monaco.editor.defineTheme('my-theme', {
+    monaco.editor.defineTheme('dark-theme', {
       base: 'vs-dark',
       inherit: false,
       rules: [
@@ -40,6 +61,7 @@ const EditorBlock = () => {
         // { token: 'regexp', foreground: 'B46695' },
         { token: 'annotation', foreground: 'cc6666' },
         { token: 'type', foreground: '3DC9B0' },
+        { token: 'semanticHighlighting', foreground: 'ff00ff' },
 
         // { token: 'delimiter', foreground: 'DCDCDC' },
         // { token: 'delimiter.html', foreground: '808080' },
@@ -71,27 +93,26 @@ const EditorBlock = () => {
       colors: {
         'editor.background': '#0e0e27',
         'editor.foreground': '#D4D4D4',
-        'editor.inactiveSelection': '#E5EBF1',
         'editor.indentGuides': '#0e0e27',
         'editor.activeIndentGuides': '#0e0e27',
-        'editor.selectionHighlight': '#ADD6FF4D',
-        // 'editor.foreground': '#3B3B3B',
-        // 'editor.background': '#FFFFFF',
-        'editor.selectionBackground': '#BAD6FD',
         'editor.lineHighlightBackground': '#00000012',
+        'editor.inactiveSelection': '#E5EBF1',
+        'editor.selectionHighlight': '#ADD6FF4D',
+        'editor.selectionBackground': '#BAD6FD',
         'editorCursor.foreground': '#D4D4D4',
-        'editorWhitespace.foreground': '#BFBFBF',
+        'editorWhitespace.foreground': '#26265f',
       },
     });
   };
   return (
-    <div className="relative z-0 col-start-1 row-start-1 pl-10">
+    <div className="relative z-0 col-start-1 row-start-1 max-h-max min-h-[60%] pl-10">
       <Editor
-        theme="my-theme"
+        theme="dark-theme"
         beforeMount={handleEditorWillMount}
         defaultLanguage="qraphql"
         onValidate={handleEditorValidation}
-        defaultValue="hello"
+        defaultValue={code}
+        options={options}
         // renderIndentGuides="false"
         // defaultValue="query {}"
         // onMount={handleEditorDidMount}
