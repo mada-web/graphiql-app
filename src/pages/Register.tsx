@@ -40,56 +40,52 @@ const Register = () => {
   };
 
   return (
-    <section className="w-screen h-screen flex items-center justify-center bg-dark-blue overflow-hidden">
-      <img
-        className="relative top-1/4 left-[-100px] w-[539px] h-[463px] object-none z-0 hidden lg:inline-block"
-        src="./bg_decor2.png"
-        alt="element"
-      />
-      <form
-        className="max-w-7xl flex flex-col w-1/2 justify-center items-center bg-gray text-black rounded-[10px] min-w-[300px] z-10"
-        onSubmit={handleSubmit(onSubmit)}
-        noValidate
-      >
-        <div className="flex flex-col w-2/3 text-start">
-          <h2 className="text-[40px] font-semibold-400 font-Impact pt-5">Sign Up</h2>
-          <FormName
-            value={valueName}
-            onChange={handleChangeName}
-            register={register}
-            errors={errors}
-            label="name"
-          />
-          <FormEmail
-            value={valueEmail}
-            onChange={handleChangeEmail}
-            register={register}
-            errors={errors}
-            label="email"
-          />
-          <FormPassword
-            value={valuePassword}
-            onChange={handleChangePassword}
-            register={register}
-            errors={errors}
-            label="password"
-          />
-          <div className="form-row">
-            <ButtonForm register={register} label="submit" page="register" />
+    <section className="w-screen h-screen inline-block bg-dark-blue">
+      <div className="absolute w-screen h-screen flex flex-col justify-center items-center ">
+        <form
+          className="max-w-7xl flex flex-col w-1/2 justify-center items-center bg-gray text-black rounded-[10px] min-[410px]:min-w-[400px] min-w-[315px] md:min-w-[600px] sm:min-w-[500px] z-10"
+          onSubmit={handleSubmit(onSubmit)}
+          noValidate
+        >
+          <div className="flex flex-col w-4/5 min-[410px]:w-2/3 text-start">
+            <h2 className="text-[40px] font-semibold-400 font-Impact pt-5">Sign Up</h2>
+            <FormName
+              value={valueName}
+              onChange={handleChangeName}
+              register={register}
+              errors={errors}
+              label="name"
+            />
+            <FormEmail
+              value={valueEmail}
+              onChange={handleChangeEmail}
+              register={register}
+              errors={errors}
+              label="email"
+            />
+            <FormPassword
+              value={valuePassword}
+              onChange={handleChangePassword}
+              register={register}
+              errors={errors}
+              label="password"
+            />
+            <div className="form-row">
+              <ButtonForm register={register} label="submit" page="register" />
+            </div>
           </div>
-        </div>
-        <div className="flex flex-row mt-3">
-          <p className="mr-3 pb-3">Already on GraphiQL?</p>
-          <Link to="/sign-in">
-            <span className="text-green underline">Sign In</span>
-          </Link>
-        </div>
-      </form>
-      <img
-        className="relative bottom-1/3 right-[-240px] w-[539px] h-[463px] object-none z-0 hidden lg:inline-block"
-        src="./element.png"
-        alt="element"
-      />
+          <div className="flex flex-row mt-3">
+            <p className="mr-3 pb-3">Already on GraphiQL?</p>
+            <Link to="/sign-in">
+              <span className="text-green underline">Sign In</span>
+            </Link>
+          </div>
+        </form>
+      </div>
+      <div className="md:h-screen h-full sm:flex hidden w-screen flex justify-between items-stretch overflow-hidden z-0">
+        <div className="relative w-[539px] h-[463px] bg-[url('./element_2.png')] bg-auto -mb-[33px] -ml-[273px] place-self-end" />
+        <div className="relative w-[539px] h-[463px] bg-[url('./element_1.png')] bg-auto -mt-[33px] -mr-[232px] bg-no-repeat place-self-start" />
+      </div>
     </section>
   );
 };
