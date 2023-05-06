@@ -46,7 +46,7 @@ const EditorBlock = () => {
       base: 'vs-dark',
       inherit: false,
       rules: [
-        { token: '', foreground: 'D4D4D4', background: '0e0e27' },
+        { token: '', foreground: '7ebc59', background: '0e0e27' },
         { token: 'invalid', foreground: 'f44747' },
         { token: 'emphasis', fontStyle: 'italic' },
         { token: 'strong', fontStyle: 'bold' },
@@ -56,7 +56,7 @@ const EditorBlock = () => {
         { token: 'variable.parameter', foreground: '9CDCFE' },
         { token: 'constant', foreground: '569CD6' },
         { token: 'comment', foreground: '608B4E' },
-        { token: 'number', foreground: 'B5CEA8' },
+        { token: 'number', foreground: '7ebc59' },
         // { token: 'number.hex', foreground: '5BB498' },
         // { token: 'regexp', foreground: 'B46695' },
         { token: 'annotation', foreground: 'cc6666' },
@@ -92,15 +92,17 @@ const EditorBlock = () => {
       ],
       colors: {
         'editor.background': '#0e0e27',
-        'editor.foreground': '#D4D4D4',
+        'editor.foreground': '#7ebc59',
         'editor.indentGuides': '#0e0e27',
         'editor.activeIndentGuides': '#0e0e27',
         'editor.lineHighlightBackground': '#00000012',
         'editor.inactiveSelection': '#E5EBF1',
         'editor.selectionHighlight': '#ADD6FF4D',
-        'editor.selectionBackground': '#BAD6FD',
-        'editorCursor.foreground': '#D4D4D4',
+        'editor.selectionBackground': '#BAD6FD40',
+        'editorCursor.foreground': '#7ebc59',
         'editorWhitespace.foreground': '#26265f',
+        'editorLineNumber.foreground': '#486f31',
+        'editorLineNumber.activeForeground': '#7ebc59',
       },
     });
   };
