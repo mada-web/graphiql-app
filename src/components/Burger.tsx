@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import Close from '../assets/svg/close.svg';
@@ -6,19 +7,18 @@ interface ModalProps {
   onClose: () => void;
 }
 
-export const Burger = (props: ModalProps) => {
-  const { onClose } = props;
+export const Burger: FC<ModalProps> = ({ onClose }): JSX.Element => {
   return (
     <div
       data-testid="modal"
-      className="h-screen flex fixed z-30 bg-white/40 w-screen items-start justify-end"
+      className="fixed z-30 flex h-screen w-screen items-start justify-end bg-white/40"
       onClick={(e) => {
         if (e.target === e.currentTarget) {
           onClose();
         }
       }}
     >
-      <li className="p-6 flex items-start justify-start sm:hidden flex-col w-[180px] h-[250px] bg-gray text-dark-blue rounded-[10px] z-30">
+      <li className="z-30 flex h-[250px] w-[180px] flex-col items-start justify-start rounded-[10px] bg-gray p-6 text-dark-blue sm:hidden">
         <button
           className="place-self-end"
           onClick={() => {
@@ -28,7 +28,7 @@ export const Burger = (props: ModalProps) => {
           <Close />
         </button>
         <NavLink
-          className="p-3 font-semibold transition-all leading-7 hover:border-b-2"
+          className="p-3 font-semibold leading-7 transition-all hover:border-b-2"
           to="sign-in"
         >
           Sign in

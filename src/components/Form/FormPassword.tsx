@@ -16,21 +16,22 @@ interface InputPasswordProps {
 }
 
 const FormPassword: FC<InputPasswordProps> = (props) => {
-  const { value, onChange, register, errors, label } = props;
   const [isReveal, setIsReveal] = useState(false);
   const [click, setClick] = useState(false);
   const intl = useIntl();
 
+  const { value, onChange, register, errors, label } = props;
+
   return (
     <>
-      <div className="flex mt-2">
+      <div className="mt-2 flex">
         <label htmlFor="password">
-          <div className="bg-green p-3 rounded-l-md">
+          <div className="rounded-l-md bg-green p-3">
             <Lock />
           </div>
         </label>
         <input
-          className="rounded-r-md w-full pl-3"
+          className="w-full rounded-r-md pl-3"
           placeholder={intl.formatMessage({ id: 'PASS_PLACEHOLDER' })}
           type={isReveal ? 'text' : 'password'}
           maxLength={12}
