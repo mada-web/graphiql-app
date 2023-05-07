@@ -1256,10 +1256,6 @@ a:hover svg .path1 {
     height: 800px;
   }
 
-  .md\:h-screen {
-    height: 100vh;
-  }
-
   .md\:min-w-\[600px\] {
     min-width: 600px;
   }
@@ -1276,8 +1272,8 @@ a:hover svg .path1 {
   }
 }
 
-@media (min-width: 1366px) {
-  .min-\[1366px\]\:h-screen {
+@media (min-width: 1400px) {
+  .min-\[1400px\]\:h-screen {
     height: 100vh;
   }
 }
