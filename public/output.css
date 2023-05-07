@@ -1153,6 +1153,10 @@ html {
 }
 
 .person:hover svg path {
+  fill: #f59e0b;
+}
+
+.white:hover svg path {
   fill: white;
 }
 

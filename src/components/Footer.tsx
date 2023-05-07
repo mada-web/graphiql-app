@@ -47,7 +47,7 @@ const Footer = () => {
         <ul className="mx-auto flex max-w-7xl items-center justify-between p-2">
           <li className="person group relative flex items-center gap-x-6 rounded-lg transition-all">
             <Link
-              className="flex items-center justify-center transition-all"
+              className=" white flex items-center justify-center transition-all"
               to="https://rs.school/react/ "
             >
               <RSLogo />
