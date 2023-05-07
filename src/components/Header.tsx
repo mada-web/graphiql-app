@@ -1,6 +1,5 @@
+import { ChangeEvent, FC, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-
-import { FC, useEffect, useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 
 import Logo from '../assets/svg/logo.svg';
@@ -11,7 +10,7 @@ import { Burger } from './Burger';
 
 export interface IHeaderProps {
   locale: string;
-  handleLocale: (e) => void;
+  handleLocale: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Header: FC<IHeaderProps> = ({ handleLocale, locale }): JSX.Element => {
