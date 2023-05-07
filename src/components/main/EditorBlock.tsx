@@ -1,8 +1,8 @@
 // import { Editor, monaco } from '@monaco-editor/react';
 // import * as monacoEditor from 'monaco-editor';
-import type monaco from 'monaco-editor';
 import Editor, { Monaco } from '@monaco-editor/react';
-import React from 'react';
+
+import type monaco from 'monaco-editor';
 
 // loader.config({
 //   paths: {

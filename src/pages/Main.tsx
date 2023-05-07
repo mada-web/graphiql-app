@@ -1,4 +1,5 @@
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
+
 import ControlBtns from '../components/main/ControlBtns';
 import EditorBlock, { defaultCode } from '../components/main/EditorBlock';
 import QueryBlock from '../components/main/QueryBlock';

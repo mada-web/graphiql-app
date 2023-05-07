@@ -1,4 +1,5 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
+
 import Play from '../../assets/svg/btn_play.svg';
 
 export interface IControlBtns {

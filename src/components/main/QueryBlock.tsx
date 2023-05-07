@@ -1,6 +1,5 @@
-import type monaco from 'monaco-editor';
-import Editor, { Monaco } from '@monaco-editor/react';
-import React from 'react';
+// import type monaco from 'monaco-editor';
+// import Editor, { Monaco } from '@monaco-editor/react';
 
 // loader.config({
 //   paths: {
@@ -12,7 +11,7 @@ import React from 'react';
 //     },
 //   },
 // });
-const code = `some query`;
+//const code = `some query`;
 const QueryBlock = () => {
   // const options: monaco.editor.IStandaloneEditorConstructionOptions = {
   //   readOnly: false,

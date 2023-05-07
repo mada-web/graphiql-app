@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Logo from '../assets/svg/logo.svg';
 import Person from '../assets/svg/person.svg';
@@ -36,7 +36,7 @@ const Header = () => {
         </li>
         <li className="sm-flex-col mr-4 sm:flex sm:gap-x-12">
           <NavLink
-            className="person -mx-3 block flex items-center rounded-lg px-3 py-2.5 font-semibold leading-7 hover:text-white"
+            className="person -mx-3 flex items-center rounded-lg px-3 py-2.5 font-semibold leading-7 hover:text-white"
             to="sign-in"
           >
             <Person />
