@@ -3,8 +3,8 @@ import { Background } from '../components/Background';
 
 const Home = () => {
   return (
-    <section className="bg-dark-blue inline-block md:h-[800px] min-[1400px]:h-screen h-[1200px] w-screen">
-      <div className="flex flex-col justify-end items-end absolute w-screen md:h-[800px] min-[1400px]:h-screen h-[1200px]">
+    <section className="bg-dark-blue inline-block md:h-[750px] min-[1400px]:h-screen h-[1200px] w-screen">
+      <div className="flex flex-col justify-end items-end absolute w-screen md:h-[750px] min-[1400px]:h-screen h-[1200px]">
         <div className="flex flex-col items-start w-3/4 mb-[28px] mr-[37px] z-10">
           <p className="ml-20 text-[20px] text-white font-semibold-700">Welcome to</p>
           <div className="flex items-center text-[40px] font-semibold-400 font-Impact justify-center gap-x-2.5 text-white ml-6 min-[370px]:mb-[0px] mb-[20px]">
