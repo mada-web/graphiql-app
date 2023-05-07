@@ -3,7 +3,6 @@ import { Link, NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 import Logo from '../assets/svg/logo.svg';
-import Person from '../assets/svg/person.svg';
 import BurgerMenu from '../assets/svg/burger.svg';
 
 import { Burger } from './Burger';
@@ -33,7 +32,7 @@ const Header = () => {
         }`}
       >
         <ul className="max-w-7xl mx-auto flex items-center justify-between list-none">
-          <li className="white group relative flex items-center gap-x-6 rounded-lg leading-6">
+          <li className="white relative flex items-center gap-x-6 leading-6">
             <Link
               className="flex items-center text-[32px] font-semibold-400 font-Impact justify-center gap-x-2.5 transition-all hover:text-white"
               to="/"
@@ -50,24 +49,20 @@ const Header = () => {
           >
             <BurgerMenu />
           </span>
-          <li className="relative sm:flex hidden flex-row sm:gap-x-12">
+          <li className="relative sm:flex hidden flex-row gap-16">
             <NavLink
-              className="-mx-3 person flex items-center block rounded-lg px-3 py-2.5 font-semibold transition-all leading-7 hover:text-orange"
+              className="p-3 font-semibold transition-all leading-7 hover:border-b-2"
               to="sign-in"
             >
-              <Person />
-              <p className="relative left-[10px]">Sign in</p>
+              Sign in
             </NavLink>
             <NavLink
-              className="-mx-3 block rounded-lg px-3 py-2.5 font-semibold leading-7 transition-all hover:text-orange"
+              className="p-3 font-semibold leading-7 transition-all hover:border-b-2"
               to="sign-up"
             >
               Sign up
             </NavLink>
-            <NavLink
-              className="-mx-3 block rounded-lg px-3 py-2.5 font-semibold leading-7 transition-all hover:text-orange"
-              to="/"
-            >
+            <NavLink className="p-3 font-semibold leading-7 transition-all hover:border-b-2" to="/">
               LogOut<span aria-hidden="true">&rarr;</span>
             </NavLink>
           </li>

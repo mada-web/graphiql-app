@@ -6,9 +6,7 @@ html {
 overflow-x: hidden;
 scroll-behavior: smooth;
 }
-.person:hover svg path {
-fill: #f59e0b;
-}
+
 .white:hover svg path {
   fill: white;
   }
@@ -21,8 +19,7 @@ a:hover svg .path1 {
 .li:hover svg path {
   fill: #7EBC59;
   }
-.active, .active svg path {
+.active {
 color: white;
-fill: white;
-text-decoration: underline;
+border-bottom: 2px solid white;
 }

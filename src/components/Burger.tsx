@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom';
 
-import Person from '../assets/svg/person.svg';
 import Close from '../assets/svg/close.svg';
 
 interface ModalProps {
@@ -19,7 +18,7 @@ export const Burger = (props: ModalProps) => {
         }
       }}
     >
-      <li className="p-6 flex items-start justify-start sm:hidden flex-col w-[180px] h-[200px] bg-gray text-dark-blue rounded-[10px] z-30">
+      <li className="p-6 flex items-start justify-start sm:hidden flex-col w-[180px] h-[250px] bg-gray text-dark-blue rounded-[10px] z-30">
         <button
           className="place-self-end"
           onClick={() => {
@@ -29,22 +28,18 @@ export const Burger = (props: ModalProps) => {
           <Close />
         </button>
         <NavLink
-          className="-mx-3 person flex items-center block rounded-lg px-3 py-2.5 font-semibold leading-7 hover:text-white"
+          className="p-3 font-semibold transition-all leading-7 hover:border-b-2"
           to="sign-in"
         >
-          <Person />
-          <p className="relative left-[10px]">Sign in</p>
+          Sign in
         </NavLink>
         <NavLink
-          className="-mx-3 block rounded-lg px-3 py-2.5 font-semibold leading-7 hover:text-white"
+          className="p-3 font-semibold leading-7 transition-all hover:border-b-2"
           to="sign-up"
         >
           Sign up
         </NavLink>
-        <NavLink
-          className="-mx-3 block rounded-lg px-3 py-2.5 font-semibold leading-7 hover:text-white"
-          to="/"
-        >
+        <NavLink className="p-3 font-semibold leading-7 transition-all hover:border-b-2" to="/">
           LogOut<span aria-hidden="true">&rarr;</span>
         </NavLink>
       </li>

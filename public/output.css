@@ -543,10 +543,6 @@ video {
   left: 0px;
 }
 
-.left-\[10px\] {
-  left: 10px;
-}
-
 .left-\[20px\] {
   left: 20px;
 }
@@ -585,11 +581,6 @@ video {
 
 .row-start-3 {
   grid-row-start: 3;
-}
-
-.-mx-3 {
-  margin-left: -0.75rem;
-  margin-right: -0.75rem;
 }
 
 .mx-5 {
@@ -718,8 +709,8 @@ video {
   height: 134px;
 }
 
-.h-\[200px\] {
-  height: 200px;
+.h-\[250px\] {
+  height: 250px;
 }
 
 .h-\[29rem\] {
@@ -868,6 +859,10 @@ video {
   justify-content: space-between;
 }
 
+.gap-16 {
+  gap: 4rem;
+}
+
 .gap-x-2 {
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
@@ -1000,21 +995,6 @@ video {
 .px-16 {
   padding-left: 4rem;
   padding-right: 4rem;
-}
-
-.px-3 {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
-
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
-.py-2\.5 {
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
 }
 
 .py-3 {
@@ -1152,10 +1132,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.person:hover svg path {
-  fill: #f59e0b;
-}
-
 .white:hover svg path {
   fill: white;
 }
@@ -1172,10 +1148,13 @@ a:hover svg .path1 {
   fill: #7EBC59;
 }
 
-.active, .active svg path {
+.active {
   color: white;
-  fill: white;
-  text-decoration: underline;
+  border-bottom: 2px solid white;
+}
+
+.hover\:border-b-2:hover {
+  border-bottom-width: 2px;
 }
 
 .hover\:bg-green\/70:hover {
@@ -1249,11 +1228,6 @@ a:hover svg .path1 {
 
   .sm\:min-w-\[500px\] {
     min-width: 500px;
-  }
-
-  .sm\:gap-x-12 {
-    -moz-column-gap: 3rem;
-         column-gap: 3rem;
   }
 }
 

@@ -21,7 +21,7 @@ const Footer = () => {
               mada-web
             </Link>
           </li>
-          <li className="li group relative flex items-center gap-x-6 rounded-lg p-4 hover:text-green">
+          <li className="li relative flex items-center gap-x-6 p-4 hover:text-green">
             <Link
               className="flex items-center justify-center gap-x-2.5 fill-current transition-all"
               to="https://github.com/dairinka"
@@ -30,7 +30,7 @@ const Footer = () => {
               dairinka
             </Link>
           </li>
-          <li className="li group relative flex items-center gap-x-6 rounded-lg p-4 hover:text-green">
+          <li className="li relative flex items-center gap-x-6 p-4 hover:text-green">
             <Link
               className="flex items-center justify-center gap-x-2.5 transition-all"
               to="https://github.com/Mary190183/"
@@ -45,7 +45,7 @@ const Footer = () => {
       </div>
       <div className="h-[3.61rem] bg-green">
         <ul className="mx-auto flex max-w-7xl items-center justify-between p-2">
-          <li className="person group relative flex items-center gap-x-6 rounded-lg transition-all">
+          <li className="person relative flex items-center gap-x-6 transition-all">
             <Link
               className=" white flex items-center justify-center transition-all"
               to="https://rs.school/react/ "
