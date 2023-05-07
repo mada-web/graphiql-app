@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { IntlProvider } from 'react-intl';
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -15,7 +15,7 @@ const App = () => {
     localStorage.getItem('lang') || LOCALES.ENGLISH
   );
 
-  const handleLocale = (e) => {
+  const handleLocale = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target?.checked === false) {
       setCurrentLocale(LOCALES.RUSSIAN);
       localStorage.setItem('lang', LOCALES.RUSSIAN);
