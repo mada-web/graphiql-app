@@ -8,10 +8,6 @@ import BurgerMenu from '../assets/svg/burger.svg';
 
 import { Burger } from './Burger';
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ');
-}
-
 const Header = () => {
   const [animateHeader, setAnimateHeader] = useState(false);
   const [click, setClick] = useState(false);
