@@ -2,6 +2,7 @@
 // import * as monacoEditor from 'monaco-editor';
 import type monaco from 'monaco-editor';
 import Editor, { Monaco } from '@monaco-editor/react';
+import React from 'react';
 
 // loader.config({
 //   paths: {
@@ -13,7 +14,7 @@ import Editor, { Monaco } from '@monaco-editor/react';
 //     },
 //   },
 // });
-const code = `query {
+export const defaultCode = `query {
     eggGroups{
       count,
       results {
@@ -36,6 +37,15 @@ const EditorBlock = () => {
       arrowSize: 1000,
     },
   };
+
+  const handleEditorChange = (
+    // eslint-disable-next-line @typescript-eslint/default-param-last
+    value = '',
+    event: monaco.editor.IModelContentChangedEvent
+  ) => {
+    console.log('here is the current model value:', value);
+  };
+
   const handleEditorValidation = (markers: monaco.editor.IMarker[]) => {
     // model markers
     markers.forEach((marker) => console.log('onValidate:', marker.message));
@@ -113,10 +123,9 @@ const EditorBlock = () => {
         beforeMount={handleEditorWillMount}
         defaultLanguage="qraphql"
         onValidate={handleEditorValidation}
-        defaultValue={code}
+        defaultValue={defaultCode}
         options={options}
-        // renderIndentGuides="false"
-        // defaultValue="query {}"
+        onChange={handleEditorChange}
         // onMount={handleEditorDidMount}
       />
     </div>
