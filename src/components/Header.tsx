@@ -8,6 +8,10 @@ import BurgerMenu from '../assets/svg/burger.svg';
 
 import { Burger } from './Burger';
 
+function classNames(...classes: string[]) {
+  return classes.filter(Boolean).join(' ');
+}
+
 const Header = () => {
   const [animateHeader, setAnimateHeader] = useState(false);
   const [click, setClick] = useState(false);
@@ -34,13 +38,13 @@ const Header = () => {
       >
         <ul className="max-w-7xl mx-auto flex items-center justify-between list-none">
           <li className="person group relative flex items-center gap-x-6 rounded-lg leading-6">
-            <NavLink
-              className="flex items-center text-[32px] font-semibold-400 font-Impact justify-center gap-x-2.5 hover:text-white"
+            <a
+              className="flex items-center text-[32px] font-semibold-400 font-Impact justify-center gap-x-2.5 transition-all hover:text-white"
               to="/"
             >
               <Logo />
               GraphiQL
-            </NavLink>
+            </a>
           </li>
           <span
             className="sm:hidden"
@@ -52,20 +56,20 @@ const Header = () => {
           </span>
           <li className="relative sm:flex hidden flex-row sm:gap-x-12">
             <NavLink
-              className="-mx-3 person flex items-center block rounded-lg px-3 py-2.5 font-semibold leading-7 hover:text-white"
+              className="-mx-3 person flex items-center block rounded-lg px-3 py-2.5 font-semibold transition-all leading-7 hover:text-white"
               to="sign-in"
             >
               <Person />
               <p className="relative left-[10px]">Sign in</p>
             </NavLink>
             <NavLink
-              className="-mx-3 block rounded-lg px-3 py-2.5 font-semibold leading-7 hover:text-white"
+              className="-mx-3 block rounded-lg px-3 py-2.5 font-semibold leading-7 transition-all hover:text-white"
               to="sign-up"
             >
               Sign up
             </NavLink>
             <NavLink
-              className="-mx-3 block rounded-lg px-3 py-2.5 font-semibold leading-7 hover:text-white"
+              className="-mx-3 block rounded-lg px-3 py-2.5 font-semibold leading-7 transition-all hover:text-white"
               to="/"
             >
               LogOut<span aria-hidden="true">&rarr;</span>

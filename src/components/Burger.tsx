@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 
 import Person from '../assets/svg/person.svg';
+import Close from '../assets/svg/close.svg';
 
 interface ModalProps {
   onClose: () => void;
@@ -25,7 +26,7 @@ export const Burger = (props: ModalProps) => {
             onClose();
           }}
         >
-          X
+          <Close />
         </button>
         <NavLink
           className="-mx-3 person flex items-center block rounded-lg px-3 py-2.5 font-semibold leading-7 hover:text-white"

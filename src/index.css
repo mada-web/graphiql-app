@@ -3,13 +3,11 @@
 @tailwind utilities;
 
 html {
-behavior: smooth;
 overflow-x: hidden;
-background-color: #D9D9D9;
+scroll-behavior: smooth;
 }
 .person:hover svg path {
 fill: white;
-/* color: white; */
 }
 li:hover svg .path {
   fill: white;
@@ -20,3 +18,7 @@ li:hover svg .path1 {
 .li:hover svg path {
   fill: #7EBC59;
   }
+.active, .active sv path {
+color: #A4A4A4;
+fill: #A4A4A4
+}

@@ -6,6 +6,7 @@ import { ButtonForm } from '../components/Form/ButtonForm';
 import FormName from '../components/Form/FormName';
 import FormEmail from '../components/Form/FormEmail';
 import FormPassword from '../components/Form/FormPassword';
+import { Background } from '../components/Background';
 
 const Register = () => {
   const {
@@ -77,15 +78,12 @@ const Register = () => {
           <div className="flex flex-row mt-3">
             <p className="mr-3 pb-3">Already on GraphiQL?</p>
             <Link to="/sign-in">
-              <span className="text-green underline">Sign In</span>
+              <span className="text-green underline hover:text-middle-gray">Sign In</span>
             </Link>
           </div>
         </form>
       </div>
-      <div className="md:h-screen h-full sm:flex hidden w-screen flex justify-between items-stretch overflow-hidden z-0">
-        <div className="relative w-[539px] h-[463px] bg-[url('./element_2.png')] bg-auto -mb-[33px] -ml-[273px] place-self-end" />
-        <div className="relative w-[539px] h-[463px] bg-[url('./element_1.png')] bg-auto -mt-[33px] -mr-[232px] bg-no-repeat place-self-start" />
-      </div>
+      <Background />
     </section>
   );
 };

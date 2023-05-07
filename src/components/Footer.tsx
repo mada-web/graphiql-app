@@ -6,7 +6,7 @@ import Graph from '../assets/svg/graph.svg';
 
 const Footer = () => {
   return (
-    <footer className="w-screen bg-dark-blue">
+    <footer className="w-screen inline-block bg-dark-blue -mt-[7px]">
       <div className="h-[3.75rem] bg-gray" />
       <div className="mx-auto h-[29rem] max-w-7xl flex items-center justify-between overflow-hidden">
         <ul className="relative block content-center text-white">
@@ -14,7 +14,7 @@ const Footer = () => {
           <hr className="w-[162px] h-[2px] text-green" />
           <li className=" li group relative flex items-center gap-x-6 rounded-lg p-4  hover:text-green">
             <Link
-              className="flex items-center justify-center gap-x-2.5 "
+              className="flex items-center justify-center gap-x-2.5 transition-all"
               to="https://github.com/mada-web"
             >
               <Github />
@@ -23,7 +23,7 @@ const Footer = () => {
           </li>
           <li className="li group relative flex items-center gap-x-6 rounded-lg p-4 hover:text-green">
             <Link
-              className="flex items-center justify-center gap-x-2.5 fill-current"
+              className="flex items-center justify-center gap-x-2.5 fill-current transition-all"
               to="https://github.com/dairinka"
             >
               <Github />
@@ -32,7 +32,7 @@ const Footer = () => {
           </li>
           <li className="li group relative flex items-center gap-x-6 rounded-lg p-4 hover:text-green">
             <Link
-              className="flex items-center justify-center gap-x-2.5"
+              className="flex items-center justify-center gap-x-2.5 transition-all"
               to="https://github.com/Mary190183/"
             >
               <Github />
@@ -45,8 +45,11 @@ const Footer = () => {
       </div>
       <div className="h-[3.61rem] bg-green">
         <ul className="mx-auto flex max-w-7xl items-center justify-between p-2">
-          <li className="person group relative flex items-center gap-x-6 rounded-lg">
-            <Link className="flex items-center justify-center" to="https://rs.school/react/">
+          <li className="person group relative flex items-center gap-x-6 rounded-lg transition-all">
+            <Link
+              className="flex items-center justify-center transition-all"
+              to="https://rs.school/react/ "
+            >
               <RSLogo />
             </Link>
           </li>
