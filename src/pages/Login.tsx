@@ -64,7 +64,7 @@ const Login = () => {
           <div className="flex flex-row mt-3">
             <p className="mr-3 pb-3">Not a member yet?</p>
             <Link to="/sign-up">
-              <span className="text-green underline hover:text-middle-gray">Sign Up</span>
+              <span className="text-green underline hover:text-orange">Sign Up</span>
             </Link>
           </div>
         </form>

@@ -78,7 +78,7 @@ const Register = () => {
           <div className="flex flex-row mt-3">
             <p className="mr-3 pb-3">Already on GraphiQL?</p>
             <Link to="/sign-in">
-              <span className="text-green underline hover:text-middle-gray">Sign In</span>
+              <span className="text-green underline hover:text-orange">Sign In</span>
             </Link>
           </div>
         </form>

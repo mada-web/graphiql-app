@@ -1160,11 +1160,11 @@ html {
   fill: white;
 }
 
-li:hover svg .path {
+a:hover svg .path {
   fill: white;
 }
 
-li:hover svg .path1 {
+a:hover svg .path1 {
   fill: #0E0E27;
 }
 
@@ -1172,9 +1172,10 @@ li:hover svg .path1 {
   fill: #7EBC59;
 }
 
-.active, .active sv path {
-  color: #A4A4A4;
-  fill: #A4A4A4
+.active, .active svg path {
+  color: white;
+  fill: white;
+  text-decoration: underline;
 }
 
 .hover\:bg-green\/70:hover {
@@ -1186,9 +1187,9 @@ li:hover svg .path1 {
   color: rgb(126 188 89 / var(--tw-text-opacity));
 }
 
-.hover\:text-middle-gray:hover {
+.hover\:text-orange:hover {
   --tw-text-opacity: 1;
-  color: rgb(164 164 164 / var(--tw-text-opacity));
+  color: rgb(245 158 11 / var(--tw-text-opacity));
 }
 
 .hover\:text-white:hover {
@@ -1196,9 +1197,9 @@ li:hover svg .path1 {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.active\:bg-middle-gray:active {
+.active\:bg-orange:active {
   --tw-bg-opacity: 1;
-  background-color: rgb(164 164 164 / var(--tw-bg-opacity));
+  background-color: rgb(245 158 11 / var(--tw-bg-opacity));
 }
 
 @media (min-width: 370px) {
@@ -1275,6 +1276,10 @@ li:hover svg .path1 {
 
   .md\:inline-block {
     display: inline-block;
+  }
+
+  .md\:h-\[800px\] {
+    height: 800px;
   }
 
   .md\:h-screen {

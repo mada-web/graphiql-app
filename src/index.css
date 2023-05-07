@@ -9,16 +9,17 @@ scroll-behavior: smooth;
 .person:hover svg path {
 fill: white;
 }
-li:hover svg .path {
+a:hover svg .path {
   fill: white;
   }
-li:hover svg .path1 {
+a:hover svg .path1 {
     fill: #0E0E27;
     }
 .li:hover svg path {
   fill: #7EBC59;
   }
-.active, .active sv path {
-color: #A4A4A4;
-fill: #A4A4A4
+.active, .active svg path {
+color: white;
+fill: white;
+text-decoration: underline;
 }

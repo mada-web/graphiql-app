@@ -13,7 +13,8 @@ export default {
         'gray': '#D9D9D9',
         'dark-blue': '#0E0E27',
         'middle-gray': '#A4A4A4',
-        'red':'#dc2626'
+        'red':'#dc2626',
+        'orange': '#f59e0b',
       }
     },
   },

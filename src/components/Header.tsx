@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import { useEffect, useState } from 'react';
 
@@ -34,13 +34,13 @@ const Header = () => {
       >
         <ul className="max-w-7xl mx-auto flex items-center justify-between list-none">
           <li className="person group relative flex items-center gap-x-6 rounded-lg leading-6">
-            <NavLink
+            <Link
               className="flex items-center text-[32px] font-semibold-400 font-Impact justify-center gap-x-2.5 transition-all hover:text-white"
               to="/"
             >
               <Logo />
               GraphiQL
-            </NavLink>
+            </Link>
           </li>
           <span
             className="sm:hidden"
