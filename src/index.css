@@ -9,14 +9,16 @@ html {
 }
 .person:hover svg path {
   fill: white;
-  /* color: white; */
 }
+
 li:hover svg .path {
   fill: white;
 }
+
 li:hover svg .path1 {
   fill: #0e0e27;
 }
+
 .li:hover svg path {
   fill: #7ebc59;
 }

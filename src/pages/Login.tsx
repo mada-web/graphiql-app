@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 
 import { ButtonForm } from '../components/Form/ButtonForm';
 import FormEmail from '../components/Form/FormEmail';
@@ -45,7 +46,9 @@ const Login = () => {
         noValidate
       >
         <div className="flex flex-col w-2/3 text-start">
-          <h2 className="text-[40px] font-semibold-400 font-Impact pt-5">Sign In</h2>
+          <h2 className="text-[40px] font-semibold-400 font-Impact pt-5">
+            <FormattedMessage id="SIGN_IN" />
+          </h2>
           <FormEmail
             value={valueEmail}
             onChange={handleChangeEmail}
@@ -65,9 +68,13 @@ const Login = () => {
           </div>
         </div>
         <div className="flex flex-row mt-3">
-          <p className="mr-3 pb-3">Not a member yet?</p>
+          <p className="mr-3 pb-3">
+            <FormattedMessage id="NOT_A_MEMBER" />
+          </p>
           <Link to="/sign-up">
-            <span className="text-green underline">Sign Up</span>
+            <span className="text-green underline">
+              <FormattedMessage id="SIGN_UP" />
+            </span>
           </Link>
         </div>
       </form>

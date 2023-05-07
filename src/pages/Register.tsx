@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 
 import { ButtonForm } from '../components/Form/ButtonForm';
 import FormName from '../components/Form/FormName';
@@ -23,10 +24,12 @@ const Register = () => {
     setValueName(e.target.value);
     reset();
   };
+
   const handleChangeEmail: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setValueEmail(e.target.value);
     reset();
   };
+
   const handleChangePassword: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setValuePassword(e.target.value);
     reset();
@@ -52,7 +55,9 @@ const Register = () => {
         noValidate
       >
         <div className="flex flex-col w-2/3 text-start">
-          <h2 className="text-[40px] font-semibold-400 font-Impact pt-5">Sign Up</h2>
+          <h2 className="text-[40px] font-semibold-400 font-Impact pt-5">
+            <FormattedMessage id="SIGN_UP" />
+          </h2>
           <FormName
             value={valueName}
             onChange={handleChangeName}
@@ -79,9 +84,13 @@ const Register = () => {
           </div>
         </div>
         <div className="flex flex-row mt-3">
-          <p className="mr-3 pb-3">Already on GraphiQL?</p>
+          <p className="mr-3 pb-3">
+            <FormattedMessage id="ALREADY_REGISTERED" />
+          </p>
           <Link to="/sign-in">
-            <span className="text-green underline">Sign In</span>
+            <span className="text-green underline">
+              <FormattedMessage id="SIGN_IN" />
+            </span>
           </Link>
         </div>
       </form>

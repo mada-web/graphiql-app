@@ -23,6 +23,7 @@
     "react-dom": "^18.2.0",
     "react-firebase-hooks": "^5.1.1",
     "react-hook-form": "^7.43.9",
+    "react-intl": "^6.4.2",
     "react-router": "^6.11.0",
     "react-router-dom": "^6.11.0"
   },
