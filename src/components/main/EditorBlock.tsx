@@ -1,8 +1,8 @@
 import Editor, { Monaco } from '@monaco-editor/react';
 
-import useAppContext from '../../hooks/useAppContext';
+import monaco from 'monaco-editor';
 
-import type monaco from 'monaco-editor';
+import useAppContext from '../../hooks/useAppContext';
 
 export const defaultCode = `query {
     eggGroups{
@@ -24,10 +24,12 @@ const EditorBlock = () => {
     autoDetectHighContrast: false,
     roundedSelection: false,
     scrollBeyondLastLine: false,
+    automaticLayout: true,
     scrollbar: {
       vertical: 'hidden',
       verticalHasArrows: true,
       arrowSize: 1000,
+      alwaysConsumeMouseWheel: false,
     },
   };
 
@@ -61,6 +63,7 @@ const EditorBlock = () => {
         { token: 'semanticHighlighting', foreground: 'ff00ff' },
 
         { token: 'string', foreground: 'CE9178' },
+        { token: 'key', foreground: '9CDCFE' },
       ],
       colors: {
         'editor.background': '#0e0e27',
@@ -79,7 +82,7 @@ const EditorBlock = () => {
     });
   };
   return (
-    <div className="relative z-0 col-start-1 row-start-1 max-h-max min-h-[60%] pl-10">
+    <div className="editor relative z-0 col-start-1 row-start-1 max-h-max min-h-[60%] pb-2  pl-10">
       <Editor
         theme="dark-theme"
         beforeMount={handleEditorWillMount}
@@ -88,6 +91,7 @@ const EditorBlock = () => {
         defaultValue={defaultCode}
         options={options}
         onChange={handleEditorChange}
+        loading="Wait a second..."
       />
     </div>
   );
