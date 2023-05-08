@@ -3,6 +3,7 @@ import { IntlProvider } from 'react-intl';
 import { ChangeEvent, useState } from 'react';
 
 import Home from './pages/Home';
+import Main from './pages/Main';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import NotFound from './pages/NotFound';
@@ -37,6 +38,7 @@ const App = () => {
             <Route index element={<Home />} />
             <Route path="sign-in" element={<Login />} />
             <Route path="sign-up" element={<Register />} />
+            <Route path="main" element={<Main />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

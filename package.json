@@ -16,6 +16,7 @@
     "src/**/*.{ts,tsx,css,md}": "prettier --write --ignore-unknown"
   },
   "dependencies": {
+    "@monaco-editor/react": "^4.5.1",
     "@svgx/vite-plugin-react": "^1.0.1",
     "concurrently": "^8.0.1",
     "firebase": "^9.21.0",
