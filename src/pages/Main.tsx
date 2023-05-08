@@ -1,20 +1,15 @@
 import { FC, useState } from 'react';
 
 import ControlBtns from '../components/main/ControlBtns';
-import EditorBlock, { defaultCode } from '../components/main/EditorBlock';
+import EditorBlock from '../components/main/EditorBlock';
 import QueryBlock from '../components/main/QueryBlock';
 import ResponseBlock from '../components/main/ResponseBlock';
 
 const Main: FC = (): JSX.Element => {
   const [isQueryParams, setIsQueryParams] = useState(false);
-  const [queryBody, setQueryBody] = useState(defaultCode);
 
   const showQueryEditor = () => {
     setIsQueryParams((prev) => !prev);
-  };
-
-  const executeQuery = () => {
-    console.log(queryBody);
   };
 
   return (

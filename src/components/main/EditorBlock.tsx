@@ -2,6 +2,8 @@
 // import * as monacoEditor from 'monaco-editor';
 import Editor, { Monaco } from '@monaco-editor/react';
 
+import useAppContext from '../../hooks/useAppContext';
+
 import type monaco from 'monaco-editor';
 
 // loader.config({
@@ -24,6 +26,8 @@ export const defaultCode = `query {
   }
 `;
 const EditorBlock = () => {
+  const { setQueryBody } = useAppContext();
+
   const options: monaco.editor.IStandaloneEditorConstructionOptions = {
     readOnly: false,
     minimap: { enabled: false },
@@ -43,7 +47,7 @@ const EditorBlock = () => {
     value = '',
     event: monaco.editor.IModelContentChangedEvent
   ) => {
-    console.log('here is the current model value:', value);
+    setQueryBody(value);
   };
 
   const handleEditorValidation = (markers: monaco.editor.IMarker[]) => {
