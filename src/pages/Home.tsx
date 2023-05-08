@@ -3,37 +3,37 @@ import { Background } from '../components/Background';
 
 const Home = () => {
   return (
-    <section className="bg-dark-blue inline-block md:h-[800px] min-[1400px]:h-screen h-[1200px] w-screen">
-      <div className="flex flex-col justify-end items-end absolute w-screen md:h-[800px] min-[1400px]:h-screen h-[1200px]">
-        <div className="flex flex-col items-start w-3/4 mb-[28px] mr-[37px] z-10">
-          <p className="ml-20 text-[20px] text-white font-semibold-700">Welcome to</p>
-          <div className="flex items-center text-[40px] font-semibold-400 font-Impact justify-center gap-x-2.5 text-white ml-6 min-[370px]:mb-[0px] mb-[20px]">
+    <section className="inline-block h-[1200px] w-screen bg-dark-blue md:h-[800px] min-[1400px]:h-screen">
+      <div className="absolute flex h-[1200px] w-screen flex-col items-end justify-end md:h-[800px] min-[1400px]:h-screen">
+        <div className="z-10 mb-[28px] mr-[37px] flex w-3/4 flex-col items-start">
+          <p className="font-semibold-700 ml-20 text-[20px] text-white">Welcome to</p>
+          <div className="font-semibold-400 mb-[20px] ml-6 flex items-center justify-center gap-x-2.5 font-Impact text-[40px] text-white min-[370px]:mb-[0px]">
             <Logo />
             <p className="ml-2">GraphiQL</p>
           </div>
-          <p className="min-[370px]:inline-block hidden ml-6 mb-[40px] mt-[47px] text-white text-[16px] font-semibold-400">
+          <p className="font-semibold-400 mb-[40px] ml-6 mt-[47px] hidden text-[16px] text-white min-[370px]:inline-block">
             This is the final project on the React course at RSSchool
           </p>
-          <div className="bg-gray flex flex-col p-6 rounded-[10px]">
-            <h2 className="md:mb-[40px] mb-[20px] text-[24px] font-semibold-400">Meet our teem</h2>
+          <div className="flex flex-col rounded-[10px] bg-gray p-6">
+            <h2 className="font-semibold-400 mb-[20px] text-[24px] md:mb-[40px]">Meet our teem</h2>
             <div className="flex flex-col items-center md:flex-row">
-              <div className="flex flex-col justify-center items-center mb-2 md:mb-4">
-                <div className="w-[165px] h-[134px] bg-middle-gray rounded-[10px]"></div>
-                <p className="md:mt-5 mt-2">
+              <div className="mb-2 flex flex-col items-center justify-center md:mb-4">
+                <div className="h-[134px] w-[165px] rounded-[10px] bg-middle-gray"></div>
+                <p className="mt-2 md:mt-5">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                   incididunt ut labore et dolore magna aliqua
                 </p>
               </div>
-              <div className="flex flex-col items-center md:ml-4 mb-2 md:mb-4">
-                <div className="w-[165px] h-[134px] bg-middle-gray rounded-[10px]"></div>
-                <p className="md:mt-5 mt-2">
+              <div className="mb-2 flex flex-col items-center md:mb-4 md:ml-4">
+                <div className="h-[134px] w-[165px] rounded-[10px] bg-middle-gray"></div>
+                <p className="mt-2 md:mt-5">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                   incididunt ut labore et dolore magna aliqua
                 </p>
               </div>
-              <div className="flex flex-col justify-center items-center md:ml-4 md:mb-4">
-                <div className="w-[165px] h-[134px] bg-middle-gray rounded-[10px]"></div>
-                <p className="md:mt-5 mt-2">
+              <div className="flex flex-col items-center justify-center md:mb-4 md:ml-4">
+                <div className="h-[134px] w-[165px] rounded-[10px] bg-middle-gray"></div>
+                <p className="mt-2 md:mt-5">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                   incididunt ut labore et dolore magna aliqua
                 </p>

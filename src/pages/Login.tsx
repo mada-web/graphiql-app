@@ -34,15 +34,15 @@ const Login = () => {
   };
 
   return (
-    <section className="w-screen h-screen inline-block bg-dark-blue">
-      <div className="absolute w-screen h-screen flex flex-col justify-center items-center ">
+    <section className="inline-block h-screen w-screen bg-dark-blue">
+      <div className="absolute flex h-screen w-screen flex-col items-center justify-center ">
         <form
-          className="max-w-7xl flex flex-col w-1/2 justify-center items-center bg-gray text-black rounded-[10px] min-[410px]:min-w-[400px] min-w-[315px] md:min-w-[600px] sm:min-w-[500px] z-10"
+          className="z-10 flex w-1/2 min-w-[315px] max-w-7xl flex-col items-center justify-center rounded-[10px] bg-gray text-black min-[410px]:min-w-[400px] sm:min-w-[500px] md:min-w-[600px]"
           onSubmit={handleSubmit(onSubmit)}
           noValidate
         >
-          <div className="flex flex-col w-4/5 min-[410px]:w-2/3 text-start">
-            <h2 className="text-[40px] font-semibold-400 font-Impact pt-5">Sign In</h2>
+          <div className="flex w-4/5 flex-col text-start min-[410px]:w-2/3">
+            <h2 className="font-semibold-400 pt-5 font-Impact text-[40px]">Sign In</h2>
             <FormEmail
               value={valueEmail}
               onChange={handleChangeEmail}
@@ -61,7 +61,7 @@ const Login = () => {
               <ButtonForm register={register} label="submit" page="login" />
             </div>
           </div>
-          <div className="flex flex-row mt-3">
+          <div className="mt-3 flex flex-row">
             <p className="mr-3 pb-3">Not a member yet?</p>
             <Link to="/sign-up">
               <span className="text-green underline hover:text-orange">Sign Up</span>

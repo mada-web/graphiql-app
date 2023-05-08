@@ -21,14 +21,14 @@ const FormPassword: FC<InputPasswordProps> = (props) => {
 
   return (
     <>
-      <div className="flex mt-2">
+      <div className="mt-2 flex">
         <label htmlFor="password">
-          <div className="bg-green p-3 rounded-l-md">
+          <div className="rounded-l-md bg-green p-3">
             <Lock />
           </div>
         </label>
         <input
-          className="rounded-r-md w-full pl-3"
+          className="w-full rounded-r-md pl-3"
           placeholder="Enter password ..."
           type={isReveal ? 'text' : 'password'}
           maxLength={12}
