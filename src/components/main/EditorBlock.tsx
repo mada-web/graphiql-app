@@ -1,21 +1,9 @@
-// import { Editor, monaco } from '@monaco-editor/react';
-// import * as monacoEditor from 'monaco-editor';
 import Editor, { Monaco } from '@monaco-editor/react';
 
 import useAppContext from '../../hooks/useAppContext';
 
 import type monaco from 'monaco-editor';
 
-// loader.config({
-//   paths: {
-//     vs: '...',
-//   },
-//   'vs/nls': {
-//     availableLanguages: {
-//       '*': 'en',
-//     },
-//   },
-// });
 export const defaultCode = `query {
     eggGroups{
       count,
@@ -25,6 +13,7 @@ export const defaultCode = `query {
     }
   }
 `;
+
 const EditorBlock = () => {
   const { setQueryBody } = useAppContext();
 
@@ -42,16 +31,11 @@ const EditorBlock = () => {
     },
   };
 
-  const handleEditorChange = (
-    // eslint-disable-next-line @typescript-eslint/default-param-last
-    value = '',
-    event: monaco.editor.IModelContentChangedEvent
-  ) => {
+  const handleEditorChange = (value = '') => {
     setQueryBody(value);
   };
 
   const handleEditorValidation = (markers: monaco.editor.IMarker[]) => {
-    // model markers
     markers.forEach((marker) => console.log('onValidate:', marker.message));
   };
 
@@ -71,36 +55,10 @@ const EditorBlock = () => {
         { token: 'constant', foreground: '569CD6' },
         { token: 'comment', foreground: '608B4E' },
         { token: 'number', foreground: '7ebc59' },
-        // { token: 'number.hex', foreground: '5BB498' },
-        // { token: 'regexp', foreground: 'B46695' },
+
         { token: 'annotation', foreground: 'cc6666' },
         { token: 'type', foreground: '3DC9B0' },
         { token: 'semanticHighlighting', foreground: 'ff00ff' },
-
-        // { token: 'delimiter', foreground: 'DCDCDC' },
-        // { token: 'delimiter.html', foreground: '808080' },
-        // { token: 'delimiter.xml', foreground: '808080' },
-
-        // { token: 'tag', foreground: '569CD6' },
-        // { token: 'tag.id.pug', foreground: '4F76AC' },
-        // { token: 'tag.class.pug', foreground: '4F76AC' },
-        // { token: 'meta.scss', foreground: 'A79873' },
-        // { token: 'meta.tag', foreground: 'CE9178' },
-        // { token: 'metatag', foreground: 'DD6A6F' },
-        // { token: 'metatag.content.html', foreground: '9CDCFE' },
-        // { token: 'metatag.html', foreground: '569CD6' },
-        // { token: 'metatag.xml', foreground: '569CD6' },
-        // { token: 'metatag.php', fontStyle: 'bold' },
-
-        // { token: 'key', foreground: '9CDCFE' },
-        // { token: 'string.key.json', foreground: '9CDCFE' },
-        // { token: 'string.value.json', foreground: 'CE9178' },
-
-        // { token: 'attribute.name', foreground: '9CDCFE' },
-        // { token: 'attribute.value', foreground: 'CE9178' },
-        // { token: 'attribute.value.number.css', foreground: 'B5CEA8' },
-        // { token: 'attribute.value.unit.css', foreground: 'B5CEA8' },
-        // { token: 'attribute.value.hex.css', foreground: 'D4D4D4' },
 
         { token: 'string', foreground: 'CE9178' },
       ],
@@ -130,7 +88,6 @@ const EditorBlock = () => {
         defaultValue={defaultCode}
         options={options}
         onChange={handleEditorChange}
-        // onMount={handleEditorDidMount}
       />
     </div>
   );
