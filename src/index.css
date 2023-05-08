@@ -3,20 +3,23 @@
 @tailwind utilities;
 
 html {
-behavior: smooth;
 overflow-x: hidden;
-background-color: #D9D9D9;
+scroll-behavior: smooth;
 }
-.person:hover svg path {
-fill: white;
-/* color: white; */
-}
-li:hover svg .path {
+
+.white:hover svg path {
   fill: white;
   }
-li:hover svg .path1 {
+a:hover svg .path {
+  fill: white;
+  }
+a:hover svg .path1 {
     fill: #0E0E27;
     }
 .li:hover svg path {
   fill: #7EBC59;
   }
+.active {
+color: white;
+border-bottom: 2px solid white;
+}
