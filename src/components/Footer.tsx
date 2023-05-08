@@ -1,10 +1,11 @@
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
 import Github from '../assets/svg/github.svg';
 import RSLogo from '../assets/svg/rsschool.svg';
 import Graph from '../assets/svg/graph.svg';
 
-const Footer = () => {
+const Footer: FC = (): JSX.Element => {
   return (
     <footer className="-mt-[7px] inline-block w-screen bg-dark-blue">
       <div className="h-[3.75rem] bg-gray" />

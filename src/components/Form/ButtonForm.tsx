@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { UseFormRegister, FieldValues, Path } from 'react-hook-form';
+import { useIntl } from 'react-intl';
 
 import { DataFormCard } from '../../types/types';
 
@@ -11,6 +12,7 @@ interface InputTitleProps {
 
 export const ButtonForm: FC<InputTitleProps> = (props) => {
   const { register, label, page } = props;
+  const intl = useIntl();
 
   return (
     <div className="mt-4">
@@ -20,7 +22,11 @@ export const ButtonForm: FC<InputTitleProps> = (props) => {
         {...register(label, {
           required: 'Enter a data',
         })}
-        value={page === 'login' ? 'Sign In' : 'Sign Up'}
+        value={
+          page === 'login'
+            ? intl.formatMessage({ id: 'SIGN_IN' })
+            : intl.formatMessage({ id: 'SIGN_UP' })
+        }
       />
     </div>
   );

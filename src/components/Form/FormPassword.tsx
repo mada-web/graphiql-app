@@ -1,3 +1,4 @@
+import { useIntl } from 'react-intl';
 import React, { FC, useState } from 'react';
 import { UseFormRegister, FieldValues, FieldErrors, Path } from 'react-hook-form';
 
@@ -10,14 +11,16 @@ interface InputPasswordProps {
   value: string | number | readonly string[] | undefined;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
   register: UseFormRegister<FieldValues>;
-  errors: FieldErrors<FieldValues>;
+  errors: FieldErrors;
   label: Path<DataFormCard>;
 }
 
 const FormPassword: FC<InputPasswordProps> = (props) => {
-  const { value, onChange, register, errors, label } = props;
   const [isReveal, setIsReveal] = useState(false);
   const [click, setClick] = useState(false);
+  const intl = useIntl();
+
+  const { value, onChange, register, errors, label } = props;
 
   return (
     <>
@@ -29,19 +32,19 @@ const FormPassword: FC<InputPasswordProps> = (props) => {
         </label>
         <input
           className="w-full rounded-r-md pl-3"
-          placeholder="Enter password ..."
+          placeholder={intl.formatMessage({ id: 'PASS_PLACEHOLDER' })}
           type={isReveal ? 'text' : 'password'}
           maxLength={12}
           value={value}
           {...register(label, {
-            required: 'Enter a password',
+            required: intl.formatMessage({ id: 'PASSWORD_VALIDATION' }),
             minLength: {
               value: 8,
-              message: 'Min length must be more 8',
+              message: intl.formatMessage({ id: 'PASSWORD_MIN_LENGTH' }),
             },
             pattern: {
               value: /^(?=.*\d)(?=.*[!@#$%^&*"'{}<>])(?=.*[a-zA-Z]).{8,}$/,
-              message: 'Must be 1 letter, 1 digit, 1 special character',
+              message: intl.formatMessage({ id: 'PASSWORD_PATTERN' }),
             },
           })}
           onChange={onChange}

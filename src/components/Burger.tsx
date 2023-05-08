@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import Close from '../assets/svg/close.svg';
@@ -6,8 +7,7 @@ interface ModalProps {
   onClose: () => void;
 }
 
-export const Burger = (props: ModalProps) => {
-  const { onClose } = props;
+export const Burger: FC<ModalProps> = ({ onClose }): JSX.Element => {
   return (
     <div
       data-testid="modal"

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 
 import { ButtonForm } from '../components/Form/ButtonForm';
 import FormName from '../components/Form/FormName';
@@ -9,6 +10,10 @@ import FormPassword from '../components/Form/FormPassword';
 import { Background } from '../components/Background';
 
 const Register = () => {
+  const [valueName, setValueName] = useState('');
+  const [valueEmail, setValueEmail] = useState('');
+  const [valuePassword, setValuePassword] = useState('');
+
   const {
     register,
     formState: { errors },
@@ -16,18 +21,16 @@ const Register = () => {
     reset,
   } = useForm({ mode: 'onBlur' });
 
-  const [valueName, setValueName] = useState('');
-  const [valueEmail, setValueEmail] = useState('');
-  const [valuePassword, setValuePassword] = useState('');
-
   const handleChangeName: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setValueName(e.target.value);
     reset();
   };
+
   const handleChangeEmail: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setValueEmail(e.target.value);
     reset();
   };
+
   const handleChangePassword: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setValuePassword(e.target.value);
     reset();
@@ -49,7 +52,9 @@ const Register = () => {
           noValidate
         >
           <div className="flex w-4/5 flex-col text-start min-[410px]:w-2/3">
-            <h2 className="font-semibold-400 pt-5 font-Impact text-[40px]">Sign Up</h2>
+            <h2 className="font-semibold-400 pt-5 font-Impact text-[40px]">
+              <FormattedMessage id="SIGN_UP" />
+            </h2>
             <FormName
               value={valueName}
               onChange={handleChangeName}
@@ -76,9 +81,13 @@ const Register = () => {
             </div>
           </div>
           <div className="mt-3 flex flex-row">
-            <p className="mr-3 pb-3">Already on GraphiQL?</p>
+            <p className="mr-3 pb-3">
+              <FormattedMessage id="ALREADY_REGISTERED" />
+            </p>
             <Link to="/sign-in">
-              <span className="text-green underline hover:text-orange">Sign In</span>
+              <span className="text-green underline hover:text-orange">
+                <FormattedMessage id="SIGN_IN" />
+              </span>
             </Link>
           </div>
         </form>

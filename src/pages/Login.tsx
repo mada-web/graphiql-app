@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
 
 import { ButtonForm } from '../components/Form/ButtonForm';
 import FormEmail from '../components/Form/FormEmail';
@@ -8,15 +9,15 @@ import FormPassword from '../components/Form/FormPassword';
 import { Background } from '../components/Background';
 
 const Login = () => {
+  const [valueEmail, setValueEmail] = useState('');
+  const [valuePassword, setValuePassword] = useState('');
+
   const {
     register,
     formState: { errors },
     handleSubmit,
     reset,
   } = useForm({ mode: 'onBlur' });
-
-  const [valueEmail, setValueEmail] = useState('');
-  const [valuePassword, setValuePassword] = useState('');
 
   const handleChangeEmail: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setValueEmail(e.target.value);
@@ -42,7 +43,9 @@ const Login = () => {
           noValidate
         >
           <div className="flex w-4/5 flex-col text-start min-[410px]:w-2/3">
-            <h2 className="font-semibold-400 pt-5 font-Impact text-[40px]">Sign In</h2>
+            <h2 className="font-semibold-400 pt-5 font-Impact text-[40px]">
+              <FormattedMessage id="SIGN_IN" />
+            </h2>
             <FormEmail
               value={valueEmail}
               onChange={handleChangeEmail}
@@ -62,9 +65,13 @@ const Login = () => {
             </div>
           </div>
           <div className="mt-3 flex flex-row">
-            <p className="mr-3 pb-3">Not a member yet?</p>
+            <p className="mr-3 pb-3">
+              <FormattedMessage id="NOT_A_MEMBER" />
+            </p>
             <Link to="/sign-up">
-              <span className="text-green underline hover:text-orange">Sign Up</span>
+              <span className="text-green underline hover:text-orange">
+                <FormattedMessage id="SIGN_UP" />
+              </span>
             </Link>
           </div>
         </form>
