@@ -5,6 +5,7 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "types": ["vite/client"],
+    "typeRoots": ["node_modules/@types", "src/types"],
 
     /* Bundler mode */
     "moduleResolution": "node",

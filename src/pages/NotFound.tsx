@@ -7,18 +7,18 @@ const NotFound = (): JSX.Element => {
   };
 
   return (
-    <div className="w-screen h-screen flex items-center">
-      <div className="grow max-w-7xl grid grid-cols-3 grid-rows-[200px_auto_140px] h-[500px] mx-5  inset-x-0 text-white bg-center bg-no-repeat  bg-[url('./bg_404.png')] bg-content rounded-[20px] xl:mx-auto">
-        <div className="text-center self-center row-start-2 col-start-1 col-span-3 sm:col-start-3 sm:row-start-1">
-          <h1 className="text-7xl font-bold font-Impact tracking-wider">404</h1>
-          <h2 className="text-2xl font-bold mt-4 font-sans">Page not found</h2>
+    <div className="flex h-screen w-screen items-center">
+      <div className="bg-content inset-x-0 mx-5 grid h-[500px] max-w-7xl grow  grid-cols-3 grid-rows-[200px_auto_140px] rounded-[20px] bg-[url('./bg_404.png')]  bg-center bg-no-repeat text-white xl:mx-auto">
+        <div className="col-span-3 col-start-1 row-start-2 self-center text-center sm:col-start-3 sm:row-start-1">
+          <h1 className="font-Impact text-7xl font-bold tracking-wider">404</h1>
+          <h2 className="mt-4 font-sans text-2xl font-bold">Page not found</h2>
         </div>
-        <div className="self-center row-start-3 col-span-3 grid grid-cols-3 items-center">
-          <span className="justify-self-center hidden sm:inline-block">
+        <div className="col-span-3 row-start-3 grid grid-cols-3 items-center self-center">
+          <span className="hidden justify-self-center sm:inline-block">
             Ups, something went wrong...{' '}
           </span>
           <button
-            className="bg-green px-16 py-3 rounded-md justify-self-center col-span-3 sm:col-span-1 "
+            className="col-span-3 justify-self-center rounded-md bg-green px-16 py-3 sm:col-span-1 "
             onClick={routeChange}
           >
             Home page
