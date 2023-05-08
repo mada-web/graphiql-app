@@ -27,7 +27,7 @@ const FormName: FC<InputTitleProps> = (props) => {
         </label>
         <input
           className="w-full rounded-r-md pl-3"
-          placeholder={intl.formatMessage({ id: 'PASS_PLACEHOLDER' })}
+          placeholder={intl.formatMessage({ id: 'NAME_PLACEHOLDER' })}
           type="text"
           value={value}
           maxLength={20}
@@ -38,7 +38,7 @@ const FormName: FC<InputTitleProps> = (props) => {
               message: intl.formatMessage({ id: 'NAME_MIN_LENGTH' }),
             },
             pattern: {
-              value: /^[A-ZА-Я][a-zA-ZА-Яа-я]+$/,
+              value: /^[A-ZА-Я][a-zA-ZА-Яа-я ]+$/,
               message: intl.formatMessage({ id: 'NAME_PATTERN' }),
             },
           })}
