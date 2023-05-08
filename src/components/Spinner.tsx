@@ -3,7 +3,7 @@ import { FC } from 'react';
 export const Spinner: FC = (): JSX.Element => {
   return (
     <svg
-      className="h-[3.75rem]  animate-spin"
+      className="h-[3.75rem] animate-spin"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
