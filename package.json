@@ -12,7 +12,7 @@
     "tailwind": "npx tailwindcss -i ./src/index.css -o public/output.css --watch"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": "eslint --cache --fix",
+    "src/**/*.{ts,tsx}": "eslint --cache",
     "src/**/*.{ts,tsx,css,md}": "prettier --write --ignore-unknown"
   },
   "dependencies": {

@@ -1,6 +1,9 @@
 import { ChangeEvent, FC, useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
+
+import { auth, logout } from '../firebase';
 
 import Logo from '../assets/svg/logo.svg';
 import { LOCALES } from '../lang/locales';
@@ -16,6 +19,7 @@ export interface IHeaderProps {
 const Header: FC<IHeaderProps> = ({ handleLocale, locale }): JSX.Element => {
   const [animateHeader, setAnimateHeader] = useState(false);
   const [click, setClick] = useState(false);
+  const [user] = useAuthState(auth);
 
   useEffect(() => {
     const listener = () => {
@@ -61,22 +65,39 @@ const Header: FC<IHeaderProps> = ({ handleLocale, locale }): JSX.Element => {
             <BurgerMenu />
           </span>
           <li className="relative hidden flex-row gap-2 sm:flex md:gap-6">
-            <NavLink
-              className="p-3 font-semibold leading-7 transition-all hover:border-b-2"
-              to="sign-in"
-            >
-              <FormattedMessage id="SIGN_IN" />
-            </NavLink>
-            <NavLink
-              className="p-3 font-semibold leading-7 transition-all hover:border-b-2"
-              to="sign-up"
-            >
-              <FormattedMessage id="SIGN_UP" />
-            </NavLink>
-            <NavLink className="p-3 font-semibold leading-7 transition-all hover:border-b-2" to="/">
-              <FormattedMessage id="LOG_OUT" />
-              <span aria-hidden="true">&rarr;</span>
-            </NavLink>
+            {!user && (
+              <>
+                <NavLink
+                  className="p-3 font-semibold leading-7 transition-all hover:border-b-2"
+                  to="sign-in"
+                >
+                  <FormattedMessage id="SIGN_IN" />
+                </NavLink>
+                <NavLink
+                  className="p-3 font-semibold leading-7 transition-all hover:border-b-2"
+                  to="sign-up"
+                >
+                  <FormattedMessage id="SIGN_UP" />
+                </NavLink>
+              </>
+            )}
+            {user && (
+              <>
+                <NavLink
+                  className="p-3 font-semibold leading-7 transition-all hover:border-b-2"
+                  to="/main"
+                >
+                  <FormattedMessage id="MAIN" />
+                </NavLink>
+                <NavLink
+                  className="p-3 font-semibold leading-7 transition-all hover:border-b-2"
+                  to="/"
+                  onClick={logout}
+                >
+                  <FormattedMessage id="LOG_OUT" />
+                </NavLink>
+              </>
+            )}
             <div className="flex items-center px-3 py-2.5">
               <span className="mr-3 font-semibold ">En</span>
               <label

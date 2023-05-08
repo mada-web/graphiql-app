@@ -41,7 +41,7 @@ const FormName: FC<InputTitleProps> = (props) => {
               message: intl.formatMessage({ id: 'NAME_MAX_LENGTH' }),
             },
             pattern: {
-              value: /^[A-ZА-Я][a-zA-ZА-Яа-я]+$/,
+              value: /^[A-ZА-Я][a-zA-ZА-Яа-я ]+$/,
               message: intl.formatMessage({ id: 'NAME_PATTERN' }),
             },
           })}

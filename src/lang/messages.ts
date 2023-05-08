@@ -2,6 +2,7 @@ import { LOCALES } from './locales';
 
 export const messages = {
   [LOCALES.ENGLISH]: {
+    MAIN: 'Main',
     SIGN_IN: 'Sing in',
     SIGN_UP: 'Sing up',
     LOG_OUT: 'Log out',
@@ -38,6 +39,7 @@ export const messages = {
     INTRO: 'This is the final project on the React course at RSSchool',
   },
   [LOCALES.RUSSIAN]: {
+    MAIN: 'Главная',
     SIGN_IN: 'Вход',
     SIGN_UP: 'Регистрация',
     LOG_OUT: 'Выйти',
