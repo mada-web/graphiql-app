@@ -2,6 +2,7 @@ import { LOCALES } from './locales';
 
 export const messages = {
   [LOCALES.ENGLISH]: {
+    MAIN: 'Main',
     SIGN_IN: 'Sing in',
     SIGN_UP: 'Sing up',
     LOG_OUT: 'Log out',
@@ -23,6 +24,7 @@ export const messages = {
     EMAIL_PATTERN: 'Invalid e-mail',
   },
   [LOCALES.RUSSIAN]: {
+    MAIN: 'Главная',
     SIGN_IN: 'Вход',
     SIGN_UP: 'Регистрация',
     LOG_OUT: 'Выйти',

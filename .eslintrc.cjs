@@ -22,7 +22,7 @@ module.exports = {
       version: 'detect',
     },
   },
-  plugins: ['react', '@typescript-eslint', 'prettier', 'import'],
+  plugins: ['react', '@typescript-eslint', 'prettier', 'import', 'react-hooks'],
   ignorePatterns: ['/public/output.css', 'tailwind.config.js'],
   rules: {
     'no-console': 'warn',
