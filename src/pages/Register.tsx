@@ -53,7 +53,6 @@ const Register = () => {
         >
           <div className="flex w-4/5 flex-col text-start min-[410px]:w-2/3">
             <h2 className="font-semibold-400 pt-5 font-Impact text-[40px]">
-              {' '}
               <FormattedMessage id="SIGN_UP" />
             </h2>
             <FormName
@@ -83,12 +82,10 @@ const Register = () => {
           </div>
           <div className="mt-3 flex flex-row">
             <p className="mr-3 pb-3">
-              {' '}
               <FormattedMessage id="ALREADY_REGISTERED" />
             </p>
             <Link to="/sign-in">
               <span className="text-green underline hover:text-orange">
-                {' '}
                 <FormattedMessage id="SIGN_IN" />
               </span>
             </Link>

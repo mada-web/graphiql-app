@@ -19,14 +19,14 @@ const FormName: FC<InputTitleProps> = (props) => {
 
   return (
     <>
-      <div className="flex mt-2">
-        <label htmlFor="Name" className="bg-green p-3 rounded-l-md">
+      <div className="mt-2 flex">
+        <label htmlFor="Name" className="rounded-l-md bg-green p-3">
           <div className="bg-green">
             <Person />
           </div>
         </label>
         <input
-          className="rounded-r-md w-full pl-3"
+          className="w-full rounded-r-md pl-3"
           placeholder={intl.formatMessage({ id: 'PASS_PLACEHOLDER' })}
           type="text"
           value={value}

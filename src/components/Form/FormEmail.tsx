@@ -19,14 +19,14 @@ const FormEmail: FC<InputEmailProps> = (props) => {
 
   return (
     <>
-      <div className="flex mt-2">
+      <div className="mt-2 flex">
         <label htmlFor="email">
-          <div className="bg-green p-3 rounded-l-md">
+          <div className="rounded-l-md bg-green p-3">
             <Email />
           </div>
         </label>
         <input
-          className="rounded-r-md pl-3 w-full"
+          className="w-full rounded-r-md pl-3"
           placeholder={intl.formatMessage({ id: 'EMAIL_PLACEHOLDER' })}
           type="email"
           value={value}
