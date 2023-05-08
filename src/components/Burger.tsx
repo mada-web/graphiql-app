@@ -32,22 +32,34 @@ export const Burger: FC<ModalProps> = ({ onClose, locale, handleLocale }): JSX.E
           <Close />
         </button>
         <NavLink
-          className="p-3 font-semibold leading-7 transition-all hover:border-b-2"
+          className="border-b-2 border-transparent p-3 font-semibold leading-7 transition-all hover:border-black"
           to="sign-in"
+          onClick={() => {
+            onClose();
+          }}
         >
           <FormattedMessage id="SIGN_IN" />
         </NavLink>
         <NavLink
-          className="p-3 font-semibold leading-7 transition-all hover:border-b-2"
+          className="border-b-2 border-transparent p-3 font-semibold leading-7 transition-all hover:border-black"
           to="sign-up"
+          onClick={() => {
+            onClose();
+          }}
         >
           <FormattedMessage id="SIGN_UP" />
         </NavLink>
-        <NavLink className="p-3 font-semibold leading-7 transition-all hover:border-b-2" to="/">
+        <NavLink
+          className="border-b-2 border-transparent p-3 font-semibold leading-7 transition-all hover:border-black"
+          onClick={() => {
+            onClose();
+          }}
+          to="/"
+        >
           <FormattedMessage id="LOG_OUT" />
           <span aria-hidden="true">&rarr;</span>
         </NavLink>
-        <div className="mt-4 flex px-3 py-2.5">
+        <div className="mt-4 flex items-center px-3 py-2.5">
           <span className="mr-3 font-semibold ">En</span>
           <label htmlFor="lang" className="relative h-5 w-10 cursor-pointer rounded-full bg-black">
             <input

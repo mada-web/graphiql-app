@@ -41,7 +41,7 @@ const FormEmail: FC<InputEmailProps> = (props) => {
           onChange={onChange}
         />
       </div>
-      <div className="h-4 text-red">
+      <div className="h-10 text-red">
         {errors?.email && <p>{`${errors.email?.message}` || 'Error'}</p>}
       </div>
     </>

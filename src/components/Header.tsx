@@ -60,7 +60,7 @@ const Header: FC<IHeaderProps> = ({ handleLocale, locale }): JSX.Element => {
           >
             <BurgerMenu />
           </span>
-          <li className="relative hidden flex-row gap-16 sm:flex">
+          <li className="relative hidden flex-row gap-2 sm:flex md:gap-6">
             <NavLink
               className="p-3 font-semibold leading-7 transition-all hover:border-b-2"
               to="sign-in"
@@ -77,7 +77,7 @@ const Header: FC<IHeaderProps> = ({ handleLocale, locale }): JSX.Element => {
               <FormattedMessage id="LOG_OUT" />
               <span aria-hidden="true">&rarr;</span>
             </NavLink>
-            <div className="flex px-3 py-2.5">
+            <div className="flex items-center px-3 py-2.5">
               <span className="mr-3 font-semibold ">En</span>
               <label
                 htmlFor="lang"
