@@ -3,8 +3,8 @@ import { LOCALES } from './locales';
 export const messages = {
   [LOCALES.ENGLISH]: {
     MAIN: 'Main',
-    SIGN_IN: 'Sing in',
-    SIGN_UP: 'Sing up',
+    SIGN_IN: 'Sign in',
+    SIGN_UP: 'Sign up',
     LOG_OUT: 'Log out',
     NOT_A_MEMBER: 'Not a member yet?',
     PASS_PLACEHOLDER: 'Enter password...',
