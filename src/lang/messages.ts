@@ -21,6 +21,19 @@ export const messages = {
     PASSWORD_PATTERN: 'Must be al least 1 letter, 1 digit, 1 special character',
     EMAIL_VALIDATION: 'Enter a email',
     EMAIL_PATTERN: 'Invalid e-mail',
+    TEAM: 'Team:',
+    TEAM_MEET: 'Meet our team:',
+    ARTEM_NAME: 'Artsem Rubashka',
+    ARTEM_INFO:
+      'Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else',
+    IRINA_NAME: 'Irina Egorova',
+    IRINA_INFO:
+      'Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else',
+    MASHA_NAME: 'Masha Petrovskaya',
+    MASHA_INFO:
+      'A novice frontend developer who is very interested in design. I live in St. Petersburg, I love my family, my cat and nature. I love math and freedom of movement, I want to work at home.',
+    WELCOME: 'Welcome to',
+    INTRO: 'This is the final project on the React course at RSSchool',
   },
   [LOCALES.RUSSIAN]: {
     SIGN_IN: 'Вход',
@@ -42,5 +55,18 @@ export const messages = {
     PASSWORD_PATTERN: 'Пароль должен содержать минимум 1 букву, 1 цифру, 1 специальный символ',
     EMAIL_VALIDATION: 'Введите адрес электронной почты',
     EMAIL_PATTERN: 'Вы ввели не валидный адрес',
+    TEAM: 'Команда:',
+    TEAM_MEET: 'Встречайте нашу команду:',
+    ARTEM_NAME: 'Артем Рубашка',
+    ARTEM_INFO:
+      'Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... ',
+    IRINA_NAME: 'Ирина Егорова',
+    IRINA_INFO:
+      'Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... ',
+    MASHA_NAME: 'Маша Петровская',
+    MASHA_INFO:
+      'Начинающий фронтенд-разработчик, очень интересующийся дизайном. Живу в Санкт-Петербурге, люблю свою семью, кота и природу. Люблю математику и свободу передвижения, хочу работать дома.',
+    WELCOME: 'Присоединяйтесь к',
+    INTRO: 'Это финальный проект курса по Реакту RSSchool',
   },
 };

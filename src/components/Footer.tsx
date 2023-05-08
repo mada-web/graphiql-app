@@ -1,6 +1,8 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
+import { FormattedMessage } from 'react-intl';
+
 import Github from '../assets/svg/github.svg';
 import RSLogo from '../assets/svg/rsschool.svg';
 import Graph from '../assets/svg/graph.svg';
@@ -11,7 +13,9 @@ const Footer: FC = (): JSX.Element => {
       <div className="h-[3.75rem] bg-gray" />
       <div className="mx-auto flex h-[29rem] max-w-7xl items-center justify-between overflow-hidden">
         <ul className="relative block content-center text-white">
-          <h2 className="relative left-[20px] text-[32px] font-normal">Team:</h2>
+          <h2 className="relative left-[20px] text-[32px] font-normal">
+            <FormattedMessage id="TEAM" />
+          </h2>
           <hr className="h-[2px] w-[162px] text-green" />
           <li className=" li group relative flex items-center gap-x-6 rounded-lg p-4  hover:text-green">
             <Link

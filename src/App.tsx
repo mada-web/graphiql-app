@@ -18,11 +18,11 @@ const App = () => {
 
   const handleLocale = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target?.checked === false) {
-      setCurrentLocale(LOCALES.RUSSIAN);
-      localStorage.setItem('lang', LOCALES.RUSSIAN);
-    } else {
       setCurrentLocale(LOCALES.ENGLISH);
       localStorage.setItem('lang', LOCALES.ENGLISH);
+    } else {
+      setCurrentLocale(LOCALES.RUSSIAN);
+      localStorage.setItem('lang', LOCALES.RUSSIAN);
     }
   };
 
@@ -31,7 +31,7 @@ const App = () => {
       <IntlProvider
         messages={messages[currentLocale]}
         locale={currentLocale}
-        defaultLocale={LOCALES.RUSSIAN}
+        defaultLocale={LOCALES.ENGLISH}
       >
         <Routes>
           <Route path="/" element={<Layout handleLocale={handleLocale} locale={currentLocale} />}>

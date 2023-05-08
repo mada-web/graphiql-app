@@ -12,7 +12,6 @@ interface ModalProps {
 export const Burger: FC<ModalProps> = ({ onClose }): JSX.Element => {
   return (
     <div
-      data-testid="modal"
       className="fixed z-30 flex h-screen w-screen items-start justify-end bg-white/40"
       onClick={(e) => {
         if (e.target === e.currentTarget) {

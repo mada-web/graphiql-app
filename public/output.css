@@ -717,6 +717,10 @@ video {
   margin-top: 47px;
 }
 
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
 .block {
   display: block;
 }
@@ -809,6 +813,18 @@ video {
   height: 100vh;
 }
 
+.h-\[165px\] {
+  height: 165px;
+}
+
+.h-\[155px\] {
+  height: 155px;
+}
+
+.h-\[145px\] {
+  height: 145px;
+}
+
 .max-h-max {
   max-height: -moz-max-content;
   max-height: max-content;
@@ -868,6 +884,10 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-\[175px\] {
+  width: 175px;
 }
 
 .min-w-\[315px\] {
@@ -1105,8 +1125,28 @@ video {
   background-image: url('./element_2.png');
 }
 
+.bg-\[url\(\'\.\/Masha\.png\'\)\] {
+  background-image: url('./Masha.png');
+}
+
+.bg-\[url\(\'\.\/Masha\.jpg\'\)\] {
+  background-image: url('./Masha.jpg');
+}
+
+.bg-\[url\(\'\.\/Masha\.jpeg\'\)\] {
+  background-image: url('./Masha.jpeg');
+}
+
+.bg-\[url\(\'\.\/Masha\.j\'\)\] {
+  background-image: url('./Masha.j');
+}
+
 .bg-auto {
   background-size: auto;
+}
+
+.bg-cover {
+  background-size: cover;
 }
 
 .bg-center {
@@ -1434,6 +1474,10 @@ a:hover svg .path1 {
 
   .md\:mt-5 {
     margin-top: 1.25rem;
+  }
+
+  .md\:mt-2 {
+    margin-top: 0.5rem;
   }
 
   .md\:inline-block {
