@@ -64,7 +64,7 @@ const Header: FC<IHeaderProps> = ({ handleLocale, locale }): JSX.Element => {
           >
             <BurgerMenu />
           </span>
-          <li className="relative hidden flex-row gap-2 sm:flex md:gap-6">
+          <li className="relative hidden flex-row gap-8 sm:flex">
             {!user && (
               <>
                 <NavLink

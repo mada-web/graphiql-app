@@ -721,6 +721,18 @@ video {
   margin-top: 0.25rem;
 }
 
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mt-\[0px\] {
+  margin-top: 0px;
+}
+
+.mt-\[10px\] {
+  margin-top: 10px;
+}
+
 .block {
   display: block;
 }
@@ -871,6 +883,34 @@ video {
 
 .h-\[1450px\] {
   height: 1450px;
+}
+
+.h-\[1550px\] {
+  height: 1550px;
+}
+
+.h-\[1570px\] {
+  height: 1570px;
+}
+
+.h-\[157px\] {
+  height: 157px;
+}
+
+.h-\[1370px\] {
+  height: 1370px;
+}
+
+.h-\[1070px\] {
+  height: 1070px;
+}
+
+.h-\[1470px\] {
+  height: 1470px;
+}
+
+.h-1 {
+  height: 0.25rem;
 }
 
 .max-h-max {
@@ -1495,6 +1535,24 @@ a:hover svg .path1 {
   left: 1.25rem;
 }
 
+@media (min-width: 4px) {
+  .min-\[4px\]\:h-\[1400px\] {
+    height: 1400px;
+  }
+}
+
+@media (min-width: 353px) {
+  .min-\[353px\]\:h-\[1500px\] {
+    height: 1500px;
+  }
+}
+
+@media (min-width: 354px) {
+  .min-\[354px\]\:h-\[1500px\] {
+    height: 1500px;
+  }
+}
+
 @media (min-width: 370px) {
   .min-\[370px\]\:mb-\[0px\] {
     margin-bottom: 0px;
@@ -1506,6 +1564,20 @@ a:hover svg .path1 {
 
   .min-\[370px\]\:h-\[1350px\] {
     height: 1350px;
+  }
+
+  .min-\[370px\]\:h-\[1450px\] {
+    height: 1450px;
+  }
+}
+
+@media (min-width: 375px) {
+  .min-\[375px\]\:h-\[1450px\] {
+    height: 1450px;
+  }
+
+  .min-\[375px\]\:h-\[1400px\] {
+    height: 1400px;
   }
 }
 
@@ -1531,6 +1603,60 @@ a:hover svg .path1 {
   }
 }
 
+@media (min-width: 383px) {
+  .min-\[383px\]\:h-\[1450px\] {
+    height: 1450px;
+  }
+
+  .min-\[383px\]\:h-\[1400px\] {
+    height: 1400px;
+  }
+
+  .min-\[383px\]\:h-\[1420px\] {
+    height: 1420px;
+  }
+
+  .min-\[383px\]\:h-\[1320px\] {
+    height: 1320px;
+  }
+
+  .min-\[383px\]\:h-\[1200px\] {
+    height: 1200px;
+  }
+
+  .min-\[383px\]\:h-\[1300px\] {
+    height: 1300px;
+  }
+
+  .min-\[383px\]\:h-\[1500px\] {
+    height: 1500px;
+  }
+}
+
+@media (min-width: 385px) {
+  .min-\[385px\]\:h-\[1450px\] {
+    height: 1450px;
+  }
+
+  .min-\[385px\]\:h-\[1400px\] {
+    height: 1400px;
+  }
+
+  .min-\[385px\]\:h-\[1050px\] {
+    height: 1050px;
+  }
+
+  .min-\[385px\]\:h-\[950px\] {
+    height: 950px;
+  }
+}
+
+@media (min-width: 400px) {
+  .min-\[400px\]\:h-\[1400px\] {
+    height: 1400px;
+  }
+}
+
 @media (min-width: 410px) {
   .min-\[410px\]\:w-2\/3 {
     width: 66.666667%;
@@ -1538,6 +1664,12 @@ a:hover svg .path1 {
 
   .min-\[410px\]\:min-w-\[400px\] {
     min-width: 400px;
+  }
+}
+
+@media (min-width: 455px) {
+  .min-\[455px\]\:h-\[1400px\] {
+    height: 1400px;
   }
 }
 
@@ -1574,6 +1706,26 @@ a:hover svg .path1 {
 
   .sm\:hidden {
     display: none;
+  }
+
+  .sm\:h-\[1000px\] {
+    height: 1000px;
+  }
+
+  .sm\:h-\[1200px\] {
+    height: 1200px;
+  }
+
+  .sm\:h-\[1250px\] {
+    height: 1250px;
+  }
+
+  .sm\:h-\[1270px\] {
+    height: 1270px;
+  }
+
+  .sm\:h-\[1300px\] {
+    height: 1300px;
   }
 
   .sm\:min-w-\[500px\] {
@@ -1650,6 +1802,18 @@ a:hover svg .path1 {
     height: 90px;
   }
 
+  .md\:h-\[1470px\] {
+    height: 1470px;
+  }
+
+  .md\:h-\[1170px\] {
+    height: 1170px;
+  }
+
+  .md\:h-\[1000px\] {
+    height: 1000px;
+  }
+
   .md\:min-w-\[600px\] {
     min-width: 600px;
   }
@@ -1660,6 +1824,42 @@ a:hover svg .path1 {
 
   .md\:gap-6 {
     gap: 1.5rem;
+  }
+
+  .md\:gap-8 {
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 800px) {
+  .min-\[800px\]\:mb-\[0px\] {
+    margin-bottom: 0px;
+  }
+
+  .min-\[800px\]\:mb-\[47px\] {
+    margin-bottom: 47px;
+  }
+
+  .min-\[800px\]\:mt-\[47px\] {
+    margin-top: 47px;
+  }
+}
+
+@media (min-width: 830px) {
+  .min-\[830px\]\:h-\[900px\] {
+    height: 900px;
+  }
+
+  .min-\[830px\]\:h-\[800px\] {
+    height: 800px;
+  }
+
+  .min-\[830px\]\:h-\[700px\] {
+    height: 700px;
+  }
+
+  .min-\[830px\]\:h-\[850px\] {
+    height: 850px;
   }
 }
 
@@ -1677,6 +1877,12 @@ a:hover svg .path1 {
   }
 }
 
+@media (min-width: 1200px) {
+  .min-\[1200px\]\:h-screen {
+    height: 100vh;
+  }
+}
+
 @media (min-width: 1280px) {
   .xl\:mx-auto {
     margin-left: auto;
@@ -1685,7 +1891,19 @@ a:hover svg .path1 {
 }
 
 @media (min-width: 1400px) {
+  .min-\[1400px\]\:mt-4 {
+    margin-top: 1rem;
+  }
+
+  .min-\[1400px\]\:mt-0 {
+    margin-top: 0px;
+  }
+
   .min-\[1400px\]\:h-screen {
     height: 100vh;
+  }
+
+  .min-\[1400px\]\:h-\[900px\] {
+    height: 900px;
   }
 }

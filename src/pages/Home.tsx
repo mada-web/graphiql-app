@@ -5,8 +5,8 @@ import { Background } from '../components/Background';
 
 const Home = () => {
   return (
-    <section className="inline-block h-[1450px] w-screen bg-dark-blue min-[370px]:h-[1350px] md:h-[900px] min-[1400px]:h-screen">
-      <div className="absolute flex h-[1450px] w-screen flex-col items-end justify-end min-[370px]:h-[1350px] md:h-[900px] min-[1400px]:h-screen">
+    <section className="inline-block h-[1600px] w-screen bg-dark-blue min-[354px]:h-[1500px] min-[455px]:h-[1400px] sm:h-[1300px] md:h-[1000px] min-[830px]:h-[900px] min-[1400px]:h-screen">
+      <div className="absolute flex h-[1600px] w-screen flex-col items-end justify-end min-[354px]:h-[1500px] min-[455px]:h-[1400px] sm:h-[1300px] md:h-[1000px] min-[830px]:h-[900px] min-[1400px]:h-screen">
         <div className="z-10 mb-[28px] mr-[37px] flex w-3/4 flex-col items-start">
           <p className="font-semibold-700 ml-20 text-[20px] text-white">
             <FormattedMessage id="WELCOME" />
