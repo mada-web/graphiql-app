@@ -25,7 +25,7 @@ const Home = () => {
             <div className="flex flex-col items-center md:flex-row">
               <div className="mb-2 flex flex-col items-center justify-center md:mb-4">
                 <div className="h-[155px] w-[165px] rounded-[10px] bg-middle-gray"></div>
-                <h2 className="mt-1 md:mt-2">
+                <h2 className="mt-1 font-semibold md:mt-2">
                   <FormattedMessage id="ARTEM_NAME" />
                 </h2>
                 <p className="mt-1 md:mt-2">
@@ -34,7 +34,7 @@ const Home = () => {
               </div>
               <div className="mb-2 flex flex-col items-center md:mb-4 md:ml-4">
                 <div className="h-[155px] w-[165px] rounded-[10px] bg-middle-gray"></div>
-                <h2 className="mt-1 md:mt-2">
+                <h2 className="mt-1 font-semibold md:mt-2">
                   <FormattedMessage id="IRINA_NAME" />
                 </h2>
                 <p className="mt-1 md:mt-2">
@@ -43,7 +43,7 @@ const Home = () => {
               </div>
               <div className="flex flex-col items-center justify-center md:mb-4 md:ml-4">
                 <div className="h-[155px] w-[165px] rounded-[10px] bg-[url('./Masha.png')] bg-cover bg-center bg-no-repeat "></div>
-                <h2 className="mt-1 md:mt-2">
+                <h2 className="mt-1 font-semibold md:mt-2">
                   <FormattedMessage id="MASHA_NAME" />
                 </h2>
                 <p className="mt-1 md:mt-2">
