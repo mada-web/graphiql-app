@@ -1,6 +1,8 @@
 import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 
+import { FormattedMessage } from 'react-intl';
+
 import Close from '../assets/svg/close.svg';
 
 interface ModalProps {
@@ -31,16 +33,17 @@ export const Burger: FC<ModalProps> = ({ onClose }): JSX.Element => {
           className="p-3 font-semibold leading-7 transition-all hover:border-b-2"
           to="sign-in"
         >
-          Sign in
+          <FormattedMessage id="SIGN_IN" />
         </NavLink>
         <NavLink
           className="p-3 font-semibold leading-7 transition-all hover:border-b-2"
           to="sign-up"
         >
-          Sign up
+          <FormattedMessage id="SIGN_UP" />
         </NavLink>
         <NavLink className="p-3 font-semibold leading-7 transition-all hover:border-b-2" to="/">
-          LogOut<span aria-hidden="true">&rarr;</span>
+          <FormattedMessage id="LOG_OUT" />
+          <span aria-hidden="true">&rarr;</span>
         </NavLink>
       </li>
     </div>
