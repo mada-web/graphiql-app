@@ -19,6 +19,11 @@ interface ModalProps extends IHeaderProps {
 export const Burger: FC<ModalProps> = ({ onClose, handleLocale, locale }): JSX.Element => {
   const [user] = useAuthState(auth);
 
+  const handleLogOut = () => {
+    logout();
+    onClose();
+  };
+
   return (
     <div
       className="fixed z-30 flex h-screen w-screen items-start justify-end bg-white/40"
@@ -42,18 +47,14 @@ export const Burger: FC<ModalProps> = ({ onClose, handleLocale, locale }): JSX.E
             <NavLink
               className="border-b-2 border-transparent p-3 font-semibold leading-7 transition-all hover:border-black"
               to="sign-in"
-              onClick={() => {
-                onClose();
-              }}
+              onClick={onClose}
             >
               <FormattedMessage id="SIGN_IN" />
             </NavLink>
             <NavLink
               className="border-b-2 border-transparent p-3 font-semibold leading-7 transition-all hover:border-black"
               to="sign-up"
-              onClick={() => {
-                onClose();
-              }}
+              onClick={onClose}
             >
               <FormattedMessage id="SIGN_UP" />
             </NavLink>
@@ -64,13 +65,14 @@ export const Burger: FC<ModalProps> = ({ onClose, handleLocale, locale }): JSX.E
             <NavLink
               className="border-b-2 border-transparent p-3 font-semibold leading-7 transition-all hover:border-black"
               to="/main"
+              onClick={onClose}
             >
               <FormattedMessage id="MAIN" />
             </NavLink>
             <NavLink
               className="border-b-2 border-transparent p-3 font-semibold leading-7 transition-all hover:border-black"
               to="/"
-              onClick={logout}
+              onClick={handleLogOut}
             >
               <FormattedMessage id="LOG_OUT" />
             </NavLink>

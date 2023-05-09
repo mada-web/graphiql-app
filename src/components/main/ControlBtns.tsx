@@ -8,10 +8,10 @@ export interface IControlBtns {
   changeList: (str: string) => void;
 }
 const ControlBtns: FC = (): JSX.Element => {
-  const { queryBody } = useAppContext();
+  const { queryBody, queryParams } = useAppContext();
 
   const executeQuery = () => {
-    console.log(queryBody);
+    console.log(queryBody, queryParams);
   };
 
   return (
