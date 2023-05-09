@@ -1,5 +1,5 @@
 import { ChangeEvent, FC } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { FormattedMessage } from 'react-intl';
 
@@ -69,13 +69,11 @@ export const Burger: FC<ModalProps> = ({ onClose, handleLocale, locale }): JSX.E
             >
               <FormattedMessage id="MAIN" />
             </NavLink>
-            <NavLink
+            <Link
               className="border-b-2 border-transparent p-3 font-semibold leading-7 transition-all hover:border-black"
-              to="/"
-              onClick={handleLogOut}
-            >
+              onClick={handleLogOut} to={'/'}            >
               <FormattedMessage id="LOG_OUT" />
-            </NavLink>
+            </Link>
           </>
         )}
         <div className="mt-6 flex px-3 py-2.5">

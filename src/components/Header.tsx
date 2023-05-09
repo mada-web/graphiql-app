@@ -89,13 +89,11 @@ const Header: FC<IHeaderProps> = ({ handleLocale, locale }): JSX.Element => {
                 >
                   <FormattedMessage id="MAIN" />
                 </NavLink>
-                <NavLink
+                <Link
                   className="p-3 font-semibold leading-7 transition-all hover:border-b-2"
-                  to="/"
-                  onClick={logout}
-                >
+                  onClick={logout} to={'/'}                >
                   <FormattedMessage id="LOG_OUT" />
-                </NavLink>
+                </Link>
               </>
             )}
             <div className="flex items-center px-3 py-2.5">
