@@ -16,6 +16,11 @@ interface ModalProps {
 export const Burger: FC<ModalProps> = ({ onClose, handleLocale, locale }): JSX.Element => {
   const [user] = useAuthState(auth);
 
+  const handleLogOut = () => {
+    logout();
+    onClose();
+  };
+
   return (
     <div
       data-testid="modal"
@@ -40,12 +45,14 @@ export const Burger: FC<ModalProps> = ({ onClose, handleLocale, locale }): JSX.E
             <NavLink
               className="p-3 font-semibold leading-7 transition-all hover:border-b-2"
               to="sign-in"
+              onClick={onClose}
             >
               <FormattedMessage id="SIGN_IN" />
             </NavLink>
             <NavLink
               className="p-3 font-semibold leading-7 transition-all hover:border-b-2"
               to="sign-up"
+              onClick={onClose}
             >
               <FormattedMessage id="SIGN_UP" />
             </NavLink>
@@ -56,13 +63,14 @@ export const Burger: FC<ModalProps> = ({ onClose, handleLocale, locale }): JSX.E
             <NavLink
               className="p-3 font-semibold leading-7 transition-all hover:border-b-2"
               to="/main"
+              onClick={onClose}
             >
               <FormattedMessage id="MAIN" />
             </NavLink>
             <NavLink
               className="p-3 font-semibold leading-7 transition-all hover:border-b-2"
               to="/"
-              onClick={logout}
+              onClick={handleLogOut}
             >
               <FormattedMessage id="LOG_OUT" />
             </NavLink>
