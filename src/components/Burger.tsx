@@ -1,18 +1,23 @@
-import { FC } from 'react';
+import { ChangeEvent, FC } from 'react';
 import { NavLink } from 'react-router-dom';
-
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { FormattedMessage } from 'react-intl';
 
 import Close from '../assets/svg/close.svg';
-import { LOCALES } from '../lang/locales';
 
 import { IHeaderProps } from './Header';
+import { auth, logout } from '../firebase';
+import { LOCALES } from '../lang/locales';
 
 interface ModalProps extends IHeaderProps {
   onClose: () => void;
+  locale: string;
+  handleLocale: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const Burger: FC<ModalProps> = ({ onClose, locale, handleLocale }): JSX.Element => {
+export const Burger: FC<ModalProps> = ({ onClose, handleLocale, locale }): JSX.Element => {
+  const [user] = useAuthState(auth);
+
   return (
     <div
       className="fixed z-30 flex h-screen w-screen items-start justify-end bg-white/40"
@@ -31,36 +36,44 @@ export const Burger: FC<ModalProps> = ({ onClose, locale, handleLocale }): JSX.E
         >
           <Close />
         </button>
-        <NavLink
+        {!user && (
+          <>
+<NavLink
           className="border-b-2 border-transparent p-3 font-semibold leading-7 transition-all hover:border-black"
           to="sign-in"
           onClick={() => {
             onClose();
           }}
         >
-          <FormattedMessage id="SIGN_IN" />
-        </NavLink>
-        <NavLink
-          className="border-b-2 border-transparent p-3 font-semibold leading-7 transition-all hover:border-black"
-          to="sign-up"
-          onClick={() => {
-            onClose();
-          }}
-        >
-          <FormattedMessage id="SIGN_UP" />
-        </NavLink>
-        <NavLink
-          className="border-b-2 border-transparent p-3 font-semibold leading-7 transition-all hover:border-black"
-          onClick={() => {
-            onClose();
-          }}
-          to="/"
-        >
-          <FormattedMessage id="LOG_OUT" />
-          <span aria-hidden="true">&rarr;</span>
-        </NavLink>
-        <div className="mt-4 flex items-center px-3 py-2.5">
-          <span className="mr-3 font-semibold ">En</span>
+              <FormattedMessage id="SIGN_IN" />
+            </NavLink>
+            <NavLink
+              className="p-3 font-semibold leading-7 transition-all hover:border-b-2"
+              to="sign-up"
+            >
+              <FormattedMessage id="SIGN_UP" />
+            </NavLink>
+          </>
+        )}
+        {user && (
+          <>
+            <NavLink
+              className="p-3 font-semibold leading-7 transition-all hover:border-b-2"
+              to="/main"
+            >
+              <FormattedMessage id="MAIN" />
+            </NavLink>
+            <NavLink
+              className="p-3 font-semibold leading-7 transition-all hover:border-b-2"
+              to="/"
+              onClick={logout}
+            >
+              <FormattedMessage id="LOG_OUT" />
+            </NavLink>
+          </>
+        )}
+        <div className="flex px-3 py-2.5">
+          <span className="mr-3 font-semibold ">EN</span>
           <label htmlFor="lang" className="relative h-5 w-10 cursor-pointer rounded-full bg-black">
             <input
               type="checkbox"
