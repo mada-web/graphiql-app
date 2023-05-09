@@ -13,8 +13,8 @@ const Main: FC = (): JSX.Element => {
   };
 
   return (
-    <main className="relative z-0 mt-3 h-screen w-screen bg-dark-blue">
-      <div className="grid h-[100%] grid-cols-1 grid-rows-1 pt-[100px] sm:grid-cols-2">
+    <main className="relative z-0 h-screen w-screen bg-dark-blue">
+      <div className="grid h-[100%] grid-cols-1 grid-rows-1 pt-[120px] sm:grid-cols-2">
         <div className="grid grid-cols-[90%_10%] grid-rows-[auto_auto]">
           <EditorBlock />
           <ControlBtns />
