@@ -4,10 +4,11 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { FormattedMessage } from 'react-intl';
 
 import Close from '../assets/svg/close.svg';
+import { LOCALES } from '../lang/locales';
+
+import { auth, logout } from '../firebase';
 
 import { IHeaderProps } from './Header';
-import { auth, logout } from '../firebase';
-import { LOCALES } from '../lang/locales';
 
 interface ModalProps extends IHeaderProps {
   onClose: () => void;
@@ -27,7 +28,7 @@ export const Burger: FC<ModalProps> = ({ onClose, handleLocale, locale }): JSX.E
         }
       }}
     >
-      <li className="z-30 flex h-[300px] w-[180px] flex-col items-start justify-start rounded-[10px] bg-gray p-6 text-dark-blue sm:hidden">
+      <li className="z-30 flex h-[250px] w-[180px] flex-col items-start justify-start rounded-[10px] bg-gray p-6 text-dark-blue sm:hidden">
         <button
           className="place-self-end"
           onClick={() => {
@@ -38,18 +39,21 @@ export const Burger: FC<ModalProps> = ({ onClose, handleLocale, locale }): JSX.E
         </button>
         {!user && (
           <>
-<NavLink
-          className="border-b-2 border-transparent p-3 font-semibold leading-7 transition-all hover:border-black"
-          to="sign-in"
-          onClick={() => {
-            onClose();
-          }}
-        >
+            <NavLink
+              className="border-b-2 border-transparent p-3 font-semibold leading-7 transition-all hover:border-black"
+              to="sign-in"
+              onClick={() => {
+                onClose();
+              }}
+            >
               <FormattedMessage id="SIGN_IN" />
             </NavLink>
             <NavLink
-              className="p-3 font-semibold leading-7 transition-all hover:border-b-2"
+              className="border-b-2 border-transparent p-3 font-semibold leading-7 transition-all hover:border-black"
               to="sign-up"
+              onClick={() => {
+                onClose();
+              }}
             >
               <FormattedMessage id="SIGN_UP" />
             </NavLink>
@@ -58,13 +62,13 @@ export const Burger: FC<ModalProps> = ({ onClose, handleLocale, locale }): JSX.E
         {user && (
           <>
             <NavLink
-              className="p-3 font-semibold leading-7 transition-all hover:border-b-2"
+              className="border-b-2 border-transparent p-3 font-semibold leading-7 transition-all hover:border-black"
               to="/main"
             >
               <FormattedMessage id="MAIN" />
             </NavLink>
             <NavLink
-              className="p-3 font-semibold leading-7 transition-all hover:border-b-2"
+              className="border-b-2 border-transparent p-3 font-semibold leading-7 transition-all hover:border-black"
               to="/"
               onClick={logout}
             >
@@ -72,7 +76,7 @@ export const Burger: FC<ModalProps> = ({ onClose, handleLocale, locale }): JSX.E
             </NavLink>
           </>
         )}
-        <div className="flex px-3 py-2.5">
+        <div className="mt-6 flex px-3 py-2.5">
           <span className="mr-3 font-semibold ">EN</span>
           <label htmlFor="lang" className="relative h-5 w-10 cursor-pointer rounded-full bg-black">
             <input
