@@ -118,7 +118,7 @@ const Header: FC<IHeaderProps> = ({ handleLocale, locale }): JSX.Element => {
           </li>
         </ul>
       </header>
-      {click && <Burger onClose={handleClosing} />}
+      {click && <Burger onClose={handleClosing} locale={locale} handleLocale={handleLocale} />}
     </>
   );
 };
