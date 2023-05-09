@@ -42,7 +42,7 @@ const Home = () => {
                 </p>
               </div>
               <div className="flex flex-col items-center justify-center md:mb-4 md:ml-4">
-                <div className="h-[155px] w-[165px] rounded-[10px] bg-[url('./Masha.png')] bg-cover bg-center bg-no-repeat "></div>
+                <div className="h-[155px] w-[165px] rounded-[10px] bg-[url('./Masha.jpg')] bg-cover bg-center bg-no-repeat "></div>
                 <h2 className="mt-1 font-semibold md:mt-2">
                   <FormattedMessage id="MASHA_NAME" />
                 </h2>
