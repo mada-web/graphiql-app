@@ -559,10 +559,6 @@ video {
   left: 0.125rem;
 }
 
-.left-\[20px\] {
-  left: 20px;
-}
-
 .top-0 {
   top: 0px;
 }
@@ -701,6 +697,10 @@ video {
   margin-right: 37px;
 }
 
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -713,12 +713,16 @@ video {
   margin-top: 1rem;
 }
 
-.mt-\[47px\] {
-  margin-top: 47px;
+.mt-6 {
+  margin-top: 1.5rem;
 }
 
-.-mb-3 {
-  margin-bottom: -0.75rem;
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mt-\[47px\] {
+  margin-top: 47px;
 }
 
 .block {
@@ -741,8 +745,8 @@ video {
   display: none;
 }
 
-.h-4 {
-  height: 1rem;
+.h-10 {
+  height: 2.5rem;
 }
 
 .h-4\/5 {
@@ -761,12 +765,12 @@ video {
   height: 100%;
 }
 
-.h-\[1200px\] {
-  height: 1200px;
+.h-\[155px\] {
+  height: 155px;
 }
 
-.h-\[134px\] {
-  height: 134px;
+.h-\[1600px\] {
+  height: 1600px;
 }
 
 .h-\[200px\] {
@@ -916,10 +920,6 @@ video {
   grid-template-columns: 90% 10%;
 }
 
-.grid-cols-\[85\%_15\%\] {
-  grid-template-columns: 85% 15%;
-}
-
 .grid-rows-1 {
   grid-template-rows: repeat(1, minmax(0, 1fr));
 }
@@ -976,8 +976,8 @@ video {
   justify-content: space-between;
 }
 
-.gap-16 {
-  gap: 4rem;
+.gap-8 {
+  gap: 2rem;
 }
 
 .gap-x-2 {
@@ -1058,6 +1058,10 @@ video {
   border-top-right-radius: 0.5rem;
 }
 
+.border-b-2 {
+  border-bottom-width: 2px;
+}
+
 .border-r-0 {
   border-right-width: 0px;
 }
@@ -1065,6 +1069,10 @@ video {
 .border-gray {
   --tw-border-opacity: 1;
   border-color: rgb(217 217 217 / var(--tw-border-opacity));
+}
+
+.border-transparent {
+  border-color: transparent;
 }
 
 .bg-black {
@@ -1101,6 +1109,10 @@ video {
   background-color: rgb(255 255 255 / 0.4);
 }
 
+.bg-\[url\(\'\.\/Masha\.jpg\'\)\] {
+  background-image: url('./Masha.jpg');
+}
+
 .bg-\[url\(\'\.\/bg_404\.png\'\)\] {
   background-image: url('./bg_404.png');
 }
@@ -1115,6 +1127,10 @@ video {
 
 .bg-auto {
   background-size: auto;
+}
+
+.bg-cover {
+  background-size: cover;
 }
 
 .bg-center {
@@ -1170,6 +1186,10 @@ video {
   padding-bottom: 0.75rem;
 }
 
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
 .pb-3 {
   padding-bottom: 0.75rem;
 }
@@ -1194,20 +1214,8 @@ video {
   padding-top: 1.25rem;
 }
 
-.pt-\[100px\] {
-  padding-top: 100px;
-}
-
-.pt-\[150px\] {
-  padding-top: 150px;
-}
-
 .pt-\[120px\] {
   padding-top: 120px;
-}
-
-.pb-2 {
-  padding-bottom: 0.5rem;
 }
 
 .text-center {
@@ -1363,6 +1371,11 @@ a:hover svg .path1 {
   border-bottom-width: 2px;
 }
 
+.hover\:border-black:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
 .hover\:bg-green\/70:hover {
   background-color: rgb(126 188 89 / 0.7);
 }
@@ -1391,13 +1404,9 @@ a:hover svg .path1 {
   left: 1.25rem;
 }
 
-@media (min-width: 370px) {
-  .min-\[370px\]\:mb-\[0px\] {
-    margin-bottom: 0px;
-  }
-
-  .min-\[370px\]\:inline-block {
-    display: inline-block;
+@media (min-width: 354px) {
+  .min-\[354px\]\:h-\[1500px\] {
+    height: 1500px;
   }
 }
 
@@ -1408,6 +1417,22 @@ a:hover svg .path1 {
 
   .min-\[410px\]\:min-w-\[400px\] {
     min-width: 400px;
+  }
+}
+
+@media (min-width: 455px) {
+  .min-\[455px\]\:h-\[1400px\] {
+    height: 1400px;
+  }
+}
+
+@media (min-width: 500px) {
+  .min-\[500px\]\:mb-\[0px\] {
+    margin-bottom: 0px;
+  }
+
+  .min-\[500px\]\:inline-block {
+    display: inline-block;
   }
 }
 
@@ -1436,6 +1461,10 @@ a:hover svg .path1 {
     display: none;
   }
 
+  .sm\:h-\[1300px\] {
+    height: 1300px;
+  }
+
   .sm\:min-w-\[500px\] {
     min-width: 500px;
   }
@@ -1462,16 +1491,16 @@ a:hover svg .path1 {
     margin-left: 1rem;
   }
 
-  .md\:mt-5 {
-    margin-top: 1.25rem;
+  .md\:mt-2 {
+    margin-top: 0.5rem;
   }
 
   .md\:inline-block {
     display: inline-block;
   }
 
-  .md\:h-\[800px\] {
-    height: 800px;
+  .md\:h-\[1000px\] {
+    height: 1000px;
   }
 
   .md\:min-w-\[600px\] {
@@ -1480,6 +1509,12 @@ a:hover svg .path1 {
 
   .md\:flex-row {
     flex-direction: row;
+  }
+}
+
+@media (min-width: 830px) {
+  .min-\[830px\]\:h-\[900px\] {
+    height: 900px;
   }
 }
 
@@ -1505,6 +1540,10 @@ a:hover svg .path1 {
 }
 
 @media (min-width: 1400px) {
+  .min-\[1400px\]\:mt-0 {
+    margin-top: 0px;
+  }
+
   .min-\[1400px\]\:h-screen {
     height: 100vh;
   }
