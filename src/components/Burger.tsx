@@ -45,14 +45,14 @@ export const Burger: FC<ModalProps> = ({ onClose, handleLocale, locale }): JSX.E
         {!user && (
           <>
             <NavLink
-              className="border-b-2 border-transparent p-3 font-semibold leading-7 transition-all hover:border-black"
+              className="p-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
               to="sign-in"
               onClick={onClose}
             >
               <FormattedMessage id="SIGN_IN" />
             </NavLink>
             <NavLink
-              className="border-b-2 border-transparent p-3 font-semibold leading-7 transition-all hover:border-black"
+              className="p-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
               to="sign-up"
               onClick={onClose}
             >
@@ -63,15 +63,17 @@ export const Burger: FC<ModalProps> = ({ onClose, handleLocale, locale }): JSX.E
         {user && (
           <>
             <NavLink
-              className="border-b-2 border-transparent p-3 font-semibold leading-7 transition-all hover:border-black"
+              className="p-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
               to="/main"
               onClick={onClose}
             >
               <FormattedMessage id="MAIN" />
             </NavLink>
             <Link
-              className="border-b-2 border-transparent p-3 font-semibold leading-7 transition-all hover:border-black"
-              onClick={handleLogOut} to={'/'}            >
+              className="p-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
+              onClick={handleLogOut}
+              to={'/'}
+            >
               <FormattedMessage id="LOG_OUT" />
             </Link>
           </>

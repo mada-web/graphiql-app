@@ -1218,6 +1218,10 @@ video {
   padding-top: 120px;
 }
 
+.pb-\[2px\] {
+  padding-bottom: 2px;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1378,6 +1382,10 @@ a:hover svg .path1 {
 
 .hover\:bg-green\/70:hover {
   background-color: rgb(126 188 89 / 0.7);
+}
+
+.hover\:pb-\[0px\]:hover {
+  padding-bottom: 0px;
 }
 
 .hover\:text-green:hover {

@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { useAuthState } from 'react-firebase-hooks/auth';
 
 import { auth, logInWithEmailAndPassword } from '../firebase';
@@ -35,12 +39,15 @@ const Login = () => {
     reset();
   };
 
+  const notify = () => toast.success('Submit!');
+
   const handleChangePassword: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setPassword(e.target.value);
     reset();
   };
 
   const onSubmit: SubmitHandler<FieldValues> = async () => {
+    notify();
     try {
       setIsLoading(true);
       await logInWithEmailAndPassword(email, password);
@@ -97,6 +104,7 @@ const Login = () => {
             </div>
           </form>
         )}
+        <ToastContainer />
       </div>
       <Background />
     </section>
