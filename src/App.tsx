@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { IntlProvider } from 'react-intl';
-import { ChangeEvent, useState } from 'react';
 
 import Home from './pages/Home';
 import Main from './pages/Main';
@@ -10,21 +9,10 @@ import NotFound from './pages/NotFound';
 import Layout from './components/Layout';
 import { LOCALES } from './lang/locales';
 import { messages } from './lang/messages';
+import useAppContext from './hooks/useAppContext';
 
 const App = () => {
-  const [currentLocale, setCurrentLocale] = useState(
-    localStorage.getItem('lang') || LOCALES.ENGLISH
-  );
-
-  const handleLocale = (e: ChangeEvent<HTMLInputElement>) => {
-    if (e.target?.checked === false) {
-      setCurrentLocale(LOCALES.ENGLISH);
-      localStorage.setItem('lang', LOCALES.ENGLISH);
-    } else {
-      setCurrentLocale(LOCALES.RUSSIAN);
-      localStorage.setItem('lang', LOCALES.RUSSIAN);
-    }
-  };
+  const { currentLocale } = useAppContext();
 
   return (
     <BrowserRouter>
@@ -34,7 +22,7 @@ const App = () => {
         defaultLocale={LOCALES.ENGLISH}
       >
         <Routes>
-          <Route path="/" element={<Layout handleLocale={handleLocale} locale={currentLocale} />}>
+          <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="sign-in" element={<Login />} />
             <Route path="sign-up" element={<Register />} />
