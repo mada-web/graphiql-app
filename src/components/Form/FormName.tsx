@@ -30,12 +30,15 @@ const FormName: FC<InputTitleProps> = (props) => {
           placeholder={intl.formatMessage({ id: 'NAME_PLACEHOLDER' })}
           type="text"
           value={value}
-          maxLength={20}
           {...register(label, {
             required: intl.formatMessage({ id: 'NAME_VALIDATION' }),
             minLength: {
               value: 2,
               message: intl.formatMessage({ id: 'NAME_MIN_LENGTH' }),
+            },
+            maxLength: {
+              value: 20,
+              message: intl.formatMessage({ id: 'NAME_MAX_LENGTH' }),
             },
             pattern: {
               value: /^[A-ZА-Я][a-zA-ZА-Яа-я ]+$/,
@@ -45,7 +48,7 @@ const FormName: FC<InputTitleProps> = (props) => {
           onChange={onChange}
         />
       </div>
-      <div className="h-4 text-red">
+      <div className="h-10 text-red">
         {errors?.name && <p>{`${errors.name?.message}` || 'Error'}</p>}
       </div>
     </>
