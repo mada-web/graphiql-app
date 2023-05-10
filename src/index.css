@@ -80,6 +80,23 @@ a:hover svg .path1 {
     transform: translateX(-200px);
     animation: show-from-left .6s reverse;
   }
+
+  .query-block-enter {
+    animation: show-from-left .5s forwards;
+  }
+  
+  .query-block-enter-active {
+    animation: show-from-left .5s forwards;
+  }
+  
+  .query-block-exit-active {
+    animation: show-from-left .5s reverse;
+  }
+  
+  .query-block-exit {
+    transform: translateX(-200px);
+    animation: show-from-left.6s reverse;
+  }
 }
 
 @keyframes show-from-bottom {

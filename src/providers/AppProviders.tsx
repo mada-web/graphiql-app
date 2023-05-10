@@ -14,6 +14,8 @@ interface IAppContext {
   setIsShowSchema: TypeSetState<boolean>;
   isQueryParams: boolean;
   setIsQueryParams: TypeSetState<boolean>;
+  isShowResult: boolean;
+  setIsShowResult: TypeSetState<boolean>;
 }
 
 export const CurrentAppContext = createContext<IAppContext>({
@@ -25,6 +27,8 @@ export const CurrentAppContext = createContext<IAppContext>({
   setIsShowSchema: () => {},
   isQueryParams: false,
   setIsQueryParams: () => {},
+  isShowResult: false,
+  setIsShowResult: () => {},
 });
 
 export const AppProvider: FC<Props> = ({ children }) => {
@@ -32,6 +36,7 @@ export const AppProvider: FC<Props> = ({ children }) => {
   const [queryParams, setQueryParams] = useState<string>(defaultParams);
   const [isShowSchema, setIsShowSchema] = useState<boolean>(false);
   const [isQueryParams, setIsQueryParams] = useState(false);
+  const [isShowResult, setIsShowResult] = useState(false);
 
   //const currentValue = useMemo(() => ({ value, setValue }), [value]);
   const allValue = {
@@ -43,6 +48,8 @@ export const AppProvider: FC<Props> = ({ children }) => {
     setIsShowSchema,
     isQueryParams,
     setIsQueryParams,
+    isShowResult,
+    setIsShowResult,
   };
 
   return <CurrentAppContext.Provider value={allValue}>{children}</CurrentAppContext.Provider>;

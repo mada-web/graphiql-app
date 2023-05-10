@@ -105,7 +105,7 @@ const QueryBlock = () => {
           </span>
         </h3>
         <Editor
-          className="ml-7 mt-5 scroll-smooth  -hue-rotate-180 invert "
+          className="h-[80%] scroll-smooth pt-8 -hue-rotate-180 invert "
           theme="grey-theme"
           beforeMount={handleEditorWillMount}
           defaultLanguage="qraphql"

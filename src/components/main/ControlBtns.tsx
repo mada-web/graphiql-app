@@ -10,10 +10,10 @@ export interface IControlBtns {
   changeList: (str: string) => void;
 }
 const ControlBtns: FC = (): JSX.Element => {
-  const { queryBody, queryParams, setIsShowSchema, setIsQueryParams } = useAppContext();
+  const { setIsShowSchema, setIsQueryParams, setIsShowResult } = useAppContext();
 
   const executeQuery = () => {
-    console.log(queryBody, queryParams);
+    setIsShowResult(true);
   };
 
   const showSchema = () => {
