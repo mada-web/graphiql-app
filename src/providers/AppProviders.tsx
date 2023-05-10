@@ -10,6 +10,10 @@ interface IAppContext {
   setQueryBody: TypeSetState<string>;
   queryParams: string;
   setQueryParams: TypeSetState<string>;
+  isShowSchema: boolean;
+  setIsShowSchema: TypeSetState<boolean>;
+  isQueryParams: boolean;
+  setIsQueryParams: TypeSetState<boolean>;
 }
 
 export const CurrentAppContext = createContext<IAppContext>({
@@ -17,14 +21,29 @@ export const CurrentAppContext = createContext<IAppContext>({
   setQueryBody: () => {},
   queryParams: defaultParams,
   setQueryParams: () => {},
+  isShowSchema: false,
+  setIsShowSchema: () => {},
+  isQueryParams: false,
+  setIsQueryParams: () => {},
 });
 
 export const AppProvider: FC<Props> = ({ children }) => {
   const [queryBody, setQueryBody] = useState<string>(defaultCode);
   const [queryParams, setQueryParams] = useState<string>(defaultParams);
+  const [isShowSchema, setIsShowSchema] = useState<boolean>(false);
+  const [isQueryParams, setIsQueryParams] = useState(false);
 
   //const currentValue = useMemo(() => ({ value, setValue }), [value]);
-  const allValue = { queryBody, setQueryBody, queryParams, setQueryParams };
+  const allValue = {
+    queryBody,
+    setQueryBody,
+    queryParams,
+    setQueryParams,
+    isShowSchema,
+    setIsShowSchema,
+    isQueryParams,
+    setIsQueryParams,
+  };
 
   return <CurrentAppContext.Provider value={allValue}>{children}</CurrentAppContext.Provider>;
 };
