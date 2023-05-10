@@ -93,7 +93,7 @@ const QueryBlock = () => {
     >
       <div
         ref={queryParamRef}
-        className="query-block h-[200px] min-w-min grow rounded-t-lg bg-query transition-all"
+        className="query-block h-[200px] w-full rounded-t-lg bg-query transition-all"
       >
         <h3 className="rounded-t-lg bg-green py-2 text-center text-black">
           query params
