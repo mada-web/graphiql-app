@@ -534,6 +534,10 @@ video {
   border-width: 0;
 }
 
+.static {
+  position: static;
+}
+
 .fixed {
   position: fixed;
 }
@@ -1291,6 +1295,11 @@ video {
   line-height: 2rem;
 }
 
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
 .text-7xl {
   font-size: 4.5rem;
   line-height: 1;
@@ -1430,67 +1439,67 @@ a:hover svg .path1 {
 }
 
 .query-block-enter {
-  animation: show-from-bottom .5s forwards;
+  animation: show-from-bottom 0.5s forwards;
 }
 
 .query-block-enter-active {
-  animation: show-from-bottom .5s forwards;
+  animation: show-from-bottom 0.5s forwards;
 }
 
 .query-block-exit-active {
-  animation: show-from-bottom .5s reverse;
+  animation: show-from-bottom 0.5s reverse;
 }
 
 .query-block-exit {
   transform: translateY(200px);
-  animation: show-from-bottom .6s reverse;
+  animation: show-from-bottom 0.6s reverse;
 }
 
 .schema-block-enter {
-  animation: show-from-right .5s forwards;
+  animation: show-from-right 0.5s forwards;
 }
 
 .schema-block-enter-active {
-  animation: show-from-right .5s forwards;
+  animation: show-from-right 0.5s forwards;
 }
 
 .schema-block-exit-active {
-  animation: show-from-right .5s reverse;
+  animation: show-from-right 0.5s reverse;
 }
 
 .schema-block-exit {
   transform: translateX(200px);
-  animation: show-from-right .6s reverse;
+  animation: show-from-right 0.6s reverse;
 }
 
 @media (max-width: 640px) {
   .schema-block-enter {
-    animation: show-from-left .5s forwards;
+    animation: show-from-left 0.5s forwards;
   }
 
   .schema-block-enter-active {
-    animation: show-from-left .5s forwards;
+    animation: show-from-left 0.5s forwards;
   }
 
   .schema-block-exit-active {
-    animation: show-from-left .5s reverse;
+    animation: show-from-left 0.5s reverse;
   }
 
   .schema-block-exit {
     transform: translateX(-200px);
-    animation: show-from-left .6s reverse;
+    animation: show-from-left 0.6s reverse;
   }
 
   .query-block-enter {
-    animation: show-from-left .5s forwards;
+    animation: show-from-left 0.5s forwards;
   }
 
   .query-block-enter-active {
-    animation: show-from-left .5s forwards;
+    animation: show-from-left 0.5s forwards;
   }
 
   .query-block-exit-active {
-    animation: show-from-left .5s reverse;
+    animation: show-from-left 0.5s reverse;
   }
 
   .query-block-exit {
@@ -1500,46 +1509,46 @@ a:hover svg .path1 {
 }
 
 @keyframes show-from-bottom {
-  0%{
+  0% {
     opacity: 0;
     transform: translateY(200px);
   }
 
-  50%{
+  50% {
     opacity: 1;
   }
 
-  100%{
+  100% {
     transform: translateY(0);
   }
 }
 
 @keyframes show-from-right {
-  0%{
+  0% {
     opacity: 0;
     transform: translateX(200px);
   }
 
-  50%{
+  50% {
     opacity: 1;
   }
 
-  100%{
+  100% {
     transform: translateX(0);
   }
 }
 
 @keyframes show-from-left {
-  0%{
+  0% {
     opacity: 0;
     transform: translateX(-200px);
   }
 
-  50%{
+  50% {
     opacity: 1;
   }
 
-  100%{
+  100% {
     transform: translateX(0);
   }
 }
