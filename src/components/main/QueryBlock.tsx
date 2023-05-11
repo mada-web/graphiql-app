@@ -1,13 +1,10 @@
 import Editor, { Monaco } from '@monaco-editor/react';
-
 import { useRef } from 'react';
-
 import { CSSTransition } from 'react-transition-group';
 
 import useAppContext from '../../hooks/useAppContext';
 
 import type monaco from 'monaco-editor';
-
 export const defaultParams = `some query`;
 
 const QueryBlock = () => {

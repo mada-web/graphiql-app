@@ -1,5 +1,4 @@
 import { CSSTransition } from 'react-transition-group';
-
 import { useRef } from 'react';
 
 import useAppContext from '../../hooks/useAppContext';
