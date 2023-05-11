@@ -1,12 +1,12 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 
 const ErrorMessage: FC = (): JSX.Element => {
-  const refreshPage = (e) => {
+  const refreshPage = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     history.go();
   };
 
-  const returnToPrevPage = (e) => {
+  const returnToPrevPage = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
     history.back();

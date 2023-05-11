@@ -3,7 +3,6 @@ import React, { ReactNode } from 'react';
 import ErrorMessage from './Error';
 
 type Props = {
-  fallback: ReactNode;
   children: ReactNode;
 };
 
@@ -23,7 +22,7 @@ class ErrorBoundary extends React.Component<Props, State> {
   }
 
   componentDidCatch(error: Error, info: React.ErrorInfo) {
-    // TODO We can add toast here as well
+    // TODO We can add toast here
     console.log(error, info.componentStack);
   }
 
