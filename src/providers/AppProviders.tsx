@@ -20,6 +20,12 @@ interface IAppContext {
   setQueryBody: TypeSetState<string>;
   queryParams: string;
   setQueryParams: TypeSetState<string>;
+  isShowSchema: boolean;
+  setIsShowSchema: TypeSetState<boolean>;
+  isQueryParams: boolean;
+  setIsQueryParams: TypeSetState<boolean>;
+  isShowResult: boolean;
+  setIsShowResult: TypeSetState<boolean>;
   currentLocale: string;
   handleLocale: (e: ChangeEvent<HTMLInputElement>) => void;
 }
@@ -29,6 +35,12 @@ export const CurrentAppContext = createContext<IAppContext>({
   setQueryBody: () => {},
   queryParams: defaultParams,
   setQueryParams: () => {},
+  isShowSchema: false,
+  setIsShowSchema: () => {},
+  isQueryParams: false,
+  setIsQueryParams: () => {},
+  isShowResult: false,
+  setIsShowResult: () => {},
   currentLocale: LOCALES.ENGLISH,
   handleLocale: () => {},
 });
@@ -36,6 +48,11 @@ export const CurrentAppContext = createContext<IAppContext>({
 export const AppProvider: FC<Props> = ({ children }) => {
   const [queryBody, setQueryBody] = useState<string>(defaultCode);
   const [queryParams, setQueryParams] = useState<string>(defaultParams);
+  const [isShowSchema, setIsShowSchema] = useState<boolean>(false);
+  const [isQueryParams, setIsQueryParams] = useState(false);
+  const [isShowResult, setIsShowResult] = useState(false);
+
+  //const currentValue = useMemo(() => ({ value, setValue }), [value]);
   const [currentLocale, setCurrentLocale] = useState(
     localStorage.getItem('lang') || LOCALES.ENGLISH
   );
@@ -55,6 +72,12 @@ export const AppProvider: FC<Props> = ({ children }) => {
     setQueryBody,
     queryParams,
     setQueryParams,
+    isShowSchema,
+    setIsShowSchema,
+    isQueryParams,
+    setIsQueryParams,
+    isShowResult,
+    setIsShowResult,
     currentLocale,
     handleLocale,
   };
