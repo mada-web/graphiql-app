@@ -1,10 +1,20 @@
-import { FC, Dispatch, SetStateAction, createContext, ReactNode, useState } from 'react';
+import {
+  FC,
+  Dispatch,
+  SetStateAction,
+  createContext,
+  ReactNode,
+  useState,
+  ChangeEvent,
+} from 'react';
 
 import { defaultCode } from '../components/main/EditorBlock';
 import { defaultParams } from '../components/main/QueryBlock';
+import { LOCALES } from '../lang/locales';
 
 type TypeSetState<T> = Dispatch<SetStateAction<T>>;
 type Props = { children: ReactNode };
+
 interface IAppContext {
   queryBody: string;
   setQueryBody: TypeSetState<string>;
@@ -16,6 +26,8 @@ interface IAppContext {
   setIsQueryParams: TypeSetState<boolean>;
   isShowResult: boolean;
   setIsShowResult: TypeSetState<boolean>;
+  currentLocale: string;
+  handleLocale: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const CurrentAppContext = createContext<IAppContext>({
@@ -29,6 +41,8 @@ export const CurrentAppContext = createContext<IAppContext>({
   setIsQueryParams: () => {},
   isShowResult: false,
   setIsShowResult: () => {},
+  currentLocale: LOCALES.ENGLISH,
+  handleLocale: () => {},
 });
 
 export const AppProvider: FC<Props> = ({ children }) => {
@@ -39,6 +53,20 @@ export const AppProvider: FC<Props> = ({ children }) => {
   const [isShowResult, setIsShowResult] = useState(false);
 
   //const currentValue = useMemo(() => ({ value, setValue }), [value]);
+  const [currentLocale, setCurrentLocale] = useState(
+    localStorage.getItem('lang') || LOCALES.ENGLISH
+  );
+
+  const handleLocale = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target?.checked === false) {
+      setCurrentLocale(LOCALES.ENGLISH);
+      localStorage.setItem('lang', LOCALES.ENGLISH);
+    } else {
+      setCurrentLocale(LOCALES.RUSSIAN);
+      localStorage.setItem('lang', LOCALES.RUSSIAN);
+    }
+  };
+
   const allValue = {
     queryBody,
     setQueryBody,
@@ -50,6 +78,8 @@ export const AppProvider: FC<Props> = ({ children }) => {
     setIsQueryParams,
     isShowResult,
     setIsShowResult,
+    currentLocale,
+    handleLocale,
   };
 
   return <CurrentAppContext.Provider value={allValue}>{children}</CurrentAppContext.Provider>;

@@ -6,10 +6,7 @@ import BtnPlay from '../../assets/svg/btn_play.svg';
 import BtnQuery from '../../assets/svg/btn_query_params.svg';
 import BtnSchema from '../../assets/svg/btn_schema.svg';
 
-export interface IControlBtns {
-  changeList: (str: string) => void;
-}
-const ControlBtns: FC = (): JSX.Element => {
+const ControlButtons: FC = (): JSX.Element => {
   const { setIsShowSchema, setIsQueryParams, setIsShowResult } = useAppContext();
 
   const executeQuery = () => {
@@ -51,4 +48,4 @@ const ControlBtns: FC = (): JSX.Element => {
   );
 };
 
-export default ControlBtns;
+export default ControlButtons;
