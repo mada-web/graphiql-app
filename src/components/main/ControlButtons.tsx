@@ -4,10 +4,7 @@ import useAppContext from '../../hooks/useAppContext';
 
 import Play from '../../assets/svg/btn_play.svg';
 
-export interface IControlBtns {
-  changeList: (str: string) => void;
-}
-const ControlBtns: FC = (): JSX.Element => {
+const ControlButtons: FC = (): JSX.Element => {
   const { queryBody, queryParams } = useAppContext();
 
   const executeQuery = () => {
@@ -24,4 +21,4 @@ const ControlBtns: FC = (): JSX.Element => {
   );
 };
 
-export default ControlBtns;
+export default ControlButtons;
