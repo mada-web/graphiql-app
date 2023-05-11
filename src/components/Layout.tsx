@@ -1,16 +1,17 @@
 import { FC } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import Header, { IHeaderProps } from './Header';
 import Footer from './Footer';
+import Header from './Header';
 
-const Layout: FC<IHeaderProps> = ({ handleLocale, locale }): JSX.Element => {
+const Layout: FC = (): JSX.Element => {
   return (
     <div>
-      <Header handleLocale={handleLocale} locale={locale} />
+      <Header />
       <Outlet />
       <Footer />
     </div>
   );
 };
+
 export default Layout;

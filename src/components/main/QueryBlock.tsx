@@ -1,13 +1,15 @@
 import Editor, { Monaco } from '@monaco-editor/react';
+import { useRef } from 'react';
+import { CSSTransition } from 'react-transition-group';
 
 import useAppContext from '../../hooks/useAppContext';
 
 import type monaco from 'monaco-editor';
-
 export const defaultParams = `some query`;
 
 const QueryBlock = () => {
-  const { setQueryParams } = useAppContext();
+  const { setQueryParams, isQueryParams, setIsQueryParams } = useAppContext();
+  const queryParamRef = useRef(null);
 
   const options: monaco.editor.IStandaloneEditorConstructionOptions = {
     readOnly: false,
@@ -31,6 +33,10 @@ const QueryBlock = () => {
   const handleEditorValidation = (markers: monaco.editor.IMarker[]) => {
     // model markers
     markers.forEach((marker) => console.log('onValidate:', marker.message));
+  };
+
+  const closeQueryParams = () => {
+    setIsQueryParams(false);
   };
 
   const handleEditorWillMount = (monaco: Monaco) => {
@@ -74,18 +80,39 @@ const QueryBlock = () => {
   };
 
   return (
-    <div className="h-[200px] w-full bg-query pl-7 pt-5 transition-all">
-      <Editor
-        className="scroll-smooth -hue-rotate-180 invert"
-        theme="grey-theme"
-        beforeMount={handleEditorWillMount}
-        defaultLanguage="qraphql"
-        onValidate={handleEditorValidation}
-        onChange={handleEditorChange}
-        defaultValue={defaultParams}
-        options={options}
-      />
-    </div>
+    <CSSTransition
+      nodeRef={queryParamRef}
+      in={isQueryParams}
+      timeout={500}
+      classNames="query-block"
+      mountOnEnter
+      unmountOnExit
+    >
+      <div
+        ref={queryParamRef}
+        className="query-block h-[200px] w-full rounded-t-lg bg-query transition-all"
+      >
+        <h3 className="rounded-t-lg bg-green py-2 text-center text-black">
+          query params
+          <span
+            className="absolute right-3 cursor-pointer px-2 font-sans"
+            onClick={closeQueryParams}
+          >
+            x
+          </span>
+        </h3>
+        <Editor
+          className="h-[80%] scroll-smooth pt-8 -hue-rotate-180 invert "
+          theme="grey-theme"
+          beforeMount={handleEditorWillMount}
+          defaultLanguage="qraphql"
+          onValidate={handleEditorValidation}
+          onChange={handleEditorChange}
+          defaultValue={defaultParams}
+          options={options}
+        />
+      </div>
+    </CSSTransition>
   );
 };
 

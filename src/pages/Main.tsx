@@ -1,34 +1,34 @@
-import { FC, useState } from 'react';
+import { FC, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
-import ControlBtns from '../components/main/ControlBtns';
+import { auth } from '../firebase';
+import ControlButtons from '../components/main/ControlButtons';
 import EditorBlock from '../components/main/EditorBlock';
 import QueryBlock from '../components/main/QueryBlock';
 import ResponseBlock from '../components/main/ResponseBlock';
+import SchemaBlock from '../components/main/SchemaBlock';
 
 const Main: FC = (): JSX.Element => {
-  const [isQueryParams, setIsQueryParams] = useState(false);
+  const [user] = useAuthState(auth);
+  const navigate = useNavigate();
 
-  const showQueryEditor = () => {
-    setIsQueryParams((prev) => !prev);
-  };
+  useEffect(() => {
+    if (!user) navigate('/');
+  }, [navigate, user]);
 
   return (
-    <main className="relative z-0 h-screen w-screen bg-dark-blue">
-      <div className="grid h-[100%] grid-cols-1 grid-rows-1 pt-[120px] sm:grid-cols-2">
-        <div className="grid grid-cols-[90%_10%] grid-rows-[auto_auto]">
+    <main className="relative z-0 min-h-screen w-screen overflow-hidden bg-dark-blue">
+      <div className="relative flex flex-col sm:flex-row">
+        <div className="relative grid h-screen grid-cols-[80%_20%] grid-rows-[auto_auto] pt-[120px] transition-all sm:w-1/2 sm:grid-cols-[85%_15%] md:grid-cols-[90%_10%]">
           <EditorBlock />
-          <ControlBtns />
-          <div className="min-x-[20%] relative z-10 col-span-2 col-start-1 row-start-2 flex w-full flex-col self-end transition-all">
-            <button
-              onClick={showQueryEditor}
-              className="w-[80%] self-center rounded-t-lg bg-green py-2 text-center transition-all lg:ml-10 lg:w-1/3 lg:self-start"
-            >
-              query params
-            </button>
-            {isQueryParams && <QueryBlock />}
+          <ControlButtons />
+          <div className="relative z-10 col-span-2 col-start-1 row-start-2 flex w-full flex-col self-end">
+            <QueryBlock />
           </div>
         </div>
         <ResponseBlock />
+        <SchemaBlock />
       </div>
     </main>
   );
