@@ -39,7 +39,7 @@ const Login = () => {
     reset();
   };
 
-  const notify = () => toast.success('Submit!');
+  const notify = () => toast.error('Error!', { position: "bottom-center", });
 
   const handleChangePassword: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setPassword(e.target.value);
@@ -47,10 +47,10 @@ const Login = () => {
   };
 
   const onSubmit: SubmitHandler<FieldValues> = async () => {
-    notify();
     try {
       setIsLoading(true);
       await logInWithEmailAndPassword(email, password);
+      notify();
       reset();
       setIsLoading(false);
     } catch (err) {
