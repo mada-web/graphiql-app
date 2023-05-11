@@ -1,24 +1,24 @@
-import { ChangeEvent, FC, useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 
 import { auth, logout } from '../firebase';
+import { LOCALES } from '../lang/locales';
 
 import Logo from '../assets/svg/logo.svg';
-import { LOCALES } from '../lang/locales';
 import BurgerMenu from '../assets/svg/burger.svg';
 
-import { Burger } from './Burger';
+import useAppContext from '../hooks/useAppContext';
 
-export interface IHeaderProps {
-  locale: string;
-  handleLocale: (e: ChangeEvent<HTMLInputElement>) => void;
-}
+import Burger from './Burger';
 
-const Header: FC<IHeaderProps> = ({ handleLocale, locale }): JSX.Element => {
+const Header: FC = (): JSX.Element => {
   const [animateHeader, setAnimateHeader] = useState(false);
   const [click, setClick] = useState(false);
+
+  const { currentLocale, handleLocale } = useAppContext();
+
   const [user] = useAuthState(auth);
 
   useEffect(() => {
@@ -108,7 +108,7 @@ const Header: FC<IHeaderProps> = ({ handleLocale, locale }): JSX.Element => {
                   type="checkbox"
                   id="lang"
                   className="peer sr-only"
-                  checked={locale !== LOCALES.ENGLISH}
+                  checked={currentLocale !== LOCALES.ENGLISH}
                   onChange={(e) => handleLocale(e)}
                 />
                 <span className="peer absolute left-0.5 top-0.5 h-4/5 w-2/5 rounded-full bg-green transition-all duration-200 peer-checked:left-5" />
@@ -118,7 +118,7 @@ const Header: FC<IHeaderProps> = ({ handleLocale, locale }): JSX.Element => {
           </li>
         </ul>
       </header>
-      {click && <Burger onClose={handleClosing} locale={locale} handleLocale={handleLocale} />}
+      {click && <Burger onClose={handleClosing} />}
     </>
   );
 };

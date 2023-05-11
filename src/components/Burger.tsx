@@ -1,4 +1,4 @@
-import { ChangeEvent, FC } from 'react';
+import { FC } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { FormattedMessage } from 'react-intl';
@@ -7,16 +7,15 @@ import Close from '../assets/svg/close.svg';
 import { LOCALES } from '../lang/locales';
 
 import { auth, logout } from '../firebase';
+import useAppContext from '../hooks/useAppContext';
 
-import { IHeaderProps } from './Header';
-
-interface ModalProps extends IHeaderProps {
+interface IBurger {
   onClose: () => void;
-  locale: string;
-  handleLocale: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const Burger: FC<ModalProps> = ({ onClose, handleLocale, locale }): JSX.Element => {
+const Burger: FC<IBurger> = ({ onClose }): JSX.Element => {
+  const { currentLocale, handleLocale } = useAppContext();
+
   const [user] = useAuthState(auth);
 
   const handleLogOut = () => {
@@ -85,7 +84,7 @@ export const Burger: FC<ModalProps> = ({ onClose, handleLocale, locale }): JSX.E
               type="checkbox"
               id="lang"
               className="peer sr-only"
-              checked={locale !== LOCALES.ENGLISH}
+              checked={currentLocale !== LOCALES.ENGLISH}
               onChange={(e) => handleLocale(e)}
             />
             <span className="peer absolute left-0.5 top-0.5 h-4/5 w-2/5 rounded-full bg-green transition-all duration-200 peer-checked:left-5" />
@@ -96,3 +95,5 @@ export const Burger: FC<ModalProps> = ({ onClose, handleLocale, locale }): JSX.E
     </div>
   );
 };
+
+export default Burger;

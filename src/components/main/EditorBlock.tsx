@@ -1,5 +1,4 @@
 import Editor, { Monaco } from '@monaco-editor/react';
-
 import monaco from 'monaco-editor';
 
 import useAppContext from '../../hooks/useAppContext';
@@ -82,7 +81,7 @@ const EditorBlock = () => {
     });
   };
   return (
-    <div className="editor relative z-0 col-start-1 row-start-1 max-h-max min-h-[60%] pb-2  pl-10">
+    <section className="editor relative z-0 col-start-1 row-start-1 max-h-max min-h-[60%] pb-2 pl-1 sm:mr-2 sm:pl-10 ">
       <Editor
         theme="dark-theme"
         beforeMount={handleEditorWillMount}
@@ -93,7 +92,7 @@ const EditorBlock = () => {
         onChange={handleEditorChange}
         loading="Wait a second..."
       />
-    </div>
+    </section>
   );
 };
 
