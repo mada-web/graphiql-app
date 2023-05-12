@@ -1,16 +1,19 @@
 import { FC } from 'react';
 
 import useAppContext from '../../hooks/useAppContext';
+import ApiQuery from '../Api/ApiQuery';
 
 import BtnPlay from '../../assets/svg/btn_play.svg';
 import BtnQuery from '../../assets/svg/btn_query_params.svg';
 import BtnSchema from '../../assets/svg/btn_schema.svg';
 
 const ControlButtons: FC = (): JSX.Element => {
-  const { setIsShowSchema, setIsQueryParams, setIsShowResult } = useAppContext();
+  const { setIsShowSchema, setIsQueryParams, setResponseApi, queryBody, queryParams } =
+    useAppContext();
 
-  const executeQuery = () => {
-    setIsShowResult(true);
+  const executeQuery = async () => {
+    const data = await ApiQuery({ queryBody, queryParams });
+    setResponseApi(() => JSON.stringify(data, null, '\t'));
   };
 
   const showSchema = () => {
