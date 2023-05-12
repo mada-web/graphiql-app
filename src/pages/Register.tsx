@@ -56,7 +56,8 @@ const Register: FC = (): JSX.Element => {
       setIsLoading(false);
     } catch (error: unknown) {
       setIsLoading(false);
-      notifyUser(error.toString());
+      const message = error.toString();
+      notifyUser(message);
     }
   };
 
