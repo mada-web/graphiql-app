@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
 
 import { ButtonForm } from '../components/Form/ButtonForm';
 import FormName from '../components/Form/FormName';
@@ -19,7 +20,7 @@ const Register: FC = (): JSX.Element => {
   const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
-  const [user, error] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
   const {
     register,
@@ -47,6 +48,8 @@ const Register: FC = (): JSX.Element => {
     reset();
   };
 
+  const notifyUser = (err) => toast.error(err, { position: 'bottom-right' });
+
   const onSubmit: SubmitHandler<FieldValues> = async () => {
     try {
       setIsLoading(true);
@@ -55,7 +58,7 @@ const Register: FC = (): JSX.Element => {
       setIsLoading(false);
     } catch (err) {
       setIsLoading(false);
-      alert(error);
+      notifyUser(err.message);
     }
   };
 

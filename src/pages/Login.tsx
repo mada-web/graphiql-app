@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
-
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 
@@ -27,7 +25,7 @@ const Login = () => {
     reset,
   } = useForm({ mode: 'onBlur' });
 
-  const [user, error] = useAuthState(auth);
+  const [user] = useAuthState(auth);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -39,7 +37,7 @@ const Login = () => {
     reset();
   };
 
-  const notify = () => toast.error('Error!', { position: "bottom-center", });
+  const notifyUser = (err) => toast.error(err, { position: 'bottom-right' });
 
   const handleChangePassword: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setPassword(e.target.value);
@@ -50,12 +48,11 @@ const Login = () => {
     try {
       setIsLoading(true);
       await logInWithEmailAndPassword(email, password);
-      notify();
       reset();
       setIsLoading(false);
     } catch (err) {
       setIsLoading(false);
-      alert(error);
+      notifyUser(err.message);
     }
   };
 
@@ -104,7 +101,7 @@ const Login = () => {
             </div>
           </form>
         )}
-        <ToastContainer />
+        {/*<ToastContainer />*/}
       </div>
       <Background />
     </section>

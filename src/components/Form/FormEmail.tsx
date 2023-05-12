@@ -19,7 +19,7 @@ const FormEmail: FC<InputEmailProps> = (props) => {
 
   return (
     <>
-      <form className="mt-2 flex">
+      <div className="mt-2 flex">
         <label htmlFor="email">
           <div className="rounded-l-md bg-green p-3">
             <Email />
@@ -40,7 +40,7 @@ const FormEmail: FC<InputEmailProps> = (props) => {
           })}
           onChange={onChange}
         />
-      </form>
+      </div>
       <div className="h-10 text-red">
         {errors?.email && <p>{`${errors.email?.message}` || 'Error'}</p>}
       </div>
