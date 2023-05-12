@@ -22,9 +22,9 @@ const Home = () => {
             <h2 className="font-semibold-400 mb-[20px] text-[24px] md:mb-[40px]">
               <FormattedMessage id="TEAM_MEET" />
             </h2>
-            <div className="flex flex-col items-center md:flex-row">
+            <div className="grid grid-rows-1 items-start md:grid-cols-3">
               <div className="mb-2 flex flex-col items-center justify-center md:mb-4">
-                <div className="h-[155px] w-[165px] rounded-[10px] bg-middle-gray"></div>
+                <div className="h-[155px] w-[165px] rounded-[10px] bg-[url('./Artsem.jpeg')] bg-cover bg-center bg-no-repeat "></div>
                 <h2 className="mt-1 font-semibold md:mt-2">
                   <FormattedMessage id="ARTEM_NAME" />
                 </h2>

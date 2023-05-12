@@ -11,6 +11,7 @@ import FormPassword from '../components/Form/FormPassword';
 import { Background } from '../components/Background';
 import { auth, registerWithEmailAndPassword } from '../firebase';
 import { Spinner } from '../components/Spinner';
+import notifyUser from '../utils/toast';
 
 const Register: FC = (): JSX.Element => {
   const [name, setName] = useState('');
@@ -19,7 +20,7 @@ const Register: FC = (): JSX.Element => {
   const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
-  const [user, error] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
   const {
     register,
@@ -53,9 +54,11 @@ const Register: FC = (): JSX.Element => {
       await registerWithEmailAndPassword(name, email, password);
       reset();
       setIsLoading(false);
-    } catch (err) {
+    } catch (error: unknown) {
       setIsLoading(false);
-      alert(error);
+      if (error instanceof Error) {
+        notifyUser(error.toString());
+      }
     }
   };
 

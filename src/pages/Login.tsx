@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
+
 import { useAuthState } from 'react-firebase-hooks/auth';
 
 import { auth, logInWithEmailAndPassword } from '../firebase';
@@ -10,6 +11,7 @@ import FormPassword from '../components/Form/FormPassword';
 import { Background } from '../components/Background';
 import { ButtonForm } from '../components/Form/ButtonForm';
 import { Spinner } from '../components/Spinner';
+import notifyUser from '../utils/toast';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -23,7 +25,7 @@ const Login = () => {
     reset,
   } = useForm({ mode: 'onBlur' });
 
-  const [user, error] = useAuthState(auth);
+  const [user] = useAuthState(auth);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -46,9 +48,11 @@ const Login = () => {
       await logInWithEmailAndPassword(email, password);
       reset();
       setIsLoading(false);
-    } catch (err) {
+    } catch (error: unknown) {
       setIsLoading(false);
-      alert(error);
+      if (error instanceof Error) {
+        notifyUser(error.toString());
+      }
     }
   };
 
@@ -97,6 +101,7 @@ const Login = () => {
             </div>
           </form>
         )}
+        {/*<ToastContainer />*/}
       </div>
       <Background />
     </section>
