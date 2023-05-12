@@ -28,7 +28,7 @@ export const messages = {
     TEAM_MEET: 'Meet our team:',
     ARTEM_NAME: 'Artsem Rubashka',
     ARTEM_INFO:
-      'Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else',
+      "I'm a JavaScript developer originally from Belarus. Currently waiting when Google will hire me :)",
     IRINA_NAME: 'Irina Egorova',
     IRINA_INFO:
       'Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else Not else',
@@ -65,7 +65,7 @@ export const messages = {
     TEAM_MEET: 'Встречайте нашу команду:',
     ARTEM_NAME: 'Артем Рубашка',
     ARTEM_INFO:
-      'Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... ',
+      'Я JavaScript разработчик, родом из Беларуси. В настоящее время жду, когда Google возьмет меня на работу :)',
     IRINA_NAME: 'Ирина Егорова',
     IRINA_INFO:
       'Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... Нет еще... ',

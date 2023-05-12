@@ -945,6 +945,10 @@ video {
   grid-template-columns: 80% 20%;
 }
 
+.grid-rows-1 {
+  grid-template-rows: repeat(1, minmax(0, 1fr));
+}
+
 .grid-rows-\[200px_auto_140px\] {
   grid-template-rows: 200px auto 140px;
 }
@@ -1087,10 +1091,6 @@ video {
   border-top-right-radius: 0.5rem;
 }
 
-.border-b-2 {
-  border-bottom-width: 2px;
-}
-
 .border-r-0 {
   border-right-width: 0px;
 }
@@ -1102,10 +1102,6 @@ video {
 .border-gray {
   --tw-border-opacity: 1;
   border-color: rgb(217 217 217 / var(--tw-border-opacity));
-}
-
-.border-transparent {
-  border-color: transparent;
 }
 
 .bg-black {
@@ -1140,6 +1136,10 @@ video {
 
 .bg-white\/40 {
   background-color: rgb(255 255 255 / 0.4);
+}
+
+.bg-\[url\(\'\.\/Artsem\.jpeg\'\)\] {
+  background-image: url('./Artsem.jpeg');
 }
 
 .bg-\[url\(\'\.\/Masha\.jpg\'\)\] {
@@ -1240,6 +1240,10 @@ video {
 
 .pb-3 {
   padding-bottom: 0.75rem;
+}
+
+.pb-\[2px\] {
+  padding-bottom: 2px;
 }
 
 .pl-1 {
@@ -1557,13 +1561,12 @@ a:hover svg .path1 {
   border-bottom-width: 2px;
 }
 
-.hover\:border-black:hover {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity));
-}
-
 .hover\:bg-green\/70:hover {
   background-color: rgb(126 188 89 / 0.7);
+}
+
+.hover\:pb-\[0px\]:hover {
+  padding-bottom: 0px;
 }
 
 .hover\:text-green:hover {
@@ -1759,12 +1762,12 @@ a:hover svg .path1 {
     min-width: 600px;
   }
 
-  .md\:grid-cols-\[90\%_10\%\] {
-    grid-template-columns: 90% 10%;
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .md\:flex-row {
-    flex-direction: row;
+  .md\:grid-cols-\[90\%_10\%\] {
+    grid-template-columns: 90% 10%;
   }
 }
 

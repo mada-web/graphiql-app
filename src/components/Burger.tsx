@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { FormattedMessage } from 'react-intl';
 
@@ -44,14 +44,14 @@ const Burger: FC<IBurger> = ({ onClose }): JSX.Element => {
         {!user && (
           <>
             <NavLink
-              className="border-b-2 border-transparent p-3 font-semibold leading-7 transition-all hover:border-black"
+              className="p-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
               to="sign-in"
               onClick={onClose}
             >
               <FormattedMessage id="SIGN_IN" />
             </NavLink>
             <NavLink
-              className="border-b-2 border-transparent p-3 font-semibold leading-7 transition-all hover:border-black"
+              className="p-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
               to="sign-up"
               onClick={onClose}
             >
@@ -62,19 +62,19 @@ const Burger: FC<IBurger> = ({ onClose }): JSX.Element => {
         {user && (
           <>
             <NavLink
-              className="border-b-2 border-transparent p-3 font-semibold leading-7 transition-all hover:border-black"
+              className="p-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
               to="/main"
               onClick={onClose}
             >
               <FormattedMessage id="MAIN" />
             </NavLink>
-            <NavLink
-              className="border-b-2 border-transparent p-3 font-semibold leading-7 transition-all hover:border-black"
-              to="/"
+            <Link
+              className="p-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
               onClick={handleLogOut}
+              to={'/'}
             >
               <FormattedMessage id="LOG_OUT" />
-            </NavLink>
+            </Link>
           </>
         )}
         <div className="mt-6 flex px-3 py-2.5">

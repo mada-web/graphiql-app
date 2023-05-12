@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import App from './App';
 import ErrorBoundary from './components/ErrorBoundary';
@@ -11,6 +13,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <AppProvider>
       <ErrorBoundary>
         <App />
+        <ToastContainer />
       </ErrorBoundary>
     </AppProvider>
   </React.StrictMode>
