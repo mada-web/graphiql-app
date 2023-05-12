@@ -833,16 +833,16 @@ video {
   height: 90vh;
 }
 
+.h-\[calc\(100\%-2rem\)\] {
+  height: calc(100% - 2rem);
+}
+
 .h-full {
   height: 100%;
 }
 
 .h-screen {
   height: 100vh;
-}
-
-.h-\[calc\(100\%-2rem\)\] {
-  height: calc(100% - 2rem);
 }
 
 .max-h-max {
@@ -898,16 +898,16 @@ video {
   width: 539px;
 }
 
+.w-\[95\%\] {
+  width: 95%;
+}
+
 .w-full {
   width: 100%;
 }
 
 .w-screen {
   width: 100vw;
-}
-
-.w-\[95\%\] {
-  width: 95%;
 }
 
 .min-w-\[315px\] {
@@ -1062,10 +1062,6 @@ video {
 
 .overflow-hidden {
   overflow: hidden;
-}
-
-.overflow-x-auto {
-  overflow-x: auto;
 }
 
 .scroll-smooth {
@@ -1412,12 +1408,6 @@ video {
   text-decoration-line: underline;
 }
 
-.shadow {
-  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
 .-hue-rotate-180 {
   --tw-hue-rotate: hue-rotate(-180deg);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -1440,7 +1430,7 @@ video {
 
 .scrollbar::-webkit-scrollbar {
   width: 13px;
-  height: 20px;
+  height: 13px;
 }
 
 .scrollbar::-webkit-scrollbar-track {
@@ -1714,6 +1704,10 @@ a:hover svg .path1 {
     height: 1300px;
   }
 
+  .sm\:h-\[calc\(100\%-1rem\)\] {
+    height: calc(100% - 1rem);
+  }
+
   .sm\:h-\[calc\(100\%-2rem\)\] {
     height: calc(100% - 2rem);
   }
@@ -1724,18 +1718,6 @@ a:hover svg .path1 {
 
   .sm\:h-screen {
     height: 100vh;
-  }
-
-  .sm\:h-\[100\%\] {
-    height: 100%;
-  }
-
-  .sm\:h-\[calc\(100\%-1rem\)\] {
-    height: calc(100% - 1rem);
-  }
-
-  .sm\:h-\[calc\(100\%-1\.5rem\)\] {
-    height: calc(100% - 1.5rem);
   }
 
   .sm\:min-h-0 {
@@ -1862,4 +1844,3 @@ a:hover svg .path1 {
     height: 100vh;
   }
 }
-
