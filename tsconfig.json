@@ -6,6 +6,7 @@
     "skipLibCheck": true,
     "types": ["vite/client"],
     "typeRoots": ["node_modules/@types", "src/types"],
+    "useUnknownInCatchVariables": false,
 
     /* Bundler mode */
     "moduleResolution": "node",
