@@ -25,7 +25,7 @@ const ControlButtons: FC = (): JSX.Element => {
   };
 
   return (
-    <aside className="col-start-2 row-span-2 row-start-1 ml-2 flex h-[100%] flex-col items-start gap-2 border-r-0 border-gray pr-2 sm:items-center sm:border-r-[1px]">
+    <aside className="col-start-2 row-span-2 row-start-1 ml-2 flex h-[100%] flex-col items-start gap-2 border-r-0 border-gray pr-2 sm:h-[calc(100%-2rem)] sm:items-center sm:border-r-[1px]">
       <button
         title="Execute query"
         className="mr-2 h-[30px] w-[30px] transition-all hover:brightness-150"

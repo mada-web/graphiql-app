@@ -534,6 +534,10 @@ video {
   border-width: 0;
 }
 
+.visible {
+  visibility: visible;
+}
+
 .fixed {
   position: fixed;
 }
@@ -837,17 +841,13 @@ video {
   height: 100vh;
 }
 
+.h-\[calc\(100\%-2rem\)\] {
+  height: calc(100% - 2rem);
+}
+
 .max-h-max {
   max-height: -moz-max-content;
   max-height: max-content;
-}
-
-.max-h-screen {
-  max-height: 100vh;
-}
-
-.max-h-\[80\%\] {
-  max-height: 80%;
 }
 
 .min-h-\[60\%\] {
@@ -904,6 +904,10 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-\[95\%\] {
+  width: 95%;
 }
 
 .min-w-\[315px\] {
@@ -1054,6 +1058,10 @@ video {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
 }
 
 .scroll-smooth {
@@ -1395,6 +1403,12 @@ video {
   text-decoration-line: underline;
 }
 
+.shadow {
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .-hue-rotate-180 {
   --tw-hue-rotate: hue-rotate(-180deg);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -1413,6 +1427,23 @@ video {
 
 .duration-200 {
   transition-duration: 200ms;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 13px;
+  height: 20px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+.response:hover .scrollbar::-webkit-scrollbar-thumb {
+  background: #494953;
 }
 
 html {
@@ -1675,44 +1706,28 @@ a:hover svg .path1 {
     height: 1300px;
   }
 
-  .sm\:h-screen {
-    height: 100vh;
-  }
-
-  .sm\:h-\[calc\(100vh-36px\)\] {
-    height: calc(100vh - 36px);
-  }
-
-  .sm\:h-\[calc\(100vh-77px\)\] {
-    height: calc(100vh - 77px);
+  .sm\:h-\[calc\(100\%-2rem\)\] {
+    height: calc(100% - 2rem);
   }
 
   .sm\:h-\[calc\(100vh-120px\)\] {
     height: calc(100vh - 120px);
   }
 
-  .sm\:h-\[calc\(100vh-130px\)\] {
-    height: calc(100vh - 130px);
+  .sm\:h-screen {
+    height: 100vh;
   }
 
-  .sm\:h-\[calc\(100vh-150px\)\] {
-    height: calc(100vh - 150px);
+  .sm\:h-\[100\%\] {
+    height: 100%;
   }
 
-  .sm\:h-\[calc\(100vh-4rem\)\] {
-    height: calc(100vh - 4rem);
+  .sm\:h-\[calc\(100\%-1rem\)\] {
+    height: calc(100% - 1rem);
   }
 
-  .sm\:h-\[calc\(100vh-64px\)\] {
-    height: calc(100vh - 64px);
-  }
-
-  .sm\:h-\[calc\(100\%-2rem\)\] {
-    height: calc(100% - 2rem);
-  }
-
-  .sm\:h-\[calc\(100\%-4rem\)\] {
-    height: calc(100% - 4rem);
+  .sm\:h-\[calc\(100\%-1\.5rem\)\] {
+    height: calc(100% - 1.5rem);
   }
 
   .sm\:min-h-0 {
@@ -1721,6 +1736,10 @@ a:hover svg .path1 {
 
   .sm\:w-1\/2 {
     width: 50%;
+  }
+
+  .sm\:w-\[calc\(50vw\)\] {
+    width: calc(50vw);
   }
 
   .sm\:min-w-\[500px\] {
@@ -1766,10 +1785,6 @@ a:hover svg .path1 {
 }
 
 @media (min-width: 768px) {
-  .md\:static {
-    position: static;
-  }
-
   .md\:mb-4 {
     margin-bottom: 1rem;
   }
@@ -1810,6 +1825,16 @@ a:hover svg .path1 {
 @media (min-width: 830px) {
   .min-\[830px\]\:h-\[900px\] {
     height: 900px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:static {
+    position: static;
+  }
+
+  .lg\:w-1\/2 {
+    width: 50%;
   }
 }
 
