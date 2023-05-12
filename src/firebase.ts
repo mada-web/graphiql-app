@@ -18,11 +18,14 @@ const app = initializeApp({
 const auth = getAuth(app);
 const db = getFirestore(app);
 
+const getErrorMessage = (error: unknown): string =>
+  error instanceof Error ? error.message : String(error);
+
 const logInWithEmailAndPassword = async (email: string, password: string) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
-  } catch (err: unknown) {
-    throw new Error(err.message);
+  } catch (error: unknown) {
+    throw new Error(getErrorMessage(error));
   }
 };
 
@@ -36,8 +39,8 @@ const registerWithEmailAndPassword = async (name: string, email: string, passwor
       authProvider: 'local',
       email,
     } as unknown);
-  } catch (err: unknown) {
-    throw new Error(err.message);
+  } catch (error: unknown) {
+    throw new Error(getErrorMessage(error));
   }
 };
 

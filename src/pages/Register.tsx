@@ -54,9 +54,9 @@ const Register: FC = (): JSX.Element => {
       await registerWithEmailAndPassword(name, email, password);
       reset();
       setIsLoading(false);
-    } catch (err: unknown) {
+    } catch (error: string) {
       setIsLoading(false);
-      notifyUser(err.toString());
+      notifyUser(error);
     }
   };
 
