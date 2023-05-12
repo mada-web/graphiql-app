@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
-import { toast } from 'react-toastify';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 
@@ -12,6 +11,7 @@ import FormPassword from '../components/Form/FormPassword';
 import { Background } from '../components/Background';
 import { ButtonForm } from '../components/Form/ButtonForm';
 import { Spinner } from '../components/Spinner';
+import notifyUser from '../utils/toast';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -37,8 +37,6 @@ const Login = () => {
     reset();
   };
 
-  const notifyUser = (err) => toast.error(err, { position: 'bottom-right' });
-
   const handleChangePassword: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setPassword(e.target.value);
     reset();
@@ -52,7 +50,7 @@ const Login = () => {
       setIsLoading(false);
     } catch (err) {
       setIsLoading(false);
-      notifyUser(err.message);
+      notifyUser(err.toString());
     }
   };
 
