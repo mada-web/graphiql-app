@@ -48,7 +48,7 @@ const Login = () => {
       await logInWithEmailAndPassword(email, password);
       reset();
       setIsLoading(false);
-    } catch (err) {
+    } catch (err: unknown) {
       setIsLoading(false);
       notifyUser(err.toString());
     }
