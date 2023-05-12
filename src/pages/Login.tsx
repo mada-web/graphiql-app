@@ -50,8 +50,9 @@ const Login = () => {
       setIsLoading(false);
     } catch (error: unknown) {
       setIsLoading(false);
-      const message = error.toString();
-      notifyUser(message);
+      if (error instanceof Error) {
+        notifyUser(error.toString());
+      }
     }
   };
 
