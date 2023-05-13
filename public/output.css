@@ -1331,6 +1331,10 @@ video {
   padding-right: 10px;
 }
 
+.pt-3 {
+  padding-top: 0.75rem;
+}
+
 .pt-5 {
   padding-top: 1.25rem;
 }
