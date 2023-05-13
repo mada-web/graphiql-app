@@ -23,8 +23,8 @@ const Main: FC = (): JSX.Element => {
   }, [navigate, user]);
 
   return (
-    <main className="relative flex flex-col z-0 min-h-screen w-screen overflow-hidden bg-dark-blue">
-      <div className="p-2 mt-[80px] w-screen h-[40px] bg-green text-white flex items-center justify-end">
+    <main className="relative z-0 flex min-h-screen w-screen flex-col overflow-hidden bg-dark-blue">
+      <div className="mt-[80px] flex h-[40px] w-screen items-center justify-end bg-green p-2 text-white">
         <p className="mx-auto max-w-7xl">Hello, {user?.email}!</p>
       </div>
       <div className="relative flex flex-col sm:flex-row">
