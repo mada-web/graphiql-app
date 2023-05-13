@@ -575,8 +575,8 @@ video {
   top: 0.125rem;
 }
 
-.top-\[77px\] {
-  top: 77px;
+.top-\[0px\] {
+  top: 0px;
 }
 
 .z-0 {
@@ -801,6 +801,10 @@ video {
   height: 100px;
 }
 
+.h-\[100vh-120px\] {
+  height: 100vh-120px;
+}
+
 .h-\[155px\] {
   height: 155px;
 }
@@ -857,12 +861,12 @@ video {
   height: 80px;
 }
 
-.h-\[90vh\] {
-  height: 90vh;
+.h-\[calc\(100vh-120px\)\] {
+  height: calc(100vh - 120px);
 }
 
-.h-\[calc\(100\%-2rem\)\] {
-  height: calc(100% - 2rem);
+.h-\[calc\(100vh-140px\)\] {
+  height: calc(100vh - 140px);
 }
 
 .h-full {
@@ -878,12 +882,12 @@ video {
   max-height: max-content;
 }
 
-.min-h-\[60\%\] {
-  min-height: 60%;
+.min-h-\[100vh-80px\] {
+  min-height: 100vh-80px;
 }
 
-.min-h-screen {
-  min-height: 100vh;
+.min-h-\[60\%\] {
+  min-height: 60%;
 }
 
 .w-1\/2 {
@@ -985,8 +989,8 @@ video {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.grid-cols-\[80\%_20\%\] {
-  grid-template-columns: 80% 20%;
+.grid-cols-\[75\%_25\%\] {
+  grid-template-columns: 75% 25%;
 }
 
 .grid-rows-1 {
@@ -1303,6 +1307,10 @@ video {
   padding-bottom: 0.75rem;
 }
 
+.pb-\[20px\] {
+  padding-bottom: 20px;
+}
+
 .pb-\[2px\] {
   padding-bottom: 2px;
 }
@@ -1323,20 +1331,20 @@ video {
   padding-right: 10px;
 }
 
-.pt-16 {
-  padding-top: 4rem;
-}
-
 .pt-5 {
   padding-top: 1.25rem;
+}
+
+.pt-6 {
+  padding-top: 1.5rem;
 }
 
 .pt-8 {
   padding-top: 2rem;
 }
 
-.pt-\[120px\] {
-  padding-top: 120px;
+.pt-\[20px\] {
+  padding-top: 20px;
 }
 
 .text-center {
@@ -1733,8 +1741,8 @@ a:hover svg .path1 {
     margin-right: 0.5rem;
   }
 
-  .sm\:mt-\[120px\] {
-    margin-top: 120px;
+  .sm\:mt-\[20px\] {
+    margin-top: 20px;
   }
 
   .sm\:inline-block {
@@ -1749,24 +1757,24 @@ a:hover svg .path1 {
     display: none;
   }
 
-  .sm\:h-\[1300px\] {
-    height: 1300px;
+  .sm\:h-\[100vh-20px\] {
+    height: 100vh-20px;
   }
 
-  .sm\:h-\[calc\(100\%-1rem\)\] {
-    height: calc(100% - 1rem);
+  .sm\:h-\[1300px\] {
+    height: 1300px;
   }
 
   .sm\:h-\[calc\(100\%-2rem\)\] {
     height: calc(100% - 2rem);
   }
 
-  .sm\:h-\[calc\(100vh-120px\)\] {
-    height: calc(100vh - 120px);
+  .sm\:h-\[calc\(100vh-220px\)\] {
+    height: calc(100vh - 220px);
   }
 
-  .sm\:h-screen {
-    height: 100vh;
+  .sm\:h-\[calc\(60vh-120px\)\] {
+    height: calc(60vh - 120px);
   }
 
   .sm\:min-h-0 {
@@ -1818,8 +1826,8 @@ a:hover svg .path1 {
     padding-top: 0px;
   }
 
-  .sm\:pt-\[84px\] {
-    padding-top: 84px;
+  .sm\:pt-\[20px\] {
+    padding-top: 20px;
   }
 }
 
