@@ -64,8 +64,8 @@ const Login = () => {
         ) : (
           <div className="flex flex-col">
             <div className="flex flex-row place-self-center">
-              <div className="z-10 -mr-[10px] mt-[7px] h-[40px] w-[70px] items-center rounded-[10px] bg-white p-2 text-center text-green">
-                Hello!
+              <div className="z-10 -mr-[10px] mt-[7px] h-[40px] w-[80px] items-center rounded-[10px] bg-white p-2 text-center text-green">
+                <FormattedMessage id="HELLO" />
               </div>
               <div className="z-0 -mb-[50px] h-[100px] w-[100px] bg-[url('./ufo.png')] bg-cover bg-no-repeat" />
             </div>
