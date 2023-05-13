@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useRef } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { FormattedMessage } from 'react-intl';
@@ -15,7 +15,6 @@ interface IBurger {
 
 const Burger: FC<IBurger> = ({ onClose }): JSX.Element => {
   const { currentLocale, handleLocale } = useAppContext();
-
   const [user] = useAuthState(auth);
 
   const handleLogOut = () => {
@@ -32,7 +31,7 @@ const Burger: FC<IBurger> = ({ onClose }): JSX.Element => {
         }
       }}
     >
-      <li className="z-30 flex h-[250px] w-[180px] flex-col items-start justify-start rounded-[10px] bg-gray p-6 text-dark-blue sm:hidden">
+      <li className="query-block-enter z-30 flex h-[250px] w-[180px] flex-col items-start justify-start rounded-[10px] bg-gray p-6 text-dark-blue sm:hidden">
         <button
           className="place-self-end"
           onClick={() => {

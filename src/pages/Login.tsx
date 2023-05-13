@@ -62,6 +62,11 @@ const Login = () => {
         {isLoading ? (
           <Spinner />
         ) : (
+        <div className="flex flex-col">
+          <div className="flex flex-row place-self-center">
+            <div className="z-10 -mr-[10px] bg-white text-green mt-[7px] p-2 rounded-[10px] items-center text-center w-[70px] h-[40px]">Hello!</div>
+            <div className="z-0 -mb-[50px] h-[100px] w-[100px] bg-[url('./ufo.png')] bg-cover bg-no-repeat" />
+          </div>
           <form
             className="z-10 flex w-1/2 min-w-[315px] max-w-7xl flex-col items-center justify-center rounded-[10px] bg-gray text-black min-[410px]:min-w-[400px] sm:min-w-[500px] md:min-w-[600px]"
             onSubmit={handleSubmit(onSubmit)}
@@ -100,8 +105,9 @@ const Login = () => {
               </Link>
             </div>
           </form>
+        </div>
         )}
-        {/*<ToastContainer />*/}
+        {/* <ToastContainer /> */}
       </div>
       <Background />
     </section>
