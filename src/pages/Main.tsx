@@ -19,7 +19,7 @@ const Main: FC = (): JSX.Element => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!user) navigate('/');
+    if (!user) navigate('/main');
   }, [navigate, user]);
 
   return (
