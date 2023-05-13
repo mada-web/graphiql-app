@@ -641,8 +641,16 @@ video {
   margin-bottom: -33px;
 }
 
+.-mb-\[50px\] {
+  margin-bottom: -50px;
+}
+
 .-ml-\[273px\] {
   margin-left: -273px;
+}
+
+.-mr-\[10px\] {
+  margin-right: -10px;
 }
 
 .-mr-\[232px\] {
@@ -741,6 +749,18 @@ video {
   margin-top: 47px;
 }
 
+.mt-\[7px\] {
+  margin-top: 7px;
+}
+
+.box-border {
+  box-sizing: border-box;
+}
+
+.box-content {
+  box-sizing: content-box;
+}
+
 .block {
   display: block;
 }
@@ -781,6 +801,10 @@ video {
   height: 100%;
 }
 
+.h-\[100px\] {
+  height: 100px;
+}
+
 .h-\[155px\] {
   height: 155px;
 }
@@ -817,6 +841,10 @@ video {
   height: 30px;
 }
 
+.h-\[40px\] {
+  height: 40px;
+}
+
 .h-\[463px\] {
   height: 463px;
 }
@@ -843,6 +871,10 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-40 {
+  height: 10rem;
 }
 
 .max-h-max {
@@ -878,6 +910,10 @@ video {
   width: 80%;
 }
 
+.w-\[100px\] {
+  width: 100px;
+}
+
 .w-\[162px\] {
   width: 162px;
 }
@@ -896,6 +932,10 @@ video {
 
 .w-\[539px\] {
   width: 539px;
+}
+
+.w-\[70px\] {
+  width: 70px;
 }
 
 .w-\[95\%\] {
@@ -921,6 +961,10 @@ video {
 
 .max-w-7xl {
   max-width: 80rem;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
 }
 
 .grow {
@@ -1040,6 +1084,10 @@ video {
   place-self: end;
 }
 
+.place-self-center {
+  place-self: center;
+}
+
 .self-end {
   align-self: flex-end;
 }
@@ -1146,6 +1194,11 @@ video {
   background-color: rgb(237 237 255 / var(--tw-bg-opacity));
 }
 
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 .bg-white\/40 {
   background-color: rgb(255 255 255 / 0.4);
 }
@@ -1170,6 +1223,10 @@ video {
   background-image: url('./element_2.png');
 }
 
+.bg-\[url\(\'\.\/ufo\.png\'\)\] {
+  background-image: url('./ufo.png');
+}
+
 .bg-auto {
   background-size: auto;
 }
@@ -1188,6 +1245,11 @@ video {
 
 .fill-current {
   fill: currentColor;
+}
+
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .p-2 {
