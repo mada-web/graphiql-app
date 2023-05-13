@@ -4,6 +4,8 @@ import { CSSTransition } from 'react-transition-group';
 
 import useAppContext from '../../hooks/useAppContext';
 
+import Close from '../../assets/svg/close.svg';
+
 import type monaco from 'monaco-editor';
 export const defaultParams = '';
 
@@ -95,10 +97,10 @@ const QueryBlock = () => {
         <h3 className="rounded-t-lg bg-green py-2 text-center text-black">
           query params
           <span
-            className="absolute right-3 cursor-pointer px-2 font-sans"
+            className="absolute right-3 cursor-pointer p-1"
             onClick={closeQueryParams}
           >
-            x
+            <Close />
           </span>
         </h3>
         <Editor
