@@ -1,13 +1,18 @@
-import { FC, useEffect } from 'react';
+import { FC, lazy, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
 import { auth } from '../firebase';
-import ControlButtons from '../components/main/ControlButtons';
-import EditorBlock from '../components/main/EditorBlock';
-import QueryBlock from '../components/main/QueryBlock';
-import ResponseBlock from '../components/main/ResponseBlock';
-import SchemaBlock from '../components/main/SchemaBlock';
+// import ControlButtons from '../components/main/ControlButtons';
+// import EditorBlock from '../components/main/EditorBlock';
+// import QueryBlock from '../components/main/QueryBlock';
+// import ResponseBlock from '../components/main/ResponseBlock';
+// import SchemaBlock from '../components/main/SchemaBlock';
+const EditorBlock = lazy(() => import('../components/main/EditorBlock'));
+const QueryBlock = lazy(() => import('../components/main/QueryBlock'));
+const ResponseBlock = lazy(() => import('../components/main/ResponseBlock'));
+const SchemaBlock = lazy(() => import('../components/main/SchemaBlock'));
+const ControlButtons = lazy(() => import('../components/main/ControlButtons'));
 
 const Main: FC = (): JSX.Element => {
   const [user] = useAuthState(auth);

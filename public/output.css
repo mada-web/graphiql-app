@@ -877,6 +877,18 @@ video {
   height: 10rem;
 }
 
+.h-\[112px\] {
+  height: 112px;
+}
+
+.h-\[80px\] {
+  height: 80px;
+}
+
+.h-\[84px\] {
+  height: 84px;
+}
+
 .max-h-max {
   max-height: -moz-max-content;
   max-height: max-content;
@@ -1350,6 +1362,10 @@ video {
 
 .pt-\[120px\] {
   padding-top: 120px;
+}
+
+.pr-3 {
+  padding-right: 0.75rem;
 }
 
 .text-center {
