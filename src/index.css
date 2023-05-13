@@ -135,3 +135,23 @@ a:hover svg .path1 {
     transform: translateX(0);
   }
 }
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 13px;
+    height: 13px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+
+  .response:hover .scrollbar::-webkit-scrollbar-thumb {
+    background: #494953;
+  }
+
+}

@@ -833,6 +833,10 @@ video {
   height: 90vh;
 }
 
+.h-\[calc\(100\%-2rem\)\] {
+  height: calc(100% - 2rem);
+}
+
 .h-full {
   height: 100%;
 }
@@ -892,6 +896,10 @@ video {
 
 .w-\[539px\] {
   width: 539px;
+}
+
+.w-\[95\%\] {
+  width: 95%;
 }
 
 .w-full {
@@ -1046,6 +1054,10 @@ video {
 
 .justify-self-center {
   justify-self: center;
+}
+
+.overflow-auto {
+  overflow: auto;
 }
 
 .overflow-hidden {
@@ -1416,6 +1428,23 @@ video {
   transition-duration: 200ms;
 }
 
+.scrollbar::-webkit-scrollbar {
+  width: 13px;
+  height: 13px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+.response:hover .scrollbar::-webkit-scrollbar-thumb {
+  background: #494953;
+}
+
 html {
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -1675,6 +1704,18 @@ a:hover svg .path1 {
     height: 1300px;
   }
 
+  .sm\:h-\[calc\(100\%-1rem\)\] {
+    height: calc(100% - 1rem);
+  }
+
+  .sm\:h-\[calc\(100\%-2rem\)\] {
+    height: calc(100% - 2rem);
+  }
+
+  .sm\:h-\[calc\(100vh-120px\)\] {
+    height: calc(100vh - 120px);
+  }
+
   .sm\:h-screen {
     height: 100vh;
   }
@@ -1685,6 +1726,10 @@ a:hover svg .path1 {
 
   .sm\:w-1\/2 {
     width: 50%;
+  }
+
+  .sm\:w-\[calc\(50vw\)\] {
+    width: calc(50vw);
   }
 
   .sm\:min-w-\[500px\] {
@@ -1730,10 +1775,6 @@ a:hover svg .path1 {
 }
 
 @media (min-width: 768px) {
-  .md\:static {
-    position: static;
-  }
-
   .md\:mb-4 {
     margin-bottom: 1rem;
   }
@@ -1774,6 +1815,16 @@ a:hover svg .path1 {
 @media (min-width: 830px) {
   .min-\[830px\]\:h-\[900px\] {
     height: 900px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:static {
+    position: static;
+  }
+
+  .lg\:w-1\/2 {
+    width: 50%;
   }
 }
 
