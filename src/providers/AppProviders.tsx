@@ -24,10 +24,10 @@ interface IAppContext {
   setIsShowSchema: TypeSetState<boolean>;
   isQueryParams: boolean;
   setIsQueryParams: TypeSetState<boolean>;
-  isShowResult: boolean;
-  setIsShowResult: TypeSetState<boolean>;
   currentLocale: string;
   handleLocale: (e: ChangeEvent<HTMLInputElement>) => void;
+  responseApi: string;
+  setResponseApi: TypeSetState<string>;
 }
 
 export const CurrentAppContext = createContext<IAppContext>({
@@ -39,10 +39,10 @@ export const CurrentAppContext = createContext<IAppContext>({
   setIsShowSchema: () => {},
   isQueryParams: false,
   setIsQueryParams: () => {},
-  isShowResult: false,
-  setIsShowResult: () => {},
   currentLocale: LOCALES.ENGLISH,
   handleLocale: () => {},
+  responseApi: '',
+  setResponseApi: () => {},
 });
 
 export const AppProvider: FC<Props> = ({ children }) => {
@@ -50,7 +50,7 @@ export const AppProvider: FC<Props> = ({ children }) => {
   const [queryParams, setQueryParams] = useState<string>(defaultParams);
   const [isShowSchema, setIsShowSchema] = useState<boolean>(false);
   const [isQueryParams, setIsQueryParams] = useState(false);
-  const [isShowResult, setIsShowResult] = useState(false);
+  const [responseApi, setResponseApi] = useState('');
 
   //const currentValue = useMemo(() => ({ value, setValue }), [value]);
   const [currentLocale, setCurrentLocale] = useState(
@@ -76,10 +76,10 @@ export const AppProvider: FC<Props> = ({ children }) => {
     setIsShowSchema,
     isQueryParams,
     setIsQueryParams,
-    isShowResult,
-    setIsShowResult,
     currentLocale,
     handleLocale,
+    responseApi,
+    setResponseApi,
   };
 
   return <CurrentAppContext.Provider value={allValue}>{children}</CurrentAppContext.Provider>;

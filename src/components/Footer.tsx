@@ -50,8 +50,8 @@ const Footer: FC = (): JSX.Element => {
         <div className="z-0 -mr-[250px] hidden h-[463px] w-[539px] bg-[url('./element_1.png')] bg-no-repeat md:inline-block" />
         <img className="z-10 hidden sm:inline-block" src="./Bazz.png" alt="Bazz" />
       </div>
-      <div className="h-[3.61rem] bg-green">
-        <ul className="mx-auto flex max-w-7xl items-center justify-between p-2">
+      <div className="h-[3.61rem] w-screen bg-green">
+        <ul className="mx-auto flex h-full w-[95%] max-w-7xl items-center justify-between p-2">
           <li className="person relative flex items-center gap-x-6 transition-all">
             <Link
               className=" white flex items-center justify-center transition-all"

@@ -25,10 +25,12 @@ const EditorBlock = () => {
     scrollBeyondLastLine: false,
     automaticLayout: true,
     scrollbar: {
-      vertical: 'hidden',
+      vertical: 'auto',
       verticalHasArrows: true,
+      horizontalHasArrows: false,
       arrowSize: 1000,
       alwaysConsumeMouseWheel: false,
+      scrollByPage: true,
     },
   };
 
@@ -75,13 +77,13 @@ const EditorBlock = () => {
         'editor.selectionBackground': '#BAD6FD40',
         'editorCursor.foreground': '#7ebc59',
         'editorWhitespace.foreground': '#26265f',
-        'editorLineNumber.foreground': '#486f31',
+        'editorLineNumber.foreground': '#00ff00',
         'editorLineNumber.activeForeground': '#7ebc59',
       },
     });
   };
   return (
-    <section className="editor relative z-0 col-start-1 row-start-1 max-h-max min-h-[60%] pb-2 pl-1 sm:mr-2 sm:pl-10 ">
+    <section className="editor relative z-0 col-start-1 row-start-1 max-h-max min-h-[60%] pb-2 pl-1 sm:mr-2 sm:h-[calc(100%-1rem)] sm:pl-10">
       <Editor
         theme="dark-theme"
         beforeMount={handleEditorWillMount}
