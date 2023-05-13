@@ -1,17 +1,14 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { IntlProvider } from 'react-intl';
 
-// import Home from './pages/Home';
-// import Main from './pages/Main';
-// import Login from './pages/Login';
-// import Register from './pages/Register';
-// import NotFound from './pages/NotFound';
 import { lazy } from 'react';
 
-import Layout from './components/Layout';
 import { LOCALES } from './lang/locales';
 import { messages } from './lang/messages';
 import useAppContext from './hooks/useAppContext';
+
+import Layout from './components/Layout';
+
 const Home = lazy(() => import('./pages/Home'));
 const Login = lazy(() => import('./pages/Login'));
 const Register = lazy(() => import('./pages/Register'));
