@@ -28,7 +28,7 @@ const SchemaBlock = () => {
       >
         <h1 className="py-2 text-center">
           schema
-          <span className="absolute right-3 cursor-pointer px-2 items-center" onClick={closeSchema}>
+          <span className="absolute right-3 cursor-pointer items-center px-2" onClick={closeSchema}>
             <Close />
           </span>
         </h1>

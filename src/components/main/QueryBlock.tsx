@@ -96,10 +96,7 @@ const QueryBlock = () => {
       >
         <h3 className="rounded-t-lg bg-green py-2 text-center text-black">
           query params
-          <span
-            className="absolute right-3 cursor-pointer p-1"
-            onClick={closeQueryParams}
-          >
+          <span className="absolute right-3 cursor-pointer p-1" onClick={closeQueryParams}>
             <Close />
           </span>
         </h3>
