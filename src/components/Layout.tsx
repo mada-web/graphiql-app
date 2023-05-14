@@ -9,9 +9,11 @@ const Layout: FC = (): JSX.Element => {
   return (
     <div>
       <Header />
-      <Suspense fallback={<Spinner />}>
-        <Outlet />
-      </Suspense>
+      <main className="h-screen w-screen">
+        <Suspense fallback={<Spinner />}>
+          <Outlet />
+        </Suspense>
+      </main>
       <Footer />
     </div>
   );
