@@ -9,7 +9,7 @@ const Layout: FC = (): JSX.Element => {
   return (
     <div>
       <Header />
-      <main className="h-screen w-screen">
+      <main className="h-screen w-screen bg-dark-blue">
         <Suspense fallback={<Spinner />}>
           <Outlet />
         </Suspense>
