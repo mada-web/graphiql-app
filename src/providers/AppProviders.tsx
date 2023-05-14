@@ -49,7 +49,7 @@ export const CurrentAppContext = createContext<IAppContext>({
   handleLocale: () => {},
   responseApi: '',
   setResponseApi: () => {},
-  schema: [],
+  schema: [{ name: 'no data' }],
   setSchema: () => {},
 });
 
@@ -59,9 +59,8 @@ export const AppProvider: FC<Props> = ({ children }) => {
   const [isShowSchema, setIsShowSchema] = useState<boolean>(false);
   const [isQueryParams, setIsQueryParams] = useState(false);
   const [responseApi, setResponseApi] = useState('');
-  const [schema, setSchema] = useState([]);
+  const [schema, setSchema] = useState<IQueries[]>([]);
 
-  //const currentValue = useMemo(() => ({ value, setValue }), [value]);
   const [currentLocale, setCurrentLocale] = useState(
     localStorage.getItem('lang') || LOCALES.ENGLISH
   );

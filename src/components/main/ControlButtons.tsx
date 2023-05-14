@@ -19,7 +19,9 @@ const ControlButtons: FC = (): JSX.Element => {
 
   const showSchema = async () => {
     const { data } = await getSchema();
-    const queries: { fields: IQueries[] } = data.__schema.types.find((el) => el.name === 'Query');
+    const queries: { fields: IQueries[] } = data.__schema.types.find(
+      (el: { name: string }) => el.name === 'Query'
+    );
 
     setSchema(queries.fields);
     setIsShowSchema((prev) => !prev);
