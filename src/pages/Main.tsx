@@ -24,7 +24,7 @@ const Main: FC = (): JSX.Element => {
         <p className="mx-auto max-w-7xl">Hello, {user?.email}!</p>
       </div>
       <div className="relative flex flex-col sm:flex-row">
-        <div className="relative grid h-[calc(100vh-120px)] grid-cols-[75%_25%] grid-rows-[auto_auto] pt-[20px] transition-all sm:w-1/2 sm:grid-cols-[85%_15%] md:grid-cols-[90%_10%]">
+        <div className="relative grid h-screen grid-cols-[80%_20%] grid-rows-[auto_auto] pt-[120px] transition-all sm:w-1/2 sm:grid-cols-[85%_15%] md:grid-cols-[90%_10%]">
           <EditorBlock />
           <ControlButtons />
           <div className="relative z-10 col-span-2 col-start-1 row-start-2 flex w-full flex-col self-end">

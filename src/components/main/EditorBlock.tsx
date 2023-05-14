@@ -83,7 +83,7 @@ const EditorBlock = () => {
     });
   };
   return (
-    <section className="editor relative z-0 col-start-1 row-start-1 max-h-max min-h-[60%] pb-2 pl-1 sm:mr-2 sm:h-[calc(60vh-120px)] sm:pl-10">
+    <section className="editor relative z-0 col-start-1 row-start-1 max-h-max min-h-[60%] pb-2 pl-1 sm:mr-2 sm:h-[calc(100%-1rem)] sm:pl-10">
       <Editor
         theme="dark-theme"
         beforeMount={handleEditorWillMount}

@@ -24,11 +24,11 @@ const SchemaBlock = () => {
     >
       <section
         ref={schemaRef}
-        className="schema-block absolute top-[0px] z-10 h-[calc(100vh-120px)] w-full min-w-fit justify-self-end bg-query sm:right-0 sm:top-0 sm:h-[100vh-20px] sm:w-[calc(50vw)] sm:pt-[20px] lg:static lg:w-1/2"
+        className="schema-block absolute top-[77px] z-10 h-[90vh] w-full min-w-fit justify-self-end bg-query sm:right-0 sm:top-0 sm:h-screen sm:w-[calc(50vw)] sm:pt-[84px] lg:static lg:w-1/2"
       >
         <h1 className="py-2 text-center">
           schema
-          <span className="absolute right-3 cursor-pointer items-center px-2" onClick={closeSchema}>
+          <span className="absolute right-3 cursor-pointer px-2 font-sans" onClick={closeSchema}>
             <Close />
           </span>
         </h1>
