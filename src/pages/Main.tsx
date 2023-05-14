@@ -1,14 +1,15 @@
-import { FC, lazy, useEffect } from 'react';
+import { FC, Suspense, lazy, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
 import { auth } from '../firebase';
+import { Spinner } from '../components/Spinner';
 
-const EditorBlock = lazy(() => import('../components/main/EditorBlock'));
-const QueryBlock = lazy(() => import('../components/main/QueryBlock'));
+import EditorBlock from '../components/main/EditorBlock';
+import QueryBlock from '../components/main/QueryBlock';
 const ResponseBlock = lazy(() => import('../components/main/ResponseBlock'));
 const SchemaBlock = lazy(() => import('../components/main/SchemaBlock'));
-const ControlButtons = lazy(() => import('../components/main/ControlButtons'));
+import ControlButtons from '../components/main/ControlButtons';
 
 const Main: FC = (): JSX.Element => {
   const [user] = useAuthState(auth);
@@ -31,8 +32,12 @@ const Main: FC = (): JSX.Element => {
             <QueryBlock />
           </div>
         </div>
-        <ResponseBlock />
-        <SchemaBlock />
+        <Suspense fallback={<Spinner />}>
+          <ResponseBlock />
+        </Suspense>
+        <Suspense fallback={<Spinner />}>
+          <SchemaBlock />
+        </Suspense>
       </div>
     </main>
   );
