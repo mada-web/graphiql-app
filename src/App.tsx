@@ -27,9 +27,6 @@ const App = () => {
             <Route index element={<Home />} />
             <Route path="sign-in" element={<Login />} />
             <Route path="sign-up" element={<Register />} />
-          </Route>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
             <Route path="main" element={<Main />} />
           </Route>
           <Route path="*" element={<NotFound />} />

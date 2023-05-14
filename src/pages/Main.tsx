@@ -7,7 +7,7 @@ import { Spinner } from '../components/Spinner';
 
 import EditorBlock from '../components/main/EditorBlock';
 import QueryBlock from '../components/main/QueryBlock';
-const ResponseBlock = lazy(() => import('../components/main/ResponseBlock'));
+import ResponseBlock from '../components/main/ResponseBlock';
 const SchemaBlock = lazy(() => import('../components/main/SchemaBlock'));
 import ControlButtons from '../components/main/ControlButtons';
 
@@ -16,7 +16,7 @@ const Main: FC = (): JSX.Element => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!user) navigate('/main');
+    if (!user) navigate('/');
   }, [navigate, user]);
 
   return (
@@ -32,9 +32,7 @@ const Main: FC = (): JSX.Element => {
             <QueryBlock />
           </div>
         </div>
-        <Suspense fallback={<Spinner />}>
-          <ResponseBlock />
-        </Suspense>
+        <ResponseBlock />
         <Suspense fallback={<Spinner />}>
           <SchemaBlock />
         </Suspense>

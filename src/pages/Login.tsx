@@ -16,11 +16,11 @@ import notifyUser from '../utils/toast';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
   const {
     register,
-    formState: { errors },
+    formState: { errors, isLoading },
     handleSubmit,
     reset,
   } = useForm({ mode: 'onBlur' });
@@ -44,12 +44,12 @@ const Login = () => {
 
   const onSubmit: SubmitHandler<FieldValues> = async () => {
     try {
-      setIsLoading(true);
+      // setIsLoading(true);
       await logInWithEmailAndPassword(email, password);
       reset();
-      setIsLoading(false);
+      // setIsLoading(false);
     } catch (error: unknown) {
-      setIsLoading(false);
+      // setIsLoading(false);
       if (error instanceof Error) {
         notifyUser(error.toString());
       }
