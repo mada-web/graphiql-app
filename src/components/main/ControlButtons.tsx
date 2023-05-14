@@ -6,6 +6,7 @@ import BtnPlay from '../../assets/svg/btn_play.svg';
 import BtnQuery from '../../assets/svg/btn_query_params.svg';
 import BtnSchema from '../../assets/svg/btn_schema.svg';
 import { getQuery, getSchema } from '../../utils/api';
+import { IQueries } from '../../providers/AppProviders';
 
 const ControlButtons: FC = (): JSX.Element => {
   const { setIsShowSchema, setIsQueryParams, setResponseApi, queryBody, queryParams, setSchema } =
@@ -18,7 +19,7 @@ const ControlButtons: FC = (): JSX.Element => {
 
   const showSchema = async () => {
     const { data } = await getSchema();
-    const queries = data.__schema.types.find((el) => el.name === 'Query');
+    const queries: { fields: IQueries[] } = data.__schema.types.find((el) => el.name === 'Query');
 
     setSchema(queries.fields);
     setIsShowSchema((prev) => !prev);

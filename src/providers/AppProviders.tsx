@@ -15,6 +15,10 @@ import { LOCALES } from '../lang/locales';
 type TypeSetState<T> = Dispatch<SetStateAction<T>>;
 type Props = { children: ReactNode };
 
+export interface IQueries {
+  name: string;
+}
+
 interface IAppContext {
   queryBody: string;
   setQueryBody: TypeSetState<string>;
@@ -28,8 +32,8 @@ interface IAppContext {
   handleLocale: (e: ChangeEvent<HTMLInputElement>) => void;
   responseApi: string;
   setResponseApi: TypeSetState<string>;
-  schema: object;
-  setSchema: TypeSetState<[]>;
+  schema: IQueries[];
+  setSchema: TypeSetState<IQueries[]>;
 }
 
 export const CurrentAppContext = createContext<IAppContext>({
