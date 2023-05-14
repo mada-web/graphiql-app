@@ -28,6 +28,8 @@ interface IAppContext {
   handleLocale: (e: ChangeEvent<HTMLInputElement>) => void;
   responseApi: string;
   setResponseApi: TypeSetState<string>;
+  schema: object;
+  setSchema: TypeSetState<[]>;
 }
 
 export const CurrentAppContext = createContext<IAppContext>({
@@ -43,6 +45,8 @@ export const CurrentAppContext = createContext<IAppContext>({
   handleLocale: () => {},
   responseApi: '',
   setResponseApi: () => {},
+  schema: [],
+  setSchema: () => {},
 });
 
 export const AppProvider: FC<Props> = ({ children }) => {
@@ -51,6 +55,7 @@ export const AppProvider: FC<Props> = ({ children }) => {
   const [isShowSchema, setIsShowSchema] = useState<boolean>(false);
   const [isQueryParams, setIsQueryParams] = useState(false);
   const [responseApi, setResponseApi] = useState('');
+  const [schema, setSchema] = useState([]);
 
   //const currentValue = useMemo(() => ({ value, setValue }), [value]);
   const [currentLocale, setCurrentLocale] = useState(
@@ -80,6 +85,8 @@ export const AppProvider: FC<Props> = ({ children }) => {
     handleLocale,
     responseApi,
     setResponseApi,
+    schema,
+    setSchema,
   };
 
   return <CurrentAppContext.Provider value={allValue}>{children}</CurrentAppContext.Provider>;
