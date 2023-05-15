@@ -33,7 +33,7 @@ const Home = () => {
                 </p>
               </div>
               <div className="mb-2 flex flex-col items-center md:mb-4 md:ml-4">
-                <div className="h-[155px] w-[165px] rounded-[10px] bg-middle-gray"></div>
+                <div className="h-[155px] w-[165px] rounded-[10px] bg-[url('./Iryna.jpg')] bg-cover bg-center bg-no-repeat "></div>
                 <h2 className="mt-1 font-semibold md:mt-2">
                   <FormattedMessage id="IRINA_NAME" />
                 </h2>
