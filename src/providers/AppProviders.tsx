@@ -15,6 +15,10 @@ import { LOCALES } from '../lang/locales';
 type TypeSetState<T> = Dispatch<SetStateAction<T>>;
 type Props = { children: ReactNode };
 
+export interface IQueries {
+  name: string;
+}
+
 interface IAppContext {
   queryBody: string;
   setQueryBody: TypeSetState<string>;
@@ -28,6 +32,8 @@ interface IAppContext {
   handleLocale: (e: ChangeEvent<HTMLInputElement>) => void;
   responseApi: string;
   setResponseApi: TypeSetState<string>;
+  schema: IQueries[];
+  setSchema: TypeSetState<IQueries[]>;
 }
 
 export const CurrentAppContext = createContext<IAppContext>({
@@ -43,6 +49,8 @@ export const CurrentAppContext = createContext<IAppContext>({
   handleLocale: () => {},
   responseApi: '',
   setResponseApi: () => {},
+  schema: [{ name: 'no data' }],
+  setSchema: () => {},
 });
 
 export const AppProvider: FC<Props> = ({ children }) => {
@@ -51,8 +59,8 @@ export const AppProvider: FC<Props> = ({ children }) => {
   const [isShowSchema, setIsShowSchema] = useState<boolean>(false);
   const [isQueryParams, setIsQueryParams] = useState(false);
   const [responseApi, setResponseApi] = useState('');
+  const [schema, setSchema] = useState<IQueries[]>([]);
 
-  //const currentValue = useMemo(() => ({ value, setValue }), [value]);
   const [currentLocale, setCurrentLocale] = useState(
     localStorage.getItem('lang') || LOCALES.ENGLISH
   );
@@ -80,6 +88,8 @@ export const AppProvider: FC<Props> = ({ children }) => {
     handleLocale,
     responseApi,
     setResponseApi,
+    schema,
+    setSchema,
   };
 
   return <CurrentAppContext.Provider value={allValue}>{children}</CurrentAppContext.Provider>;
