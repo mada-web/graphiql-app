@@ -669,6 +669,10 @@ video {
   margin-bottom: 0.75rem;
 }
 
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
 .mb-\[20px\] {
   margin-bottom: 20px;
 }
@@ -837,6 +841,10 @@ video {
   height: calc(100% - 2rem);
 }
 
+.h-\[calc\(100\%-64px\)\] {
+  height: calc(100% - 64px);
+}
+
 .h-full {
   height: 100%;
 }
@@ -912,11 +920,6 @@ video {
 
 .min-w-\[315px\] {
   min-width: 315px;
-}
-
-.min-w-fit {
-  min-width: -moz-fit-content;
-  min-width: fit-content;
 }
 
 .max-w-7xl {
@@ -1064,6 +1067,10 @@ video {
   overflow: hidden;
 }
 
+.overflow-scroll {
+  overflow: scroll;
+}
+
 .scroll-smooth {
   scroll-behavior: smooth;
 }
@@ -1136,11 +1143,6 @@ video {
   background-color: rgb(126 188 89 / var(--tw-bg-opacity));
 }
 
-.bg-middle-gray {
-  --tw-bg-opacity: 1;
-  background-color: rgb(164 164 164 / var(--tw-bg-opacity));
-}
-
 .bg-query {
   --tw-bg-opacity: 1;
   background-color: rgb(237 237 255 / var(--tw-bg-opacity));
@@ -1152,6 +1154,10 @@ video {
 
 .bg-\[url\(\'\.\/Artsem\.jpeg\'\)\] {
   background-image: url('./Artsem.jpeg');
+}
+
+.bg-\[url\(\'\.\/Iryna\.jpg\'\)\] {
+  background-image: url('./Iryna.jpg');
 }
 
 .bg-\[url\(\'\.\/Masha\.jpg\'\)\] {
@@ -1219,11 +1225,6 @@ video {
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
-}
-
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
 }
 
 .px-8 {
@@ -1374,6 +1375,11 @@ video {
   letter-spacing: 0.05em;
 }
 
+.text-amber-600 {
+  --tw-text-opacity: 1;
+  color: rgb(217 119 6 / var(--tw-text-opacity));
+}
+
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -1397,6 +1403,11 @@ video {
 .text-red {
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity));
+}
+
+.text-rose-700 {
+  --tw-text-opacity: 1;
+  color: rgb(190 18 60 / var(--tw-text-opacity));
 }
 
 .text-white {
@@ -1584,6 +1595,10 @@ a:hover svg .path1 {
   100% {
     transform: translateX(0);
   }
+}
+
+.non-null::after {
+  content:'!';
 }
 
 .hover\:border-b-2:hover {

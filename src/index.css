@@ -155,3 +155,7 @@ a:hover svg .path1 {
   }
 
 }
+
+.non-null::after {
+  content:'!';
+}

@@ -1,23 +1,42 @@
 import { FC } from 'react';
 
 import useAppContext from '../../hooks/useAppContext';
-import ApiQuery from '../Api/ApiQuery';
+import ApiQuery from '../ApiPokemon/ApiQuery';
+import getSchema from '../ApiPokemon/GetSchema';
 
 import BtnPlay from '../../assets/svg/btn_play.svg';
 import BtnQuery from '../../assets/svg/btn_query_params.svg';
 import BtnSchema from '../../assets/svg/btn_schema.svg';
-
+import { SchemaData, Type } from '../../types/types';
+interface IQueries {
+  name: string;
+}
 const ControlButtons: FC = (): JSX.Element => {
-  const { setIsShowSchema, setIsQueryParams, setResponseApi, queryBody, queryParams } =
-    useAppContext();
+  const {
+    setIsShowSchema,
+    setIsQueryParams,
+    setResponseApi,
+    queryBody,
+    queryParams,
+    setSchema,
+    setSchemaData,
+  } = useAppContext();
 
   const executeQuery = async () => {
     const data = await ApiQuery({ queryBody, queryParams });
     setResponseApi(() => JSON.stringify(data, null, '\t'));
   };
 
-  const showSchema = () => {
+  const showSchema = async () => {
     setIsShowSchema((prev) => !prev);
+    const { data } = await getSchema();
+    console.log(' data', data);
+    const queries = data.__schema.types.find((el: { name: string }) => el.name === 'Query') as Type;
+    setSchemaData(data.__schema);
+    console.log('queries', queries);
+    //setSchemaData(JSON.stringify(data, null, '\t'));
+    //setSchemaData(JSON.stringify(queries.fields, null, '\t'));
+    setSchema(() => (queries.fields ? queries.fields : [{ name: 'no data' }]));
   };
 
   const showQueryParams = () => {
