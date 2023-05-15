@@ -24,6 +24,7 @@ const getErrorMessage = (error: unknown): string =>
 const logInWithEmailAndPassword = async (email: string, password: string) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
+    localStorage.setItem('isAuthenticated', 'true');
   } catch (error: unknown) {
     throw new Error(getErrorMessage(error));
   }
@@ -32,6 +33,7 @@ const logInWithEmailAndPassword = async (email: string, password: string) => {
 const registerWithEmailAndPassword = async (name: string, email: string, password: string) => {
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
+    localStorage.setItem('isAuthenticated', 'true');
     const { user } = res;
     await addDoc(collection(db, 'users'), {
       uid: user.uid,
@@ -46,6 +48,7 @@ const registerWithEmailAndPassword = async (name: string, email: string, passwor
 
 const logout = () => {
   signOut(auth);
+  localStorage.removeItem('isAuthenticated');
 };
 
 export { auth, db, logInWithEmailAndPassword, registerWithEmailAndPassword, logout };

@@ -1,8 +1,6 @@
 import { FC, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuthState } from 'react-firebase-hooks/auth';
 
-import { auth } from '../firebase';
 import ControlButtons from '../components/main/ControlButtons';
 import EditorBlock from '../components/main/EditorBlock';
 import QueryBlock from '../components/main/QueryBlock';
@@ -10,12 +8,12 @@ import ResponseBlock from '../components/main/ResponseBlock';
 import SchemaBlock from '../components/main/SchemaBlock';
 
 const Main: FC = (): JSX.Element => {
-  const [user] = useAuthState(auth);
+  const isAuthenticated = localStorage.getItem('isAuthenticated');
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!user) navigate('/');
-  }, [navigate, user]);
+    if (!isAuthenticated) navigate('/');
+  }, [isAuthenticated, navigate]);
 
   return (
     <main className="relative z-0 min-h-screen w-screen overflow-hidden bg-dark-blue">
