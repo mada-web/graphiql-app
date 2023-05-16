@@ -67,7 +67,6 @@ export const AppProvider: FC<Props> = ({ children }) => {
   const [schema, setSchema] = useState<SchemaField[]>([{ name: 'no data' }]);
   const [schemaData, setSchemaData] = useState<Schema>(schemaDefault);
 
-  //const currentValue = useMemo(() => ({ value, setValue }), [value]);
   const [currentLocale, setCurrentLocale] = useState(
     localStorage.getItem('lang') || LOCALES.ENGLISH
   );

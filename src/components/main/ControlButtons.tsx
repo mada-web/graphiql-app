@@ -7,10 +7,10 @@ import getSchema from '../ApiPokemon/GetSchema';
 import BtnPlay from '../../assets/svg/btn_play.svg';
 import BtnQuery from '../../assets/svg/btn_query_params.svg';
 import BtnSchema from '../../assets/svg/btn_schema.svg';
+import { getQuery, getSchema } from '../../utils/api';
+import { IQueries } from '../../providers/AppProviders';
 import { SchemaData, Type } from '../../types/types';
-interface IQueries {
-  name: string;
-}
+
 const ControlButtons: FC = (): JSX.Element => {
   const {
     setIsShowSchema,
@@ -23,7 +23,7 @@ const ControlButtons: FC = (): JSX.Element => {
   } = useAppContext();
 
   const executeQuery = async () => {
-    const data = await ApiQuery({ queryBody, queryParams });
+    const data = await getQuery({ queryBody, queryParams });
     setResponseApi(() => JSON.stringify(data, null, '\t'));
   };
 
