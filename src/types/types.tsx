@@ -6,35 +6,6 @@ export interface DataFormCard {
   submit: boolean;
 }
 
-type Description = string | null;
-// export interface SchemaQuery {
-//   name: string;
-//   description?: Description;
-//   args?: Arg[];
-//   type?: Type2;
-// }
-
-// export interface Arg {
-//   name: string;
-//   description: Description;
-//   type: Type;
-//   defaultValue: null;
-// }
-
-// export interface Type {
-//   name?: string;
-//   ofType?: OfType;
-// }
-
-// export interface OfType {
-//   name: string;
-//   ofType: Type2;
-// }
-
-// export interface Type2 {
-//   name: string;
-//   ofType: null;
-// }
 export interface SchemaData {
   data: SchemaRoot;
 }
