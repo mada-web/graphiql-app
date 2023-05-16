@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import useAppContext from '../../hooks/useAppContext';
-import getSchema from '../ApiPokemon/GetSchema';
+import getSchema from '../../utils/getSchema';
 
 import BtnPlay from '../../assets/svg/btn_play.svg';
 import BtnQuery from '../../assets/svg/btn_query_params.svg';
@@ -27,7 +27,7 @@ const ControlButtons: FC = (): JSX.Element => {
 
   const showSchema = async () => {
     setIsShowSchema((prev) => !prev);
-    const { data } = await getSchema();
+    const { data } = (await getSchema()) as SchemaData;
     console.log(' data', data);
     const queries = data.__schema.types.find((el: { name: string }) => el.name === 'Query') as Type;
     setSchemaData(data.__schema);

@@ -11,13 +11,15 @@ import {
 import { defaultCode } from '../components/main/EditorBlock';
 import { defaultParams } from '../components/main/QueryBlock';
 import { LOCALES } from '../lang/locales';
-import { Schema, SchemaField, SchemaRoot } from '../types/types';
+import { Schema, SchemaField, Type } from '../types/types';
 
 type TypeSetState<T> = Dispatch<SetStateAction<T>>;
 type Props = { children: ReactNode };
 
-const schemaDefault = {
-  types: [{ name: 'no data' }],
+const defaultSchemaObj = { name: 'no data' };
+
+const schemaDefault: Schema = {
+  types: [defaultSchemaObj],
 };
 
 interface IAppContext {
@@ -37,6 +39,10 @@ interface IAppContext {
   setSchema: TypeSetState<SchemaField[]>;
   schemaData: Schema;
   setSchemaData: TypeSetState<Schema>;
+  schemaParams: Type;
+  setSchemaParams: TypeSetState<Type>;
+  isShowDescription: boolean;
+  setIsShowDescription: TypeSetState<boolean>;
 }
 
 export const CurrentAppContext = createContext<IAppContext>({
@@ -52,10 +58,14 @@ export const CurrentAppContext = createContext<IAppContext>({
   handleLocale: () => {},
   responseApi: '',
   setResponseApi: () => {},
-  schema: [{ name: 'no data' }],
+  schema: [defaultSchemaObj],
   setSchema: () => {},
   schemaData: schemaDefault,
   setSchemaData: () => {},
+  schemaParams: defaultSchemaObj,
+  setSchemaParams: () => {},
+  isShowDescription: false,
+  setIsShowDescription: () => {},
 });
 
 export const AppProvider: FC<Props> = ({ children }) => {
@@ -64,8 +74,10 @@ export const AppProvider: FC<Props> = ({ children }) => {
   const [isShowSchema, setIsShowSchema] = useState<boolean>(false);
   const [isQueryParams, setIsQueryParams] = useState(false);
   const [responseApi, setResponseApi] = useState('');
-  const [schema, setSchema] = useState<SchemaField[]>([{ name: 'no data' }]);
+  const [schema, setSchema] = useState<SchemaField[]>([defaultSchemaObj]);
   const [schemaData, setSchemaData] = useState<Schema>(schemaDefault);
+  const [schemaParams, setSchemaParams] = useState<Type>(defaultSchemaObj);
+  const [isShowDescription, setIsShowDescription] = useState(false);
 
   const [currentLocale, setCurrentLocale] = useState(
     localStorage.getItem('lang') || LOCALES.ENGLISH
@@ -98,6 +110,10 @@ export const AppProvider: FC<Props> = ({ children }) => {
     setSchema,
     schemaData,
     setSchemaData,
+    schemaParams,
+    setSchemaParams,
+    isShowDescription,
+    setIsShowDescription,
   };
 
   return <CurrentAppContext.Provider value={allValue}>{children}</CurrentAppContext.Provider>;

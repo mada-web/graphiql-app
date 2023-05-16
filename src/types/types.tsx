@@ -78,7 +78,7 @@ export interface OfType {
 }
 
 export interface Type3 {
-  kind: 'OBJECT';
+  kind: 'OBJECT' | 'LIST';
   name?: string;
   ofType?: OfType2;
 }

@@ -7,7 +7,7 @@ import ControlButtons from '../components/main/ControlButtons';
 import EditorBlock from '../components/main/EditorBlock';
 import QueryBlock from '../components/main/QueryBlock';
 import ResponseBlock from '../components/main/ResponseBlock';
-import SchemaBlock from '../components/main/SchemaBlock';
+import SchemaBlock from '../components/main/Schema/SchemaBlock';
 
 const Main: FC = (): JSX.Element => {
   const [user] = useAuthState(auth);
