@@ -48,7 +48,7 @@ const SchemaBlock = () => {
             x
           </span>
         </div>
-        <div className="mx-5 h-[calc(100%-64px)]" onClick={listenSchema}>
+        <div className="relative mx-5 h-[calc(100%-64px)]" onClick={listenSchema}>
           <ShowSchema />
         </div>
       </section>
