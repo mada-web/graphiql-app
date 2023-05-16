@@ -1,14 +1,12 @@
 import { FC } from 'react';
 
 import useAppContext from '../../hooks/useAppContext';
-import ApiQuery from '../ApiPokemon/ApiQuery';
 import getSchema from '../ApiPokemon/GetSchema';
 
 import BtnPlay from '../../assets/svg/btn_play.svg';
 import BtnQuery from '../../assets/svg/btn_query_params.svg';
 import BtnSchema from '../../assets/svg/btn_schema.svg';
-import { getQuery, getSchema } from '../../utils/api';
-import { IQueries } from '../../providers/AppProviders';
+import { getQuery } from '../../utils/api';
 import { SchemaData, Type } from '../../types/types';
 
 const ControlButtons: FC = (): JSX.Element => {
