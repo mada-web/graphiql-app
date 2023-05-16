@@ -19,7 +19,7 @@ const Header: FC = (): JSX.Element => {
 
   const { currentLocale, handleLocale } = useAppContext();
 
-  const [user] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
 
   useEffect(() => {
     const listener = () => {
@@ -65,7 +65,7 @@ const Header: FC = (): JSX.Element => {
             <BurgerMenu />
           </span>
           <li className="relative hidden flex-row gap-8 sm:flex">
-            {!user && (
+            {!user && !loading && (
               <>
                 <NavLink
                   className="p-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
@@ -81,7 +81,7 @@ const Header: FC = (): JSX.Element => {
                 </NavLink>
               </>
             )}
-            {user && (
+            {user && !loading && (
               <>
                 <NavLink
                   className="p-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"

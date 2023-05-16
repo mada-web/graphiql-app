@@ -6,14 +6,17 @@ import EditorBlock from '../components/main/EditorBlock';
 import QueryBlock from '../components/main/QueryBlock';
 import ResponseBlock from '../components/main/ResponseBlock';
 import SchemaBlock from '../components/main/SchemaBlock';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../firebase';
 
 const Main: FC = (): JSX.Element => {
-  const isAuthenticated = localStorage.getItem('isAuthenticated');
   const navigate = useNavigate();
 
+  const [user, loading] = useAuthState(auth);
+
   useEffect(() => {
-    if (!isAuthenticated) navigate('/');
-  }, [isAuthenticated, navigate]);
+    if (!loading && !user) navigate('/');
+  }, [user, navigate, loading]);
 
   return (
     <main className="relative z-0 min-h-screen w-screen overflow-hidden bg-dark-blue">
