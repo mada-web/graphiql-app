@@ -1,12 +1,12 @@
 import { FC, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 import ControlButtons from '../components/main/ControlButtons';
 import EditorBlock from '../components/main/EditorBlock';
 import QueryBlock from '../components/main/QueryBlock';
 import ResponseBlock from '../components/main/ResponseBlock';
 import SchemaBlock from '../components/main/Schema/SchemaBlock';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../firebase';
 
 const Main: FC = (): JSX.Element => {
