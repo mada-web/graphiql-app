@@ -4,7 +4,7 @@ import DescriptionBlock from './DescriptionBlock';
 import SchemaParams from './SchemaParams';
 
 const ShowSchema = (): JSX.Element => {
-  const { schema, isShowDescription } = useAppContext();
+  const { schema } = useAppContext();
 
   return (
     <>
