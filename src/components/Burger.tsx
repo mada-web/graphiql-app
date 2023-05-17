@@ -15,7 +15,8 @@ interface IBurger {
 
 const Burger: FC<IBurger> = ({ onClose }): JSX.Element => {
   const { currentLocale, handleLocale } = useAppContext();
-  const [user] = useAuthState(auth);
+
+  const [user, loading] = useAuthState(auth);
 
   const handleLogOut = () => {
     logout();
@@ -40,7 +41,7 @@ const Burger: FC<IBurger> = ({ onClose }): JSX.Element => {
         >
           <Close />
         </button>
-        {user ? (
+        {!user && !loading && (
           <>
             <NavLink
               className="px-3 pb-[2px] pt-3 font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
@@ -57,7 +58,8 @@ const Burger: FC<IBurger> = ({ onClose }): JSX.Element => {
               <FormattedMessage id="LOG_OUT" />
             </Link>
           </>
-        ) : (
+        )}
+        {user && !loading && (
           <>
             <NavLink
               className="px-3 pb-[2px] pt-3 font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"

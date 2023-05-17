@@ -19,7 +19,7 @@ const Header: FC = (): JSX.Element => {
 
   const { currentLocale, handleLocale } = useAppContext();
 
-  const [user] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
 
   useEffect(() => {
     const listener = () => {
@@ -65,23 +65,7 @@ const Header: FC = (): JSX.Element => {
             <BurgerMenu />
           </span>
           <li className="relative hidden flex-row items-center gap-8 sm:flex">
-            {user ? (
-              <>
-                <NavLink
-                  className="px-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
-                  to="main"
-                >
-                  <FormattedMessage id="MAIN" />
-                </NavLink>
-                <Link
-                  className="px-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
-                  onClick={logout}
-                  to={'/'}
-                >
-                  <FormattedMessage id="LOG_OUT" />
-                </Link>
-              </>
-            ) : (
+            {!user && !loading && (
               <>
                 <NavLink
                   className="px-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
@@ -95,6 +79,23 @@ const Header: FC = (): JSX.Element => {
                 >
                   <FormattedMessage id="SIGN_UP" />
                 </NavLink>
+              </>
+            )}
+            {user && !loading && (
+              <>
+                <NavLink
+                  className="px-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
+                  to="/main"
+                >
+                  <FormattedMessage id="MAIN" />
+                </NavLink>
+                <Link
+                  className="px-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
+                  onClick={logout}
+                  to={'/'}
+                >
+                  <FormattedMessage id="LOG_OUT" />
+                </Link>
               </>
             )}
             <div className="flex items-center px-3 py-2.5">

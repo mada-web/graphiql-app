@@ -1,22 +1,25 @@
 import { FC, Suspense, lazy, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import { useAuthState } from 'react-firebase-hooks/auth';
 
 import { auth } from '../firebase';
 import { Spinner } from '../components/Spinner';
-
-const EditorBlock = lazy(() => import('../components/main/EditorBlock'));
-import QueryBlock from '../components/main/QueryBlock';
-const ResponseBlock = lazy(() => import('../components/main/ResponseBlock'));
-const SchemaBlock = lazy(() => import('../components/main/SchemaBlock'));
 import ControlButtons from '../components/main/ControlButtons';
+import EditorBlock from '../components/main/EditorBlock';
+import QueryBlock from '../components/main/QueryBlock';
+import SchemaBlock from '../components/main/SchemaBlock';
+
+const ResponseBlock = lazy(() => import('../components/main/ResponseBlock'));
+// const SchemaBlock = lazy(() => import('../components/main/SchemaBlock'));
 const Main: FC = (): JSX.Element => {
-  const [user] = useAuthState(auth);
   const navigate = useNavigate();
 
+  const [user, loading] = useAuthState(auth);
+
   useEffect(() => {
-    if (!user) navigate('/');
-  }, [navigate, user]);
+    if (!loading && !user) navigate('/');
+  }, [user, navigate, loading]);
 
   return (
     <main className="relative z-0 flex min-h-[100vh-80px] w-screen flex-col overflow-hidden bg-dark-blue">
@@ -25,15 +28,7 @@ const Main: FC = (): JSX.Element => {
       </div>
       <div className="relative flex flex-col sm:flex-row">
         <div className="relative grid h-screen grid-cols-[80%_20%] grid-rows-[auto_auto] pt-[120px] transition-all sm:w-1/2 sm:grid-cols-[85%_15%] md:grid-cols-[90%_10%]">
-          <Suspense
-            fallback={
-              <section className="relative z-0 flex max-h-max min-h-[60%] items-start justify-center pb-2 pl-1 sm:mr-2 sm:h-[calc(100%-1rem)] sm:pl-10">
-                <Spinner />
-              </section>
-            }
-          >
-            <EditorBlock />
-          </Suspense>
+          <EditorBlock />
           <ControlButtons />
           <div className="relative z-10 col-span-2 col-start-1 row-start-2 flex w-full flex-col self-end">
             <QueryBlock />
@@ -48,9 +43,7 @@ const Main: FC = (): JSX.Element => {
         >
           <ResponseBlock />
         </Suspense>
-        <Suspense fallback={<Spinner />}>
-          <SchemaBlock />
-        </Suspense>
+        <SchemaBlock />
       </div>
     </main>
   );
