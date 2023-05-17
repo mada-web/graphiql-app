@@ -1,4 +1,4 @@
-import { FC, Suspense, lazy, useEffect, useState } from 'react';
+import { FC, Suspense, lazy, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -10,8 +10,6 @@ import EditorBlock from '../components/main/EditorBlock';
 import QueryBlock from '../components/main/QueryBlock';
 import SchemaBlock from '../components/main/SchemaBlock';
 import useAppContext from '../hooks/useAppContext';
-import { getQuery, getSchema } from '../utils/api';
-import { IQueries } from '../providers/AppProviders';
 
 function delayForDemo(promise: Promise<typeof import('../components/main/ResponseBlock')>) {
   return new Promise((resolve) => {
@@ -26,31 +24,8 @@ const Main: FC = (): JSX.Element => {
   const navigate = useNavigate();
   const [user, loading] = useAuthState(auth);
 
-  const { setIsShowSchema, setIsQueryParams, setResponseApi, queryBody, queryParams, setSchema } =
-    useAppContext();
+  const { isLoading } = useAppContext();
 
-  const [isLoading, setIsLoading] = useState(false);
-
-  const executeQuery = async () => {
-    setIsLoading(true);
-    const data = await getQuery({ queryBody, queryParams });
-    setResponseApi(() => JSON.stringify(data, null, '\t'));
-    setIsLoading(false);
-  };
-
-  const showSchema = async () => {
-    const { data } = await getSchema();
-    const queries: { fields: IQueries[] } = data.__schema.types.find(
-      (el: { name: string }) => el.name === 'Query'
-    );
-
-    setSchema(queries.fields);
-    setIsShowSchema((prev) => !prev);
-  };
-
-  const showQueryParams = () => {
-    setIsQueryParams((prev) => !prev);
-  };
   useEffect(() => {
     if (!loading && !user) navigate('/');
   }, [user, navigate, loading]);
@@ -63,11 +38,7 @@ const Main: FC = (): JSX.Element => {
       <div className="relative flex flex-col sm:flex-row">
         <div className="relative grid h-screen grid-cols-[80%_20%] grid-rows-[auto_auto] pt-[120px] transition-all sm:w-1/2 sm:grid-cols-[85%_15%] md:grid-cols-[90%_10%]">
           <EditorBlock />
-          <ControlButtons
-            onClick1={executeQuery}
-            onClick2={showQueryParams}
-            onClick3={showSchema}
-          />
+          <ControlButtons />
           <div className="relative z-10 col-span-2 col-start-1 row-start-2 flex w-full flex-col self-end">
             <QueryBlock />
           </div>
