@@ -8,7 +8,7 @@ const ShowSchema = (): JSX.Element => {
 
   return (
     <>
-      <div className="h-full overflow-scroll">
+      <div className="mx-5 h-full overflow-scroll">
         <h3 className="mb-4 font-semibold">Queries</h3>
         {schema.map((el) => (
           <p key={el.name} className="mb-4">
@@ -21,7 +21,7 @@ const ShowSchema = (): JSX.Element => {
           </p>
         ))}
       </div>
-      {isShowDescription && <DescriptionBlock />}
+      <DescriptionBlock />
     </>
   );
 };
