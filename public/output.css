@@ -705,6 +705,10 @@ video {
   margin-left: 0.75rem;
 }
 
+.ml-5 {
+  margin-left: 1.25rem;
+}
+
 .ml-6 {
   margin-left: 1.5rem;
 }
@@ -719,6 +723,10 @@ video {
 
 .mr-3 {
   margin-right: 0.75rem;
+}
+
+.mr-4 {
+  margin-right: 1rem;
 }
 
 .mr-\[37px\] {
@@ -841,16 +849,24 @@ video {
   height: 80%;
 }
 
-.h-\[90vh\] {
-  height: 90vh;
+.h-\[calc\(100\%-25px\)\] {
+  height: calc(100% - 25px);
 }
 
 .h-\[calc\(100\%-2rem\)\] {
   height: calc(100% - 2rem);
 }
 
-.h-\[calc\(100\%-64px\)\] {
-  height: calc(100% - 64px);
+.h-\[calc\(100\%-3rem\)\] {
+  height: calc(100% - 3rem);
+}
+
+.h-\[calc\(100\%-40px\)\] {
+  height: calc(100% - 40px);
+}
+
+.h-\[calc\(100vh-77px\)\] {
+  height: calc(100vh - 77px);
 }
 
 .h-full {
@@ -859,10 +875,6 @@ video {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-auto {
-  height: auto;
 }
 
 .max-h-max {
@@ -920,10 +932,6 @@ video {
 
 .w-\[95\%\] {
   width: 95%;
-}
-
-.w-\[calc\(100\%-1\.25rem\)\] {
-  width: calc(100% - 1.25rem);
 }
 
 .w-full {
@@ -1073,10 +1081,6 @@ video {
 
 .justify-self-center {
   justify-self: center;
-}
-
-.overflow-auto {
-  overflow: auto;
 }
 
 .overflow-hidden {
@@ -1292,12 +1296,20 @@ video {
   padding-right: 0.5rem;
 }
 
+.pr-3 {
+  padding-right: 0.75rem;
+}
+
 .pr-\[10px\] {
   padding-right: 10px;
 }
 
 .pt-16 {
   padding-top: 4rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
 }
 
 .pt-5 {
@@ -1472,8 +1484,8 @@ video {
 }
 
 .scrollbar::-webkit-scrollbar {
-  width: 13px;
-  height: 13px;
+  width: 5px;
+  height: 5px;
 }
 
 .scrollbar::-webkit-scrollbar-track {
@@ -1484,8 +1496,20 @@ video {
   background: transparent;
 }
 
+.scrollbar::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
 .response:hover .scrollbar::-webkit-scrollbar-thumb {
   background: #494953;
+}
+
+.desc:hover.scrollbar::-webkit-scrollbar-thumb {
+  background: #ededff;
+}
+
+.schema:hover.scrollbar::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
 }
 
 html {
@@ -1791,6 +1815,14 @@ a:hover svg .path1 {
     min-width: 500px;
   }
 
+  .sm\:max-w-full {
+    max-width: 100%;
+  }
+
+  .sm\:scroll-ml-3 {
+    scroll-margin-left: 0.75rem;
+  }
+
   .sm\:grid-cols-\[85\%_15\%\] {
     grid-template-columns: 85% 15%;
   }
@@ -1811,13 +1843,16 @@ a:hover svg .path1 {
     border-top-width: 0px;
   }
 
-  .sm\:px-8 {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
   .sm\:pl-10 {
     padding-left: 2.5rem;
+  }
+
+  .sm\:pl-8 {
+    padding-left: 2rem;
+  }
+
+  .sm\:pr-4 {
+    padding-right: 1rem;
   }
 
   .sm\:pt-0 {

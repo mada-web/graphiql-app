@@ -28,12 +28,8 @@ const ControlButtons: FC = (): JSX.Element => {
   const showSchema = async () => {
     setIsShowSchema((prev) => !prev);
     const { data } = (await getSchema()) as SchemaData;
-    console.log(' data', data);
     const queries = data.__schema.types.find((el: { name: string }) => el.name === 'Query') as Type;
     setSchemaData(data.__schema);
-    console.log('queries', queries);
-    //setSchemaData(JSON.stringify(data, null, '\t'));
-    //setSchemaData(JSON.stringify(queries.fields, null, '\t'));
     setSchema(() => (queries.fields ? queries.fields : [{ name: 'no data' }]));
   };
 
@@ -42,7 +38,7 @@ const ControlButtons: FC = (): JSX.Element => {
   };
 
   return (
-    <aside className="col-start-2 row-span-2 row-start-1 ml-2 flex h-[100%] flex-col items-start gap-2 border-r-0 border-gray pr-2 sm:h-[calc(100%-2rem)] sm:items-center sm:border-r-[1px]">
+    <aside className="col-start-2 row-span-2 row-start-1 ml-2 flex h-[100%] flex-col items-center gap-2 border-r-0 border-gray pr-2 sm:h-[calc(100%-2rem)] sm:items-center sm:border-r-[1px]">
       <button
         title="Execute query"
         className="mr-2 h-[30px] w-[30px] transition-all hover:brightness-150"

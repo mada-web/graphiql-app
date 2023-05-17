@@ -24,7 +24,7 @@ const Main: FC = (): JSX.Element => {
         <div className="relative grid h-screen grid-cols-[80%_20%] grid-rows-[auto_auto] pt-[120px] transition-all sm:w-1/2 sm:grid-cols-[85%_15%] md:grid-cols-[90%_10%]">
           <EditorBlock />
           <ControlButtons />
-          <div className="relative z-10 col-span-2 col-start-1 row-start-2 flex w-full flex-col self-end">
+          <div className="relative z-10 col-span-2 col-start-1 row-start-2 flex grow flex-col self-end">
             <QueryBlock />
           </div>
         </div>

@@ -138,8 +138,8 @@ a:hover svg .path1 {
 
 @layer utilities {
   .scrollbar::-webkit-scrollbar {
-    width: 13px;
-    height: 13px;
+    width: 5px;
+    height: 5px;
   }
 
   .scrollbar::-webkit-scrollbar-track {
@@ -149,11 +149,21 @@ a:hover svg .path1 {
   .scrollbar::-webkit-scrollbar-thumb {
     background: transparent;
   }
+  .scrollbar::-webkit-scrollbar-corner {
+    background: transparent;
+  }
 
   .response:hover .scrollbar::-webkit-scrollbar-thumb {
     background: #494953;
   }
 
+  .desc:hover.scrollbar::-webkit-scrollbar-thumb {
+    background: #ededff;
+  }
+  
+  .schema:hover.scrollbar::-webkit-scrollbar-thumb {
+    background: #d9d9d9;
+  }
 }
 
 .non-null::after {
