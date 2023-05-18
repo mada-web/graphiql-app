@@ -5,7 +5,7 @@ import useAppContext from '../../hooks/useAppContext';
 
 const SchemaBlock = () => {
   const { setIsShowSchema, isShowSchema, schema } = useAppContext();
-  const schemaRef = useRef(null);
+  const schemaRef = useRef<MutableRefObject<HTMLElement>| null>(null);
 
   const closeSchema = () => {
     setIsShowSchema(false);
