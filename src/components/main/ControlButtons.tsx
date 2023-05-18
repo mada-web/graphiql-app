@@ -27,6 +27,7 @@ const ControlButtons: FC = (): JSX.Element => {
   };
 
   const showSchema = async () => {
+    setIsLoading(true);
     const { data } = await getSchema();
     const queries: { fields: IQueries[] } = data.__schema.types.find(
       (el: { name: string }) => el.name === 'Query'
@@ -34,6 +35,7 @@ const ControlButtons: FC = (): JSX.Element => {
 
     setSchema(queries.fields);
     setIsShowSchema((prev) => !prev);
+    setIsLoading(false);
   };
 
   const showQueryParams = () => {

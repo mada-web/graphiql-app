@@ -8,7 +8,7 @@ import { Spinner } from '../components/Spinner';
 import ControlButtons from '../components/main/ControlButtons';
 import EditorBlock from '../components/main/EditorBlock';
 import QueryBlock from '../components/main/QueryBlock';
-import SchemaBlock from '../components/main/SchemaBlock';
+// import SchemaBlock from '../components/main/SchemaBlock';
 // import ResponseBlock from '../components/main/ResponseBlock';
 import useAppContext from '../hooks/useAppContext';
 
@@ -18,7 +18,7 @@ function delayForDemo(promise: Promise<typeof import('../components/main/Respons
   }).then(() => promise);
 }
 
-// const SchemaBlock = lazy(() => import('../components/main/SchemaBlock'));
+const SchemaBlock = lazy(() => import('../components/main/SchemaBlock'));
 const ResponseBlock = lazy(() => delayForDemo(import('../components/main/ResponseBlock')));
 
 const Main: FC = (): JSX.Element => {
@@ -59,7 +59,21 @@ const Main: FC = (): JSX.Element => {
             <ResponseBlock />
           </Suspense>
         )}
-        <SchemaBlock />
+        {isLoading ? (
+          <section className="schema-block absolute top-[77px] z-10 flex h-[90vh] w-full min-w-fit items-start justify-center justify-self-end overflow-auto bg-query sm:right-0 sm:top-0 sm:h-screen sm:w-[calc(50vw)] sm:pt-[84px] lg:static lg:w-1/2">
+            <Spinner />
+          </section>
+        ) : (
+          <Suspense
+            fallback={
+              <section className="schema-block absolute top-[77px] z-10 flex h-[90vh] w-full min-w-fit items-start justify-center justify-self-end overflow-auto bg-query sm:right-0 sm:top-0 sm:h-screen sm:w-[calc(50vw)] sm:pt-[84px] lg:static lg:w-1/2">
+                <Spinner />
+              </section>
+            }
+          >
+            <SchemaBlock />
+          </Suspense>
+        )}
       </div>
     </main>
   );
