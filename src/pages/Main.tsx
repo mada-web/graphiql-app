@@ -1,16 +1,20 @@
-import { FC, useEffect } from 'react';
+import { FC, useEffect, Suspense, lazy } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
+import { auth } from '../firebase';
 import ControlButtons from '../components/main/ControlButtons';
 import EditorBlock from '../components/main/EditorBlock';
 import QueryBlock from '../components/main/QueryBlock';
 import ResponseBlock from '../components/main/ResponseBlock';
-import SchemaBlock from '../components/main/SchemaBlock';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth } from '../firebase';
+import { Spinner } from '../components/Spinner';
+import useAppContext from '../hooks/useAppContext';
+
+const Schema = lazy(() => import('../components/main/SchemaBlock'));
 
 const Main: FC = (): JSX.Element => {
   const navigate = useNavigate();
+  const { isShowSchema } = useAppContext();
 
   const [user, loading] = useAuthState(auth);
 
@@ -29,7 +33,11 @@ const Main: FC = (): JSX.Element => {
           </div>
         </div>
         <ResponseBlock />
-        <SchemaBlock />
+        {isShowSchema && (
+          <Suspense fallback={<Spinner />}>
+            <Schema />
+          </Suspense>
+        )}
       </div>
     </main>
   );

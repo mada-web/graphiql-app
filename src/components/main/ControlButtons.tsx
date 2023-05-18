@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, SyntheticEvent } from 'react';
 
 import useAppContext from '../../hooks/useAppContext';
 
@@ -9,25 +9,44 @@ import { getQuery, getSchema } from '../../utils/api';
 import { IQueries } from '../../providers/AppProviders';
 
 const ControlButtons: FC = (): JSX.Element => {
-  const { setIsShowSchema, setIsQueryParams, setResponseApi, queryBody, queryParams, setSchema } =
-    useAppContext();
+  const {
+    setIsDataLoading,
+    setIsShowSchema,
+    setIsQueryParams,
+    setSchema,
+    queryBody,
+    queryParams,
+    setResponseApi,
+    schema,
+  } = useAppContext();
 
-  const executeQuery = async () => {
+  const executeQuery = async (e: SyntheticEvent) => {
+    e.preventDefault();
+    setIsDataLoading(true);
+
     const data = await getQuery({ queryBody, queryParams });
     setResponseApi(() => JSON.stringify(data, null, '\t'));
+
+    setIsDataLoading(false);
   };
 
-  const showSchema = async () => {
-    const { data } = await getSchema();
-    const queries: { fields: IQueries[] } = data.__schema.types.find(
-      (el: { name: string }) => el.name === 'Query'
-    );
+  const showSchema = async (e: SyntheticEvent) => {
+    e.preventDefault();
 
-    setSchema(queries.fields);
+    if (!schema.length) {
+      const { data } = await getSchema();
+      const queries: { fields: IQueries[] } = data.__schema.types.find(
+        (el: { name: string }) => el.name === 'Query'
+      );
+
+      setSchema(queries.fields);
+    }
     setIsShowSchema((prev) => !prev);
   };
 
-  const showQueryParams = () => {
+  const showQueryParams = (e: SyntheticEvent) => {
+    e.preventDefault();
+
     setIsQueryParams((prev) => !prev);
   };
 
@@ -36,21 +55,21 @@ const ControlButtons: FC = (): JSX.Element => {
       <button
         title="Execute query"
         className="mr-2 h-[30px] w-[30px] transition-all hover:brightness-150"
-        onClick={executeQuery}
+        onClick={(e) => executeQuery(e)}
       >
         <BtnPlay />
       </button>
       <button
         title="Query params"
         className="mb-3 mr-2 h-[30px] w-[30px] transition-all hover:brightness-150"
-        onClick={showQueryParams}
+        onClick={(e) => showQueryParams(e)}
       >
         <BtnQuery />
       </button>
       <button
         title="Show schema"
         className="mr-2 h-[30px] w-[30px] transition-all hover:brightness-150"
-        onClick={showSchema}
+        onClick={(e) => showSchema(e)}
       >
         <BtnSchema />
       </button>

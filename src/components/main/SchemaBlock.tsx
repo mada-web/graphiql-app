@@ -1,5 +1,5 @@
 import { CSSTransition } from 'react-transition-group';
-import { useRef } from 'react';
+import { MutableRefObject, useRef } from 'react';
 
 import useAppContext from '../../hooks/useAppContext';
 
@@ -21,7 +21,7 @@ const SchemaBlock = () => {
       unmountOnExit
     >
       <section
-        ref={schemaRef}
+        ref={schemaRef as MutableRefObject<HTMLElement>}
         className="schema-block absolute top-[77px] z-10 h-[90vh] w-full min-w-fit justify-self-end overflow-auto bg-query sm:right-0 sm:top-0 sm:h-screen sm:w-[calc(50vw)] sm:pt-[84px] lg:static lg:w-1/2"
       >
         <div className="flex justify-center py-2">

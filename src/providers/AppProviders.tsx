@@ -26,6 +26,8 @@ interface IAppContext {
   setQueryParams: TypeSetState<string>;
   isShowSchema: boolean;
   setIsShowSchema: TypeSetState<boolean>;
+  isDataLoading: boolean;
+  setIsDataLoading: TypeSetState<boolean>;
   isQueryParams: boolean;
   setIsQueryParams: TypeSetState<boolean>;
   currentLocale: string;
@@ -51,12 +53,15 @@ export const CurrentAppContext = createContext<IAppContext>({
   setResponseApi: () => {},
   schema: [{ name: 'no data' }],
   setSchema: () => {},
+  isDataLoading: false,
+  setIsDataLoading: () => {},
 });
 
 export const AppProvider: FC<Props> = ({ children }) => {
   const [queryBody, setQueryBody] = useState<string>(defaultCode);
   const [queryParams, setQueryParams] = useState<string>(defaultParams);
   const [isShowSchema, setIsShowSchema] = useState<boolean>(false);
+  const [isDataLoading, setIsDataLoading] = useState<boolean>(false);
   const [isQueryParams, setIsQueryParams] = useState(false);
   const [responseApi, setResponseApi] = useState('');
   const [schema, setSchema] = useState<IQueries[]>([]);
@@ -90,6 +95,8 @@ export const AppProvider: FC<Props> = ({ children }) => {
     setResponseApi,
     schema,
     setSchema,
+    isDataLoading,
+    setIsDataLoading
   };
 
   return <CurrentAppContext.Provider value={allValue}>{children}</CurrentAppContext.Provider>;
