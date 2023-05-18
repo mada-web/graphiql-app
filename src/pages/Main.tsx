@@ -25,7 +25,7 @@ const Main: FC = (): JSX.Element => {
   const navigate = useNavigate();
   const [user, loading] = useAuthState(auth);
 
-  const { isLoading } = useAppContext();
+  const { isLoading, isLoadingSchema } = useAppContext();
 
   useEffect(() => {
     if (!loading && !user) navigate('/');
@@ -59,7 +59,7 @@ const Main: FC = (): JSX.Element => {
             <ResponseBlock />
           </Suspense>
         )}
-        {isLoading ? (
+        {isLoadingSchema ? (
           <section className="schema-block absolute top-[77px] z-10 flex h-[90vh] w-full min-w-fit items-start justify-center justify-self-end overflow-auto bg-query sm:right-0 sm:top-0 sm:h-screen sm:w-[calc(50vw)] sm:pt-[84px] lg:static lg:w-1/2">
             <Spinner />
           </section>
