@@ -32,7 +32,7 @@ const Burger: FC<IBurger> = ({ onClose }): JSX.Element => {
         }
       }}
     >
-      <li className="query-block-enter z-30 flex h-[250px] w-[180px] flex-col items-start justify-start rounded-[10px] bg-gray p-6 text-dark-blue sm:hidden">
+      <li className="z-30 flex h-[250px] w-[180px] flex-col items-start justify-start rounded-[10px] bg-gray p-6 text-dark-blue sm:hidden">
         <button
           className="place-self-end"
           onClick={() => {
@@ -42,24 +42,6 @@ const Burger: FC<IBurger> = ({ onClose }): JSX.Element => {
           <Close />
         </button>
         {!user && !loading && (
-          <>
-            <NavLink
-              className="px-3 pb-[2px] pt-3 font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
-              to="main"
-              onClick={onClose}
-            >
-              <FormattedMessage id="MAIN" />
-            </NavLink>
-            <Link
-              className="px-3 pb-[2px] pt-3 font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
-              onClick={handleLogOut}
-              to={'/'}
-            >
-              <FormattedMessage id="LOG_OUT" />
-            </Link>
-          </>
-        )}
-        {user && !loading && (
           <>
             <NavLink
               className="px-3 pb-[2px] pt-3 font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
@@ -75,6 +57,24 @@ const Burger: FC<IBurger> = ({ onClose }): JSX.Element => {
             >
               <FormattedMessage id="SIGN_UP" />
             </NavLink>
+          </>
+        )}
+        {user && !loading && (
+          <>
+            <NavLink
+              className="px-3 pb-[2px] pt-3 font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
+              to="/main"
+              onClick={onClose}
+            >
+              <FormattedMessage id="MAIN" />
+            </NavLink>
+            <Link
+              className="px-3 pb-[2px] pt-3 font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
+              onClick={handleLogOut}
+              to={'/'}
+            >
+              <FormattedMessage id="LOG_OUT" />
+            </Link>
           </>
         )}
         <div className="mt-6 flex px-3 py-2.5">
