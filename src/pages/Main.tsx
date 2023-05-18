@@ -9,6 +9,7 @@ import ControlButtons from '../components/main/ControlButtons';
 import EditorBlock from '../components/main/EditorBlock';
 import QueryBlock from '../components/main/QueryBlock';
 import SchemaBlock from '../components/main/SchemaBlock';
+import ResponseBlock from '../components/main/ResponseBlock';
 import useAppContext from '../hooks/useAppContext';
 
 function delayForDemo(promise: Promise<typeof import('../components/main/ResponseBlock')>) {
@@ -18,7 +19,7 @@ function delayForDemo(promise: Promise<typeof import('../components/main/Respons
 }
 
 // const SchemaBlock = lazy(() => import('../components/main/SchemaBlock'));
-const ResponseBlock = lazy(() => delayForDemo(import('../components/main/ResponseBlock')));
+// const ResponseBlock = lazy(() => delayForDemo(import('../components/main/ResponseBlock')));
 
 const Main: FC = (): JSX.Element => {
   const navigate = useNavigate();
