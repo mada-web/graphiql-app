@@ -43,6 +43,8 @@ interface IAppContext {
   setSchemaParams: TypeSetState<Type>;
   isShowDescription: boolean;
   setIsShowDescription: TypeSetState<boolean>;
+  active: string;
+  setActive: TypeSetState<string>;
 }
 
 export const CurrentAppContext = createContext<IAppContext>({
@@ -66,6 +68,8 @@ export const CurrentAppContext = createContext<IAppContext>({
   setSchemaParams: () => {},
   isShowDescription: false,
   setIsShowDescription: () => {},
+  active: '',
+  setActive: () => {},
 });
 
 export const AppProvider: FC<Props> = ({ children }) => {
@@ -78,6 +82,7 @@ export const AppProvider: FC<Props> = ({ children }) => {
   const [schemaData, setSchemaData] = useState<Schema>(schemaDefault);
   const [schemaParams, setSchemaParams] = useState<Type>(defaultSchemaObj);
   const [isShowDescription, setIsShowDescription] = useState(false);
+  const [active, setActive] = useState('');
 
   const [currentLocale, setCurrentLocale] = useState(
     localStorage.getItem('lang') || LOCALES.ENGLISH
@@ -114,6 +119,8 @@ export const AppProvider: FC<Props> = ({ children }) => {
     setSchemaParams,
     isShowDescription,
     setIsShowDescription,
+    active,
+    setActive,
   };
 
   return <CurrentAppContext.Provider value={allValue}>{children}</CurrentAppContext.Provider>;

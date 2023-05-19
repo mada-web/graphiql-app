@@ -591,28 +591,12 @@ video {
   top: 0.5rem;
 }
 
-.top-4 {
-  top: 1rem;
-}
-
-.top-5 {
-  top: 1.25rem;
-}
-
-.top-6 {
-  top: 1.5rem;
-}
-
-.top-7 {
-  top: 1.75rem;
-}
-
-.top-8 {
-  top: 2rem;
-}
-
 .top-3 {
   top: 0.75rem;
+}
+
+.top-4 {
+  top: 1rem;
 }
 
 .z-0 {
@@ -1366,6 +1350,11 @@ video {
   padding-bottom: 0.75rem;
 }
 
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
 .pb-2 {
   padding-bottom: 0.5rem;
 }
@@ -1420,6 +1409,10 @@ video {
 
 .pt-\[20px\] {
   padding-top: 20px;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
 }
 
 .text-center {
@@ -1643,6 +1636,10 @@ a:hover svg .path1 {
   padding-bottom: 0px;
 }
 
+.schema-active {
+  background-color: rgba(241, 158, 2, 0.3);
+}
+
 .schema-block a:hover {
   filter: brightness(150%);
 }
@@ -1844,10 +1841,6 @@ a:hover svg .path1 {
     right: 0px;
   }
 
-  .sm\:right-3 {
-    right: 0.75rem;
-  }
-
   .sm\:top-0 {
     top: 0px;
   }
@@ -1868,16 +1861,16 @@ a:hover svg .path1 {
     grid-row-start: 1;
   }
 
+  .sm\:mr-0 {
+    margin-right: 0px;
+  }
+
   .sm\:mr-2 {
     margin-right: 0.5rem;
   }
 
   .sm\:mt-\[20px\] {
     margin-top: 20px;
-  }
-
-  .sm\:mr-0 {
-    margin-right: 0px;
   }
 
   .sm\:inline-block {
@@ -1932,20 +1925,16 @@ a:hover svg .path1 {
     width: auto;
   }
 
-  .sm\:w-full {
-    width: 100%;
-  }
-
   .sm\:min-w-\[25\%\] {
     min-width: 25%;
   }
 
-  .sm\:min-w-\[500px\] {
-    min-width: 500px;
-  }
-
   .sm\:min-w-\[50\%\] {
     min-width: 50%;
+  }
+
+  .sm\:min-w-\[500px\] {
+    min-width: 500px;
   }
 
   .sm\:max-w-full {
@@ -2056,14 +2045,6 @@ a:hover svg .path1 {
 
   .lg\:w-1\/2 {
     width: 50%;
-  }
-
-  .lg\:w-auto {
-    width: auto;
-  }
-
-  .lg\:max-w-full {
-    max-width: 100%;
   }
 
   .lg\:grow {

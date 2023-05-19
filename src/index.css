@@ -29,6 +29,9 @@ a:hover svg .path1 {
   padding-bottom: 0px;
 }
 
+.schema-active {
+  background-color: rgba(241, 158, 2, 0.3);
+}
 .schema-block a:hover {
   filter: brightness(150%);
 }
