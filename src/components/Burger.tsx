@@ -44,14 +44,22 @@ const Burger: FC<IBurger> = ({ onClose }): JSX.Element => {
         {!user && !loading && (
           <>
             <NavLink
-              className={({ isActive }) => (isActive ? 'px-3 mt-[8px] font-semibold leading-7 border-b-2 text-white' : 'px-3 mt-[8px] border-transparent border-b-2 font-semibold leading-7 transition-all hover:border-black')}
+              className={({ isActive }) =>
+                isActive
+                  ? 'mt-[8px] border-b-2 px-3 font-semibold leading-7 text-white'
+                  : 'mt-[8px] border-b-2 border-transparent px-3 font-semibold leading-7 transition-all hover:border-black'
+              }
               to="sign-in"
               onClick={onClose}
             >
               <FormattedMessage id="SIGN_IN" />
             </NavLink>
             <NavLink
-              className={({ isActive }) => (isActive ? 'px-3 mt-[8px] font-semibold leading-7 border-b-2 text-white' : 'px-3 mt-[8px] border-transparent border-b-2 font-semibold leading-7 transition-all hover:border-black')}
+              className={({ isActive }) =>
+                isActive
+                  ? 'mt-[8px] border-b-2 px-3 font-semibold leading-7 text-white'
+                  : 'mt-[8px] border-b-2 border-transparent px-3 font-semibold leading-7 transition-all hover:border-black'
+              }
               to="sign-up"
               onClick={onClose}
             >
@@ -62,14 +70,18 @@ const Burger: FC<IBurger> = ({ onClose }): JSX.Element => {
         {user && !loading && (
           <>
             <NavLink
-              className={({ isActive }) => (isActive ? 'px-3 mt-[8px] font-semibold leading-7 border-b-2 text-white' : 'px-3 mt-[8px] border-transparent border-b-2 font-semibold leading-7 transition-all hover:border-black')}
+              className={({ isActive }) =>
+                isActive
+                  ? 'mt-[8px] border-b-2 px-3 font-semibold leading-7 text-white'
+                  : 'mt-[8px] border-b-2 border-transparent px-3 font-semibold leading-7 transition-all hover:border-black'
+              }
               to="/main"
               onClick={onClose}
             >
               <FormattedMessage id="MAIN" />
             </NavLink>
             <Link
-              className="px-3 mt-[8px] border-transparent border-b-2 font-semibold leading-7 transition-all hover:border-b-2 hover:border-black"
+              className="mt-[8px] border-b-2 border-transparent px-3 font-semibold leading-7 transition-all hover:border-b-2 hover:border-black"
               onClick={handleLogOut}
               to={'/'}
             >
