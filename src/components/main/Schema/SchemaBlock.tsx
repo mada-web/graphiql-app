@@ -3,6 +3,8 @@ import { useRef } from 'react';
 
 import useAppContext from '../../../hooks/useAppContext';
 
+import Close from '../../../assets/svg/close.svg';
+
 import ShowSchema from './ShowSchema';
 
 const SchemaBlock = () => {
@@ -45,7 +47,7 @@ const SchemaBlock = () => {
         <div className="flex justify-center py-2">
           <h1 className="text-center font-bold">Documentation</h1>
           <span className="absolute right-3 cursor-pointer px-4 font-sans" onClick={closeSchema}>
-            x
+            <Close />
           </span>
         </div>
         <div className="relative mr-4 h-[calc(100%-40px)]" onClick={listenSchema}>
