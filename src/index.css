@@ -28,6 +28,10 @@ a:hover svg .path1 {
   border-bottom: 2px solid white;
 }
 
+.schema-block a:hover {
+  filter: brightness(150%);
+}
+
 .query-block-enter {
   animation: show-from-bottom 0.5s forwards;
 }
