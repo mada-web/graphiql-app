@@ -25,7 +25,7 @@ const Main: FC = (): JSX.Element => {
       </div>
       <main className="relative z-0 min-h-[calc(100vh-120px)] w-screen overflow-hidden bg-dark-blue">
         <div className="relative flex flex-col sm:flex-row">
-          <div className="relative grid h-[calc(100vh-100px)] grid-cols-[80%_20%] grid-rows-[auto_auto] pt-[20px] transition-all sm:w-1/2 sm:grid-cols-[85%_15%] md:grid-cols-[90%_10%]">
+          <div className="relative grid h-[calc(100vh-100px)] grid-cols-[80%_20%] grid-rows-[auto_auto] pt-[20px] transition-all sm:w-1/2 sm:min-w-[50%] sm:grid-cols-[85%_15%] md:grid-cols-[90%_10%]">
             <EditorBlock />
             <ControlButtons />
             <div className="relative z-10 col-span-2 col-start-1 row-start-2 flex grow flex-col self-end">

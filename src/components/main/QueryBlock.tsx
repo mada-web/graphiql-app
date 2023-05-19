@@ -92,18 +92,18 @@ const QueryBlock = () => {
     >
       <div
         ref={queryParamRef}
-        className="query-block mr-2 h-[200px] w-[calc(100%-1rem)] rounded-t-lg bg-query transition-all sm:w-full"
+        className="query-block relative mr-2 h-[200px] w-[calc(100%-1rem)] rounded-t-lg bg-query transition-all sm:mr-0 sm:w-auto"
       >
         <h3 className="rounded-t-lg bg-green py-2 text-center text-black">query params</h3>
         <span
-          className="absolute right-5 top-4 cursor-pointer px-2 font-sans sm:right-3"
+          className="absolute right-5 top-4 cursor-pointer px-2 font-sans"
           onClick={closeQueryParams}
         >
           <Close />
         </span>
 
         <Editor
-          className="h-[80%] scroll-smooth pt-8 -hue-rotate-180 invert "
+          className="h-[80%] w-auto scroll-smooth pt-8 -hue-rotate-180 invert "
           theme="grey-theme"
           beforeMount={handleEditorWillMount}
           defaultLanguage="qraphql"

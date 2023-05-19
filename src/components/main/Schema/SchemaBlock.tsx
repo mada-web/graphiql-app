@@ -43,7 +43,7 @@ const SchemaBlock = () => {
         <div className="flex justify-center py-2">
           <h1 className="text-center font-bold">Documentation</h1>
           <span
-            className="absolute right-3 top-2 cursor-pointer px-4 font-sans"
+            className="absolute right-3 top-3 cursor-pointer px-4 font-sans sm:top-8"
             onClick={closeSchema}
           >
             <Close />
