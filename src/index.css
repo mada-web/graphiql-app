@@ -26,6 +26,7 @@ a:hover svg .path1 {
 .active {
   color: white;
   border-bottom: 2px solid white;
+  padding-bottom: 0px;
 }
 
 .query-block-enter {

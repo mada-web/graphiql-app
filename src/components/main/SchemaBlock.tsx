@@ -3,6 +3,8 @@ import { useRef } from 'react';
 
 import useAppContext from '../../hooks/useAppContext';
 
+import Close from '../../assets/svg/close.svg';
+
 const SchemaBlock = () => {
   const { setIsShowSchema, isShowSchema, schema } = useAppContext();
   const schemaRef = useRef(null);
@@ -27,7 +29,7 @@ const SchemaBlock = () => {
         <div className="flex justify-center py-2">
           <h1 className="text-center font-bold">Documentation</h1>
           <span className="absolute right-3 cursor-pointer px-2 font-sans" onClick={closeSchema}>
-            x
+            <Close />
           </span>
         </div>
         <ul className="lis list-inside list-disc pl-3 text-base">

@@ -42,7 +42,7 @@ const Header: FC = (): JSX.Element => {
   return (
     <>
       <header
-        className={`fixed left-0 top-0 z-20 w-screen p-4 transition-all duration-200 ${
+        className={`fixed left-0 top-0 z-20 h-[80px] w-screen p-4 transition-all duration-200 ${
           animateHeader ? 'bg-green text-dark-blue' : 'bg-gray'
         }`}
       >
@@ -64,17 +64,17 @@ const Header: FC = (): JSX.Element => {
           >
             <BurgerMenu />
           </span>
-          <li className="relative hidden flex-row gap-8 sm:flex">
+          <li className="relative hidden flex-row items-center gap-8 sm:flex">
             {!user && !loading && (
               <>
                 <NavLink
-                  className="p-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
+                  className="px-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
                   to="sign-in"
                 >
                   <FormattedMessage id="SIGN_IN" />
                 </NavLink>
                 <NavLink
-                  className="p-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
+                  className="px-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
                   to="sign-up"
                 >
                   <FormattedMessage id="SIGN_UP" />
@@ -84,13 +84,13 @@ const Header: FC = (): JSX.Element => {
             {user && !loading && (
               <>
                 <NavLink
-                  className="p-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
+                  className="px-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
                   to="/main"
                 >
                   <FormattedMessage id="MAIN" />
                 </NavLink>
                 <Link
-                  className="p-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
+                  className="px-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
                   onClick={logout}
                   to={'/'}
                 >
