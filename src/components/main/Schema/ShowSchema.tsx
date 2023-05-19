@@ -8,7 +8,7 @@ const ShowSchema = (): JSX.Element => {
 
   return (
     <>
-      <div className="schema scrollbar ml-5 mr-3 h-[calc(100%-25px)] overflow-scroll">
+      <div className="schema scrollbar ml-5 mr-3 h-[calc(100%-25px)] overflow-auto lg:h-[calc(100%-25px)]">
         <h3 className="mb-4 font-semibold">Queries</h3>
         {schema.map((el, ind) => (
           <p key={el.name} data-ind={ind} className="mb-4">

@@ -14,8 +14,6 @@ const SchemaBlock = () => {
 
   const listenSchema = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
-    console.log('e.target', e);
-    console.log('schemaData', schemaData);
     const paramTag = e.target as HTMLAnchorElement;
     const nameParam = paramTag.textContent;
     const descParam = schemaData.types.find((type) => nameParam === type.name);
@@ -23,8 +21,6 @@ const SchemaBlock = () => {
       setSchemaParams(descParam);
       setIsShowDescription(true);
     }
-    console.log('nameParam', nameParam);
-    console.log('descParam', descParam);
   };
 
   const closeSchema = () => {
@@ -42,15 +38,21 @@ const SchemaBlock = () => {
     >
       <section
         ref={schemaRef}
-        className="schema-block absolute top-[77px] z-10 h-[calc(100vh-77px)] w-full justify-self-end bg-query sm:right-0 sm:top-0 sm:h-screen sm:w-[calc(50vw)] sm:pt-[84px] lg:static lg:w-1/2 lg:grow"
+        className="schema-block absolute top-0 z-10 h-[calc(100vh-100px)] w-full justify-self-end bg-query sm:right-0 sm:top-0 sm:h-[calc(100vh-100px)] sm:w-[calc(50vw)] sm:pt-[25px] lg:static lg:h-[calc(100vh-100px)] lg:w-1/2 lg:grow"
       >
         <div className="flex justify-center py-2">
           <h1 className="text-center font-bold">Documentation</h1>
-          <span className="absolute right-3 cursor-pointer px-4 font-sans" onClick={closeSchema}>
+          <span
+            className="absolute right-3 top-2 cursor-pointer px-4 font-sans"
+            onClick={closeSchema}
+          >
             <Close />
           </span>
         </div>
-        <div className="relative mr-4 h-[calc(100%-40px)]" onClick={listenSchema}>
+        <div
+          className="relative mr-4 h-[calc(100%-40px)] sm:h-[calc(100%-40px)]"
+          onClick={listenSchema}
+        >
           <ShowSchema />
         </div>
       </section>

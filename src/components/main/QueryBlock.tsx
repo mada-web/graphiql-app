@@ -92,17 +92,16 @@ const QueryBlock = () => {
     >
       <div
         ref={queryParamRef}
-        className="query-block h-[200px] w-full rounded-t-lg bg-query transition-all"
+        className="query-block mr-2 h-[200px] w-[calc(100%-1rem)] rounded-t-lg bg-query transition-all sm:w-full"
       >
-        <h3 className="rounded-t-lg bg-green py-2 text-center text-black">
-          query params
-          <span
-            className="absolute right-3 cursor-pointer px-2 font-sans"
-            onClick={closeQueryParams}
-          >
-            <Close />
-          </span>
-        </h3>
+        <h3 className="rounded-t-lg bg-green py-2 text-center text-black">query params</h3>
+        <span
+          className="absolute right-5 top-4 cursor-pointer px-2 font-sans sm:right-3"
+          onClick={closeQueryParams}
+        >
+          <Close />
+        </span>
+
         <Editor
           className="h-[80%] scroll-smooth pt-8 -hue-rotate-180 invert "
           theme="grey-theme"
