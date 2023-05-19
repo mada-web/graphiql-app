@@ -878,12 +878,12 @@ video {
   max-height: max-content;
 }
 
-.min-h-\[100vh-80px\] {
-  min-height: 100vh-80px;
-}
-
 .min-h-\[60\%\] {
   min-height: 60%;
+}
+
+.min-h-screen {
+  min-height: 100vh;
 }
 
 .w-1\/2 {
