@@ -34,10 +34,6 @@ interface IAppContext {
   setResponseApi: TypeSetState<string>;
   schema: IQueries[];
   setSchema: TypeSetState<IQueries[]>;
-  isLoading: boolean;
-  setIsLoading: TypeSetState<boolean>;
-  isLoadingSchema: boolean;
-  setIsLoadingSchema: TypeSetState<boolean>;
 }
 
 export const CurrentAppContext = createContext<IAppContext>({
@@ -55,10 +51,6 @@ export const CurrentAppContext = createContext<IAppContext>({
   setResponseApi: () => {},
   schema: [{ name: 'no data' }],
   setSchema: () => {},
-  isLoading: false,
-  setIsLoading: () => {},
-  isLoadingSchema: false,
-  setIsLoadingSchema: () => {},
 });
 
 export const AppProvider: FC<Props> = ({ children }) => {
@@ -68,8 +60,6 @@ export const AppProvider: FC<Props> = ({ children }) => {
   const [isQueryParams, setIsQueryParams] = useState(false);
   const [responseApi, setResponseApi] = useState('');
   const [schema, setSchema] = useState<IQueries[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isLoadingSchema, setIsLoadingSchema] = useState(false);
 
   const [currentLocale, setCurrentLocale] = useState(
     localStorage.getItem('lang') || LOCALES.ENGLISH
@@ -100,10 +90,6 @@ export const AppProvider: FC<Props> = ({ children }) => {
     setResponseApi,
     schema,
     setSchema,
-    isLoading,
-    setIsLoading,
-    isLoadingSchema,
-    setIsLoadingSchema,
   };
 
   return <CurrentAppContext.Provider value={allValue}>{children}</CurrentAppContext.Provider>;

@@ -2,7 +2,6 @@ import { FC } from 'react';
 
 export const Spinner: FC = (): JSX.Element => {
   return (
-    // <div className="absolute flex h-screen w-screen flex-col items-center justify-center ">
     <svg
       className="h-[3.75rem] animate-spin"
       viewBox="0 0 24 24"
@@ -22,6 +21,5 @@ export const Spinner: FC = (): JSX.Element => {
         <path d="M2 12C2 6.47715 6.47715 2 12 2V5C8.13401 5 5 8.13401 5 12H2Z" fill="#7EBC59" />
       </g>
     </svg>
-    // </div>
   );
 };
