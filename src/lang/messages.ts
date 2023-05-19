@@ -37,6 +37,7 @@ export const messages = {
       'A novice frontend developer who is very interested in design. I live in St. Petersburg, I love my family, my cat and nature. I love math and freedom of movement, I want to work at home.',
     WELCOME: 'Welcome to',
     INTRO: 'This is the final project on the React course at RSSchool',
+    HELLO: 'Hello!',
   },
   [LOCALES.RUSSIAN]: {
     MAIN: 'Главная',
@@ -73,6 +74,7 @@ export const messages = {
     MASHA_INFO:
       'Начинающий фронтенд-разработчик, очень интересующийся дизайном. Живу в Санкт-Петербурге, люблю свою семью, кота и природу. Люблю математику и свободу передвижения, хочу работать дома.',
     WELCOME: 'Присоединяйтесь к',
+    HELLO: 'Привет!',
     INTRO: 'Это финальный проект курса по Реакту RSSchool',
   },
 };

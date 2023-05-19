@@ -44,14 +44,14 @@ const Burger: FC<IBurger> = ({ onClose }): JSX.Element => {
         {!user && !loading && (
           <>
             <NavLink
-              className="p-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
+              className="px-3 pb-[2px] pt-3 font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
               to="sign-in"
               onClick={onClose}
             >
               <FormattedMessage id="SIGN_IN" />
             </NavLink>
             <NavLink
-              className="p-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
+              className="px-3 pb-[2px] pt-3 font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
               to="sign-up"
               onClick={onClose}
             >
@@ -62,14 +62,14 @@ const Burger: FC<IBurger> = ({ onClose }): JSX.Element => {
         {user && !loading && (
           <>
             <NavLink
-              className="p-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
+              className="px-3 pb-[2px] pt-3 font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
               to="/main"
               onClick={onClose}
             >
               <FormattedMessage id="MAIN" />
             </NavLink>
             <Link
-              className="p-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
+              className="px-3 pb-[2px] pt-3 font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
               onClick={handleLogOut}
               to={'/'}
             >

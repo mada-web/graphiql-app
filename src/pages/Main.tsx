@@ -19,19 +19,24 @@ const Main: FC = (): JSX.Element => {
   }, [user, navigate, loading]);
 
   return (
-    <main className="relative z-0 min-h-screen w-screen overflow-hidden bg-dark-blue">
-      <div className="relative flex flex-col sm:flex-row">
-        <div className="relative grid h-screen grid-cols-[80%_20%] grid-rows-[auto_auto] pt-[120px] transition-all sm:w-1/2 sm:grid-cols-[85%_15%] md:grid-cols-[90%_10%]">
-          <EditorBlock />
-          <ControlButtons />
-          <div className="relative z-10 col-span-2 col-start-1 row-start-2 flex grow flex-col self-end">
-            <QueryBlock />
-          </div>
-        </div>
-        <ResponseBlock />
-        <SchemaBlock />
+    <>
+      <div className="mt-[80px] flex h-[40px] w-screen items-center justify-end bg-green p-2 text-white">
+        <p className="mx-auto max-w-7xl">Hello, {user?.email}!</p>
       </div>
-    </main>
+      <main className="relative z-0 flex min-h-screen w-screen flex-col overflow-hidden bg-dark-blue">
+        <div className="relative flex flex-col sm:flex-row">
+          <div className="relative grid h-screen grid-cols-[80%_20%] grid-rows-[auto_auto] pt-[120px] transition-all sm:w-1/2 sm:grid-cols-[85%_15%] md:grid-cols-[90%_10%]">
+            <EditorBlock />
+            <ControlButtons />
+            <div className="relative z-10 col-span-2 col-start-1 row-start-2 flex grow flex-col self-end">
+              <QueryBlock />
+            </div>
+          </div>
+          <ResponseBlock />
+          <SchemaBlock />
+        </div>
+      </main>
+    </>
   );
 };
 
