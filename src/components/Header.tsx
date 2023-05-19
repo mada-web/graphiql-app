@@ -68,13 +68,13 @@ const Header: FC = (): JSX.Element => {
             {!user && !loading && (
               <>
                 <NavLink
-                  className="px-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
+                  className={({ isActive }) => (isActive ? 'px-3 font-semibold leading-7 border-b-2 text-white' : 'px-3 border-transparent border-b-2 font-semibold leading-7 transition-all hover:border-black')}
                   to="sign-in"
                 >
                   <FormattedMessage id="SIGN_IN" />
                 </NavLink>
                 <NavLink
-                  className="px-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
+                  className={({ isActive }) => (isActive ? 'px-3 font-semibold leading-7 border-b-2 text-white' : 'px-3 border-transparent border-b-2 font-semibold leading-7 transition-all hover:border-black')}
                   to="sign-up"
                 >
                   <FormattedMessage id="SIGN_UP" />
@@ -84,13 +84,13 @@ const Header: FC = (): JSX.Element => {
             {user && !loading && (
               <>
                 <NavLink
-                  className="px-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
+                  className={({ isActive }) => (isActive ? 'px-3 font-semibold leading-7 border-b-2 text-white' : 'px-3 border-transparent border-b-2 font-semibold leading-7 transition-all hover:border-black')}
                   to="/main"
                 >
                   <FormattedMessage id="MAIN" />
                 </NavLink>
                 <Link
-                  className="px-3 pb-[2px] font-semibold leading-7 transition-all hover:border-b-2 hover:pb-[0px]"
+                  className="px-3 border-transparent border-b-2 font-semibold leading-7 transition-all hover:border-b-2 hover:border-black"
                   onClick={logout}
                   to={'/'}
                 >

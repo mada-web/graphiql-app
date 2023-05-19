@@ -23,12 +23,6 @@ a:hover svg .path1 {
   fill: #7ebc59;
 }
 
-.active {
-  color: white;
-  border-bottom: 2px solid white;
-  padding-bottom: 0px;
-}
-
 .query-block-enter {
   animation: show-from-bottom 0.5s forwards;
 }
