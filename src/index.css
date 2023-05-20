@@ -23,12 +23,6 @@ a:hover svg .path1 {
   fill: #7ebc59;
 }
 
-.active {
-  color: white;
-  border-bottom: 2px solid white;
-  padding-bottom: 0px;
-}
-
 .schema-active {
   background-color: rgba(241, 158, 2, 0.3);
 }
