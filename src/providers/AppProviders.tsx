@@ -16,7 +16,7 @@ import { Schema, SchemaField, Type } from '../types/types';
 type TypeSetState<T> = Dispatch<SetStateAction<T>>;
 type Props = { children: ReactNode };
 
-const defaultSchemaObj = { name: 'no data' };
+export const defaultSchemaObj = { name: 'no data' };
 
 const schemaDefault: Schema = {
   types: [defaultSchemaObj],
