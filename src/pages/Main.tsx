@@ -18,7 +18,7 @@ const SchemaBlock = lazy(() => import('../components/main/Schema/SchemaBlock'));
 const Main: FC = (): JSX.Element => {
   const navigate = useNavigate();
   const [user, loading] = useAuthState(auth);
-  const { setSchema, setSchemaData, schema, isShowSchema } = useAppContext();
+  const { setSchema, setSchemaData, schema } = useAppContext();
 
   useEffect(() => {
     if (!loading && !user) navigate('/');
@@ -54,11 +54,9 @@ const Main: FC = (): JSX.Element => {
             </div>
           </div>
           <ResponseBlock />
-          {isShowSchema && (
-            <Suspense fallback={null}>
-              <SchemaBlock />
-            </Suspense>
-          )}
+          <Suspense fallback={null}>
+            <SchemaBlock />
+          </Suspense>
         </div>
       </main>
     </>
