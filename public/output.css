@@ -725,10 +725,6 @@ video {
   margin-left: 0.75rem;
 }
 
-.ml-5 {
-  margin-left: 1.25rem;
-}
-
 .ml-6 {
   margin-left: 1.5rem;
 }
@@ -787,6 +783,10 @@ video {
 
 .mt-\[80px\] {
   margin-top: 80px;
+}
+
+.mt-\[8px\] {
+  margin-top: 8px;
 }
 
 .block {
@@ -1194,6 +1194,10 @@ video {
   border-top-right-radius: 0.5rem;
 }
 
+.border-b-2 {
+  border-bottom-width: 2px;
+}
+
 .border-r-0 {
   border-right-width: 0px;
 }
@@ -1205,6 +1209,10 @@ video {
 .border-gray {
   --tw-border-opacity: 1;
   border-color: rgb(217 217 217 / var(--tw-border-opacity));
+}
+
+.border-transparent {
+  border-color: transparent;
 }
 
 .bg-\[\#c6c6c6\] {
@@ -1335,6 +1343,11 @@ video {
   padding-right: 2rem;
 }
 
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -1350,11 +1363,6 @@ video {
   padding-bottom: 0.75rem;
 }
 
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
-
 .pb-2 {
   padding-bottom: 0.5rem;
 }
@@ -1363,12 +1371,12 @@ video {
   padding-bottom: 0.75rem;
 }
 
-.pb-\[2px\] {
-  padding-bottom: 2px;
-}
-
 .pl-1 {
   padding-left: 0.25rem;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
 }
 
 .pl-3 {
@@ -1391,10 +1399,6 @@ video {
   padding-top: 4rem;
 }
 
-.pt-3 {
-  padding-top: 0.75rem;
-}
-
 .pt-4 {
   padding-top: 1rem;
 }
@@ -1409,10 +1413,6 @@ video {
 
 .pt-\[20px\] {
   padding-top: 20px;
-}
-
-.pl-2 {
-  padding-left: 0.5rem;
 }
 
 .text-center {
@@ -1630,12 +1630,6 @@ a:hover svg .path1 {
   fill: #7ebc59;
 }
 
-.active {
-  color: white;
-  border-bottom: 2px solid white;
-  padding-bottom: 0px;
-}
-
 .schema-active {
   background-color: rgba(241, 158, 2, 0.3);
 }
@@ -1767,12 +1761,13 @@ a:hover svg .path1 {
   border-bottom-width: 2px;
 }
 
-.hover\:bg-green\/70:hover {
-  background-color: rgb(126 188 89 / 0.7);
+.hover\:border-black:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
-.hover\:pb-\[0px\]:hover {
-  padding-bottom: 0px;
+.hover\:bg-green\/70:hover {
+  background-color: rgb(126 188 89 / 0.7);
 }
 
 .hover\:text-green:hover {
