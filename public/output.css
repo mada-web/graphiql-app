@@ -1630,14 +1630,6 @@ a:hover svg .path1 {
   fill: #7ebc59;
 }
 
-<<<<<<< HEAD
-=======
-.active {
-  color: white;
-  border-bottom: 2px solid white;
-  padding-bottom: 0px;
-}
-
 .schema-active {
   background-color: rgba(241, 158, 2, 0.3);
 }
@@ -1646,7 +1638,6 @@ a:hover svg .path1 {
   filter: brightness(150%);
 }
 
->>>>>>> cefa4a63c53371d7b822a47e464cb4b1908d95f3
 .query-block-enter {
   animation: show-from-bottom 0.5s forwards;
 }
