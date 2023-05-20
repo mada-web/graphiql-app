@@ -1,16 +1,24 @@
 import { FC } from 'react';
 
 import useAppContext from '../../hooks/useAppContext';
+import getSchema from '../../utils/getSchema';
 
 import BtnPlay from '../../assets/svg/btn_play.svg';
 import BtnQuery from '../../assets/svg/btn_query_params.svg';
 import BtnSchema from '../../assets/svg/btn_schema.svg';
-import { getQuery, getSchema } from '../../utils/api';
-import { IQueries } from '../../providers/AppProviders';
+import { getQuery } from '../../utils/api';
+import { SchemaData, Type } from '../../types/types';
 
 const ControlButtons: FC = (): JSX.Element => {
-  const { setIsShowSchema, setIsQueryParams, setResponseApi, queryBody, queryParams, setSchema } =
-    useAppContext();
+  const {
+    setIsShowSchema,
+    setIsQueryParams,
+    setResponseApi,
+    queryBody,
+    queryParams,
+    setSchema,
+    setSchemaData,
+  } = useAppContext();
 
   const executeQuery = async () => {
     const data = await getQuery({ queryBody, queryParams });
@@ -18,13 +26,11 @@ const ControlButtons: FC = (): JSX.Element => {
   };
 
   const showSchema = async () => {
-    const { data } = await getSchema();
-    const queries: { fields: IQueries[] } = data.__schema.types.find(
-      (el: { name: string }) => el.name === 'Query'
-    );
-
-    setSchema(queries.fields);
     setIsShowSchema((prev) => !prev);
+    const { data } = (await getSchema()) as SchemaData;
+    const queries = data.__schema.types.find((el: { name: string }) => el.name === 'Query') as Type;
+    setSchemaData(data.__schema);
+    setSchema(() => (queries.fields ? queries.fields : [{ name: 'no data' }]));
   };
 
   const showQueryParams = () => {
@@ -32,7 +38,7 @@ const ControlButtons: FC = (): JSX.Element => {
   };
 
   return (
-    <aside className="col-start-2 row-span-2 row-start-1 ml-2 flex h-[100%] flex-col items-start gap-2 border-r-0 border-gray pr-2 sm:h-[calc(100%-2rem)] sm:items-center sm:border-r-[1px]">
+    <aside className="col-start-2 row-span-2 row-start-1 ml-2 flex h-[100%] flex-col items-center gap-2 border-r-0 border-gray pr-2 sm:h-[calc(100%-2rem)] sm:items-center sm:border-r-[1px]">
       <button
         title="Execute query"
         className="mr-2 h-[30px] w-[30px] transition-all hover:brightness-150"
