@@ -46,7 +46,7 @@ const ControlButtons: FC = (): JSX.Element => {
       </button>
       <button
         title="Query params"
-        className="mb-3 mr-2 h-[30px] w-[30px] transition-all hover:brightness-150"
+        className="mr-2 h-[30px] w-[30px] transition-all hover:brightness-150"
         onClick={showQueryParams}
       >
         <BtnQuery />
