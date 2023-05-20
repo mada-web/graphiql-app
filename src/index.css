@@ -23,6 +23,22 @@ a:hover svg .path1 {
   fill: #7ebc59;
 }
 
+<<<<<<< HEAD
+=======
+.active {
+  color: white;
+  border-bottom: 2px solid white;
+  padding-bottom: 0px;
+}
+
+.schema-active {
+  background-color: rgba(241, 158, 2, 0.3);
+}
+.schema-block a:hover {
+  filter: brightness(150%);
+}
+
+>>>>>>> cefa4a63c53371d7b822a47e464cb4b1908d95f3
 .query-block-enter {
   animation: show-from-bottom 0.5s forwards;
 }
@@ -133,8 +149,8 @@ a:hover svg .path1 {
 
 @layer utilities {
   .scrollbar::-webkit-scrollbar {
-    width: 13px;
-    height: 13px;
+    width: 5px;
+    height: 5px;
   }
 
   .scrollbar::-webkit-scrollbar-track {
@@ -144,9 +160,23 @@ a:hover svg .path1 {
   .scrollbar::-webkit-scrollbar-thumb {
     background: transparent;
   }
+  .scrollbar::-webkit-scrollbar-corner {
+    background: transparent;
+  }
 
   .response:hover .scrollbar::-webkit-scrollbar-thumb {
     background: #494953;
   }
 
+  .desc:hover.scrollbar::-webkit-scrollbar-thumb {
+    background: #ededff;
+  }
+  
+  .schema:hover.scrollbar::-webkit-scrollbar-thumb {
+    background: #d9d9d9;
+  }
+}
+
+.non-null::after {
+  content:'!';
 }
