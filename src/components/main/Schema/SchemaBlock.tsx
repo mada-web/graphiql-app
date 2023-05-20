@@ -1,6 +1,8 @@
 import { CSSTransition } from 'react-transition-group';
 import { useRef } from 'react';
 
+import { FormattedMessage } from 'react-intl';
+
 import useAppContext from '../../../hooks/useAppContext';
 
 import Close from '../../../assets/svg/close.svg';
@@ -41,7 +43,9 @@ const SchemaBlock = () => {
         className="schema-block absolute top-0 z-10 h-[calc(100vh-100px)] w-full justify-self-end bg-query sm:right-0 sm:top-0 sm:h-[calc(100vh-100px)] sm:w-[calc(50vw)] sm:pt-[25px] lg:static lg:h-[calc(100vh-100px)] lg:w-1/2 lg:grow"
       >
         <div className="flex justify-center py-2">
-          <h1 className="text-center font-bold">Documentation</h1>
+          <h1 className="text-center font-bold">
+            <FormattedMessage id="DOC" />
+          </h1>
           <span
             className="absolute right-3 top-3 cursor-pointer px-4 font-sans sm:top-8"
             onClick={closeSchema}

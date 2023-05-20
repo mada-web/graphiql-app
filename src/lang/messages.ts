@@ -34,10 +34,11 @@ export const messages = {
       'Front-end developer, aspiring to become a full-stack developer. I see the goal - I do not notice the obstacles',
     MASHA_NAME: 'Masha Petrovskaya',
     MASHA_INFO:
-      'A novice frontend developer who is very interested in design. I live in St. Petersburg, I love my family, my cat and nature. I love math and freedom of movement, I want to work at home.',
+      'A novice Front-end developer. I live in St. Petersburg. I love math and freedom of movement, I want to work at home.',
     WELCOME: 'Welcome to',
     INTRO: 'This is the final project on the React course at RSSchool',
-    HELLO: 'Hello!',
+    HELLO: 'Hello',
+    DOC: 'Documentation',
   },
   [LOCALES.RUSSIAN]: {
     MAIN: 'Главная',
@@ -72,9 +73,10 @@ export const messages = {
       'Front-end разработчик, стремлюсь стать full-stack. Вижу цель - не замечаю препятствий.',
     MASHA_NAME: 'Маша Петровская',
     MASHA_INFO:
-      'Начинающий фронтенд-разработчик, очень интересующийся дизайном. Живу в Санкт-Петербурге, люблю свою семью, кота и природу. Люблю математику и свободу передвижения, хочу работать дома.',
+      'Начинающий Front-end разработчик. Живу в Санкт-Петербурге. Люблю математику и свободу передвижения, хочу работать дома.',
     WELCOME: 'Присоединяйтесь к',
-    HELLO: 'Привет!',
+    HELLO: 'Привет',
     INTRO: 'Это финальный проект курса по Реакту RSSchool',
+    DOC: 'Документация',
   },
 };

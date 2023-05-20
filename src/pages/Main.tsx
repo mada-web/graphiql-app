@@ -2,6 +2,8 @@ import { FC, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
+import { FormattedMessage } from 'react-intl';
+
 import ControlButtons from '../components/main/ControlButtons';
 import EditorBlock from '../components/main/EditorBlock';
 import QueryBlock from '../components/main/QueryBlock';
@@ -21,7 +23,9 @@ const Main: FC = (): JSX.Element => {
   return (
     <>
       <div className="mt-[80px] h-[40px] w-screen bg-green py-2 text-white">
-        <p className="text-center">Hello, {user?.email}!</p>
+        <p className="text-center">
+          <FormattedMessage id="HELLO" />, {user?.email}!
+        </p>
       </div>
       <main className="relative z-0 min-h-[calc(100vh-120px)] w-screen overflow-hidden bg-dark-blue">
         <div className="relative flex flex-col sm:flex-row">
