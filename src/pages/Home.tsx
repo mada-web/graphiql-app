@@ -5,14 +5,14 @@ import { Background } from '../components/Background';
 
 const Home = () => {
   return (
-    <section className="inline-block h-[1500px] w-screen bg-dark-blue min-[370px]:h-[1450px] min-[455px]:h-[1400px] sm:h-[1300px] md:h-[1000px] min-[830px]:h-[900px] min-[1400px]:h-screen">
-      <div className="absolute flex h-[1500px] w-screen flex-col items-end justify-end min-[370px]:h-[1450px] min-[455px]:h-[1400px] sm:h-[1300px] md:h-[1000px] min-[830px]:h-[900px] min-[1400px]:h-screen">
+    <section className="inline-block h-[1500px] w-screen bg-dark-blue min-[395px]:h-[1450px] min-[465px]:h-[1400px] sm:h-[1300px] md:h-[1000px] min-[950px]:h-[900px] min-[1400px]:h-screen">
+      <div className="absolute flex h-[1500px] w-screen flex-col items-end justify-end min-[395px]:h-[1450px] min-[465px]:h-[1400px] sm:h-[1300px] md:h-[1000px] min-[950px]:h-[900px] min-[1400px]:h-screen">
         <div className="z-10 mb-[28px] mr-[37px] flex w-3/4 flex-col">
-          <div className="font-semibold-400 flex flex-col self-center text-center text-white">
-            <p className="hidden text-[20px] text-green min-[320px]:inline-block">
+          <div className="font-semibold-400 -mx-[20px] flex flex-col self-center text-center text-white">
+            <p className="text-[20px] text-green">
               <FormattedMessage id="INTRO1" />
             </p>
-            <div className="mt-[10px] flex flex-row items-center justify-center gap-x-2.5 text-[16px] min-[500px]:mb-[0px]">
+            <div className="mt-[10px] hidden flex-row items-center justify-center gap-x-2.5 text-[16px] min-[500px]:mb-[0px] min-[500px]:flex">
               <p>
                 <FormattedMessage id="INTRO2" />
               </p>
@@ -25,14 +25,14 @@ const Home = () => {
                 <FormattedMessage id="INTRO4" />
               </p>
             </div>
-            <p className="mb-[30px] mt-[10px] text-[16px]">
+            <p className="mt-[10px] hidden text-[16px] min-[500px]:inline-block">
               <FormattedMessage id="INTRO5" />
             </p>
-            <div className="mb-[20px] flex items-center justify-center gap-x-2.5 font-Impact text-[40px] min-[500px]:mb-[0px]">
+            <div className="mb-[20px] mt-[30px] flex items-center justify-center gap-x-2.5 font-Impact text-[40px] min-[500px]:mb-[0px]">
               <LogoGreen />
               <p className="ml-2  text-blue">GraphiQL</p>
             </div>
-            <p className="mt-[17px] hidden text-[16px] min-[400px]:inline-block">
+            <p className="mt-[17px] hidden text-[16px] min-[350px]:inline-block">
               <FormattedMessage id="INTRO6" />
             </p>
             <p className="mb-[30px] mt-[17px] text-[16px]">

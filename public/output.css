@@ -657,6 +657,11 @@ video {
   margin-right: auto;
 }
 
+.-mx-\[20px\] {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
 .-mb-\[33px\] {
   margin-bottom: -33px;
 }
@@ -789,6 +794,10 @@ video {
   margin-top: 8px;
 }
 
+.mt-\[30px\] {
+  margin-top: 30px;
+}
+
 .block {
   display: block;
 }
@@ -833,12 +842,12 @@ video {
   height: 100px;
 }
 
-.h-\[1500px\] {
-  height: 1500px;
-}
-
 .h-\[155px\] {
   height: 155px;
+}
+
+.h-\[1600px\] {
+  height: 1600px;
 }
 
 .h-\[200px\] {
@@ -915,6 +924,10 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-\[1500px\] {
+  height: 1500px;
 }
 
 .max-h-max {
@@ -1813,6 +1826,32 @@ a:hover svg .path1 {
   .min-\[320px\]\:inline-block {
     display: inline-block;
   }
+
+  .min-\[320px\]\:flex {
+    display: flex;
+  }
+}
+
+@media (min-width: 350px) {
+  .min-\[350px\]\:inline-block {
+    display: inline-block;
+  }
+}
+
+@media (min-width: 354px) {
+  .min-\[354px\]\:h-\[1500px\] {
+    height: 1500px;
+  }
+
+  .min-\[354px\]\:h-\[1450px\] {
+    height: 1450px;
+  }
+}
+
+@media (min-width: 360px) {
+  .min-\[360px\]\:h-\[1450px\] {
+    height: 1450px;
+  }
 }
 
 @media (min-width: 370px) {
@@ -1821,9 +1860,35 @@ a:hover svg .path1 {
   }
 }
 
+@media (min-width: 380px) {
+  .min-\[380px\]\:h-\[1450px\] {
+    height: 1450px;
+  }
+}
+
+@media (min-width: 390px) {
+  .min-\[390px\]\:h-\[1450px\] {
+    height: 1450px;
+  }
+}
+
+@media (min-width: 395px) {
+  .min-\[395px\]\:h-\[1450px\] {
+    height: 1450px;
+  }
+}
+
 @media (min-width: 400px) {
   .min-\[400px\]\:inline-block {
     display: inline-block;
+  }
+
+  .min-\[400px\]\:flex {
+    display: flex;
+  }
+
+  .min-\[400px\]\:h-\[1400px\] {
+    height: 1400px;
   }
 }
 
@@ -1843,9 +1908,23 @@ a:hover svg .path1 {
   }
 }
 
+@media (min-width: 465px) {
+  .min-\[465px\]\:h-\[1400px\] {
+    height: 1400px;
+  }
+}
+
 @media (min-width: 500px) {
   .min-\[500px\]\:mb-\[0px\] {
     margin-bottom: 0px;
+  }
+
+  .min-\[500px\]\:inline-block {
+    display: inline-block;
+  }
+
+  .min-\[500px\]\:flex {
+    display: flex;
   }
 }
 
@@ -2043,6 +2122,12 @@ a:hover svg .path1 {
   }
 }
 
+@media (min-width: 950px) {
+  .min-\[950px\]\:h-\[900px\] {
+    height: 900px;
+  }
+}
+
 @media (min-width: 1024px) {
   .lg\:static {
     position: static;
@@ -2079,5 +2164,11 @@ a:hover svg .path1 {
 
   .min-\[1400px\]\:h-screen {
     height: 100vh;
+  }
+}
+
+@media (min-width: 4500px) {
+  .min-\[4500px\]\:flex {
+    display: flex;
   }
 }
