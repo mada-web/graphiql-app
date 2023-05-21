@@ -1,24 +1,45 @@
 import { FormattedMessage } from 'react-intl';
 
-import Logo from '../assets/svg/logo.svg';
+import LogoGreen from '../assets/svg/logo-green.svg';
 import { Background } from '../components/Background';
 
 const Home = () => {
   return (
-    <section className="inline-block h-[1600px] w-screen bg-dark-blue min-[354px]:h-[1500px] min-[455px]:h-[1400px] sm:h-[1300px] md:h-[1000px] min-[830px]:h-[900px] min-[1400px]:h-screen">
-      <div className="absolute flex h-[1600px] w-screen flex-col items-end justify-end min-[354px]:h-[1500px] min-[455px]:h-[1400px] sm:h-[1300px] md:h-[1000px] min-[830px]:h-[900px] min-[1400px]:h-screen">
-        <div className="z-10 mb-[28px] mr-[37px] flex w-3/4 flex-col items-start">
-          <p className="font-semibold-700 ml-20 text-[20px] text-white">
-            <FormattedMessage id="WELCOME" />
-          </p>
-          <div className="font-semibold-400 mb-[20px] ml-6 flex items-center justify-center gap-x-2.5 font-Impact text-[40px] text-white min-[500px]:mb-[0px]">
-            <Logo />
-            <p className="ml-2">GraphiQL</p>
+    <section className="inline-block h-[1500px] w-screen bg-dark-blue min-[370px]:h-[1450px] min-[455px]:h-[1400px] sm:h-[1300px] md:h-[1000px] min-[830px]:h-[900px] min-[1400px]:h-screen">
+      <div className="absolute flex h-[1500px] w-screen flex-col items-end justify-end min-[370px]:h-[1450px] min-[455px]:h-[1400px] sm:h-[1300px] md:h-[1000px] min-[830px]:h-[900px] min-[1400px]:h-screen">
+        <div className="z-10 mb-[28px] mr-[37px] flex w-3/4 flex-col">
+          <div className="font-semibold-400 flex flex-col self-center text-center text-white">
+            <p className="hidden text-[20px] text-green min-[320px]:inline-block">
+              <FormattedMessage id="INTRO1" />
+            </p>
+            <div className="mt-[10px] flex flex-row items-center justify-center gap-x-2.5 text-[16px] min-[500px]:mb-[0px]">
+              <p>
+                <FormattedMessage id="INTRO2" />
+              </p>
+              <p>&bull;</p>
+              <p>
+                <FormattedMessage id="INTRO3" />
+              </p>
+              <p>&bull;</p>
+              <p>
+                <FormattedMessage id="INTRO4" />
+              </p>
+            </div>
+            <p className="mb-[30px] mt-[10px] text-[16px]">
+              <FormattedMessage id="INTRO5" />
+            </p>
+            <div className="mb-[20px] flex items-center justify-center gap-x-2.5 font-Impact text-[40px] min-[500px]:mb-[0px]">
+              <LogoGreen />
+              <p className="ml-2  text-blue">GraphiQL</p>
+            </div>
+            <p className="mt-[17px] hidden text-[16px] min-[400px]:inline-block">
+              <FormattedMessage id="INTRO6" />
+            </p>
+            <p className="mb-[30px] mt-[17px] text-[16px]">
+              <FormattedMessage id="INTRO7" />
+            </p>
           </div>
-          <p className="font-semibold-400 mb-[40px] ml-6 mt-[47px] hidden text-[16px] text-white min-[500px]:inline-block">
-            <FormattedMessage id="INTRO" />
-          </p>
-          <div className="flex flex-col rounded-[10px] bg-gray p-6">
+          <div className="flex flex-col rounded-[10px] bg-gray p-6 text-dark-blue">
             <h2 className="font-semibold-400 mb-[20px] text-[24px] md:mb-[40px]">
               <FormattedMessage id="TEAM_MEET" />
             </h2>

@@ -76,7 +76,7 @@ const Register: FC = (): JSX.Element => {
               <div className="z-0 -mb-[50px] h-[100px] w-[100px] bg-[url('./ufo.png')] bg-cover bg-no-repeat" />
             </div>
             <form
-              className="z-10 flex w-1/2 min-w-[315px] max-w-7xl flex-col items-center justify-center rounded-[10px] bg-gray text-black min-[410px]:min-w-[400px] sm:min-w-[500px] md:min-w-[600px]"
+              className="z-10 flex w-1/2 min-w-[315px] max-w-7xl flex-col items-center justify-center rounded-[10px] bg-gray text-dark-blue min-[410px]:min-w-[400px] sm:min-w-[500px] md:min-w-[600px]"
               onSubmit={handleSubmit(onSubmit)}
               noValidate
             >

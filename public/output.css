@@ -709,24 +709,16 @@ video {
   margin-bottom: 28px;
 }
 
-.mb-\[40px\] {
-  margin-bottom: 40px;
+.mb-\[30px\] {
+  margin-bottom: 30px;
 }
 
 .ml-2 {
   margin-left: 0.5rem;
 }
 
-.ml-20 {
-  margin-left: 5rem;
-}
-
 .ml-3 {
   margin-left: 0.75rem;
-}
-
-.ml-6 {
-  margin-left: 1.5rem;
 }
 
 .ml-\[-51px\] {
@@ -773,6 +765,14 @@ video {
   margin-top: 2rem;
 }
 
+.mt-\[10px\] {
+  margin-top: 10px;
+}
+
+.mt-\[17px\] {
+  margin-top: 17px;
+}
+
 .mt-\[47px\] {
   margin-top: 47px;
 }
@@ -795,10 +795,6 @@ video {
 
 .inline-block {
   display: inline-block;
-}
-
-.inline {
-  display: inline;
 }
 
 .flex {
@@ -919,6 +915,10 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-\[1500px\] {
+  height: 1500px;
 }
 
 .max-h-max {
@@ -1518,6 +1518,11 @@ video {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
+.text-blue {
+  --tw-text-opacity: 1;
+  color: rgb(54 140 191 / var(--tw-text-opacity));
+}
+
 .text-dark-blue {
   --tw-text-opacity: 1;
   color: rgb(14 14 39 / var(--tw-text-opacity));
@@ -1622,6 +1627,10 @@ html {
   fill: white;
 }
 
+.logo .logo svg path {
+  fill: #0e0e27;
+}
+
 a:hover svg .path {
   fill: white;
 }
@@ -1631,6 +1640,7 @@ a:hover svg .path1 {
 }
 
 .li:hover svg path {
+  fill: #860971;
   fill: #7ebc59;
 }
 
@@ -1803,9 +1813,43 @@ a:hover svg .path1 {
   left: 1.25rem;
 }
 
+@media (min-width: 320px) {
+  .min-\[320px\]\:inline-block {
+    display: inline-block;
+  }
+
+  .min-\[320px\]\:flex {
+    display: flex;
+  }
+}
+
 @media (min-width: 354px) {
   .min-\[354px\]\:h-\[1500px\] {
     height: 1500px;
+  }
+
+  .min-\[354px\]\:h-\[1450px\] {
+    height: 1450px;
+  }
+}
+
+@media (min-width: 370px) {
+  .min-\[370px\]\:h-\[1450px\] {
+    height: 1450px;
+  }
+}
+
+@media (min-width: 400px) {
+  .min-\[400px\]\:inline-block {
+    display: inline-block;
+  }
+
+  .min-\[400px\]\:flex {
+    display: flex;
+  }
+
+  .min-\[400px\]\:h-\[1400px\] {
+    height: 1400px;
   }
 }
 
@@ -1832,6 +1876,10 @@ a:hover svg .path1 {
 
   .min-\[500px\]\:inline-block {
     display: inline-block;
+  }
+
+  .min-\[500px\]\:flex {
+    display: flex;
   }
 }
 
@@ -2065,5 +2113,11 @@ a:hover svg .path1 {
 
   .min-\[1400px\]\:h-screen {
     height: 100vh;
+  }
+}
+
+@media (min-width: 4500px) {
+  .min-\[4500px\]\:flex {
+    display: flex;
   }
 }
