@@ -1,13 +1,11 @@
 import { FC } from 'react';
 
+import { getQuery } from '../../utils/getQueryi';
 import useAppContext from '../../hooks/useAppContext';
-import getSchema from '../../utils/getSchema';
 
 import BtnPlay from '../../assets/svg/btn_play.svg';
 import BtnQuery from '../../assets/svg/btn_query_params.svg';
 import BtnSchema from '../../assets/svg/btn_schema.svg';
-import { getQuery } from '../../utils/api';
-import { SchemaData, Type } from '../../types/types';
 
 const ControlButtons: FC = (): JSX.Element => {
   const {
@@ -16,21 +14,21 @@ const ControlButtons: FC = (): JSX.Element => {
     setResponseApi,
     queryBody,
     queryParams,
-    setSchema,
-    setSchemaData,
+    setIsDataLoading,
+    schema,
   } = useAppContext();
 
   const executeQuery = async () => {
+    setIsDataLoading(true);
+
     const data = await getQuery({ queryBody, queryParams });
     setResponseApi(() => JSON.stringify(data, null, '\t'));
+
+    setIsDataLoading(false);
   };
 
   const showSchema = async () => {
     setIsShowSchema((prev) => !prev);
-    const { data } = (await getSchema()) as SchemaData;
-    const queries = data.__schema.types.find((el: { name: string }) => el.name === 'Query') as Type;
-    setSchemaData(data.__schema);
-    setSchema(() => (queries.fields ? queries.fields : [{ name: 'no data' }]));
   };
 
   const showQueryParams = () => {
@@ -48,13 +46,14 @@ const ControlButtons: FC = (): JSX.Element => {
       </button>
       <button
         title="Query params"
-        className="mb-3 mr-2 h-[30px] w-[30px] transition-all hover:brightness-150"
+        className="mr-2 h-[30px] w-[30px] transition-all hover:brightness-150"
         onClick={showQueryParams}
       >
         <BtnQuery />
       </button>
       <button
         title="Show schema"
+        disabled={schema.length === 1}
         className="mr-2 h-[30px] w-[30px] transition-all hover:brightness-150"
         onClick={showSchema}
       >
