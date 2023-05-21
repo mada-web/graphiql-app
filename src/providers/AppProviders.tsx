@@ -16,7 +16,7 @@ import { Schema, SchemaField, Type } from '../types/types';
 type TypeSetState<T> = Dispatch<SetStateAction<T>>;
 type Props = { children: ReactNode };
 
-const defaultSchemaObj = { name: 'no data' };
+export const defaultSchemaObj = { name: 'no data' };
 
 const schemaDefault: Schema = {
   types: [defaultSchemaObj],
@@ -29,6 +29,8 @@ interface IAppContext {
   setQueryParams: TypeSetState<string>;
   isShowSchema: boolean;
   setIsShowSchema: TypeSetState<boolean>;
+  isDataLoading: boolean;
+  setIsDataLoading: TypeSetState<boolean>;
   isQueryParams: boolean;
   setIsQueryParams: TypeSetState<boolean>;
   currentLocale: string;
@@ -70,12 +72,15 @@ export const CurrentAppContext = createContext<IAppContext>({
   setIsShowDescription: () => {},
   active: '',
   setActive: () => {},
+  isDataLoading: false,
+  setIsDataLoading: () => {},
 });
 
 export const AppProvider: FC<Props> = ({ children }) => {
   const [queryBody, setQueryBody] = useState<string>(defaultCode);
   const [queryParams, setQueryParams] = useState<string>(defaultParams);
   const [isShowSchema, setIsShowSchema] = useState<boolean>(false);
+  const [isDataLoading, setIsDataLoading] = useState<boolean>(false);
   const [isQueryParams, setIsQueryParams] = useState(false);
   const [responseApi, setResponseApi] = useState('');
   const [schema, setSchema] = useState<SchemaField[]>([defaultSchemaObj]);
@@ -121,6 +126,8 @@ export const AppProvider: FC<Props> = ({ children }) => {
     setIsShowDescription,
     active,
     setActive,
+    isDataLoading,
+    setIsDataLoading
   };
 
   return <CurrentAppContext.Provider value={allValue}>{children}</CurrentAppContext.Provider>;

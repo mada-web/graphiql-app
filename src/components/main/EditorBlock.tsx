@@ -93,7 +93,7 @@ const EditorBlock = () => {
         defaultValue={defaultCode}
         options={options}
         onChange={handleEditorChange}
-        loading="Wait a second..."
+        loading="Wait a second, please..."
       />
     </section>
   );

@@ -1,19 +1,20 @@
+import React from 'react';
 import { CSSTransition } from 'react-transition-group';
-import { useRef } from 'react';
 
+import ShowSchema from './ShowSchema';
 import useAppContext from '../../../hooks/useAppContext';
 
 import Close from '../../../assets/svg/close.svg';
 
-import ShowSchema from './ShowSchema';
-
 const SchemaBlock = () => {
   const { setIsShowSchema, isShowSchema, schemaData, setSchemaParams, setIsShowDescription } =
     useAppContext();
-  const schemaRef = useRef(null);
+
+  const schemaRef = React.useRef() as React.MutableRefObject<HTMLDivElement>;
 
   const listenSchema = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
+
     const paramTag = e.target as HTMLAnchorElement;
     const nameParam = paramTag.textContent;
     const descParam = schemaData.types.find((type) => nameParam === type.name);

@@ -1,27 +1,47 @@
-import { FC, useEffect } from 'react';
+import { FC, useEffect, Suspense, lazy } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
-import ControlButtons from '../components/main/ControlButtons';
-import EditorBlock from '../components/main/EditorBlock';
-import QueryBlock from '../components/main/QueryBlock';
-import ResponseBlock from '../components/main/ResponseBlock';
-import SchemaBlock from '../components/main/Schema/SchemaBlock';
 import { auth } from '../firebase';
+import { SchemaData, Type } from '../types/types';
+import { defaultSchemaObj } from '../providers/AppProviders';
+
+import getSchema from '../utils/getSchema';
+import useAppContext from '../hooks/useAppContext';
+import QueryBlock from '../components/main/QueryBlock';
+import EditorBlock from '../components/main/EditorBlock';
+import ResponseBlock from '../components/main/ResponseBlock';
+import ControlButtons from '../components/main/ControlButtons';
+
+const SchemaBlock = lazy(() => import('../components/main/Schema/SchemaBlock'));
 
 const Main: FC = (): JSX.Element => {
   const navigate = useNavigate();
-
   const [user, loading] = useAuthState(auth);
+  const { setSchema, setSchemaData, schema } = useAppContext();
 
   useEffect(() => {
     if (!loading && !user) navigate('/');
+
+    const getDocs = async () => {
+      const { data } = (await getSchema()) as SchemaData;
+      const queries = data.__schema.types.find(
+        (el: { name: string }) => el.name === 'Query'
+      ) as Type;
+
+      setSchemaData(data.__schema);
+      setSchema(() => (queries.fields ? queries.fields : [defaultSchemaObj]));
+    };
+
+    if (user && schema[0] === defaultSchemaObj) {
+      getDocs();
+    }
   }, [user, navigate, loading]);
 
   return (
     <>
       <div className="mt-[80px] h-[40px] w-screen bg-green py-2 text-white">
-        <p className="text-center">Hello, {user?.email}!</p>
+        {user && <p className="text-center">Hello, {user?.email}!</p>}
       </div>
       <main className="relative z-0 min-h-[calc(100vh-120px)] w-screen overflow-hidden bg-dark-blue sm:h-[calc(100vh-120px)]">
         <article className="relative flex flex-col sm:flex-row">
@@ -33,7 +53,9 @@ const Main: FC = (): JSX.Element => {
             </div>
           </div>
           <ResponseBlock />
-          <SchemaBlock />
+          <Suspense fallback={null}>
+            <SchemaBlock />
+          </Suspense>
         </article>
       </main>
     </>
