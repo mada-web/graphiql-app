@@ -69,7 +69,7 @@ export const messages = {
     EMAIL_VALIDATION: 'Введите адрес электронной почты',
     EMAIL_PATTERN: 'Вы ввели невалидный адрес',
     TEAM: 'Команда:',
-    TEAM_MEET: 'Встречайте нашу команду:',
+    TEAM_MEET: 'Наша команда:',
     ARTEM_NAME: 'Артем Рубашка',
     ARTEM_INFO:
       'Я JavaScript разработчик, родом из Беларуси. В настоящее время жду, когда Google возьмет меня на работу :)',
