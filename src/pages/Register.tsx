@@ -63,8 +63,8 @@ const Register: FC = (): JSX.Element => {
   };
 
   return (
-    <section className="inline-block h-screen w-screen bg-dark-blue">
-      <div className="absolute mt-8 flex h-screen w-screen flex-col items-center justify-center min-[1400px]:mt-0">
+    <main className="relative flex min-h-[calc(100vh-80px)] w-screen bg-dark-blue ">
+      <section className="absolute flex h-screen w-screen flex-col items-center justify-center">
         {isLoading ? (
           <Spinner />
         ) : (
@@ -122,9 +122,9 @@ const Register: FC = (): JSX.Element => {
             </form>
           </div>
         )}
-      </div>
+      </section>
       <Background />
-    </section>
+    </main>
   );
 };
 

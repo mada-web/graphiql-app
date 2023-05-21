@@ -6,7 +6,10 @@ html {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
-
+body {
+  display: flex;
+  align-items: flex-start;
+}
 .white:hover svg path {
   fill: white;
 }
