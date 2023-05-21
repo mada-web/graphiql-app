@@ -2,7 +2,6 @@ import Editor, { Monaco } from '@monaco-editor/react';
 import monaco from 'monaco-editor';
 
 import useAppContext from '../../hooks/useAppContext';
-import { Spinner } from '../Spinner';
 
 export const defaultCode = `query {
     eggGroups{
@@ -94,7 +93,7 @@ const EditorBlock = () => {
         defaultValue={defaultCode}
         options={options}
         onChange={handleEditorChange}
-        loading={<Spinner />}
+        loading="Wait a second, please..."
       />
     </section>
   );
