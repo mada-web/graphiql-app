@@ -17,7 +17,7 @@ const ErrorMessage: FC = (): JSX.Element => {
   };
 
   return (
-    <div className="flex h-screen w-screen flex-col items-center justify-center bg-dark-blue">
+    <article className="flex h-screen w-screen flex-col items-center justify-center bg-dark-blue">
       <h1 className="mt-[47px] text-4xl text-white">Something went wrong...</h1>
       <p className="mt-6 text-2xl text-white">Please, try again later.</p>
       <button
@@ -33,7 +33,7 @@ const ErrorMessage: FC = (): JSX.Element => {
       >
         GO BACK
       </button>
-    </div>
+    </article>
   );
 };
 

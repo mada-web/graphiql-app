@@ -881,8 +881,8 @@ video {
   height: 500px;
 }
 
-.h-\[80\%\] {
-  height: 80%;
+.h-\[70\%\] {
+  height: 70%;
 }
 
 .h-\[80px\] {
@@ -897,16 +897,16 @@ video {
   height: calc(100% - 2rem);
 }
 
-.h-\[calc\(100\%-3rem\)\] {
-  height: calc(100% - 3rem);
+.h-\[calc\(100\%-3\.5rem\)\] {
+  height: calc(100% - 3.5rem);
 }
 
 .h-\[calc\(100\%-40px\)\] {
   height: calc(100% - 40px);
 }
 
-.h-\[calc\(100vh-100px\)\] {
-  height: calc(100vh - 100px);
+.h-\[calc\(100vh-120px\)\] {
+  height: calc(100vh - 120px);
 }
 
 .h-full {
@@ -1395,12 +1395,8 @@ video {
   padding-right: 10px;
 }
 
-.pt-16 {
-  padding-top: 4rem;
-}
-
-.pt-4 {
-  padding-top: 1rem;
+.pt-10 {
+  padding-top: 2.5rem;
 }
 
 .pt-5 {
@@ -1892,8 +1888,8 @@ a:hover svg .path1 {
     height: calc(100% - 2rem);
   }
 
-  .sm\:h-\[calc\(100\%-40px\)\] {
-    height: calc(100% - 40px);
+  .sm\:h-\[calc\(100\%-60px\)\] {
+    height: calc(100% - 60px);
   }
 
   .sm\:h-\[calc\(100vh-100px\)\] {
@@ -1902,6 +1898,10 @@ a:hover svg .path1 {
 
   .sm\:h-\[calc\(100vh-120px\)\] {
     height: calc(100vh - 120px);
+  }
+
+  .sm\:h-\[calc\(100vh-140px\)\] {
+    height: calc(100vh - 140px);
   }
 
   .sm\:min-h-0 {
@@ -1976,8 +1976,8 @@ a:hover svg .path1 {
     padding-top: 0px;
   }
 
-  .sm\:pt-\[25px\] {
-    padding-top: 25px;
+  .sm\:pt-\[20px\] {
+    padding-top: 20px;
   }
 }
 
