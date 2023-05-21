@@ -58,7 +58,7 @@ const Login = () => {
 
   return (
     <section className="mt-8 inline-block h-screen w-screen bg-dark-blue min-[1400px]:mt-0">
-      <div className="absolute flex h-screen w-screen flex-col items-center justify-center ">
+      <div className="absolute mt-8 min-[1400px]:mt-0 flex h-screen w-screen flex-col items-center justify-center ">
         {isLoading ? (
           <Spinner />
         ) : (
