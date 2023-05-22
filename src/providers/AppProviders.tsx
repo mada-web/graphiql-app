@@ -127,7 +127,7 @@ export const AppProvider: FC<Props> = ({ children }) => {
     active,
     setActive,
     isDataLoading,
-    setIsDataLoading
+    setIsDataLoading,
   };
 
   return <CurrentAppContext.Provider value={allValue}>{children}</CurrentAppContext.Provider>;

@@ -57,20 +57,20 @@ const Login = () => {
   };
 
   return (
-    <section className="mt-8 inline-block h-screen w-screen bg-dark-blue min-[1400px]:mt-0">
-      <div className="absolute flex h-screen w-screen flex-col items-center justify-center ">
+    <main className="relative flex min-h-[calc(100vh-80px)] w-screen  bg-dark-blue ">
+      <section className="absolute flex h-screen w-screen flex-col items-center justify-center">
         {isLoading ? (
           <Spinner />
         ) : (
           <div className="flex flex-col">
             <div className="flex flex-row place-self-center">
               <div className="z-10 -mr-[10px] mt-[7px] h-[40px] w-[80px] items-center rounded-[10px] bg-white p-2 text-center text-green">
-                <FormattedMessage id="HELLO" />
+                <FormattedMessage id="HELLO" />!
               </div>
               <div className="z-0 -mb-[50px] h-[100px] w-[100px] bg-[url('./ufo.png')] bg-cover bg-no-repeat" />
             </div>
             <form
-              className="z-10 flex w-1/2 min-w-[315px] max-w-7xl flex-col items-center justify-center rounded-[10px] bg-gray text-black min-[410px]:min-w-[400px] sm:min-w-[500px] md:min-w-[600px]"
+              className="z-10 flex w-1/2 min-w-[315px] max-w-7xl flex-col items-center justify-center rounded-[10px] bg-gray text-dark-blue min-[410px]:min-w-[400px] sm:min-w-[500px] md:min-w-[600px]"
               onSubmit={handleSubmit(onSubmit)}
               noValidate
             >
@@ -109,9 +109,9 @@ const Login = () => {
             </form>
           </div>
         )}
-      </div>
+      </section>
       <Background />
-    </section>
+    </main>
   );
 };
 export default Login;

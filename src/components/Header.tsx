@@ -43,13 +43,13 @@ const Header: FC = (): JSX.Element => {
     <>
       <header
         className={`fixed left-0 top-0 z-20 h-[80px] w-screen p-4 transition-all duration-200 ${
-          animateHeader ? 'bg-green text-dark-blue' : 'bg-gray'
+          animateHeader ? 'logo bg-green text-dark-blue' : 'bg-gray'
         }`}
       >
         <ul className="mx-auto flex max-w-7xl list-none items-center justify-between">
           <li className="white relative flex items-center gap-x-6 leading-6">
             <Link
-              className="font-semibold-400 flex items-center justify-center gap-x-2.5 font-Impact text-[32px] transition-all hover:text-white"
+              className="logo font-semibold-400 flex items-center justify-center gap-x-2.5 font-Impact text-[32px] text-dark-blue transition-all hover:text-white"
               to="/"
             >
               <Logo />
@@ -71,7 +71,7 @@ const Header: FC = (): JSX.Element => {
                   className={({ isActive }) =>
                     isActive
                       ? 'border-b-2 px-3 font-semibold leading-7 text-white'
-                      : 'border-b-2 border-transparent px-3 font-semibold leading-7 transition-all hover:border-black'
+                      : 'border-b-2 border-transparent px-3 font-semibold leading-7 text-dark-blue transition-all hover:border-black'
                   }
                   to="sign-in"
                 >
@@ -81,7 +81,7 @@ const Header: FC = (): JSX.Element => {
                   className={({ isActive }) =>
                     isActive
                       ? 'border-b-2 px-3 font-semibold leading-7 text-white'
-                      : 'border-b-2 border-transparent px-3 font-semibold leading-7 transition-all hover:border-black'
+                      : 'border-b-2 border-transparent px-3 font-semibold leading-7 text-dark-blue transition-all hover:border-black'
                   }
                   to="sign-up"
                 >
@@ -95,14 +95,14 @@ const Header: FC = (): JSX.Element => {
                   className={({ isActive }) =>
                     isActive
                       ? 'border-b-2 px-3 font-semibold leading-7 text-white'
-                      : 'border-b-2 border-transparent px-3 font-semibold leading-7 transition-all hover:border-black'
+                      : 'border-b-2 border-transparent px-3 font-semibold leading-7 text-dark-blue transition-all hover:border-black'
                   }
                   to="/main"
                 >
                   <FormattedMessage id="MAIN" />
                 </NavLink>
                 <Link
-                  className="border-b-2 border-transparent px-3 font-semibold leading-7 transition-all hover:border-b-2 hover:border-black"
+                  className="border-b-2 border-transparent px-3 font-semibold leading-7 text-dark-blue transition-all hover:border-b-2 hover:border-black"
                   onClick={logout}
                   to={'/'}
                 >
@@ -110,11 +110,11 @@ const Header: FC = (): JSX.Element => {
                 </Link>
               </>
             )}
-            <div className="flex items-center px-3 py-2.5">
+            <div className="flex items-center px-3 py-2.5 text-dark-blue">
               <span className="mr-3 font-semibold ">En</span>
               <label
                 htmlFor="lang"
-                className="relative h-5 w-10 cursor-pointer rounded-full bg-black"
+                className="relative h-5 w-10 cursor-pointer rounded-full bg-dark-blue"
               >
                 <input
                   type="checkbox"
