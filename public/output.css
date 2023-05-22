@@ -1400,8 +1400,8 @@ video {
   padding-right: 10px;
 }
 
-.pt-10 {
-  padding-top: 2.5rem;
+.pt-16 {
+  padding-top: 4rem;
 }
 
 .pt-5 {
@@ -1938,10 +1938,6 @@ a:hover svg .path1 {
 
   .sm\:h-\[calc\(100vh-120px\)\] {
     height: calc(100vh - 120px);
-  }
-
-  .sm\:h-\[calc\(100vh-140px\)\] {
-    height: calc(100vh - 140px);
   }
 
   .sm\:min-h-0 {

@@ -41,7 +41,7 @@ const Main: FC = (): JSX.Element => {
   return (
     <>
       <div className="mt-[80px] h-[40px] w-screen bg-green py-2 text-white">
-        {user && <p className="text-center">Hello, {user?.email}!</p>}
+        {user?.displayName ? <p className="text-center">Hello, {user?.displayName}!</p> : false}
       </div>
       <main className="relative z-0 min-h-[calc(100vh-120px)] w-screen overflow-hidden bg-dark-blue sm:h-[calc(100vh-120px)]">
         <article className="relative flex flex-col sm:flex-row">
