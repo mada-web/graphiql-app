@@ -1,10 +1,11 @@
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
 
-import ShowSchema from './ShowSchema';
 import useAppContext from '../../../hooks/useAppContext';
 
 import Close from '../../../assets/svg/close.svg';
+
+import ShowSchema from './ShowSchema';
 
 const SchemaBlock = () => {
   const { setIsShowSchema, isShowSchema, schemaData, setSchemaParams, setIsShowDescription } =
