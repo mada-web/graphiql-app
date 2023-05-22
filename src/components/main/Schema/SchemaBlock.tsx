@@ -39,7 +39,7 @@ const SchemaBlock = () => {
     >
       <section
         ref={schemaRef}
-        className="schema-block absolute top-0 z-10 h-[calc(100vh-100px)] w-full justify-self-end bg-query sm:right-0 sm:top-0 sm:h-[calc(100vh-100px)] sm:w-[calc(50vw)] sm:pt-[25px] lg:static lg:h-[calc(100vh-100px)] lg:w-1/2 lg:grow"
+        className="schema-block absolute top-0 z-10 h-[calc(100vh-120px)] w-full justify-self-end bg-query sm:right-0 sm:top-0 sm:h-[calc(100vh-100px)] sm:w-[calc(50vw)] sm:pt-[20px] lg:static lg:h-[calc(100vh-100px)] lg:w-1/2 lg:grow"
       >
         <div className="flex justify-center py-2">
           <h1 className="text-center font-bold">Documentation</h1>
@@ -51,7 +51,7 @@ const SchemaBlock = () => {
           </span>
         </div>
         <div
-          className="relative mr-4 h-[calc(100%-40px)] sm:h-[calc(100%-40px)]"
+          className="relative mr-4 h-[calc(100%-40px)] sm:h-[calc(100%-60px)]"
           onClick={listenSchema}
         >
           <ShowSchema />

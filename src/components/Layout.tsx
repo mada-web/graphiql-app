@@ -6,11 +6,11 @@ import Header from './Header';
 
 const Layout: FC = (): JSX.Element => {
   return (
-    <div>
+    <>
       <Header />
       <Outlet />
       <Footer />
-    </div>
+    </>
   );
 };
 
