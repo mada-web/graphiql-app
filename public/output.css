@@ -762,10 +762,6 @@ video {
   margin-top: 1.5rem;
 }
 
-.mt-8 {
-  margin-top: 2rem;
-}
-
 .mt-\[10px\] {
   margin-top: 10px;
 }
@@ -792,14 +788,6 @@ video {
 
 .mt-\[8px\] {
   margin-top: 8px;
-}
-
-.mt-\[\] {
-  margin-top: ;
-}
-
-.mt-\[80p\] {
-  margin-top: 80p;
 }
 
 .block {
@@ -930,14 +918,6 @@ video {
   height: 100vh;
 }
 
-.h-\[calc\(h-full-80px\)\] {
-  height: calc(h-full-80px);
-}
-
-.h-\[calc\(100vh-80px\)\] {
-  height: calc(100vh - 80px);
-}
-
 .max-h-max {
   max-height: -moz-max-content;
   max-height: max-content;
@@ -953,14 +933,6 @@ video {
 
 .min-h-\[calc\(100vh-80px\)\] {
   min-height: calc(100vh - 80px);
-}
-
-.min-h-\[calc\(100vh-73px\)\] {
-  min-height: calc(100vh - 73px);
-}
-
-.min-h-\[calc\(100vh-87px\)\] {
-  min-height: calc(100vh - 87px);
 }
 
 .w-1\/2 {
@@ -1033,22 +1005,6 @@ video {
 
 .min-w-\[315px\] {
   min-width: 315px;
-}
-
-.min-w-\[9\] {
-  min-width: 9;
-}
-
-.min-w-\[95\] {
-  min-width: 95;
-}
-
-.min-w-\[95v\] {
-  min-width: 95v;
-}
-
-.min-w-\[95vw\] {
-  min-width: 95vw;
 }
 
 .max-w-7xl {
@@ -1677,6 +1633,10 @@ body {
   fill: white;
 }
 
+.white:hover .logo svg path {
+  fill: white;
+}
+
 .logo .logo svg path {
   fill: #0e0e27;
 }
@@ -2135,10 +2095,6 @@ a:hover svg .path1 {
 }
 
 @media (min-width: 1400px) {
-  .min-\[1400px\]\:mt-0 {
-    margin-top: 0px;
-  }
-
   .min-\[1400px\]\:h-screen {
     height: 100vh;
   }

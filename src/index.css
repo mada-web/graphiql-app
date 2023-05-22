@@ -13,7 +13,9 @@ body {
 .white:hover svg path {
   fill: white;
 }
-
+.white:hover .logo svg path {
+  fill: white;
+}
 .logo .logo svg path {
   fill: #0e0e27;
 }
