@@ -1282,34 +1282,6 @@ video {
   background-image: url('./ufo.png');
 }
 
-.bg-\[url\(\'\.\/2\.jpg\'\)\] {
-  background-image: url('./2.jpg');
-}
-
-.bg-\[url\(\'\.\/1\.jpg\'\)\] {
-  background-image: url('./1.jpg');
-}
-
-.bg-\[url\(\'\.\/1\.\437\442\43F\'\)\] {
-  background-image: url('./1.зтп');
-}
-
-.bg-\[url\(\'\.\/1\.\'\)\] {
-  background-image: url('./1.');
-}
-
-.bg-\[url\(\'\.\/1\.png\'\)\] {
-  background-image: url('./1.png');
-}
-
-.bg-\[url\(\'\.\/3\.png\'\)\] {
-  background-image: url('./3.png');
-}
-
-.bg-\[url\(\'\.\/3\.jpg\'\)\] {
-  background-image: url('./3.jpg');
-}
-
 .bg-auto {
   background-size: auto;
 }
