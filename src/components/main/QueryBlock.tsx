@@ -90,7 +90,7 @@ const QueryBlock = () => {
       mountOnEnter
       unmountOnExit
     >
-      <div
+      <section
         ref={queryParamRef}
         className="query-block relative mr-2 h-[200px] w-[calc(100%-1rem)] rounded-t-lg bg-query transition-all sm:mr-0 sm:w-auto"
       >
@@ -103,7 +103,7 @@ const QueryBlock = () => {
         </span>
 
         <Editor
-          className="h-[80%] w-auto scroll-smooth pt-8 -hue-rotate-180 invert "
+          className="h-[70%] w-auto scroll-smooth pt-8 -hue-rotate-180 invert "
           theme="grey-theme"
           beforeMount={handleEditorWillMount}
           defaultLanguage="qraphql"
@@ -112,7 +112,7 @@ const QueryBlock = () => {
           defaultValue={defaultParams}
           options={options}
         />
-      </div>
+      </section>
     </CSSTransition>
   );
 };

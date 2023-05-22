@@ -10,7 +10,7 @@ const NotFound: FC = (): JSX.Element => {
   };
 
   return (
-    <div className="flex h-screen w-screen items-center">
+    <article className="flex h-screen w-screen items-center">
       <div className="bg-content inset-x-0 mx-5 grid h-[500px] max-w-7xl grow  grid-cols-3 grid-rows-[200px_auto_140px] rounded-[20px] bg-[url('./bg_404.png')]  bg-center bg-no-repeat text-white xl:mx-auto">
         <div className="col-span-3 col-start-1 row-start-2 self-center text-center sm:col-start-3 sm:row-start-1">
           <h1 className="font-Impact text-7xl font-bold tracking-wider">404</h1>
@@ -30,7 +30,7 @@ const NotFound: FC = (): JSX.Element => {
           </button>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 export default NotFound;

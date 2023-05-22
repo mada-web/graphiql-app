@@ -21,7 +21,7 @@ const DescriptionBlock = () => {
       mountOnEnter
       unmountOnExit
     >
-      <div
+      <section
         ref={descriptionRef}
         className="query-block absolute bottom-0 left-0 h-[200px] w-full rounded-t-lg bg-[#c6c6c6] shadow-[0_-20px_0_0_rgba(237,237,255,1)] transition-[height]"
       >
@@ -29,10 +29,10 @@ const DescriptionBlock = () => {
         <span onClick={handleClick} className="absolute right-2 top-2 cursor-pointer p-2">
           <Close />
         </span>
-        <div className="desc scrollbar mb-2 mr-2 h-[calc(100%-3rem)] overflow-scroll px-4 pt-4 text-sm">
+        <ul className="desc scrollbar mb-2 mr-2 mt-2 h-[calc(100%-3.5rem)] overflow-scroll px-4 text-sm">
           {schemaParams.fields &&
             schemaParams.fields.map((field) => (
-              <p key={field.name} className="mb-2">
+              <li key={field.name} className="mb-2">
                 <span>{field.name}: </span>
                 <a href="#" className="text-amber-500">
                   {field.type?.name}
@@ -46,11 +46,11 @@ const DescriptionBlock = () => {
                     <span>]</span>
                   </>
                 )}
-              </p>
+              </li>
             ))}
           {schemaParams.description && <p>{schemaParams.description}</p>}
-        </div>
-      </div>
+        </ul>
+      </section>
     </CSSTransition>
   );
 };

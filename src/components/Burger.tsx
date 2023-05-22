@@ -24,7 +24,7 @@ const Burger: FC<IBurger> = ({ onClose }): JSX.Element => {
   };
 
   return (
-    <div
+    <menu
       className="fixed z-30 flex h-screen w-screen items-start justify-end bg-white/40"
       onClick={(e) => {
         if (e.target === e.currentTarget) {
@@ -104,7 +104,7 @@ const Burger: FC<IBurger> = ({ onClose }): JSX.Element => {
           <span className="ml-3 font-semibold">Ru</span>
         </div>
       </li>
-    </div>
+    </menu>
   );
 };
 

@@ -9,10 +9,10 @@ import Graph from '../assets/svg/graph.svg';
 
 const Footer: FC = (): JSX.Element => {
   return (
-    <footer className="-mt-[7px] inline-block w-screen bg-dark-blue">
+    <footer className="inline-block h-full w-screen bg-dark-blue">
       <div className="h-[3.75rem] bg-gray" />
       <div className="mx-auto flex h-[29rem] max-w-7xl items-center justify-between overflow-hidden">
-        <ul className="relative block content-center text-white">
+        <ul className="relative block content-center text-white ">
           <div className="flex flex-col items-center">
             <h2 className="relative text-[32px] font-normal">
               <FormattedMessage id="TEAM" />
