@@ -1629,13 +1629,9 @@ body {
   fill: white;
 }
 
-.white:hover .logo svg path {
-  fill: white;
-}
-
-.logo .logo svg path {
+/* .logo .logo svg path {
   fill: #0e0e27;
-}
+} */
 
 a:hover svg .path {
   fill: white;
@@ -1647,6 +1643,7 @@ a:hover svg .path1 {
 
 .li:hover svg path {
   fill: #860971;
+  fill: #2c7005f6;
   fill: #7ebc59;
 }
 
