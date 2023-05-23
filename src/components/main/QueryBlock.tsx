@@ -1,17 +1,34 @@
 import React from 'react';
-import type monaco from 'monaco-editor';
+
 import Editor, { Monaco } from '@monaco-editor/react';
 import { CSSTransition } from 'react-transition-group';
 
 import useAppContext from '../../hooks/useAppContext';
 
 import Close from '../../assets/svg/close.svg';
+import Save from '../../assets/svg/btn_save.svg';
+import Clear from '../../assets/svg/btn_clear.svg';
+
+import type monaco from 'monaco-editor';
 
 export const defaultParams = '';
 
 const QueryBlock = () => {
-  const { setQueryParams, isQueryParams, setIsQueryParams } = useAppContext();
+  const {
+    setQueryParams,
+    isQueryParams,
+    setIsQueryParams,
+    params,
+    setParams,
+    setHeadersParams,
+    queryParams,
+    headersParams,
+    setIsSaveHeadersParams,
+    setIsSaveQueryParams,
+  } = useAppContext();
   const queryParamRef = React.useRef() as React.MutableRefObject<HTMLDivElement>;
+
+  const paramsData = params === 'query params' ? queryParams : headersParams;
 
   const options: monaco.editor.IStandaloneEditorConstructionOptions = {
     readOnly: false,
@@ -29,15 +46,30 @@ const QueryBlock = () => {
   };
 
   const handleEditorChange = (value = '') => {
-    setQueryParams(value.replace(/\s+/g, '').trim());
+    params === 'query params'
+      ? setQueryParams(value.replace(/\s+/g, '').trim())
+      : setHeadersParams(value.replace(/\s+/g, '').trim());
   };
 
-  const handleEditorValidation = (markers: monaco.editor.IMarker[]) => {
-    markers.forEach((marker) => console.log('onValidate:', marker.message));
-  };
+  // const handleEditorValidation = (markers: monaco.editor.IMarker[]) => {
+  //   markers.forEach((marker) => console.log('onValidate:', marker.message));
+  // };
 
   const closeQueryParams = () => {
     setIsQueryParams(false);
+  };
+
+  const chooseParams = (e: React.MouseEvent<HTMLElement>) => {
+    const paramTag = e.target as HTMLSpanElement;
+    const nameParam = paramTag.textContent as string;
+    setParams(nameParam);
+  };
+
+  const saveData = () => {
+    params === 'query params' ? setIsSaveQueryParams(true) : setIsSaveHeadersParams(true);
+  };
+  const clearData = () => {
+    params === 'query params' ? setQueryParams('') : setHeadersParams('');
   };
 
   const handleEditorWillMount = (monaco: Monaco) => {
@@ -93,7 +125,35 @@ const QueryBlock = () => {
         ref={queryParamRef}
         className="query-block relative mr-2 h-[200px] w-[calc(100%-1rem)] rounded-t-lg bg-query transition-all sm:mr-0 sm:w-auto"
       >
-        <h3 className="rounded-t-lg bg-green py-2 text-center text-black">query params</h3>
+        <h3 className="cursor-pointer rounded-t-lg bg-green px-3 py-2 text-left text-black">
+          <span
+            onClick={chooseParams}
+            className={params === 'query params' ? 'text-black' : 'text-[#a9f779]'}
+          >
+            query params
+          </span>
+          <span className="text-[#a9f779]">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+          <span
+            onClick={chooseParams}
+            className={params === 'headers' ? 'text-black' : 'text-[#a9f779]'}
+          >
+            headers
+          </span>
+        </h3>
+        <button
+          title="Save params after execute query"
+          className="absolute right-20 top-1 cursor-pointer px-2 font-sans"
+          onClick={saveData}
+        >
+          <Save />
+        </button>
+        <button
+          title={`Clear ${params}`}
+          className="absolute right-10 top-1 cursor-pointer px-2 font-sans"
+          onClick={clearData}
+        >
+          <Clear />
+        </button>
         <span
           className="absolute right-5 top-4 cursor-pointer px-2 font-sans"
           onClick={closeQueryParams}
@@ -106,9 +166,10 @@ const QueryBlock = () => {
           theme="grey-theme"
           beforeMount={handleEditorWillMount}
           defaultLanguage="qraphql"
-          onValidate={handleEditorValidation}
           onChange={handleEditorChange}
-          defaultValue={defaultParams}
+          defaultValue=""
+          value={paramsData}
+          loading=""
           options={options}
         />
       </section>

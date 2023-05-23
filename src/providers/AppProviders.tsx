@@ -47,6 +47,14 @@ interface IAppContext {
   setIsShowDescription: TypeSetState<boolean>;
   active: string;
   setActive: TypeSetState<string>;
+  params: string;
+  setParams: TypeSetState<string>;
+  headersParams: string;
+  setHeadersParams: TypeSetState<string>;
+  isSaveQueryParams: boolean;
+  setIsSaveQueryParams: TypeSetState<boolean>;
+  isSaveHeadersParams: boolean;
+  setIsSaveHeadersParams: TypeSetState<boolean>;
 }
 
 export const CurrentAppContext = createContext<IAppContext>({
@@ -74,6 +82,14 @@ export const CurrentAppContext = createContext<IAppContext>({
   setActive: () => {},
   isDataLoading: false,
   setIsDataLoading: () => {},
+  params: '',
+  setParams: () => {},
+  headersParams: '',
+  setHeadersParams: () => {},
+  isSaveQueryParams: false,
+  setIsSaveQueryParams: () => {},
+  isSaveHeadersParams: false,
+  setIsSaveHeadersParams: () => {},
 });
 
 export const AppProvider: FC<Props> = ({ children }) => {
@@ -88,6 +104,10 @@ export const AppProvider: FC<Props> = ({ children }) => {
   const [schemaParams, setSchemaParams] = useState<Type>(defaultSchemaObj);
   const [isShowDescription, setIsShowDescription] = useState(false);
   const [active, setActive] = useState('');
+  const [params, setParams] = useState<string>('');
+  const [headersParams, setHeadersParams] = useState<string>(defaultParams);
+  const [isSaveQueryParams, setIsSaveQueryParams] = useState(false);
+  const [isSaveHeadersParams, setIsSaveHeadersParams] = useState(false);
 
   const [currentLocale, setCurrentLocale] = useState(
     localStorage.getItem('lang') || LOCALES.ENGLISH
@@ -128,6 +148,14 @@ export const AppProvider: FC<Props> = ({ children }) => {
     setActive,
     isDataLoading,
     setIsDataLoading,
+    params,
+    setParams,
+    headersParams,
+    setHeadersParams,
+    isSaveQueryParams,
+    setIsSaveQueryParams,
+    isSaveHeadersParams,
+    setIsSaveHeadersParams,
   };
 
   return <CurrentAppContext.Provider value={allValue}>{children}</CurrentAppContext.Provider>;
