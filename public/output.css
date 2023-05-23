@@ -1011,6 +1011,14 @@ video {
   max-width: 80rem;
 }
 
+.max-w-5xl {
+  max-width: 64rem;
+}
+
+.max-w-3xl {
+  max-width: 48rem;
+}
+
 .grow {
   flex-grow: 1;
 }
@@ -1323,6 +1331,10 @@ video {
   padding: 1.5rem;
 }
 
+.p-0 {
+  padding: 0px;
+}
+
 .px-16 {
   padding-left: 4rem;
   padding-right: 4rem;
@@ -1366,6 +1378,11 @@ video {
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}
+
+.px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .pb-2 {
@@ -1980,6 +1997,10 @@ a:hover svg .path1 {
     align-items: center;
   }
 
+  .sm\:justify-between {
+    justify-content: space-between;
+  }
+
   .sm\:border-r-\[1px\] {
     border-right-width: 1px;
   }
@@ -2026,6 +2047,10 @@ a:hover svg .path1 {
     margin-top: 0.5rem;
   }
 
+  .md\:block {
+    display: block;
+  }
+
   .md\:inline-block {
     display: inline-block;
   }
@@ -2038,12 +2063,24 @@ a:hover svg .path1 {
     min-width: 600px;
   }
 
+  .md\:max-w-7xl {
+    max-width: 80rem;
+  }
+
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .md\:grid-cols-\[90\%_10\%\] {
     grid-template-columns: 90% 10%;
+  }
+
+  .md\:items-center {
+    align-items: center;
+  }
+
+  .md\:justify-between {
+    justify-content: space-between;
   }
 }
 
@@ -2085,5 +2122,23 @@ a:hover svg .path1 {
 @media (min-width: 1400px) {
   .min-\[1400px\]\:h-screen {
     height: 100vh;
+  }
+
+  .min-\[1400px\]\:h-\[1420px\] {
+    height: 1420px;
+  }
+
+  .min-\[1400px\]\:p-4 {
+    padding: 1rem;
+  }
+
+  .min-\[1400px\]\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .min-\[1400px\]\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
