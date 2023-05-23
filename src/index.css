@@ -16,22 +16,14 @@ body {
 .white:hover svg path {
   fill: white;
 }
-/* .logo .logo svg path {
-  fill: #0e0e27;
-} */
-
 a:hover svg .path {
   fill: white;
 }
-
 a:hover svg .path1 {
   fill: #0e0e27;
 }
 .li:hover svg path {
   fill: #860971;
-}
-.li:hover svg path {
-  fill: #2c7005f6;
 }
 .li:hover svg path {
   fill: #7ebc59;
