@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Editor, { Monaco } from '@monaco-editor/react';
 import { CSSTransition } from 'react-transition-group';
 
@@ -64,6 +63,7 @@ const QueryBlock = () => {
   const saveData = () => {
     params === 'query params' ? setIsSaveQueryParams(true) : setIsSaveHeadersParams(true);
   };
+
   const clearData = () => {
     params === 'query params' ? setQueryParams('') : setHeadersParams('');
   };
@@ -131,9 +131,9 @@ const QueryBlock = () => {
           <span className="text-[#a9f779]">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
           <span
             onClick={chooseParams}
-            className={params === 'headers' ? 'text-black' : 'text-[#a9f779]'}
+            className={params === 'http headers' ? 'text-black' : 'text-[#a9f779]'}
           >
-            headers
+            http headers
           </span>
         </h3>
         <button
@@ -161,9 +161,9 @@ const QueryBlock = () => {
           className="h-[70%] w-auto scroll-smooth pt-8 -hue-rotate-180 invert "
           theme="grey-theme"
           beforeMount={handleEditorWillMount}
-          defaultLanguage="qraphql"
+          language="json"
           onChange={handleEditorChange}
-          defaultValue=""
+          defaultValue={'{}'}
           value={paramsData}
           loading=""
           options={options}

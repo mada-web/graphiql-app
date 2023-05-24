@@ -10,25 +10,26 @@ import BtnSchema from '../../assets/svg/btn_schema.svg';
 
 const ControlButtons: FC = (): JSX.Element => {
   const {
-    setIsShowSchema,
-    setIsQueryParams,
-    setResponseApi,
+    schema,
+    params,
+    setParams,
     queryBody,
     queryParams,
-    setIsDataLoading,
-    schema,
-    setParams,
-    params,
-    isSaveHeadersParams,
-    isSaveQueryParams,
+    headersParams,
+    setResponseApi,
     setQueryParams,
+    setIsShowSchema,
+    setIsQueryParams,
+    setIsDataLoading,
     setHeadersParams,
+    isSaveQueryParams,
+    isSaveHeadersParams,
   } = useAppContext();
 
   const executeQuery = async () => {
     setIsDataLoading(true);
 
-    const data = await getQuery({ queryBody, queryParams });
+    const data = await getQuery({ queryBody, queryParams, headersParams });
     setResponseApi(() => JSON.stringify(data, null, '\t'));
 
     setIsDataLoading(false);
@@ -46,8 +47,8 @@ const ControlButtons: FC = (): JSX.Element => {
   };
 
   const showHeadersParams = () => {
-    setIsQueryParams((prev) => (params === 'headers' ? !prev : true));
-    setParams('headers');
+    setIsQueryParams((prev) => (params === 'http headers' ? !prev : true));
+    setParams('http headers');
   };
 
   return (
