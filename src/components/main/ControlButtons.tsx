@@ -5,6 +5,7 @@ import useAppContext from '../../hooks/useAppContext';
 
 import BtnPlay from '../../assets/svg/btn_play.svg';
 import BtnQuery from '../../assets/svg/btn_query_params.svg';
+import BtnHeaders from '../../assets/svg/btn_headers_params.svg';
 import BtnSchema from '../../assets/svg/btn_schema.svg';
 
 const ControlButtons: FC = (): JSX.Element => {
@@ -16,6 +17,12 @@ const ControlButtons: FC = (): JSX.Element => {
     queryParams,
     setIsDataLoading,
     schema,
+    setParams,
+    params,
+    isSaveHeadersParams,
+    isSaveQueryParams,
+    setQueryParams,
+    setHeadersParams,
   } = useAppContext();
 
   const executeQuery = async () => {
@@ -25,6 +32,8 @@ const ControlButtons: FC = (): JSX.Element => {
     setResponseApi(() => JSON.stringify(data, null, '\t'));
 
     setIsDataLoading(false);
+    if (!isSaveHeadersParams) setHeadersParams('');
+    if (!isSaveQueryParams) setQueryParams('');
   };
 
   const showSchema = async () => {
@@ -32,7 +41,13 @@ const ControlButtons: FC = (): JSX.Element => {
   };
 
   const showQueryParams = () => {
-    setIsQueryParams((prev) => !prev);
+    setIsQueryParams((prev) => (params === 'query params' ? !prev : true));
+    setParams('query params');
+  };
+
+  const showHeadersParams = () => {
+    setIsQueryParams((prev) => (params === 'headers' ? !prev : true));
+    setParams('headers');
   };
 
   return (
@@ -52,9 +67,16 @@ const ControlButtons: FC = (): JSX.Element => {
         <BtnQuery />
       </button>
       <button
+        title="Headers"
+        className="mr-2 h-[30px] w-[30px] transition-all hover:brightness-150"
+        onClick={showHeadersParams}
+      >
+        <BtnHeaders />
+      </button>
+      <button
         title="Show schema"
         disabled={schema.length === 1}
-        className="mr-2 h-[30px] w-[30px] transition-all hover:brightness-150"
+        className="mr-2 mt-3 h-[30px] w-[30px] transition-all hover:brightness-150"
         onClick={showSchema}
       >
         <BtnSchema />
