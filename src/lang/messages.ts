@@ -55,9 +55,9 @@ export const messages = {
     INTRO_REACT12: 'SSR (Server-Side Rendering)',
     INTRO_REACT13: 'Use Typescript',
     INTRO_REACT14: 'Stack in GraphiQL:',
+    PLAYGROUND: 'Playground for',
     HELLO: 'Hello',
     DOC: 'Documentation',
-    PLAYGROUND: 'Playground for',
   },
   [LOCALES.RUSSIAN]: {
     MAIN: 'Главная',
