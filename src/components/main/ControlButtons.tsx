@@ -35,8 +35,6 @@ const ControlButtons: FC = (): JSX.Element => {
     setIsDataLoading(false);
     if (!isSaveHeadersParams) setHeadersParams('');
     if (!isSaveQueryParams) setQueryParams('');
-    console.log('headers', headersParams);
-    console.log('query params', queryParams);
   };
 
   const showSchema = async () => {

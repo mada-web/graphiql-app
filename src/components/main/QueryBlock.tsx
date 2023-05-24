@@ -51,10 +51,6 @@ const QueryBlock = () => {
       : setHeadersParams(value.replace(/\s+/g, '').trim());
   };
 
-  // const handleEditorValidation = (markers: monaco.editor.IMarker[]) => {
-  //   markers.forEach((marker) => console.log('onValidate:', marker.message));
-  // };
-
   const closeQueryParams = () => {
     setIsQueryParams(false);
   };
