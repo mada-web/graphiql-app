@@ -21,13 +21,13 @@ const InfoPokeApi = () => {
         <p>
           <FormattedMessage id="INTRO_API5" />
         </p>
-        {/* <form className="mt-4 w-[215px]" action="/sign-up">
+        <form className="mt-4 w-[215px]" action="/sign-up">
           <input
             className="w-full rounded-md bg-green p-3 transition-all hover:bg-green/70 active:bg-orange"
             type="submit"
             value={intl.formatMessage({ id: 'SIGN_UP' })}
           />
-        </form> */}
+        </form>
       </div>
     </>
   );
