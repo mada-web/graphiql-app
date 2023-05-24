@@ -23,7 +23,6 @@ const ControlButtons: FC = (): JSX.Element => {
     isSaveQueryParams,
     setQueryParams,
     setHeadersParams,
-    headersParams,
   } = useAppContext();
 
   const executeQuery = async () => {
