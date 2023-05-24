@@ -5,7 +5,7 @@ const InfoPokeApi = () => {
 
   return (
     <>
-      <div className="mt-16 flex flex-col items-center gap-6 rounded-[10px] bg-query p-6 text-dark-blue">
+      <div className="mt-16 flex w-full flex-col items-center gap-6 rounded-[10px] bg-query p-6 text-center text-dark-blue">
         <h2 className="font-semibold-400 text-[32px]">
           <FormattedMessage id="INTRO_API1" />
         </h2>
