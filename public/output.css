@@ -659,6 +659,11 @@ video {
   grid-row-start: 3;
 }
 
+.-mx-8 {
+  margin-left: -2rem;
+  margin-right: -2rem;
+}
+
 .-mx-\[20px\] {
   margin-left: -20px;
   margin-right: -20px;
@@ -1906,9 +1911,9 @@ a:hover svg .path1 {
     grid-row-start: 1;
   }
 
-  .sm\:-mx-\[90px\] {
-    margin-left: -90px;
-    margin-right: -90px;
+  .sm\:-mx-24 {
+    margin-left: -6rem;
+    margin-right: -6rem;
   }
 
   .sm\:mr-0 {
