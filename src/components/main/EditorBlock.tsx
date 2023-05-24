@@ -38,10 +38,6 @@ const EditorBlock = () => {
     setQueryBody(value);
   };
 
-  const handleEditorValidation = (markers: monaco.editor.IMarker[]) => {
-    markers.forEach((marker) => console.log('onValidate:', marker.message));
-  };
-
   const handleEditorWillMount = (monaco: Monaco) => {
     monaco.editor.defineTheme('dark-theme', {
       base: 'vs-dark',
@@ -89,7 +85,6 @@ const EditorBlock = () => {
         theme="dark-theme"
         beforeMount={handleEditorWillMount}
         defaultLanguage="qraphql"
-        onValidate={handleEditorValidation}
         defaultValue={defaultCode}
         options={options}
         onChange={handleEditorChange}

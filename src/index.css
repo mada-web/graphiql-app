@@ -36,19 +36,23 @@ a:hover svg .path1 {
   filter: brightness(150%);
 }
 
-.query-block-enter {
+.query-block-enter,
+.headers-block-enter {
   animation: show-from-bottom 0.5s forwards;
 }
 
-.query-block-enter-active {
+.query-block-enter-active,
+.headers-block-enter-active {
   animation: show-from-bottom 0.5s forwards;
 }
 
-.query-block-exit-active {
+.query-block-exit-active,
+.headers-block-exit-active {
   animation: show-from-bottom 0.5s reverse;
 }
 
-.query-block-exit {
+.query-block-exit,
+.headers-block-exit {
   transform: translateY(200px);
   animation: show-from-bottom 0.6s reverse;
 }
