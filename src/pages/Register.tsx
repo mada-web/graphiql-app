@@ -105,9 +105,7 @@ const Register: FC = (): JSX.Element => {
                   errors={errors}
                   label="password"
                 />
-                <div className="form-row">
-                  <ButtonForm register={register} label="submit" page="register" />
-                </div>
+                <ButtonForm register={register} label="submit" page="register" />
               </div>
               <div className="mt-3 flex flex-row">
                 <p className="mr-3 pb-3">

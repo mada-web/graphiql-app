@@ -16,7 +16,7 @@ export default {
         'middle-gray': '#A4A4A4',
         'red':'#dc2626',
         'orange': '#f59e0b',
-        'query': '#ededff'
+        'query': '#ededff',
       }
     },
   },
