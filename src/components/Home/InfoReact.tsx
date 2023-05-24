@@ -5,7 +5,7 @@ import Typescript from '../../assets/svg/typescript.svg';
 import Tailwind from '../../assets/svg/tailwind.svg';
 import Firebase from '../../assets/svg/firebase.svg';
 import Qraphql from '../../assets/svg/graphql.svg';
-import Npm from '../../assets/svg/Npm.svg';
+import Npm from '../../assets/svg/npm.svg';
 
 const InfoReact = () => {
   return (
