@@ -6,7 +6,7 @@ interface IQueryReq {
   headersParams: string;
 }
 
-function isJSONObject(jsonStr: string): boolean {
+function isJSONObject(jsonStr: string) {
   try {
     const obj = JSON.parse(jsonStr);
     return typeof obj === 'object' ? obj : false;
@@ -23,7 +23,7 @@ export const getQuery = async ({ queryBody, queryParams, headersParams }: IQuery
 
     const headers = {
       'Content-Type': 'application/json',
-      ...(additionalHeaders && (additionalHeaders as object)),
+      ...(additionalHeaders && additionalHeaders),
     };
 
     const body = JSON.stringify({
