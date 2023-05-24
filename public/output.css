@@ -1012,8 +1012,8 @@ video {
   width: 30px;
 }
 
-.w-\[400px\] {
-  width: 400px;
+.w-\[420px\] {
+  width: 420px;
 }
 
 .w-\[539px\] {
@@ -1506,6 +1506,10 @@ video {
 .text-7xl {
   font-size: 4.5rem;
   line-height: 1;
+}
+
+.text-\[16px\] {
+  font-size: 16px;
 }
 
 .text-\[20px\] {
@@ -2099,8 +2103,8 @@ a:hover svg .path1 {
     margin-right: auto;
   }
 
-  .xl\:w-\[350px\] {
-    width: 350px;
+  .xl\:w-\[280px\] {
+    width: 280px;
   }
 
   .xl\:justify-between {

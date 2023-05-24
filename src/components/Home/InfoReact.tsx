@@ -12,7 +12,7 @@ const InfoReact = () => {
     <>
       <div className="my-16 w-full rounded-[10px] bg-query p-6 text-dark-blue">
         <div className="mx-auto flex w-5/6 flex-col items-center gap-6">
-          <div className="sm:-mx-22 -mx-8 flex flex-row flex-wrap items-center justify-center gap-2 text-[24px]">
+          <div className="sm:-mx-22 -mx-8 flex flex-row flex-wrap items-center justify-center gap-2 text-[20px]">
             <p className="font-semibold-400 font-Impact text-[32px]">GraphiQL</p>
             <p className="text-center">
               <FormattedMessage id="INTRO_REACT1" />
@@ -27,8 +27,8 @@ const InfoReact = () => {
             </b>
             <FormattedMessage id="INTRO_REACT3" />
           </h3>
-          <div className="flex w-full flex-row flex-wrap justify-center text-[20px] xl:justify-between">
-            <ul className="w-[400px] list-disc">
+          <div className="flex w-full flex-row flex-wrap justify-center text-[16px] xl:justify-between">
+            <ul className="w-[420px] list-disc">
               <li>
                 <FormattedMessage id="INTRO_REACT4" />
               </li>
@@ -45,7 +45,7 @@ const InfoReact = () => {
                 <FormattedMessage id="INTRO_REACT8" />
               </li>
             </ul>
-            <ul className="w-[400px] list-disc xl:w-[350px]">
+            <ul className="w-[420px] list-disc xl:w-[280px]">
               <li>
                 <FormattedMessage id="INTRO_REACT9" />
               </li>
