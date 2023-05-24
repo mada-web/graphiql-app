@@ -947,12 +947,12 @@ video {
   min-height: 60%;
 }
 
-.min-h-\[calc\(100vh-120px\)\] {
-  min-height: calc(100vh - 120px);
+.min-h-\[710px\] {
+  min-height: 710px;
 }
 
-.min-h-\[calc\(100vh-80px\)\] {
-  min-height: calc(100vh - 80px);
+.min-h-\[calc\(100vh-120px\)\] {
+  min-height: calc(100vh - 120px);
 }
 
 .min-h-full {
