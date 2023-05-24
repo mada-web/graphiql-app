@@ -117,7 +117,7 @@ export const messages = {
     INTRO_REACT7: 'Redux и управление состоянием',
     INTRO_REACT8: 'Архитектура Redux: действия, редьюсеры, хранилище',
     INTRO_REACT9: 'React хуки',
-    INTRO_REACT10N: 'Контекстный API',
+    INTRO_REACT10: 'Контекстный API',
     INTRO_REACT11: 'Тестирование приложений React',
     INTRO_REACT12: 'SSR (рендеринг на стороне сервера)',
     INTRO_REACT13: 'Использование Typescript',
