@@ -1,17 +1,17 @@
+import React from 'react';
+import type monaco from 'monaco-editor';
 import Editor, { Monaco } from '@monaco-editor/react';
-import { useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 import useAppContext from '../../hooks/useAppContext';
 
 import Close from '../../assets/svg/close.svg';
 
-import type monaco from 'monaco-editor';
 export const defaultParams = '';
 
 const QueryBlock = () => {
   const { setQueryParams, isQueryParams, setIsQueryParams } = useAppContext();
-  const queryParamRef = useRef(null);
+  const queryParamRef = React.useRef() as React.MutableRefObject<HTMLDivElement>;
 
   const options: monaco.editor.IStandaloneEditorConstructionOptions = {
     readOnly: false,
@@ -29,11 +29,10 @@ const QueryBlock = () => {
   };
 
   const handleEditorChange = (value = '') => {
-    setQueryParams(value);
+    setQueryParams(value.replace(/\s+/g, '').trim());
   };
 
   const handleEditorValidation = (markers: monaco.editor.IMarker[]) => {
-    // model markers
     markers.forEach((marker) => console.log('onValidate:', marker.message));
   };
 
