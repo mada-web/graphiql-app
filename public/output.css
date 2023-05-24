@@ -972,10 +972,6 @@ video {
   width: 2.5rem;
 }
 
-.w-2\/3 {
-  width: 66.666667%;
-}
-
 .w-2\/5 {
   width: 40%;
 }
@@ -986,6 +982,10 @@ video {
 
 .w-4\/5 {
   width: 80%;
+}
+
+.w-5\/6 {
+  width: 83.333333%;
 }
 
 .w-\[100px\] {
@@ -1010,10 +1010,6 @@ video {
 
 .w-\[30px\] {
   width: 30px;
-}
-
-.w-\[350px\] {
-  width: 350px;
 }
 
 .w-\[400px\] {
@@ -1911,11 +1907,6 @@ a:hover svg .path1 {
     grid-row-start: 1;
   }
 
-  .sm\:-mx-24 {
-    margin-left: -6rem;
-    margin-right: -6rem;
-  }
-
   .sm\:mr-0 {
     margin-right: 0px;
   }
@@ -2106,6 +2097,14 @@ a:hover svg .path1 {
   .xl\:mx-auto {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .xl\:w-\[350px\] {
+    width: 350px;
+  }
+
+  .xl\:justify-between {
+    justify-content: space-between;
   }
 }
 
