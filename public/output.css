@@ -659,6 +659,11 @@ video {
   grid-row-start: 3;
 }
 
+.-mx-6 {
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
+
 .-mx-8 {
   margin-left: -2rem;
   margin-right: -2rem;
@@ -667,11 +672,6 @@ video {
 .-mx-\[20px\] {
   margin-left: -20px;
   margin-right: -20px;
-}
-
-.mx-0 {
-  margin-left: 0px;
-  margin-right: 0px;
 }
 
 .mx-5 {

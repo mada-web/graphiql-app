@@ -63,7 +63,7 @@ const InfoReact = () => {
               </li>
             </ul>
           </div>
-          <div className="mx-0 flex flex-row flex-wrap items-center gap-4 md:-mx-[70px]">
+          <div className="-mx-6 flex flex-row flex-wrap items-center gap-4 md:-mx-[70px]">
             <p className="font-semibold-400 font-Impact text-[20px]">
               <FormattedMessage id="INTRO_REACT14" />
             </p>
