@@ -11,8 +11,6 @@ import Clear from '../../assets/svg/btn_clear.svg';
 
 import type monaco from 'monaco-editor';
 
-import type monaco from 'monaco-editor';
-
 export const defaultParams = '';
 
 const QueryBlock = () => {
