@@ -595,20 +595,12 @@ video {
   top: 0.125rem;
 }
 
-.top-1 {
-  top: 0.25rem;
-}
-
 .top-2 {
   top: 0.5rem;
 }
 
 .top-3 {
   top: 0.75rem;
-}
-
-.top-4 {
-  top: 1rem;
 }
 
 .z-0 {
@@ -661,6 +653,8 @@ video {
 
 .m-auto {
   margin: auto;
+}
+
 .-mx-6 {
   margin-left: -1.5rem;
   margin-right: -1.5rem;
