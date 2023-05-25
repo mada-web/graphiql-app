@@ -595,20 +595,12 @@ video {
   top: 0.125rem;
 }
 
-.top-1 {
-  top: 0.25rem;
-}
-
 .top-2 {
   top: 0.5rem;
 }
 
 .top-3 {
   top: 0.75rem;
-}
-
-.top-4 {
-  top: 1rem;
 }
 
 .z-0 {
@@ -657,6 +649,10 @@ video {
 
 .row-start-3 {
   grid-row-start: 3;
+}
+
+.m-auto {
+  margin: auto;
 }
 
 .-mx-6 {
@@ -1026,10 +1022,6 @@ video {
 
 .w-\[95\%\] {
   width: 95%;
-}
-
-.w-\[calc\(100\%-1rem\)\] {
-  width: calc(100% - 1rem);
 }
 
 .w-auto {
@@ -1455,6 +1447,10 @@ video {
 
 .pr-\[10px\] {
   padding-right: 10px;
+}
+
+.pr-\[130px\] {
+  padding-right: 130px;
 }
 
 .pt-16 {
@@ -1889,6 +1885,10 @@ a:hover svg .path1 {
 @media (min-width: 640px) {
   .sm\:right-0 {
     right: 0px;
+  }
+
+  .sm\:right-3 {
+    right: 0.75rem;
   }
 
   .sm\:top-0 {
