@@ -11,8 +11,8 @@ const Footer: FC = (): JSX.Element => {
   return (
     <footer className="inline-block h-full w-screen bg-dark-blue">
       <div className="h-[3.75rem] bg-gray" />
-      <div className="mx-auto flex h-[29rem] max-w-7xl items-center justify-between overflow-hidden">
-        <ul className="relative block content-center text-white ">
+      <div className="mx-auto flex h-[29rem] max-w-7xl items-center justify-center overflow-hidden px-4 sm:justify-between min-[1400px]:px-0">
+        <ul className="relative inline-block content-center text-white ">
           <div className="flex flex-col items-center">
             <h2 className="relative text-[32px] font-normal">
               <FormattedMessage id="TEAM" />
