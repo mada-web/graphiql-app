@@ -583,6 +583,10 @@ video {
   right: 0.75rem;
 }
 
+.right-5 {
+  right: 1.25rem;
+}
+
 .top-0 {
   top: 0px;
 }
@@ -597,10 +601,6 @@ video {
 
 .top-3 {
   top: 0.75rem;
-}
-
-.right-5 {
-  right: 1.25rem;
 }
 
 .z-0 {
@@ -1897,16 +1897,16 @@ a:hover svg .path1 {
     right: 0px;
   }
 
+  .sm\:right-3 {
+    right: 0.75rem;
+  }
+
   .sm\:top-0 {
     top: 0px;
   }
 
   .sm\:top-8 {
     top: 2rem;
-  }
-
-  .sm\:right-3 {
-    right: 0.75rem;
   }
 
   .sm\:col-span-1 {

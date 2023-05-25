@@ -139,14 +139,14 @@ const QueryBlock = () => {
           </h3>
           <button
             title={`Save ${params} after execute query`}
-            className="absolute bottom-0 right-20 top-0 m-auto cursor-pointer px-2"
+            className="absolute bottom-0 right-20 top-0 m-auto cursor-pointer px-2 hover:brightness-150"
             onClick={saveData}
           >
             <Save />
           </button>
           <button
             title={`Clear ${params}`}
-            className="absolute bottom-0 right-10 top-0 m-auto cursor-pointer px-2"
+            className="absolute bottom-0 right-10 top-0 m-auto cursor-pointer px-2 hover:brightness-150"
             onClick={clearData}
           >
             <Clear />
