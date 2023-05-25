@@ -119,7 +119,7 @@ const QueryBlock = () => {
     >
       <section
         ref={queryParamRef}
-        className="query-block relative h-[200px] w-[calc(100%-1rem)] rounded-t-lg bg-query transition-all sm:mr-0 sm:w-auto"
+        className="query-block relative h-[200px] w-full rounded-t-lg bg-query transition-all sm:mr-0 sm:w-auto"
       >
         <div className="relative rounded-t-lg bg-green">
           <h3 className="flex cursor-pointer flex-wrap px-3 py-2 pr-[130px] text-left text-black">
@@ -152,7 +152,7 @@ const QueryBlock = () => {
             <Clear />
           </button>
           <button
-            className="absolute bottom-0 right-2 top-0 m-auto cursor-pointer px-2"
+            className="absolute bottom-0 right-5 top-0 m-auto cursor-pointer px-2 sm:right-3"
             onClick={closeQueryParams}
           >
             <Close />
