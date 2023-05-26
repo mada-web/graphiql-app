@@ -63,7 +63,7 @@ const Register: FC = (): JSX.Element => {
   };
 
   return (
-    <main className="relative flex min-h-[calc(100vh-80px)] w-screen bg-dark-blue ">
+    <main className="relative flex h-screen min-h-[710px] w-screen items-center bg-dark-blue ">
       <section className="absolute flex h-screen w-screen flex-col items-center justify-center">
         {isLoading ? (
           <Spinner />
@@ -105,9 +105,7 @@ const Register: FC = (): JSX.Element => {
                   errors={errors}
                   label="password"
                 />
-                <div className="form-row">
-                  <ButtonForm register={register} label="submit" page="register" />
-                </div>
+                <ButtonForm register={register} label="submit" page="register" />
               </div>
               <div className="mt-3 flex flex-row">
                 <p className="mr-3 pb-3">

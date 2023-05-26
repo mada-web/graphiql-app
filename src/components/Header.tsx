@@ -43,13 +43,13 @@ const Header: FC = (): JSX.Element => {
     <>
       <header
         className={`fixed left-0 top-0 z-20 h-[80px] w-screen p-4 transition-all duration-200 ${
-          animateHeader ? 'logo bg-green text-dark-blue' : 'bg-gray'
+          animateHeader ? 'bg-green text-dark-blue' : 'bg-gray'
         }`}
       >
         <ul className="mx-auto flex max-w-7xl list-none items-center justify-between">
           <li className="white relative flex items-center gap-x-6 leading-6">
             <Link
-              className="logo font-semibold-400 flex items-center justify-center gap-x-2.5 font-Impact text-[32px] text-dark-blue transition-all hover:text-white"
+              className="font-semibold-400 flex items-center justify-center gap-x-2.5 font-Impact text-[32px] text-dark-blue transition-all hover:text-white"
               to="/"
             >
               <Logo />
