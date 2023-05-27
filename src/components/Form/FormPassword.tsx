@@ -8,7 +8,7 @@ import Eye from '../../assets/svg/eye.svg';
 import CloseEye from '../../assets/svg/eye-close.svg';
 
 interface InputPasswordProps {
-  value: string | number | readonly string[] | undefined;
+  value: string;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
   register: UseFormRegister<FieldValues>;
   errors: FieldErrors;
@@ -40,10 +40,6 @@ const FormPassword: FC<InputPasswordProps> = (props) => {
             minLength: {
               value: 8,
               message: intl.formatMessage({ id: 'PASSWORD_MIN_LENGTH' }),
-            },
-            maxLength: {
-              value: 12,
-              message: intl.formatMessage({ id: 'PASSWORD_MAX_LENGTH' }),
             },
             pattern: {
               value: /^(?=.*\d)(?=.*[!@#$%^&*"'{}<>])(?=.*[a-zA-Z]).{8,}$/,

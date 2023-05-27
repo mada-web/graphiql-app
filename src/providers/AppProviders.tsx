@@ -31,8 +31,8 @@ interface IAppContext {
   setIsShowSchema: TypeSetState<boolean>;
   isDataLoading: boolean;
   setIsDataLoading: TypeSetState<boolean>;
-  isQueryParams: boolean;
-  setIsQueryParams: TypeSetState<boolean>;
+  isOpenQueryParams: boolean;
+  setIsOpenQueryParams: TypeSetState<boolean>;
   currentLocale: string;
   handleLocale: (e: ChangeEvent<HTMLInputElement>) => void;
   responseApi: string;
@@ -51,10 +51,6 @@ interface IAppContext {
   setParams: TypeSetState<string>;
   headersParams: string;
   setHeadersParams: TypeSetState<string>;
-  isSaveQueryParams: boolean;
-  setIsSaveQueryParams: TypeSetState<boolean>;
-  isSaveHeadersParams: boolean;
-  setIsSaveHeadersParams: TypeSetState<boolean>;
 }
 
 export const CurrentAppContext = createContext<IAppContext>({
@@ -64,11 +60,11 @@ export const CurrentAppContext = createContext<IAppContext>({
   setQueryParams: () => {},
   isShowSchema: false,
   setIsShowSchema: () => {},
-  isQueryParams: false,
-  setIsQueryParams: () => {},
+  isOpenQueryParams: false,
+  setIsOpenQueryParams: () => {},
   currentLocale: LOCALES.ENGLISH,
   handleLocale: () => {},
-  responseApi: '',
+  responseApi: defaultParams,
   setResponseApi: () => {},
   schema: [defaultSchemaObj],
   setSchema: () => {},
@@ -78,36 +74,30 @@ export const CurrentAppContext = createContext<IAppContext>({
   setSchemaParams: () => {},
   isShowDescription: false,
   setIsShowDescription: () => {},
-  active: '',
+  active: defaultParams,
   setActive: () => {},
   isDataLoading: false,
   setIsDataLoading: () => {},
-  params: '',
+  params: defaultParams,
   setParams: () => {},
-  headersParams: '',
+  headersParams: defaultParams,
   setHeadersParams: () => {},
-  isSaveQueryParams: false,
-  setIsSaveQueryParams: () => {},
-  isSaveHeadersParams: false,
-  setIsSaveHeadersParams: () => {},
 });
 
 export const AppProvider: FC<Props> = ({ children }) => {
+  const [active, setActive] = useState<string>(defaultParams);
+  const [params, setParams] = useState<string>(defaultParams);
   const [queryBody, setQueryBody] = useState<string>(defaultCode);
+  const [schemaData, setSchemaData] = useState<Schema>(schemaDefault);
+  const [responseApi, setResponseApi] = useState<string>(defaultParams);
   const [queryParams, setQueryParams] = useState<string>(defaultParams);
+  const [schemaParams, setSchemaParams] = useState<Type>(defaultSchemaObj);
+  const [headersParams, setHeadersParams] = useState<string>(defaultParams);
+  const [schema, setSchema] = useState<SchemaField[]>([defaultSchemaObj]);
   const [isShowSchema, setIsShowSchema] = useState<boolean>(false);
   const [isDataLoading, setIsDataLoading] = useState<boolean>(false);
-  const [isQueryParams, setIsQueryParams] = useState(false);
-  const [responseApi, setResponseApi] = useState('');
-  const [schema, setSchema] = useState<SchemaField[]>([defaultSchemaObj]);
-  const [schemaData, setSchemaData] = useState<Schema>(schemaDefault);
-  const [schemaParams, setSchemaParams] = useState<Type>(defaultSchemaObj);
-  const [isShowDescription, setIsShowDescription] = useState(false);
-  const [active, setActive] = useState('');
-  const [params, setParams] = useState<string>('');
-  const [headersParams, setHeadersParams] = useState<string>(defaultParams);
-  const [isSaveQueryParams, setIsSaveQueryParams] = useState(false);
-  const [isSaveHeadersParams, setIsSaveHeadersParams] = useState(false);
+  const [isShowDescription, setIsShowDescription] = useState<boolean>(false);
+  const [isOpenQueryParams, setIsOpenQueryParams] = useState<boolean>(false);
 
   const [currentLocale, setCurrentLocale] = useState(
     localStorage.getItem('lang') || LOCALES.ENGLISH
@@ -130,8 +120,8 @@ export const AppProvider: FC<Props> = ({ children }) => {
     setQueryParams,
     isShowSchema,
     setIsShowSchema,
-    isQueryParams,
-    setIsQueryParams,
+    isOpenQueryParams,
+    setIsOpenQueryParams,
     currentLocale,
     handleLocale,
     responseApi,
@@ -152,10 +142,6 @@ export const AppProvider: FC<Props> = ({ children }) => {
     setParams,
     headersParams,
     setHeadersParams,
-    isSaveQueryParams,
-    setIsSaveQueryParams,
-    isSaveHeadersParams,
-    setIsSaveHeadersParams,
   };
 
   return <CurrentAppContext.Provider value={allValue}>{children}</CurrentAppContext.Provider>;

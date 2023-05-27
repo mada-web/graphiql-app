@@ -172,12 +172,12 @@ a:hover svg .path1 {
   .desc:hover.scrollbar::-webkit-scrollbar-thumb {
     background: #ededff;
   }
-  
+
   .schema:hover.scrollbar::-webkit-scrollbar-thumb {
     background: #d9d9d9;
   }
 }
 
 .non-null::after {
-  content:'!';
+  content: '!';
 }
