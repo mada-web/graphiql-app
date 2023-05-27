@@ -1,8 +1,12 @@
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { Link } from 'react-router-dom';
 
+import { auth } from '../../firebase';
+
 const InfoPokeApi = () => {
   const intl = useIntl();
+  const [user, loading] = useAuthState(auth);
 
   return (
     <>
@@ -26,7 +30,11 @@ const InfoPokeApi = () => {
           <input
             className="w-full rounded-md bg-green p-3 text-white transition-all hover:bg-green/70 active:bg-orange"
             type="submit"
-            value={intl.formatMessage({ id: 'SIGN_UP' })}
+            value={
+              !user && !loading
+                ? intl.formatMessage({ id: 'SIGN_UP' })
+                : intl.formatMessage({ id: 'MAIN' })
+            }
           />
         </Link>
       </div>
