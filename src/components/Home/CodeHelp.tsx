@@ -1,8 +1,8 @@
 import { FormattedMessage } from 'react-intl';
 
-export const pokemonsCode = `query pokemons($limit: Int, $offset: Int) {
-  pokemons(limit: $limit, offset: $offset) {
-    count
+export const pokemonsCode1 = `query pokemons($limit: Int, $offset: Int) {`;
+export const pokemonsCode2 = `pokemons(limit: $limit, offset: $offset) {`;
+export const pokemonsCode3 = `    count
     next
     previous
     status
@@ -29,8 +29,9 @@ const CodeHelp = () => {
             <FormattedMessage id="INTRO_HELP3" />
           </p>
           <div className="rounded-[10px] bg-query p-6 text-dark-blue ">
-            <pre className="hidden md:inline-block">{pokemonsCode}</pre>
-            <code className="inline-block md:hidden">{pokemonsCode}</code>
+            <p>{pokemonsCode1}</p>
+            <p>{pokemonsCode2}</p>
+            <pre>{pokemonsCode3}</pre>
           </div>
         </div>
         <div className="flex flex-col gap-4 lg:flex-row">
