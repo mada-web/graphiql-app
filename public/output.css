@@ -1827,7 +1827,7 @@ a:hover svg .path1 {
 }
 
 .non-null::after {
-  content:'!';
+  content: '!';
 }
 
 .hover\:border-b-2:hover {

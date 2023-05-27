@@ -8,7 +8,7 @@ import Eye from '../../assets/svg/eye.svg';
 import CloseEye from '../../assets/svg/eye-close.svg';
 
 interface InputPasswordProps {
-  value: string | number | readonly string[] | undefined;
+  value: string;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
   register: UseFormRegister<FieldValues>;
   errors: FieldErrors;
