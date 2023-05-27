@@ -6,7 +6,7 @@ import { DataFormCard } from '../../types/types';
 import Email from '../../assets/svg/email.svg';
 
 interface InputEmailProps {
-  value: string | number | readonly string[] | undefined;
+  value: string;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
   register: UseFormRegister<FieldValues>;
   errors: FieldErrors;

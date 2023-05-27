@@ -6,6 +6,7 @@ import { Background } from '../components/Background';
 import InfoTeem from '../components/Home/InfoTeem';
 import InfoReact from '../components/Home/InfoReact';
 import InfoPokeApi from '../components/Home/InfoPokeApi';
+import InfoHelp from '../components/Home/InfoHelp';
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
         </div>
         <InfoPokeApi />
         <InfoReact />
+        <InfoHelp />
         <InfoTeem />
       </section>
       <Background />
