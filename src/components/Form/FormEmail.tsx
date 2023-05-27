@@ -18,7 +18,7 @@ const FormEmail: FC<InputEmailProps> = (props) => {
   const intl = useIntl();
   const [cursor, setCursor] = useState<number | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
-  const { ref } = register('emailInput');
+  const { ref } = register('email');
 
   useEffect(() => {
     const input = inputRef.current;
@@ -58,7 +58,7 @@ const FormEmail: FC<InputEmailProps> = (props) => {
             ref(e);
             inputRef.current = e;
           }}
-          name="emailInput"
+          name="email"
           onChange={cursorPosition}
         />
       </div>
