@@ -12,7 +12,11 @@ const InfoHelp = () => {
   return (
     <>
       <div className="mb-16 w-full rounded-[10px] bg-query-shadow p-6 backdrop-opacity-50">
-        <img className="w-full rounded-[10px]" src="./example.jpg" alt="example" />
+        <img
+          className="hidden w-full rounded-[10px] sm:inline-block"
+          src="./example.jpg"
+          alt="example"
+        />
         <h2 className="font-semibold-400 mt-[35px] text-[20px]">
           <FormattedMessage id="INTRO_HELP1" />
         </h2>

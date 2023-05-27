@@ -2097,10 +2097,6 @@ a:hover svg .path1 {
     display: inline-block;
   }
 
-  .md\:hidden {
-    display: none;
-  }
-
   .md\:min-w-\[600px\] {
     min-width: 600px;
   }
