@@ -110,7 +110,7 @@ const QueryBlock = () => {
         className="query-block relative h-[200px] w-full rounded-t-lg bg-query transition-all sm:mr-0 sm:w-auto"
       >
         <div className="relative rounded-t-lg bg-green">
-          <h3 className="flex cursor-pointer flex-wrap px-3 py-2 pr-[130px] text-left text-black">
+          <h3 className="flex cursor-pointer flex-wrap px-3 py-2 pr-[20px] text-left text-black">
             <span
               onClick={chooseParams}
               className={
