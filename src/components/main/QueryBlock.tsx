@@ -1,30 +1,26 @@
 import React from 'react';
+import type monaco from 'monaco-editor';
 import Editor, { Monaco } from '@monaco-editor/react';
 import { CSSTransition } from 'react-transition-group';
 
 import useAppContext from '../../hooks/useAppContext';
 
 import Close from '../../assets/svg/close.svg';
-import Save from '../../assets/svg/btn_save.svg';
-import Clear from '../../assets/svg/btn_clear.svg';
-
-import type monaco from 'monaco-editor';
 
 export const defaultParams = '';
 
 const QueryBlock = () => {
   const {
     setQueryParams,
-    isQueryParams,
-    setIsQueryParams,
+    isOpenQueryParams,
+    setIsOpenQueryParams,
     params,
     setParams,
     setHeadersParams,
     queryParams,
     headersParams,
-    setIsSaveHeadersParams,
-    setIsSaveQueryParams,
   } = useAppContext();
+
   const queryParamRef = React.useRef() as React.MutableRefObject<HTMLDivElement>;
 
   const paramsData = params === 'query params' ? queryParams : headersParams;
@@ -51,21 +47,13 @@ const QueryBlock = () => {
   };
 
   const closeQueryParams = () => {
-    setIsQueryParams(false);
+    setIsOpenQueryParams(false);
   };
 
   const chooseParams = (e: React.MouseEvent<HTMLElement>) => {
     const paramTag = e.target as HTMLSpanElement;
     const nameParam = paramTag.textContent as string;
     setParams(nameParam);
-  };
-
-  const saveData = () => {
-    params === 'query params' ? setIsSaveQueryParams(true) : setIsSaveHeadersParams(true);
-  };
-
-  const clearData = () => {
-    params === 'query params' ? setQueryParams('') : setHeadersParams('');
   };
 
   const handleEditorWillMount = (monaco: Monaco) => {
@@ -111,7 +99,7 @@ const QueryBlock = () => {
   return (
     <CSSTransition
       nodeRef={queryParamRef}
-      in={isQueryParams}
+      in={isOpenQueryParams}
       timeout={500}
       classNames="query-block"
       mountOnEnter
@@ -125,32 +113,22 @@ const QueryBlock = () => {
           <h3 className="flex cursor-pointer flex-wrap px-3 py-2 pr-[130px] text-left text-black">
             <span
               onClick={chooseParams}
-              className={params === 'query params' ? 'text-black' : 'text-[#a9f779]'}
+              className={
+                params === 'query params' ? 'rounded bg-gray p-1 text-black' : 'p-1 text-black'
+              }
             >
               query params
             </span>
             <span className="text-[#a9f779]">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
             <span
               onClick={chooseParams}
-              className={params === 'http headers' ? 'text-black' : 'text-[#a9f779]'}
+              className={
+                params === 'http headers' ? 'rounded bg-gray p-1 text-black' : 'p-1 text-black'
+              }
             >
               http headers
             </span>
           </h3>
-          <button
-            title={`Save ${params} after execute query`}
-            className="absolute bottom-0 right-20 top-0 m-auto cursor-pointer px-2 hover:brightness-150"
-            onClick={saveData}
-          >
-            <Save />
-          </button>
-          <button
-            title={`Clear ${params}`}
-            className="absolute bottom-0 right-10 top-0 m-auto cursor-pointer px-2 hover:brightness-150"
-            onClick={clearData}
-          >
-            <Clear />
-          </button>
           <button
             className="absolute bottom-0 right-5 top-0 m-auto cursor-pointer px-2 sm:right-3"
             onClick={closeQueryParams}
@@ -164,9 +142,7 @@ const QueryBlock = () => {
           beforeMount={handleEditorWillMount}
           language="json"
           onChange={handleEditorChange}
-          defaultValue={'{}'}
           value={paramsData}
-          loading=""
           options={options}
         />
       </section>

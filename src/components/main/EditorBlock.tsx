@@ -89,7 +89,7 @@ const EditorBlock = () => {
         value={queryBody}
         options={options}
         onChange={handleEditorChange}
-        loading="Wait a second, please..."
+        loading=""
       />
     </section>
   );

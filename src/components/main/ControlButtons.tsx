@@ -19,11 +19,9 @@ const ControlButtons: FC = (): JSX.Element => {
     setResponseApi,
     setQueryParams,
     setIsShowSchema,
-    setIsQueryParams,
+    setIsOpenQueryParams,
     setIsDataLoading,
     setHeadersParams,
-    isSaveQueryParams,
-    isSaveHeadersParams,
   } = useAppContext();
 
   const executeQuery = async () => {
@@ -32,9 +30,10 @@ const ControlButtons: FC = (): JSX.Element => {
     const data = await getQuery({ queryBody, queryParams, headersParams });
     setResponseApi(() => JSON.stringify(data, null, '\t'));
 
+    setHeadersParams(headersParams);
+    setQueryParams(queryParams);
+
     setIsDataLoading(false);
-    if (!isSaveHeadersParams) setHeadersParams('');
-    if (!isSaveQueryParams) setQueryParams('');
   };
 
   const showSchema = async () => {
@@ -42,12 +41,12 @@ const ControlButtons: FC = (): JSX.Element => {
   };
 
   const showQueryParams = () => {
-    setIsQueryParams((prev) => (params === 'query params' ? !prev : true));
+    setIsOpenQueryParams((prev) => (params === 'query params' ? !prev : true));
     setParams('query params');
   };
 
   const showHeadersParams = () => {
-    setIsQueryParams((prev) => (params === 'http headers' ? !prev : true));
+    setIsOpenQueryParams((prev) => (params === 'http headers' ? !prev : true));
     setParams('http headers');
   };
 
