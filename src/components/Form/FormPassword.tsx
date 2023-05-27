@@ -41,10 +41,6 @@ const FormPassword: FC<InputPasswordProps> = (props) => {
               value: 8,
               message: intl.formatMessage({ id: 'PASSWORD_MIN_LENGTH' }),
             },
-            maxLength: {
-              value: 12,
-              message: intl.formatMessage({ id: 'PASSWORD_MAX_LENGTH' }),
-            },
             pattern: {
               value: /^(?=.*\d)(?=.*[!@#$%^&*"'{}<>])(?=.*[a-zA-Z]).{8,}$/,
               message: intl.formatMessage({ id: 'PASSWORD_PATTERN' }),
