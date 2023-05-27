@@ -119,44 +119,45 @@ const QueryBlock = () => {
     >
       <section
         ref={queryParamRef}
-        className="query-block relative mr-2 h-[200px] w-[calc(100%-1rem)] rounded-t-lg bg-query transition-all sm:mr-0 sm:w-auto"
+        className="query-block relative h-[200px] w-full rounded-t-lg bg-query transition-all sm:mr-0 sm:w-auto"
       >
-        <h3 className="cursor-pointer rounded-t-lg bg-green px-3 py-2 text-left text-black">
-          <span
-            onClick={chooseParams}
-            className={params === 'query params' ? 'text-black' : 'text-[#a9f779]'}
+        <div className="relative rounded-t-lg bg-green">
+          <h3 className="flex cursor-pointer flex-wrap px-3 py-2 pr-[130px] text-left text-black">
+            <span
+              onClick={chooseParams}
+              className={params === 'query params' ? 'text-black' : 'text-[#a9f779]'}
+            >
+              query params
+            </span>
+            <span className="text-[#a9f779]">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+            <span
+              onClick={chooseParams}
+              className={params === 'http headers' ? 'text-black' : 'text-[#a9f779]'}
+            >
+              http headers
+            </span>
+          </h3>
+          <button
+            title={`Save ${params} after execute query`}
+            className="absolute bottom-0 right-20 top-0 m-auto cursor-pointer px-2 hover:brightness-150"
+            onClick={saveData}
           >
-            query params
-          </span>
-          <span className="text-[#a9f779]">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-          <span
-            onClick={chooseParams}
-            className={params === 'http headers' ? 'text-black' : 'text-[#a9f779]'}
+            <Save />
+          </button>
+          <button
+            title={`Clear ${params}`}
+            className="absolute bottom-0 right-10 top-0 m-auto cursor-pointer px-2 hover:brightness-150"
+            onClick={clearData}
           >
-            http headers
-          </span>
-        </h3>
-        <button
-          title="Save params after execute query"
-          className="absolute right-20 top-1 cursor-pointer px-2 font-sans"
-          onClick={saveData}
-        >
-          <Save />
-        </button>
-        <button
-          title={`Clear ${params}`}
-          className="absolute right-10 top-1 cursor-pointer px-2 font-sans"
-          onClick={clearData}
-        >
-          <Clear />
-        </button>
-        <span
-          className="absolute right-5 top-4 cursor-pointer px-2 font-sans"
-          onClick={closeQueryParams}
-        >
-          <Close />
-        </span>
-
+            <Clear />
+          </button>
+          <button
+            className="absolute bottom-0 right-5 top-0 m-auto cursor-pointer px-2 sm:right-3"
+            onClick={closeQueryParams}
+          >
+            <Close />
+          </button>
+        </div>
         <Editor
           className="h-[70%] w-auto scroll-smooth pt-8 -hue-rotate-180 invert "
           theme="grey-theme"
