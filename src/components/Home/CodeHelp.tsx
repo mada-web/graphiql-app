@@ -1,9 +1,9 @@
 import { FormattedMessage } from 'react-intl';
 
 const queries = {
-  code_1: `query pokemons($limit: Int, $offset: Int) {`,
-  code_2: `pokemons(limit: $limit, offset: $offset) {`,
-  code_3: `    count
+  code1: `query pokemons($limit: Int, $offset: Int) {`,
+  code2: `pokemons(limit: $limit, offset: $offset) {`,
+  code3: `    count
     next
     previous
     status
@@ -15,8 +15,9 @@ const queries = {
     }
   }
 }`,
-  code_4: `{
-    "limit": 2, "offset": 1
+  code4: `{
+  "limit": 2,
+  "offset": 1
 }`,
 };
 
@@ -29,9 +30,9 @@ const CodeHelp = () => {
             <FormattedMessage id="INTRO_HELP3" />
           </p>
           <div className="rounded-[10px] bg-query p-6 text-dark-blue ">
-            <p>{queries.code_1}</p>
-            <p>{queries.code_2}</p>
-            <pre>{queries.code_3}</pre>
+            <p>{queries.code1}</p>
+            <p>{queries.code2}</p>
+            <pre>{queries.code3}</pre>
           </div>
         </div>
         <div className="flex flex-col gap-4 lg:flex-row">
@@ -39,7 +40,7 @@ const CodeHelp = () => {
             <FormattedMessage id="INTRO_HELP4" />
           </p>
           <div className="rounded-[10px] bg-query p-6 text-dark-blue ">
-            <pre>{queries.code_4}</pre>
+            <pre>{queries.code4}</pre>
           </div>
         </div>
       </div>
