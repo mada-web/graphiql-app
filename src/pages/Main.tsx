@@ -53,7 +53,7 @@ const Main: FC = (): JSX.Element => {
     if (user && schema[0] === defaultSchemaObj) {
       getDocs();
     }
-  }, [user, navigate, loading]);
+  }, [user, navigate, loading, schema, setSchema, setSchemaData]);
 
   return (
     <>

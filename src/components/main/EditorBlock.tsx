@@ -14,7 +14,7 @@ export const defaultCode = `query {
 `;
 
 const EditorBlock = () => {
-  const { setQueryBody } = useAppContext();
+  const { setQueryBody, queryBody } = useAppContext();
 
   const options: monaco.editor.IStandaloneEditorConstructionOptions = {
     readOnly: false,
@@ -86,9 +86,10 @@ const EditorBlock = () => {
         beforeMount={handleEditorWillMount}
         defaultLanguage="qraphql"
         defaultValue={defaultCode}
+        value={queryBody}
         options={options}
         onChange={handleEditorChange}
-        loading="Wait a second, please..."
+        loading=""
       />
     </section>
   );

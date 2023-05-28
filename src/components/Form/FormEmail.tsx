@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import { useIntl } from 'react-intl';
 import { UseFormRegister, FieldValues, FieldErrors, Path } from 'react-hook-form';
 
@@ -16,6 +16,22 @@ interface InputEmailProps {
 const FormEmail: FC<InputEmailProps> = (props) => {
   const { value, onChange, register, errors, label } = props;
   const intl = useIntl();
+  const [cursor, setCursor] = useState<number | null>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
+  const { ref } = register('email');
+
+  useEffect(() => {
+    const input = inputRef.current;
+    if (input) {
+      input.setSelectionRange(cursor, cursor);
+    }
+  }, [inputRef, cursor, value]);
+
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const target = e.target as HTMLInputElement;
+    setCursor(target.selectionEnd);
+    onChange && onChange(e);
+  };
 
   return (
     <>
@@ -28,7 +44,7 @@ const FormEmail: FC<InputEmailProps> = (props) => {
         <input
           className="w-full rounded-r-md pl-3"
           placeholder={intl.formatMessage({ id: 'EMAIL_PLACEHOLDER' })}
-          type="email"
+          type="text"
           value={value}
           {...register(label, {
             required: intl.formatMessage({ id: 'EMAIL_VALIDATION' }),
@@ -38,7 +54,12 @@ const FormEmail: FC<InputEmailProps> = (props) => {
               message: intl.formatMessage({ id: 'EMAIL_PATTERN' }),
             },
           })}
-          onChange={onChange}
+          ref={(e: HTMLInputElement) => {
+            ref(e);
+            inputRef.current = e;
+          }}
+          name="email"
+          onChange={handleInput}
         />
       </div>
       <div className="h-10 text-red">
