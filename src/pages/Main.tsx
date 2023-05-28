@@ -16,17 +16,20 @@ import ControlButtons from '../components/main/ControlButtons';
 const SchemaBlock = lazy(() => import('../components/main/Schema/SchemaBlock'));
 
 const Main: FC = (): JSX.Element => {
-  const navigate = useNavigate();
   const [user, loading] = useAuthState(auth);
-  const { setSchema, setSchemaData, schema } = useAppContext();
-  const responseRef = useRef<HTMLElement | null>(null);
   const [width, setWidth] = useState(window.innerWidth);
+
+  const navigate = useNavigate();
+  const responseRef = useRef<HTMLElement | null>(null);
+  const { setSchema, setSchemaData, schema } = useAppContext();
 
   useEffect(() => {
     function handleResize() {
       setWidth(window.innerWidth);
     }
+
     window.addEventListener('resize', handleResize);
+
     return () => window.removeEventListener('resize', handleResize);
   }, [width]);
 
@@ -34,12 +37,9 @@ const Main: FC = (): JSX.Element => {
     window.scrollTo(0, 0);
   }, []);
 
-  const executeScroll = () => {
-    width < 640 && responseRef.current?.scrollIntoView();
-  };
-
   useEffect(() => {
     if (!loading && !user) navigate('/');
+
     const getDocs = async () => {
       const { data } = (await getSchema()) as SchemaData;
       const queries = data.__schema.types.find(
@@ -54,6 +54,10 @@ const Main: FC = (): JSX.Element => {
       getDocs();
     }
   }, [user, navigate, loading, schema, setSchema, setSchemaData]);
+
+  const executeScroll = () => {
+    width < 640 && responseRef.current?.scrollIntoView();
+  };
 
   return (
     <>

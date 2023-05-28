@@ -16,14 +16,8 @@ class ErrorBoundary extends React.Component<Props, State> {
     this.state = { hasError: false };
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   static getDerivedStateFromError(error: Error): State {
     return { hasError: !!error };
-  }
-
-  componentDidCatch(error: Error, info: React.ErrorInfo) {
-    // TODO We can add toast here
-    console.log(error, info.componentStack);
   }
 
   render() {
