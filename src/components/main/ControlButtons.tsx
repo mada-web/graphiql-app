@@ -8,7 +8,11 @@ import BtnQuery from '../../assets/svg/btn_query_params.svg';
 import BtnHeaders from '../../assets/svg/btn_headers_params.svg';
 import BtnSchema from '../../assets/svg/btn_schema.svg';
 
-const ControlButtons: FC = (): JSX.Element => {
+interface IControlButtons {
+  toScroll: () => void;
+}
+
+const ControlButtons: FC<IControlButtons> = ({ toScroll }): JSX.Element => {
   const {
     setIsShowSchema,
     setIsQueryParams,
@@ -26,6 +30,7 @@ const ControlButtons: FC = (): JSX.Element => {
   } = useAppContext();
 
   const executeQuery = async () => {
+    toScroll();
     setIsDataLoading(true);
 
     const data = await getQuery({ queryBody, queryParams });
