@@ -107,6 +107,9 @@ a:hover svg .path1 {
     transform: translateX(-200px);
     animation: show-from-left.6s reverse;
   }
+  .burger-menu {
+    animation: show-from-right 0.5s forwards;
+  }
 }
 
 @keyframes show-from-bottom {
