@@ -32,7 +32,7 @@ const Burger: FC<IBurger> = ({ onClose }): JSX.Element => {
         }
       }}
     >
-      <li className="schema-block-enter z-30 flex h-[250px] w-[180px] flex-col items-start justify-start rounded-[10px] bg-gray p-6 text-dark-blue sm:hidden">
+      <li className="burger-menu z-30 flex h-[250px] w-[180px] flex-col items-start justify-start rounded-[10px] bg-gray p-6 text-dark-blue sm:hidden">
         <button
           className="place-self-end"
           onClick={() => {
