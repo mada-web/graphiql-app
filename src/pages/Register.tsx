@@ -116,7 +116,7 @@ const Register: FC = (): JSX.Element => {
                   <FormattedMessage id="ALREADY_REGISTERED" />
                 </p>
                 <Link to="/sign-in">
-                  <span className="text-green underline hover:text-orange">
+                  <span className="text-green underline transition-all hover:text-orange">
                     <FormattedMessage id="SIGN_IN" />
                   </span>
                 </Link>
