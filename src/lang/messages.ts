@@ -62,6 +62,10 @@ export const messages = {
     PLAYGROUND: 'Playground for',
     HELLO: 'Hello',
     DOC: 'Documentation',
+    ERROR1: 'Something went wrong...',
+    ERROR2: 'Please, try again later.',
+    ERROR3: 'REFRESH',
+    ERROR4: 'GO BACK',
   },
   [LOCALES.RUSSIAN]: {
     MAIN: 'Главная',
@@ -124,5 +128,9 @@ export const messages = {
     INTRO_HELP3: 'Простой запрос:',
     INTRO_HELP4: 'Параметры запроса:',
     PLAYGROUND: 'Песочница для',
+    ERROR1: 'Что-то не так...',
+    ERROR2: 'Пожалуйста, попробуйте позже.',
+    ERROR3: 'ОБНОВИТЬ',
+    ERROR4: 'НАЗАД',
   },
 };

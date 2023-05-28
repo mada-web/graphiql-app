@@ -1,12 +1,12 @@
 import { useIntl } from 'react-intl';
 import { FC, useRef, useState } from 'react';
 
-import { InputProps } from './FormEmail';
-
 import Lock from '../../assets/svg/lock.svg';
 import Eye from '../../assets/svg/eye.svg';
 import CloseEye from '../../assets/svg/eye-close.svg';
 import useInput from '../../hooks/useInput';
+
+import { InputProps } from './FormEmail';
 
 const FormPassword: FC<InputProps> = (props) => {
   const [click, setClick] = useState(false);

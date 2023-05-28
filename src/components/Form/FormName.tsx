@@ -1,9 +1,10 @@
 import { FC, useRef } from 'react';
 import { useIntl } from 'react-intl';
 
-import { InputProps } from './FormEmail';
 import useInput from '../../hooks/useInput';
 import Person from '../../assets/svg/person-login.svg';
+
+import { InputProps } from './FormEmail';
 
 const FormName: FC<InputProps> = (props) => {
   const { value, onChange, register, errors, label } = props;
