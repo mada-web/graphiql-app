@@ -6,25 +6,32 @@ html {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
+
 body {
   display: flex;
   align-items: flex-start;
 }
+
 .white:hover svg path {
   fill: white;
 }
+
 .white:hover svg path {
   fill: white;
 }
+
 a:hover svg .path {
   fill: white;
 }
+
 a:hover svg .path1 {
   fill: #0e0e27;
 }
+
 .li:hover svg path {
   fill: #860971;
 }
+
 .li:hover svg path {
   fill: #7ebc59;
 }
@@ -32,6 +39,7 @@ a:hover svg .path1 {
 .schema-active {
   background-color: rgba(241, 158, 2, 0.3);
 }
+
 .schema-block a:hover {
   filter: brightness(150%);
 }

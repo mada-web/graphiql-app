@@ -1,11 +1,12 @@
-import React, { FC, useEffect, useRef, useState } from 'react';
+import React, { FC, useRef } from 'react';
 import { useIntl } from 'react-intl';
 import { UseFormRegister, FieldValues, FieldErrors, Path } from 'react-hook-form';
 
 import { DataFormCard } from '../../types/types';
 import Email from '../../assets/svg/email.svg';
+import useInput from '../../hooks/useInput';
 
-interface InputEmailProps {
+export interface InputProps {
   value: string;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
   register: UseFormRegister<FieldValues>;
@@ -13,25 +14,14 @@ interface InputEmailProps {
   label: Path<DataFormCard>;
 }
 
-const FormEmail: FC<InputEmailProps> = (props) => {
+const FormEmail: FC<InputProps> = (props) => {
   const { value, onChange, register, errors, label } = props;
+
   const intl = useIntl();
-  const [cursor, setCursor] = useState<number | null>(null);
-  const inputRef = useRef<HTMLInputElement | null>(null);
   const { ref } = register('email');
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
-  useEffect(() => {
-    const input = inputRef.current;
-    if (input) {
-      input.setSelectionRange(cursor, cursor);
-    }
-  }, [inputRef, cursor, value]);
-
-  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const target = e.target as HTMLInputElement;
-    setCursor(target.selectionEnd);
-    onChange && onChange(e);
-  };
+  const { handleInput } = useInput({ ref: inputRef, value, onChange });
 
   return (
     <>

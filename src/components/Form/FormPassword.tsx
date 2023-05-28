@@ -1,39 +1,24 @@
 import { useIntl } from 'react-intl';
-import React, { FC, useEffect, useRef, useState } from 'react';
-import { UseFormRegister, FieldValues, FieldErrors, Path } from 'react-hook-form';
+import { FC, useRef, useState } from 'react';
 
-import { DataFormCard } from '../../types/types';
+import { InputProps } from './FormEmail';
+
 import Lock from '../../assets/svg/lock.svg';
 import Eye from '../../assets/svg/eye.svg';
 import CloseEye from '../../assets/svg/eye-close.svg';
+import useInput from '../../hooks/useInput';
 
-interface InputPasswordProps {
-  value: string;
-  onChange: React.ChangeEventHandler<HTMLInputElement>;
-  register: UseFormRegister<FieldValues>;
-  errors: FieldErrors;
-  label: Path<DataFormCard>;
-}
-
-const FormPassword: FC<InputPasswordProps> = (props) => {
-  const [isReveal, setIsReveal] = useState(false);
+const FormPassword: FC<InputProps> = (props) => {
   const [click, setClick] = useState(false);
-  const intl = useIntl();
+  const [isReveal, setIsReveal] = useState(false);
+
   const { value, onChange, register, errors, label } = props;
-  const [cursor, setCursor] = useState<number | null>(null);
-  const inputRef = useRef<HTMLInputElement | null>(null);
+
   const { ref } = register('password');
+  const inputRef = useRef<HTMLInputElement | null>(null);
+  const intl = useIntl();
 
-  useEffect(() => {
-    const input = inputRef.current;
-    if (input) input.setSelectionRange(cursor, cursor);
-  }, [inputRef, cursor, value]);
-
-  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const target = e.target as HTMLInputElement;
-    setCursor(target.selectionEnd);
-    onChange && onChange(e);
-  };
+  const { handleInput } = useInput({ ref: inputRef, value, onChange });
 
   return (
     <>
