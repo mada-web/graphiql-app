@@ -1,5 +1,5 @@
 import { useIntl } from 'react-intl';
-import React, { FC, useRef, useState } from 'react';
+import { FC, useRef, useState } from 'react';
 
 import { InputProps } from './FormEmail';
 

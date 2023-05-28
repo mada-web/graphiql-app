@@ -1,4 +1,4 @@
-import React, { FC, useRef } from 'react';
+import { FC, useRef } from 'react';
 import { useIntl } from 'react-intl';
 
 import { InputProps } from './FormEmail';

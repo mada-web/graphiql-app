@@ -1,6 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { RefObject, useEffect, useState } from 'react';
 
-const useInput = ({ ref, value, onChange }) => {
+interface IUseInput {
+  ref: RefObject<HTMLInputElement | null>;
+  value: string;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
+}
+const useInput = ({ ref, value, onChange }: IUseInput) => {
   const [cursor, setCursor] = useState<number | null>(null);
 
   useEffect(() => {
