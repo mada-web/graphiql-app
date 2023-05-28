@@ -30,6 +30,10 @@ const Register: FC = (): JSX.Element => {
   } = useForm({ mode: 'onBlur' });
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     if (user) navigate('/main');
   }, [navigate, user]);
 

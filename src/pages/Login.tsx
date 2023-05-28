@@ -25,12 +25,20 @@ const Login = () => {
     reset,
   } = useForm({ mode: 'onBlur' });
 
-  const [user] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (user) navigate('/main');
-  }, [navigate, user]);
+    if (!loading && user) navigate('/main');
+  }, [navigate, user, loading]);
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }, []);
 
   const handleChangeEmail: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setEmail(e.target.value);

@@ -1075,6 +1075,10 @@ video {
   cursor: pointer;
 }
 
+.resize {
+  resize: both;
+}
+
 .list-disc {
   list-style-type: disc;
 }
@@ -1813,6 +1817,10 @@ a:hover svg .path1 {
   .query-block-exit {
     transform: translateX(-200px);
     animation: show-from-left.6s reverse;
+  }
+
+  .burger-menu {
+    animation: show-from-right 0.5s forwards;
   }
 }
 

@@ -17,7 +17,7 @@ export const ButtonForm: FC<InputTitleProps> = (props) => {
   return (
     <div className="mt-4">
       <input
-        className="w-full rounded-md bg-green p-3 transition-all hover:bg-green/70 active:bg-orange"
+        className="w-full cursor-pointer rounded-md bg-green p-3 transition-all hover:bg-green/70 active:bg-orange"
         type="submit"
         {...register(label, {
           required: 'Enter a data',
