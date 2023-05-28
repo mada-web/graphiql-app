@@ -10,11 +10,11 @@ import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <AppProvider>
-      <ErrorBoundary>
+    <ErrorBoundary>
+      <AppProvider>
         <App />
         <ToastContainer />
-      </ErrorBoundary>
-    </AppProvider>
+      </AppProvider>
+    </ErrorBoundary>
   </React.StrictMode>
 );
