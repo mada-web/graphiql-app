@@ -27,9 +27,9 @@ const FormEmail: FC<InputEmailProps> = (props) => {
     }
   }, [inputRef, cursor, value]);
 
-  const cursorPosition = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const target = e.target as HTMLInputElement;
-    setCursor(target.selectionEnd ? target.selectionEnd : target.selectionEnd);
+    setCursor(target.selectionEnd);
     onChange && onChange(e);
   };
 
@@ -59,7 +59,7 @@ const FormEmail: FC<InputEmailProps> = (props) => {
             inputRef.current = e;
           }}
           name="email"
-          onChange={cursorPosition}
+          onChange={handleInput}
         />
       </div>
       <div className="h-10 text-red">

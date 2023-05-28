@@ -29,9 +29,9 @@ const FormPassword: FC<InputPasswordProps> = (props) => {
     if (input) input.setSelectionRange(cursor, cursor);
   }, [inputRef, cursor, value]);
 
-  const cursorPosition = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const target = e.target as HTMLInputElement;
-    setCursor(target.selectionEnd ? target.selectionEnd : target.selectionEnd);
+    setCursor(target.selectionEnd);
     onChange && onChange(e);
   };
 
@@ -64,7 +64,7 @@ const FormPassword: FC<InputPasswordProps> = (props) => {
             inputRef.current = e;
           }}
           name="password"
-          onChange={cursorPosition}
+          onChange={handleInput}
         />
         <span
           className="ml-[-51px] pr-[10px]"

@@ -25,9 +25,9 @@ const FormName: FC<InputTitleProps> = (props) => {
     if (input) input.setSelectionRange(cursor, cursor);
   }, [inputRef, cursor, value]);
 
-  const cursorPosition = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const target = e.target as HTMLInputElement;
-    setCursor(target.selectionEnd ? target.selectionEnd : target.selectionEnd);
+    setCursor(target.selectionEnd);
     onChange && onChange(e);
   };
 
@@ -64,7 +64,7 @@ const FormName: FC<InputTitleProps> = (props) => {
             inputRef.current = e;
           }}
           name="name"
-          onChange={cursorPosition}
+          onChange={handleInput}
         />
       </div>
       <div className="h-10 text-red">
