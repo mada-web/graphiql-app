@@ -99,7 +99,7 @@ const Login = () => {
                   <FormattedMessage id="NOT_A_MEMBER" />
                 </p>
                 <Link to="/sign-up">
-                  <span className="text-green underline hover:text-orange">
+                  <span className="text-green underline transition-all hover:text-orange">
                     <FormattedMessage id="SIGN_UP" />
                   </span>
                 </Link>
