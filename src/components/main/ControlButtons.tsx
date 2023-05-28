@@ -10,30 +10,30 @@ import BtnSchema from '../../assets/svg/btn_schema.svg';
 
 const ControlButtons: FC = (): JSX.Element => {
   const {
-    setIsShowSchema,
-    setIsQueryParams,
-    setResponseApi,
+    schema,
+    params,
+    setParams,
     queryBody,
     queryParams,
-    setIsDataLoading,
-    schema,
-    setParams,
-    params,
-    isSaveHeadersParams,
-    isSaveQueryParams,
+    headersParams,
+    setResponseApi,
     setQueryParams,
+    setIsShowSchema,
+    setIsOpenQueryParams,
+    setIsDataLoading,
     setHeadersParams,
   } = useAppContext();
 
   const executeQuery = async () => {
     setIsDataLoading(true);
 
-    const data = await getQuery({ queryBody, queryParams });
+    const data = await getQuery({ queryBody, queryParams, headersParams });
     setResponseApi(() => JSON.stringify(data, null, '\t'));
 
+    setHeadersParams(headersParams);
+    setQueryParams(queryParams);
+
     setIsDataLoading(false);
-    if (!isSaveHeadersParams) setHeadersParams('');
-    if (!isSaveQueryParams) setQueryParams('');
   };
 
   const showSchema = async () => {
@@ -41,13 +41,13 @@ const ControlButtons: FC = (): JSX.Element => {
   };
 
   const showQueryParams = () => {
-    setIsQueryParams((prev) => (params === 'query params' ? !prev : true));
+    setIsOpenQueryParams((prev) => (params === 'query params' ? !prev : true));
     setParams('query params');
   };
 
   const showHeadersParams = () => {
-    setIsQueryParams((prev) => (params === 'headers' ? !prev : true));
-    setParams('headers');
+    setIsOpenQueryParams((prev) => (params === 'http headers' ? !prev : true));
+    setParams('http headers');
   };
 
   return (
