@@ -1,11 +1,13 @@
 import React from 'react';
-import type monaco from 'monaco-editor';
+
 import Editor, { Monaco } from '@monaco-editor/react';
 import { CSSTransition } from 'react-transition-group';
 
 import useAppContext from '../../hooks/useAppContext';
 
 import Close from '../../assets/svg/close.svg';
+
+import type monaco from 'monaco-editor';
 
 export const defaultParams = '';
 

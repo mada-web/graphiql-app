@@ -1,5 +1,5 @@
 import { useIntl } from 'react-intl';
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import { UseFormRegister, FieldValues, FieldErrors, Path } from 'react-hook-form';
 
 import { DataFormCard } from '../../types/types';
@@ -19,8 +19,21 @@ const FormPassword: FC<InputPasswordProps> = (props) => {
   const [isReveal, setIsReveal] = useState(false);
   const [click, setClick] = useState(false);
   const intl = useIntl();
-
   const { value, onChange, register, errors, label } = props;
+  const [cursor, setCursor] = useState<number | null>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
+  const { ref } = register('password');
+
+  useEffect(() => {
+    const input = inputRef.current;
+    if (input) input.setSelectionRange(cursor, cursor);
+  }, [inputRef, cursor, value]);
+
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const target = e.target as HTMLInputElement;
+    setCursor(target.selectionEnd);
+    onChange && onChange(e);
+  };
 
   return (
     <>
@@ -46,7 +59,12 @@ const FormPassword: FC<InputPasswordProps> = (props) => {
               message: intl.formatMessage({ id: 'PASSWORD_PATTERN' }),
             },
           })}
-          onChange={onChange}
+          ref={(e: HTMLInputElement) => {
+            ref(e);
+            inputRef.current = e;
+          }}
+          name="password"
+          onChange={handleInput}
         />
         <span
           className="ml-[-51px] pr-[10px]"

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import { UseFormRegister, FieldValues, FieldErrors, Path } from 'react-hook-form';
 import { useIntl } from 'react-intl';
 
@@ -16,6 +16,20 @@ interface InputTitleProps {
 const FormName: FC<InputTitleProps> = (props) => {
   const { value, onChange, register, errors, label } = props;
   const intl = useIntl();
+  const [cursor, setCursor] = useState<number | null>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
+  const { ref } = register('name');
+
+  useEffect(() => {
+    const input = inputRef.current;
+    if (input) input.setSelectionRange(cursor, cursor);
+  }, [inputRef, cursor, value]);
+
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const target = e.target as HTMLInputElement;
+    setCursor(target.selectionEnd);
+    onChange && onChange(e);
+  };
 
   return (
     <>
@@ -45,7 +59,12 @@ const FormName: FC<InputTitleProps> = (props) => {
               message: intl.formatMessage({ id: 'NAME_PATTERN' }),
             },
           })}
-          onChange={onChange}
+          ref={(e: HTMLInputElement) => {
+            ref(e);
+            inputRef.current = e;
+          }}
+          name="name"
+          onChange={handleInput}
         />
       </div>
       <div className="h-10 text-red">
