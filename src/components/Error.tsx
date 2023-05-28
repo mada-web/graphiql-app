@@ -22,14 +22,14 @@ const ErrorMessage: FC = (): JSX.Element => {
       <p className="mt-6 text-2xl text-white">Please, try again later.</p>
       <button
         onClick={(e) => refreshPage(e)}
-        className="col-span-3 mt-4 justify-self-center rounded-md bg-green px-16 py-3 sm:col-span-1"
+        className="col-span-3 mt-4 justify-self-center rounded-md bg-green px-16 py-3 transition-all hover:bg-green/70 active:bg-orange sm:col-span-1"
       >
         REFRESH
       </button>
 
       <button
         onClick={(e) => returnToPrevPage(e)}
-        className="col-span-3 mt-4 justify-self-center rounded-md bg-green px-16 py-3 sm:col-span-1"
+        className="col-span-3 mt-4 justify-self-center rounded-md bg-green px-16 py-3 transition-all hover:bg-green/70 active:bg-orange sm:col-span-1"
       >
         GO BACK
       </button>
