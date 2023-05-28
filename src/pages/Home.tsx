@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { FormattedMessage } from 'react-intl';
 
 import PokeApiLogo from '../assets/svg/poke-api-logo.svg';
@@ -9,6 +10,10 @@ import InfoPokeApi from '../components/Home/InfoPokeApi';
 import InfoHelp from '../components/Home/InfoHelp';
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <main className="flex min-h-max w-screen bg-dark-blue">
       <section className="relative z-10 mx-auto my-[28px] flex w-3/4 flex-col items-center">
